@@ -27,6 +27,10 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn. Semua pesan ke pemilik dalam 
 6. Commit `idx_bot/paper` dan `idx_bot/runs`, push ke `ccr-1c2d0097-crqzw5`.
 7. Laporan di chat: kondisi IHSG, kejadian (beli/jual/stop), keputusan tiap kandidat dan alasannya,
    ekuitas dan status rem 6%, link dashboard. Singkat.
+8. Kirim notifikasi HP (PushNotification, satu baris di bawah 200 karakter) di akhir setiap run, karena pemilik
+   tidak membuka aplikasi. Mulai dengan yang paling penting, misalnya "LQ45 19 Okt: BELI ICBP 4 lot, ekuitas Rp 10,0 jt"
+   atau "LQ45 19 Okt: tidak ada sinyal, IHSG -1,2%". Bila harus berhenti (risiko besar, data aneh, tes gagal),
+   kirim notifikasinya segera dengan kata "PERLU KEPUTUSAN".
 
 ## Catatan
 
