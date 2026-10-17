@@ -74,3 +74,83 @@ def test_fundamental_missing_fields_listed_and_bank_der_skipped():
     assert score == 35  # 25 for ROE + 10 neutral for a bank's leverage
     assert "DER" not in details["missing"]
     assert "PER" in details["missing"]
+
+
+def _bars(rows, start="2026-10-19"):
+    idx = pd.bdate_range(start, periods=len(rows))
+    return pd.DataFrame(rows, columns=["Open", "High", "Low", "Close"], index=idx)
+
+
+def _ledger_with_order():
+    from idx_bot import paper
+    ledger = paper.new_ledger()
+    plan = {"lots": 10, "entry": 1000, "stop": 950, "target": 1100}
+    paper.add_order(ledger, "TEST", plan, "2026-10-16", "uji")
+    return paper, ledger
+
+
+@pytest.mark.unit
+def test_paper_fills_at_next_open_and_hits_target():
+    paper, ledger = _ledger_with_order()
+    bars = {"TEST": _bars([[1010, 1030, 1000, 1020], [1020, 1120, 1015, 1110]])}
+    events = paper.settle(ledger, bars)
+    assert len(events) == 2 and not ledger["open"]
+    trade = ledger["closed"][0]
+    assert trade["entry"] == 1010 and trade["exit_price"] == 1100 and trade["exit_reason"] == "target"
+    cost = 1000 * 1010 * (1 + config.BUY_FEE)
+    assert trade["pnl"] == pytest.approx(1000 * 1100 * (1 - config.SELL_FEE) - cost, abs=0.01)
+    assert ledger["cash"] == pytest.approx(config.EQUITY + trade["pnl"])
+
+
+@pytest.mark.unit
+def test_paper_gap_below_stop_fills_at_open_and_stop_wins_ties():
+    paper, ledger = _ledger_with_order()
+    paper.settle(ledger, {"TEST": _bars([[1010, 1020, 1000, 1010], [900, 920, 880, 900]])})
+    assert ledger["closed"][0]["exit_price"] == 900  # gapped through the 950 stop
+    paper2, ledger2 = _ledger_with_order()
+    paper2.settle(ledger2, {"TEST": _bars([[1010, 1150, 940, 1000]])})
+    assert ledger2["closed"][0]["exit_reason"] == "stop-loss"
+
+
+@pytest.mark.unit
+def test_paper_order_waits_without_new_bar_and_cancels_below_stop():
+    paper, ledger = _ledger_with_order()
+    paper.settle(ledger, {"TEST": _bars([[1000, 1000, 1000, 1000]], start="2026-10-16")})
+    assert len(ledger["pending"]) == 1  # no bar after the signal day yet
+    paper.settle(ledger, {"TEST": _bars([[940, 960, 930, 950]])})
+    assert not ledger["pending"] and not ledger["open"] and ledger["cash"] == config.EQUITY
+
+
+@pytest.mark.unit
+def test_paper_risk_and_month_loss():
+    paper, ledger = _ledger_with_order()
+    assert paper.open_risk(ledger) == 50 * 10 * 100
+    ledger["closed"] = [{"exit_date": "2026-10-20", "pnl": -120_000}, {"exit_date": "2026-09-30", "pnl": -50_000},
+                        {"exit_date": "2026-10-21", "pnl": 20_000}]
+    assert paper.month_loss(ledger, "2026-10") == 100_000
+
+
+@pytest.mark.unit
+def test_buy_queues_candidate_and_refuses_others(tmp_path, monkeypatch):
+    import json
+
+    from idx_bot import daily, paper
+    monkeypatch.setattr(paper, "LEDGER", tmp_path / "ledger.json")
+    monkeypatch.setattr(daily, "RUNS", tmp_path)
+    monkeypatch.setattr(daily, "DASHBOARD", tmp_path / "dash")
+    plan = {"lots": 10, "entry": 1000, "stop": 950, "target": 1100}
+    report = {"date": "2026-10-19", "brake": False, "month_loss": 0,
+              "candidates": [{"code": "TEST", "name": "Uji", "score": 70, "plan": plan}]}
+    (tmp_path / "daily-2026-10-19.json").write_text(json.dumps(report))
+    (tmp_path / "screener-2026-10-19.json").write_text(
+        json.dumps({"rows": [{"code": "TEST", "technical": {"close": 1000}}]}))
+
+    daily.buy("TEST", "tren naik")
+    assert paper.load()["pending"][0]["code"] == "TEST"
+    assert "TEST,menunggu,10" in (tmp_path / "dash" / "posisi.csv").read_text()
+    with pytest.raises(SystemExit):
+        daily.buy("OTHER", "bukan kandidat")
+    report["brake"] = True
+    (tmp_path / "daily-2026-10-19.json").write_text(json.dumps(report))
+    with pytest.raises(SystemExit):
+        daily.buy("TEST", "rem aktif")

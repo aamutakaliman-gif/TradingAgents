@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T19:19:41+00:00",
+  "generated_at": "2026-10-17T19:33:07+00:00",
   "universe": "LQ45",
   "settings": {
     "equity": 10000000,
@@ -44,6 +44,7 @@
         "name": "PT Bukit Asam (Persero) Tbk",
         "missing": []
       },
+      "atr": 146.87071054831523,
       "plan": {
         "entry": 2800.0,
         "stop": 2500,
@@ -92,6 +93,7 @@
         "name": "PT Aspirasi Hidup Indonesia Tbk",
         "missing": []
       },
+      "atr": 14.649366386992009,
       "plan": {
         "entry": 328.0,
         "stop": 298,
@@ -139,6 +141,7 @@
         "name": "PT Indofood CBP Sukses Makmur Tbk",
         "missing": []
       },
+      "atr": 227.25972567658727,
       "plan": {
         "entry": 6300.0,
         "stop": 5825,
@@ -184,6 +187,7 @@
         "name": "PT Indofood Sukses Makmur Tbk",
         "missing": []
       },
+      "atr": 213.41601774751967,
       "plan": {
         "entry": 6625.0,
         "stop": 6175,
@@ -229,6 +233,7 @@
         "name": "PT Ciputra Development Tbk",
         "missing": []
       },
+      "atr": 23.82846491138936,
       "plan": {
         "entry": 540.0,
         "stop": 492,
@@ -275,6 +280,7 @@
         "name": "PT Indosat Tbk",
         "missing": []
       },
+      "atr": 111.3363530265573,
       "plan": {
         "entry": 1755.0,
         "stop": 1530,
@@ -321,6 +327,7 @@
         "name": "PT Map Aktif Adiperkasa Tbk",
         "missing": []
       },
+      "atr": 29.809989753082263,
       "plan": {
         "entry": 520.0,
         "stop": 460,
@@ -368,6 +375,7 @@
         "name": "PT. Mitra Adiperkasa Tbk",
         "missing": []
       },
+      "atr": 80.17011963686085,
       "plan": {
         "entry": 1320.0,
         "stop": 1155,
@@ -415,6 +423,7 @@
         "name": "PT Medco Energi Internasional Tbk",
         "missing": []
       },
+      "atr": 71.24492573989554,
       "plan": {
         "entry": 1290.0,
         "stop": 1145,
@@ -461,6 +470,7 @@
         "name": "Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk",
         "missing": []
       },
+      "atr": 87.74917062400641,
       "plan": {
         "entry": 1900.0,
         "stop": 1720,
@@ -487,7 +497,7 @@
         "close": 5175.0,
         "sma20": 6070.0,
         "sma50": 6285.12162109375,
-        "sma200": 6501.527268066407,
+        "sma200": 6501.527270507812,
         "rsi": 22.9,
         "ret_1m": -0.185,
         "ret_3m": -0.1977,
@@ -507,6 +517,7 @@
         "name": "PT Bank Central Asia Tbk",
         "missing": []
       },
+      "atr": 180.597894536318,
       "plan": {
         "entry": 5175.0,
         "stop": 4810,
@@ -553,6 +564,7 @@
         "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
         "missing": []
       },
+      "atr": 102.29444120959374,
       "plan": {
         "entry": 2640.0,
         "stop": 2430,
@@ -599,6 +611,7 @@
         "name": "PT Bank Syariah Indonesia Tbk",
         "missing": []
       },
+      "atr": 54.64329599258963,
       "plan": {
         "entry": 1095.0,
         "stop": 985,
@@ -645,6 +658,7 @@
         "name": "PT AKR Corporindo Tbk",
         "missing": []
       },
+      "atr": 54.35001842526674,
       "plan": {
         "entry": 1250.0,
         "stop": 1140,
@@ -671,7 +685,7 @@
         "close": 1055.0,
         "sma20": 1253.6291870117188,
         "sma50": 1300.0788525390626,
-        "sma200": 1461.643412475586,
+        "sma200": 1461.6434185791015,
         "rsi": 25.2,
         "ret_1m": -0.1944,
         "ret_3m": -0.2005,
@@ -691,6 +705,7 @@
         "name": "PT Sumber Alfaria Trijaya Tbk",
         "missing": []
       },
+      "atr": 50.43613982626503,
       "plan": {
         "entry": 1055.0,
         "stop": 950,
@@ -735,6 +750,7 @@
         "name": "PT Antam (Persero) Tbk",
         "missing": []
       },
+      "atr": 136.92521653373515,
       "plan": {
         "entry": 2550.0,
         "stop": 2270,
@@ -781,6 +797,7 @@
         "name": "PT Bank Negara Indonesia (Persero) Tbk",
         "missing": []
       },
+      "atr": 105.67379323040726,
       "plan": {
         "entry": 2970.0,
         "stop": 2750,
@@ -807,7 +824,7 @@
         "close": 3390.0,
         "sma20": 4023.5,
         "sma50": 4134.9744140625,
-        "sma200": 4238.823299560547,
+        "sma200": 4238.8233093261715,
         "rsi": 17.7,
         "ret_1m": -0.2207,
         "ret_3m": -0.2316,
@@ -827,6 +844,7 @@
         "name": "PT Bank Mandiri (Persero) Tbk",
         "missing": []
       },
+      "atr": 112.35631063195623,
       "plan": {
         "entry": 3390.0,
         "stop": 3160,
@@ -871,6 +889,7 @@
         "name": "PT Trimegah Bangun Persada Tbk",
         "missing": []
       },
+      "atr": 36.00264384852357,
       "plan": {
         "entry": 690.0,
         "stop": 615,
@@ -897,7 +916,7 @@
         "close": 2210.0,
         "sma20": 2525.0,
         "sma50": 2584.2,
-        "sma200": 2329.672173461914,
+        "sma200": 2329.672174682617,
         "rsi": 27.8,
         "ret_1m": -0.1723,
         "ret_3m": -0.1124,
@@ -917,6 +936,7 @@
         "name": "PT Alamtri Resources Indonesia Tbk",
         "missing": []
       },
+      "atr": 103.53344652019804,
       "plan": {
         "entry": 2210.0,
         "stop": 2000,
@@ -963,6 +983,7 @@
         "name": "PT Indo Tambangraya Megah Tbk",
         "missing": []
       },
+      "atr": 782.3286497831293,
       "plan": {
         "entry": 23000.0,
         "stop": 21425,
@@ -1008,6 +1029,7 @@
         "name": "PT Summarecon Agung Tbk",
         "missing": []
       },
+      "atr": 12.844440683199407,
       "plan": {
         "entry": 230.0,
         "stop": 204,
@@ -1052,6 +1074,7 @@
         "name": "PT Charoen Pokphand Indonesia Tbk",
         "missing": []
       },
+      "atr": 108.43639797324195,
       "plan": {
         "entry": 2560.0,
         "stop": 2340,
@@ -1096,6 +1119,7 @@
         "name": "PT Japfa Comfeed Indonesia Tbk",
         "missing": []
       },
+      "atr": 85.45880241539689,
       "plan": {
         "entry": 1765.0,
         "stop": 1590,
@@ -1140,6 +1164,7 @@
         "name": "PT Bank Tabungan Negara (Persero) Tbk",
         "missing": []
       },
+      "atr": 37.17075686383026,
       "plan": {
         "entry": 885.0,
         "stop": 810,
@@ -1184,6 +1209,7 @@
         "name": "PT Kalbe Farma Tbk.",
         "missing": []
       },
+      "atr": 31.34999507774154,
       "plan": {
         "entry": 675.0,
         "stop": 610,
@@ -1228,6 +1254,7 @@
         "name": "PT Industri Jamu dan Farmasi Sido Muncul Tbk",
         "missing": []
       },
+      "atr": 9.020555877426855,
       "plan": {
         "entry": 326.0,
         "stop": 306,
@@ -1274,6 +1301,7 @@
         "name": "PT Pertamina Geothermal Energy Tbk",
         "missing": []
       },
+      "atr": 39.27739967006861,
       "plan": {
         "entry": 880.0,
         "stop": 800,
@@ -1318,6 +1346,7 @@
         "name": "PT Alamtri Minerals Indonesia Tbk",
         "missing": []
       },
+      "atr": 69.15763664394584,
       "plan": {
         "entry": 1165.0,
         "stop": 1025,
@@ -1362,6 +1391,7 @@
         "name": "PT ESSA Industries Indonesia Tbk.",
         "missing": []
       },
+      "atr": 27.809955230728463,
       "plan": {
         "entry": 476.0,
         "stop": 420,
@@ -1408,6 +1438,7 @@
         "name": "PT Vale Indonesia Tbk",
         "missing": []
       },
+      "atr": 201.87661199227298,
       "plan": {
         "entry": 3450.0,
         "stop": 3040,
@@ -1452,6 +1483,7 @@
         "name": "PT Unilever Indonesia Tbk",
         "missing": []
       },
+      "atr": 44.58446707820373,
       "plan": {
         "entry": 1390.0,
         "stop": 1300,
@@ -1478,7 +1510,7 @@
         "close": 4190.0,
         "sma20": 4634.383569335938,
         "sma50": 4717.78728515625,
-        "sma200": 5377.693999023438,
+        "sma200": 5377.6939697265625,
         "rsi": 29.3,
         "ret_1m": -0.1271,
         "ret_3m": -0.1613,
@@ -1496,6 +1528,7 @@
         "name": "PT Astra International Tbk",
         "missing": []
       },
+      "atr": 144.44153890536845,
       "plan": {
         "entry": 4190.0,
         "stop": 3900,
@@ -1542,6 +1575,7 @@
         "name": "PT Jasa Marga (Persero) Tbk",
         "missing": []
       },
+      "atr": 91.8712893904776,
       "plan": {
         "entry": 2110.0,
         "stop": 1925,
@@ -1592,6 +1626,7 @@
           "PER"
         ]
       },
+      "atr": 2.0460758067575835,
       "plan": {
         "entry": 25.0,
         "stop": 20,
@@ -1636,6 +1671,7 @@
         "name": "PT Indah Kiat Pulp & Paper Tbk",
         "missing": []
       },
+      "atr": 357.2001062709509,
       "plan": {
         "entry": 6950.0,
         "stop": 6225,
@@ -1682,6 +1718,7 @@
           "PER"
         ]
       },
+      "atr": 239.07086599699014,
       "plan": {
         "entry": 3740.0,
         "stop": 3260,
@@ -1727,6 +1764,7 @@
         "name": "PT Perusahaan Gas Negara (Persero) Tbk",
         "missing": []
       },
+      "atr": 46.02253398809955,
       "plan": {
         "entry": 1190.0,
         "stop": 1095,
@@ -1771,6 +1809,7 @@
         "name": "PT United Tractors Tbk",
         "missing": []
       },
+      "atr": 943.0323038467194,
       "plan": {
         "entry": 22625.0,
         "stop": 20725,
@@ -1815,6 +1854,7 @@
         "name": "PT Bank Jago Tbk",
         "missing": []
       },
+      "atr": 44.34412341406253,
       "plan": {
         "entry": 625.0,
         "stop": 535,
@@ -1864,6 +1904,7 @@
           "PER"
         ]
       },
+      "atr": 105.37644464605705,
       "plan": {
         "entry": 1815.0,
         "stop": 1600,
@@ -1909,6 +1950,7 @@
         "name": "PT. Indika Energy Tbk",
         "missing": []
       },
+      "atr": 168.97950138330842,
       "plan": {
         "entry": 2060.0,
         "stop": 1720,
@@ -1953,6 +1995,7 @@
         "name": "PT Merdeka Battery Materials Tbk.",
         "missing": []
       },
+      "atr": 23.03637439871843,
       "plan": {
         "entry": 374.0,
         "stop": 326,
@@ -1997,6 +2040,7 @@
         "name": "PT Merdeka Copper Gold Tbk",
         "missing": []
       },
+      "atr": 132.08461435039544,
       "plan": {
         "entry": 2430.0,
         "stop": 2160,
@@ -2041,6 +2085,7 @@
         "name": "PT Barito Pacific Tbk",
         "missing": []
       },
+      "atr": 83.82937517614394,
       "plan": {
         "entry": 1210.0,
         "stop": 1040,

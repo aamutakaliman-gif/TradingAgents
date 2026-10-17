@@ -126,6 +126,7 @@ def screen(universe: list[str]) -> dict:
             "avg_daily_value": float(daily_value),
             "technical": tech_d,
             "fundamental": fund_d,
+            "atr": float(atr(df).iloc[-1]),
             "plan": plan_trade(float(df["Close"].iloc[-1]), float(atr(df).iloc[-1])),
             "flags": flags,
         })
