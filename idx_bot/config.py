@@ -54,3 +54,7 @@ CRYPTO_POOL = [
     "LTC", "BCH", "XLM", "HBAR", "NEAR", "UNI", "APT", "ATOM", "ETC", "ICP", "FIL",
 ]
 CRYPTO_TOP_N = 15
+
+# Binance Spot Testnet rehearsal. Off by owner's choice (18 Oct 2026): testnet.binance.vision
+# answers 451 from this cloud region, so it waits for a machine where Binance is served.
+TESTNET_ENABLED = False

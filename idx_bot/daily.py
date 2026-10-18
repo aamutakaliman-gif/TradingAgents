@@ -49,7 +49,9 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     bars = _idx_bars(held) if market.name == "idx" else crypto.fetch(held, period="3mo")[0]
     events = paper.settle(ledger, bars, market)
     testnet = "tidak dipakai"
-    if market.name == "crypto":
+    if market.name == "crypto" and not config.TESTNET_ENABLED:
+        testnet = "ditunda (testnet tidak bisa diakses dari server cloud)"
+    elif market.name == "crypto":
         api = binance_testnet.connect()
         if api is None:
             testnet = "nonaktif: kunci testnet belum diisi"
