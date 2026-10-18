@@ -68,7 +68,7 @@ def market_score(code: str, df: pd.DataFrame, btc: pd.DataFrame, rank: int) -> t
         score += 12 + 8  # strength against itself is neutral
     else:
         score += (25 if rs_30 > 0 else 0) + (15 if rs_90 > 0 else 0)
-    score += 30 if volume >= 1e9 else 15 if volume >= 2e8 else 0
+    score += 30 if volume >= 5e8 else 15 if volume >= 1e8 else 0
     return score, {"rank": rank, "rs_btc_30d": round(float(rs_30), 4),
                    "rs_btc_90d": round(float(rs_90), 4), "volume_usd": float(volume)}
 
@@ -108,7 +108,7 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
         if abs(last_move) >= market.extreme_move:
             flags.append(f"pergerakan harian ekstrem {last_move:+.1%}: cek berita")
         if mkt_d["volume_usd"] < market.min_daily_value:
-            flags.append("volume harian < USD 50 juta")
+            flags.append(f"volume harian < USD {market.min_daily_value / 1e6:,.0f} juta")
         rows.append({
             "code": code,
             "name": names[code],

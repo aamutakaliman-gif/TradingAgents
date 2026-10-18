@@ -43,7 +43,9 @@ IDX = Market("idx", EQUITY, "Rp", LOT_SIZE, BUY_FEE, SELL_FEE, "idx", 0.10, MIN_
 
 # Rp 10 jt at the 17 Oct 2026 rate of Rp 18,000 per USD. Binance spot, no leverage,
 # standard 0.1% fee each way. Crypto moves more, so the extreme-move bar is 15%.
-CRYPTO = Market("crypto", 555.56, "USDT", 0.000001, 0.001, 0.001, "sig5", 0.15, 50_000_000)
+# Turnover is the one Binance USDT pair's (Yahoo's fallback sums many venues, so
+# it clears the bar more easily); USD 10 mn a day dwarfs orders of a few hundred USDT.
+CRYPTO = Market("crypto", 555.56, "USDT", 0.000001, 0.001, 0.001, "sig5", 0.15, 10_000_000)
 
 # Large coins traded on Binance spot against USDT, without stablecoins or meme coins.
 # The daily run ranks these by market cap and keeps the top CRYPTO_TOP_N.
