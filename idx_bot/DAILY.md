@@ -47,5 +47,9 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
   dengan memberi tahu pemilik apa yang berubah.
 - Masa uji 2–4 minggu sejak 19 Oktober 2026. Setelah 2 minggu, kirim evaluasi kinerja kedua pasar dan tanyakan
   apakah lanjut.
+- Data kripto diambil dari Binance lewat library python-binance (fork pemilik, aamutakaliman-gif/python-binance),
+  termasuk aturan pasangan koin (kelipatan jumlah, kelipatan harga, minimum order 5 USDT). Bila Binance tidak bisa
+  dijangkau, otomatis memakai Yahoo; `price_source` di laporan harian menyebut sumbernya. Sebutkan di laporan bila
+  sumbernya Yahoo.
 - Uang sungguhan di Binance hanya setelah pemilik setuju, memakai API key yang dibuat pemilik dengan izin trading saja,
   tanpa izin penarikan, dan dikunci ke IP server.

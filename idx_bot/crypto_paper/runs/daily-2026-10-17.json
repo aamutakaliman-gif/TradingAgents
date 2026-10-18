@@ -1,6 +1,7 @@
 {
   "market": "crypto",
   "currency": "USDT",
+  "price_source": "Yahoo",
   "date": "2026-10-17",
   "events": [],
   "brake": false,

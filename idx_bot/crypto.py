@@ -2,16 +2,19 @@
 
 Crypto has no financial statements, so the second score is about standing in
 the market instead: market-cap rank, strength against BTC, and USD turnover.
-Yahoo's daily crypto bars run on UTC days; the bar of the day still trading is
-dropped, so every figure is from completed days.
+Candles come from Binance itself (the USDT pair that would be traded) and fall
+back to Yahoo's USD prices when Binance cannot be reached; market caps come
+from Yahoo either way. Daily bars run on UTC days; the bar of the day still
+trading is dropped, so every figure is from completed days.
 """
 
+import logging
 from datetime import UTC, datetime
 
 import pandas as pd
 import yfinance as yf
 
-from idx_bot import config
+from idx_bot import binance_feed, config
 from idx_bot.indicators import atr
 from idx_bot.risk import plan_trade
 from idx_bot.screener import TECH_WEIGHT, technical_score
@@ -27,9 +30,23 @@ def complete_days(df: pd.DataFrame, now: datetime | None = None) -> pd.DataFrame
     return df[df.index.strftime("%Y-%m-%d") < today]
 
 
-def fetch(codes: list[str], period: str = "1y") -> dict[str, pd.DataFrame]:
+logger = logging.getLogger(__name__)
+
+
+def fetch(codes: list[str], period: str = "1y") -> tuple[dict[str, pd.DataFrame], str]:
+    """Completed daily candles per code and where they came from ("Binance" or "Yahoo")."""
     if not codes:
-        return {}
+        return {}, "Binance"
+    days = {"3mo": 100, "1y": 400}[period]
+    try:
+        api = binance_feed.client()
+        return {c: complete_days(binance_feed.klines(api, c, days)) for c in codes}, "Binance"
+    except Exception as exc:  # unreachable or refused: Yahoo has the same coins in USD
+        logger.warning("Binance klines unavailable (%s); using Yahoo", exc)
+    return _yahoo(codes, period), "Yahoo"
+
+
+def _yahoo(codes: list[str], period: str) -> dict[str, pd.DataFrame]:
     symbols = [symbol(c) for c in codes]
     data = yf.download(symbols, period=period, interval="1d", group_by="ticker",
                        auto_adjust=False, progress=False, threads=True)
@@ -68,7 +85,11 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
             caps[code] = info["marketCap"]
             names[code] = info.get("name") or info.get("shortName") or code
     universe = sorted(caps, key=caps.get, reverse=True)[:top_n]
-    prices = fetch(universe)
+    prices, source = fetch(universe)
+    rules = {}
+    if source == "Binance":
+        api = binance_feed.client()
+        rules = {code: binance_feed.trading_rules(api, code) for code in universe}
     btc = prices.get("BTC")
     if btc is None:
         raise RuntimeError("BTC price history unavailable; crypto screen cannot score strength against BTC")
@@ -101,7 +122,8 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
             "technical": tech_d,
             "market": mkt_d,
             "atr": atr_value,
-            "plan": plan_trade(float(df["Close"].iloc[-1]), atr_value, market=market),
+            "rules": rules.get(code),
+            "plan": plan_trade(float(df["Close"].iloc[-1]), atr_value, market=market, rules=rules.get(code)),
             "flags": flags,
         })
     rows.sort(key=lambda r: r["score"], reverse=True)
@@ -113,6 +135,7 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
     return {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "universe": f"Top {top_n} kripto Binance (market cap)",
+        "price_source": source,
         "settings": {"equity": market.equity, "currency": market.currency,
                      "risk_per_trade": config.RISK_PER_TRADE,
                      "monthly_risk_cap": config.MONTHLY_RISK_CAP, "tech_weight": TECH_WEIGHT},

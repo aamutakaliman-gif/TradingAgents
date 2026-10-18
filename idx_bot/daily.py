@@ -46,7 +46,7 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     runs.mkdir(parents=True, exist_ok=True)
     ledger = paper.load(ledger_path, market)
     held = sorted({p["code"] for p in ledger["open"] + ledger["pending"]})
-    bars = _idx_bars(held) if market.name == "idx" else crypto.fetch(held, period="3mo")
+    bars = _idx_bars(held) if market.name == "idx" else crypto.fetch(held, period="3mo")[0]
     events = paper.settle(ledger, bars, market)
 
     result = screen(config.LQ45) if market.name == "idx" else crypto.screen()
@@ -67,12 +67,12 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
             continue
         r = rows[code]
         plan = plan_trade(r["technical"]["close"], r["atr"], cash=ledger["cash"],
-                          open_risk=open_risk, month_loss=month_loss, market=market)
+                          open_risk=open_risk, month_loss=month_loss, market=market, rules=r.get("rules"))
         if plan["lots"] > 0:
             candidates.append({"code": code, "name": r["name"], "score": r["score"], "plan": plan})
 
     report = {
-        "market": market.name, "currency": market.currency,
+        "market": market.name, "currency": market.currency, "price_source": result.get("price_source", "Yahoo"),
         "date": date, "events": events, "brake": brake,
         "month_loss": month_loss, "open_risk": open_risk,
         "cash": ledger["cash"], "equity": paper.equity(ledger, last_close),

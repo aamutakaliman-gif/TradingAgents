@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-10-18T09:18:49+00:00",
+  "generated_at": "2026-10-18T10:31:03+00:00",
   "universe": "Top 15 kripto Binance (market cap)",
+  "price_source": "Yahoo",
   "settings": {
     "equity": 555.56,
     "currency": "USDT",
@@ -25,7 +26,7 @@
       "market_score": 80,
       "last_move": -0.0401,
       "avg_daily_value": 1230230102.7,
-      "market_cap": 6525538816,
+      "market_cap": 6515733504,
       "technical": {
         "close": 4.853939056396484,
         "sma20": 5.029564785957336,
@@ -50,6 +51,7 @@
         "volume_usd": 1230230102.7
       },
       "atr": 0.5323943157405625,
+      "rules": null,
       "plan": {
         "entry": 4.853939056396484,
         "stop": 3.7891,
@@ -71,7 +73,7 @@
       "market_score": 80,
       "last_move": -0.0015,
       "avg_daily_value": 28746869046.0,
-      "market_cap": 1646343094272,
+      "market_cap": 1650474221568,
       "technical": {
         "close": 81382.1484375,
         "sma20": 83407.605859375,
@@ -96,6 +98,7 @@
         "volume_usd": 28746869046.0
       },
       "atr": 2133.261924322059,
+      "rules": null,
       "plan": {
         "entry": 81382.1484375,
         "stop": 77115.0,
@@ -117,7 +120,7 @@
       "market_score": 65,
       "last_move": -0.0193,
       "avg_daily_value": 486088060.75,
-      "market_cap": 4359304192,
+      "market_cap": 4359950336,
       "technical": {
         "close": 9.754706382751465,
         "sma20": 10.63593349456787,
@@ -142,6 +145,7 @@
         "volume_usd": 486088060.75
       },
       "atr": 0.6451956748395169,
+      "rules": null,
       "plan": {
         "entry": 9.754706382751465,
         "stop": 8.4643,
@@ -163,7 +167,7 @@
       "market_score": 35,
       "last_move": -0.0044,
       "avg_daily_value": 425428417.8,
-      "market_cap": 31625203712,
+      "market_cap": 31633668096,
       "technical": {
         "close": 0.3334529995918274,
         "sma20": 0.3333844467997551,
@@ -189,6 +193,7 @@
         "volume_usd": 425428417.8
       },
       "atr": 0.0036678370357590383,
+      "rules": null,
       "plan": {
         "entry": 0.3334529995918274,
         "stop": 0.32611,
@@ -210,7 +215,7 @@
       "market_score": 65,
       "last_move": -0.0069,
       "avg_daily_value": 204481822.8,
-      "market_cap": 5511867392,
+      "market_cap": 5532392960,
       "technical": {
         "close": 275.1466979980469,
         "sma20": 293.10945892333984,
@@ -234,6 +239,7 @@
         "volume_usd": 204481822.8
       },
       "atr": 15.561676433418521,
+      "rules": null,
       "plan": {
         "entry": 275.1466979980469,
         "stop": 244.02,
@@ -255,7 +261,7 @@
       "market_score": 75,
       "last_move": -0.0271,
       "avg_daily_value": 573840013.3,
-      "market_cap": 8092644864,
+      "market_cap": 8124270592,
       "technical": {
         "close": 0.21942099928855896,
         "sma20": 0.24374444782733917,
@@ -278,6 +284,7 @@
         "volume_usd": 573840013.3
       },
       "atr": 0.01470013501877675,
+      "rules": null,
       "plan": {
         "entry": 0.21942099928855896,
         "stop": 0.19002,
@@ -299,7 +306,7 @@
       "market_score": 25,
       "last_move": -0.0575,
       "avg_daily_value": 171915336.8,
-      "market_cap": 1893257472,
+      "market_cap": 1905316736,
       "technical": {
         "close": 1.1142940521240234,
         "sma20": 1.1817775011062621,
@@ -324,6 +331,7 @@
         "volume_usd": 171915336.8
       },
       "atr": 0.08468611014643165,
+      "rules": null,
       "plan": {
         "entry": 1.1142940521240234,
         "stop": 0.94492,
@@ -345,7 +353,7 @@
       "market_score": 75,
       "last_move": -0.0083,
       "avg_daily_value": 12590243459.35,
-      "market_cap": 295495368704,
+      "market_cap": 295609401344,
       "technical": {
         "close": 2399.799072265625,
         "sma20": 2571.700634765625,
@@ -368,6 +376,7 @@
         "volume_usd": 12590243459.35
       },
       "atr": 94.03701216206997,
+      "rules": null,
       "plan": {
         "entry": 2399.799072265625,
         "stop": 2211.7,
@@ -389,7 +398,7 @@
       "market_score": 65,
       "last_move": -0.0094,
       "avg_daily_value": 2956556224.75,
-      "market_cap": 61119295488,
+      "market_cap": 61318504448,
       "technical": {
         "close": 103.3118667602539,
         "sma20": 113.04962310791015,
@@ -412,6 +421,7 @@
         "volume_usd": 2956556224.75
       },
       "atr": 4.686933377240053,
+      "rules": null,
       "plan": {
         "entry": 103.3118667602539,
         "stop": 93.938,
@@ -433,7 +443,7 @@
       "market_score": 50,
       "last_move": 0.0212,
       "avg_daily_value": 194483072.65,
-      "market_cap": 3910458368,
+      "market_cap": 3859111424,
       "technical": {
         "close": 0.08522599935531616,
         "sma20": 0.09575709961354732,
@@ -457,6 +467,7 @@
         "volume_usd": 194483072.65
       },
       "atr": 0.005740236596116014,
+      "rules": null,
       "plan": {
         "entry": 0.08522599935531616,
         "stop": 0.073745,
@@ -478,7 +489,7 @@
       "market_score": 60,
       "last_move": -0.0053,
       "avg_daily_value": 1415633326.45,
-      "market_cap": 95975940096,
+      "market_cap": 96155992064,
       "technical": {
         "close": 717.0421752929688,
         "sma20": 755.01240234375,
@@ -501,6 +512,7 @@
         "volume_usd": 1415633326.45
       },
       "atr": 19.83927354074195,
+      "rules": null,
       "plan": {
         "entry": 717.0421752929688,
         "stop": 677.36,
@@ -522,7 +534,7 @@
       "market_score": 50,
       "last_move": -0.0133,
       "avg_daily_value": 2599721002.65,
-      "market_cap": 81870700544,
+      "market_cap": 81910235136,
       "technical": {
         "close": 1.2925670146942139,
         "sma20": 1.4220723152160644,
@@ -545,6 +557,7 @@
         "volume_usd": 2599721002.65
       },
       "atr": 0.06047449457734609,
+      "rules": null,
       "plan": {
         "entry": 1.2925670146942139,
         "stop": 1.1716,
@@ -566,7 +579,7 @@
       "market_score": 50,
       "last_move": -0.0147,
       "avg_daily_value": 308569798.25,
-      "market_cap": 4604881408,
+      "market_cap": 4610019840,
       "technical": {
         "close": 58.763126373291016,
         "sma20": 65.1445327758789,
@@ -589,6 +602,7 @@
         "volume_usd": 308569798.25
       },
       "atr": 2.885010450027536,
+      "rules": null,
       "plan": {
         "entry": 58.763126373291016,
         "stop": 52.993,
@@ -610,7 +624,7 @@
       "market_score": 50,
       "last_move": -0.0294,
       "avg_daily_value": 399858089.2,
-      "market_cap": 8975114240,
+      "market_cap": 8971068416,
       "technical": {
         "close": 11.97105884552002,
         "sma20": 13.432010841369628,
@@ -632,6 +646,7 @@
         "volume_usd": 399858089.2
       },
       "atr": 0.6866889309442298,
+      "rules": null,
       "plan": {
         "entry": 11.97105884552002,
         "stop": 10.597,
@@ -653,7 +668,7 @@
       "market_score": 25,
       "last_move": -0.0241,
       "avg_daily_value": 223714531.85,
-      "market_cap": 6257844736,
+      "market_cap": 6255751680,
       "technical": {
         "close": 0.1768610030412674,
         "sma20": 0.20368509963154793,
@@ -676,6 +691,7 @@
         "volume_usd": 223714531.85
       },
       "atr": 0.010139296262671595,
+      "rules": null,
       "plan": {
         "entry": 0.1768610030412674,
         "stop": 0.15658,

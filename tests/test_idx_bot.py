@@ -202,3 +202,59 @@ def test_crypto_paper_trade_uses_units_and_binance_fees():
     assert "unit" in events[0] and trade["exit_price"] == 88_000
     expected = plan["units"] * (88_000 * (1 - 0.001) - 80_000 * (1 + 0.001))
     assert trade["pnl"] == pytest.approx(expected, abs=0.01)
+
+
+class _FakeBinance:
+    """Stands in for binance.client.Client with canned public-endpoint answers."""
+
+    def get_klines(self, symbol, interval, limit):
+        day = 86_400_000
+        start = 1_760_659_200_000  # 2025-10-17 00:00 UTC
+        return [[start + i * day, "100", "110", "90", str(100 + i), "5", start + (i + 1) * day - 1, "5000",
+                 10, "2", "200", "0"] for i in range(3)]
+
+    def get_symbol_info(self, symbol):
+        if symbol != "BTCUSDT":
+            return None
+        return {"filters": [
+            {"filterType": "PRICE_FILTER", "tickSize": "0.01000000"},
+            {"filterType": "LOT_SIZE", "stepSize": "0.00001000"},
+            {"filterType": "NOTIONAL", "minNotional": "5.00000000"},
+        ]}
+
+
+@pytest.mark.unit
+def test_binance_klines_and_trading_rules():
+    from idx_bot import binance_feed
+    df = binance_feed.klines(_FakeBinance(), "BTC", days=3)
+    assert list(df.columns) == ["Open", "High", "Low", "Close", "Volume"]
+    assert df["Close"].tolist() == [100, 101, 102] and df["Volume"].iloc[0] == 5000  # USDT turnover
+    assert df.index[0].strftime("%Y-%m-%d") == "2025-10-17"
+    assert binance_feed.trading_rules(_FakeBinance(), "BTC") == {"step": 0.00001, "tick": 0.01, "min_notional": 5.0}
+    assert binance_feed.trading_rules(_FakeBinance(), "XYZ") is None
+
+
+@pytest.mark.unit
+def test_plan_trade_follows_binance_rules():
+    rules = {"step": 0.00001, "tick": 0.01, "min_notional": 5.0}
+    plan = plan_trade(entry=81_382.15, atr_value=2_133.57, market=config.CRYPTO, rules=rules)
+    assert plan["stop"] == pytest.approx(77_115.01)  # floored to the 0.01 tick
+    assert plan["units"] == pytest.approx(0.0026)  # floored to the 0.00001 step
+    assert round(plan["units"] / rules["step"], 6) == int(round(plan["units"] / rules["step"]))
+    assert plan["risk"] <= config.CRYPTO.equity * config.RISK_PER_TRADE
+    tiny = plan_trade(entry=81_382.15, atr_value=2_133.57, market=config.CRYPTO, cash=4.0, rules=rules)
+    assert tiny["units"] == 0  # under Binance's 5 USDT minimum order
+
+
+@pytest.mark.unit
+def test_crypto_fetch_falls_back_to_yahoo(monkeypatch):
+    from idx_bot import binance_feed, crypto
+
+    def unreachable():
+        raise ConnectionError("403 from proxy")
+    monkeypatch.setattr(binance_feed, "client", unreachable)
+    monkeypatch.setattr(crypto, "_yahoo", lambda codes, period: dict.fromkeys(codes, "yahoo"))
+    assert crypto.fetch(["BTC"]) == ({"BTC": "yahoo"}, "Yahoo")
+    monkeypatch.setattr(binance_feed, "client", lambda: _FakeBinance())
+    prices, source = crypto.fetch(["BTC"], period="3mo")
+    assert source == "Binance" and len(prices["BTC"]) == 3  # all three days are long past
