@@ -2,7 +2,7 @@
   "market": "crypto",
   "currency": "USDT",
   "price_source": "Binance",
-  "testnet": "nonaktif: kunci testnet belum diisi",
+  "testnet": "ditunda (testnet tidak bisa diakses dari server cloud)",
   "date": "2026-10-17",
   "events": [],
   "brake": false,
