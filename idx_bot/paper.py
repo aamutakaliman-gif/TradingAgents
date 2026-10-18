@@ -3,6 +3,7 @@
 The ledger is a JSON file committed to the repo, since the session that runs it
 does not keep files between days. Fills are conservative: a gap past a stop
 fills at the open, and a day that touches both stop and target counts the stop.
+Positions hold ``units`` (shares or coins); ``lots`` is kept for the IDX report.
 """
 
 import json
@@ -15,13 +16,17 @@ from idx_bot import config
 LEDGER = Path(__file__).parent / "paper" / "ledger.json"
 
 
-def new_ledger() -> dict:
-    return {"cash": config.EQUITY, "pending": [], "open": [], "closed": []}
+def _price(x: float) -> str:
+    return f"{x:,.6g}"
 
 
-def load(path: Path | None = None) -> dict:
+def new_ledger(market: config.Market = config.IDX) -> dict:
+    return {"cash": market.equity, "pending": [], "open": [], "closed": []}
+
+
+def load(path: Path | None = None, market: config.Market = config.IDX) -> dict:
     path = path or LEDGER
-    return json.loads(path.read_text()) if path.exists() else new_ledger()
+    return json.loads(path.read_text()) if path.exists() else new_ledger(market)
 
 
 def save(ledger: dict, path: Path | None = None) -> None:
@@ -33,7 +38,7 @@ def save(ledger: dict, path: Path | None = None) -> None:
 def open_risk(ledger: dict) -> float:
     """What the open positions and pending orders lose if every stop is hit."""
     positions = ledger["open"] + ledger["pending"]
-    return sum(max(p["entry"] - p["stop"], 0) * p["lots"] * config.LOT_SIZE for p in positions)
+    return sum(max(p["entry"] - p["stop"], 0) * p["units"] for p in positions)
 
 
 def month_loss(ledger: dict, month: str) -> float:
@@ -42,27 +47,28 @@ def month_loss(ledger: dict, month: str) -> float:
     return max(-pnl, 0.0)
 
 
-def add_order(ledger: dict, code: str, plan: dict, signal_date: str, reason: str) -> None:
+def add_order(ledger: dict, code: str, plan: dict, signal_date: str, reason: str,
+              market: config.Market = config.IDX) -> None:
     """Queue a buy at the next open; ``plan`` comes from risk.plan_trade."""
     ledger["pending"].append({
-        "code": code, "lots": plan["lots"], "entry": plan["entry"], "stop": plan["stop"],
-        "target": plan["target"], "signal_date": signal_date, "reason": reason,
+        "code": code, "lots": plan["lots"], "units": plan.get("units", plan["lots"] * market.lot_size),
+        "entry": plan["entry"], "stop": plan["stop"], "target": plan["target"],
+        "signal_date": signal_date, "reason": reason,
     })
 
 
-def _close(ledger: dict, pos: dict, price: float, date: str, why: str) -> None:
-    shares = pos["lots"] * config.LOT_SIZE
-    proceeds = shares * price * (1 - config.SELL_FEE)
+def _close(ledger: dict, pos: dict, price: float, date: str, why: str, market: config.Market) -> None:
+    proceeds = pos["units"] * price * (1 - market.sell_fee)
     ledger["cash"] += proceeds
     ledger["closed"].append({**pos, "exit_price": price, "exit_date": date, "exit_reason": why,
                              "pnl": round(proceeds - pos["cost"], 2)})
 
 
-def settle(ledger: dict, bars: dict[str, pd.DataFrame]) -> list[str]:
+def settle(ledger: dict, bars: dict[str, pd.DataFrame], market: config.Market = config.IDX) -> list[str]:
     """Fill pending orders and check stops/targets against each code's daily bars.
 
-    ``bars[code]`` is a daily OHLC frame indexed by date. Returns what happened,
-    one line per event, for the daily report.
+    ``bars[code]`` is a daily OHLC frame of completed days, indexed by date.
+    Returns what happened, one line per event, for the daily report.
     """
     events = []
     still_pending = []
@@ -74,14 +80,15 @@ def settle(ledger: dict, bars: dict[str, pd.DataFrame]) -> list[str]:
             continue
         day, bar = after.index[0].strftime("%Y-%m-%d"), after.iloc[0]
         fill = float(bar["Open"])
-        cost = order["lots"] * config.LOT_SIZE * fill * (1 + config.BUY_FEE)
+        cost = order["units"] * fill * (1 + market.buy_fee)
         if bar["Open"] <= order["stop"] or cost > ledger["cash"]:
-            events.append(f"{order['code']}: order batal (buka {fill:,.0f} di bawah stop atau kas kurang)")
+            events.append(f"{order['code']}: order batal (buka {_price(fill)} di bawah stop atau kas kurang)")
             continue
         ledger["cash"] -= cost
         # Keep the planned stop; the position's risk is now measured from the real fill.
         ledger["open"].append({**order, "entry": fill, "entry_date": day, "cost": round(cost, 2)})
-        events.append(f"{order['code']}: beli {order['lots']} lot di {fill:,.0f} ({day})")
+        size = f"{order['lots']} lot" if market.name == "idx" else f"{order['units']:g} unit"
+        events.append(f"{order['code']}: beli {size} di {_price(fill)} ({day})")
     ledger["pending"] = still_pending
 
     still_open = []
@@ -93,16 +100,16 @@ def settle(ledger: dict, bars: dict[str, pd.DataFrame]) -> list[str]:
                 day = ts.strftime("%Y-%m-%d")
                 if bar["Low"] <= pos["stop"]:
                     price = min(float(bar["Open"]), pos["stop"]) if day > pos["entry_date"] else pos["stop"]
-                    _close(ledger, pos, price, day, "stop-loss")
+                    _close(ledger, pos, price, day, "stop-loss", market)
                     done = True
                 elif bar["High"] >= pos["target"]:
                     price = max(float(bar["Open"]), pos["target"]) if day > pos["entry_date"] else pos["target"]
-                    _close(ledger, pos, price, day, "target")
+                    _close(ledger, pos, price, day, "target", market)
                     done = True
                 if done:
                     t = ledger["closed"][-1]
-                    events.append(f"{pos['code']}: jual di {t['exit_price']:,.0f} ({t['exit_reason']}), "
-                                  f"laba/rugi Rp {t['pnl']:,.0f}")
+                    events.append(f"{pos['code']}: jual di {_price(t['exit_price'])} ({t['exit_reason']}), "
+                                  f"laba/rugi {market.currency} {t['pnl']:,.2f}")
                     break
         if not done:
             still_open.append(pos)
@@ -111,5 +118,5 @@ def settle(ledger: dict, bars: dict[str, pd.DataFrame]) -> list[str]:
 
 
 def equity(ledger: dict, last_close: dict[str, float]) -> float:
-    held = sum(p["lots"] * config.LOT_SIZE * last_close.get(p["code"], p["entry"]) for p in ledger["open"])
+    held = sum(p["units"] * last_close.get(p["code"], p["entry"]) for p in ledger["open"])
     return ledger["cash"] + held

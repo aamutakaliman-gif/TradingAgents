@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T19:33:07+00:00",
+  "generated_at": "2026-10-18T09:23:08+00:00",
   "universe": "LQ45",
   "settings": {
     "equity": 10000000,
@@ -50,8 +50,9 @@
         "stop": 2500,
         "target": 3400,
         "lots": 6,
+        "units": 600,
         "position_value": 1680000.0,
-        "risk_idr": 180000.0,
+        "risk": 180000.0,
         "stop_pct": 0.10714285714285714
       },
       "flags": [
@@ -99,8 +100,9 @@
         "stop": 298,
         "target": 388,
         "lots": 66,
+        "units": 6600,
         "position_value": 2164800.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.09146341463414634
       },
       "flags": [
@@ -147,8 +149,9 @@
         "stop": 5825,
         "target": 7250,
         "lots": 4,
+        "units": 400,
         "position_value": 2520000.0,
-        "risk_idr": 190000.0,
+        "risk": 190000.0,
         "stop_pct": 0.07539682539682539
       },
       "flags": []
@@ -193,8 +196,9 @@
         "stop": 6175,
         "target": 7525,
         "lots": 4,
+        "units": 400,
         "position_value": 2650000.0,
-        "risk_idr": 180000.0,
+        "risk": 180000.0,
         "stop_pct": 0.06792452830188679
       },
       "flags": []
@@ -239,8 +243,9 @@
         "stop": 492,
         "target": 640,
         "lots": 41,
+        "units": 4100,
         "position_value": 2214000.0,
-        "risk_idr": 196800.0,
+        "risk": 196800.0,
         "stop_pct": 0.08888888888888889
       },
       "flags": [
@@ -286,8 +291,9 @@
         "stop": 1530,
         "target": 2210,
         "lots": 8,
+        "units": 800,
         "position_value": 1404000.0,
-        "risk_idr": 180000.0,
+        "risk": 180000.0,
         "stop_pct": 0.1282051282051282
       },
       "flags": [
@@ -333,8 +339,9 @@
         "stop": 460,
         "target": 640,
         "lots": 33,
+        "units": 3300,
         "position_value": 1716000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.11538461538461539
       },
       "flags": [
@@ -381,8 +388,9 @@
         "stop": 1155,
         "target": 1650,
         "lots": 12,
+        "units": 1200,
         "position_value": 1584000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.125
       },
       "flags": [
@@ -429,8 +437,9 @@
         "stop": 1145,
         "target": 1580,
         "lots": 13,
+        "units": 1300,
         "position_value": 1677000.0,
-        "risk_idr": 188500.0,
+        "risk": 188500.0,
         "stop_pct": 0.1124031007751938
       },
       "flags": [
@@ -476,8 +485,9 @@
         "stop": 1720,
         "target": 2260,
         "lots": 11,
+        "units": 1100,
         "position_value": 2090000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.09473684210526316
       },
       "flags": [
@@ -497,7 +507,7 @@
         "close": 5175.0,
         "sma20": 6070.0,
         "sma50": 6285.12162109375,
-        "sma200": 6501.527270507812,
+        "sma200": 6501.527282714844,
         "rsi": 22.9,
         "ret_1m": -0.185,
         "ret_3m": -0.1977,
@@ -517,14 +527,15 @@
         "name": "PT Bank Central Asia Tbk",
         "missing": []
       },
-      "atr": 180.597894536318,
+      "atr": 180.59789453225207,
       "plan": {
         "entry": 5175.0,
         "stop": 4810,
         "target": 5925,
         "lots": 5,
+        "units": 500,
         "position_value": 2587500.0,
-        "risk_idr": 182500.0,
+        "risk": 182500.0,
         "stop_pct": 0.07053140096618357
       },
       "flags": [
@@ -544,7 +555,7 @@
         "close": 2640.0,
         "sma20": 3105.5,
         "sma50": 3186.0,
-        "sma200": 3203.7395483398436,
+        "sma200": 3203.7395434570312,
         "rsi": 22.3,
         "ret_1m": -0.2072,
         "ret_3m": -0.1111,
@@ -564,14 +575,15 @@
         "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
         "missing": []
       },
-      "atr": 102.29444120959374,
+      "atr": 102.29444120960667,
       "plan": {
         "entry": 2640.0,
         "stop": 2430,
         "target": 3060,
         "lots": 9,
+        "units": 900,
         "position_value": 2376000.0,
-        "risk_idr": 189000.0,
+        "risk": 189000.0,
         "stop_pct": 0.07954545454545454
       },
       "flags": [
@@ -617,8 +629,9 @@
         "stop": 985,
         "target": 1315,
         "lots": 18,
+        "units": 1800,
         "position_value": 1971000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.1004566210045662
       },
       "flags": [
@@ -638,7 +651,7 @@
         "close": 1250.0,
         "sma20": 1458.75,
         "sma50": 1442.4,
-        "sma200": 1307.4542584228516,
+        "sma200": 1307.4542565917968,
         "rsi": 26.6,
         "ret_1m": -0.1497,
         "ret_3m": -0.0449,
@@ -658,14 +671,15 @@
         "name": "PT AKR Corporindo Tbk",
         "missing": []
       },
-      "atr": 54.35001842526674,
+      "atr": 54.35001842151847,
       "plan": {
         "entry": 1250.0,
         "stop": 1140,
         "target": 1470,
         "lots": 18,
+        "units": 1800,
         "position_value": 2250000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.088
       },
       "flags": [
@@ -711,8 +725,9 @@
         "stop": 950,
         "target": 1265,
         "lots": 19,
+        "units": 1900,
         "position_value": 2004500.0,
-        "risk_idr": 199500.0,
+        "risk": 199500.0,
         "stop_pct": 0.0995260663507109
       },
       "flags": [
@@ -756,8 +771,9 @@
         "stop": 2270,
         "target": 3110,
         "lots": 7,
+        "units": 700,
         "position_value": 1785000.0,
-        "risk_idr": 196000.0,
+        "risk": 196000.0,
         "stop_pct": 0.10980392156862745
       },
       "flags": [
@@ -803,8 +819,9 @@
         "stop": 2750,
         "target": 3410,
         "lots": 9,
+        "units": 900,
         "position_value": 2673000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.07407407407407407
       },
       "flags": [
@@ -850,8 +867,9 @@
         "stop": 3160,
         "target": 3850,
         "lots": 8,
+        "units": 800,
         "position_value": 2712000.0,
-        "risk_idr": 184000.0,
+        "risk": 184000.0,
         "stop_pct": 0.06784660766961652
       },
       "flags": [
@@ -895,8 +913,9 @@
         "stop": 615,
         "target": 840,
         "lots": 26,
+        "units": 2600,
         "position_value": 1794000.0,
-        "risk_idr": 195000.0,
+        "risk": 195000.0,
         "stop_pct": 0.10869565217391304
       },
       "flags": [
@@ -916,7 +935,7 @@
         "close": 2210.0,
         "sma20": 2525.0,
         "sma50": 2584.2,
-        "sma200": 2329.672174682617,
+        "sma200": 2329.672173461914,
         "rsi": 27.8,
         "ret_1m": -0.1723,
         "ret_3m": -0.1124,
@@ -936,14 +955,15 @@
         "name": "PT Alamtri Resources Indonesia Tbk",
         "missing": []
       },
-      "atr": 103.53344652019804,
+      "atr": 103.53344652021214,
       "plan": {
         "entry": 2210.0,
         "stop": 2000,
         "target": 2630,
         "lots": 9,
+        "units": 900,
         "position_value": 1989000.0,
-        "risk_idr": 189000.0,
+        "risk": 189000.0,
         "stop_pct": 0.09502262443438914
       },
       "flags": [
@@ -983,14 +1003,15 @@
         "name": "PT Indo Tambangraya Megah Tbk",
         "missing": []
       },
-      "atr": 782.3286497831293,
+      "atr": 782.3286497831067,
       "plan": {
         "entry": 23000.0,
         "stop": 21425,
         "target": 26150,
         "lots": 1,
+        "units": 100,
         "position_value": 2300000.0,
-        "risk_idr": 157500.0,
+        "risk": 157500.0,
         "stop_pct": 0.06847826086956521
       },
       "flags": []
@@ -1035,8 +1056,9 @@
         "stop": 204,
         "target": 282,
         "lots": 76,
+        "units": 7600,
         "position_value": 1748000.0,
-        "risk_idr": 197600.0,
+        "risk": 197600.0,
         "stop_pct": 0.11304347826086956
       },
       "flags": [
@@ -1080,8 +1102,9 @@
         "stop": 2340,
         "target": 3000,
         "lots": 9,
+        "units": 900,
         "position_value": 2304000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.0859375
       },
       "flags": [
@@ -1125,8 +1148,9 @@
         "stop": 1590,
         "target": 2120,
         "lots": 11,
+        "units": 1100,
         "position_value": 1941500.0,
-        "risk_idr": 192500.0,
+        "risk": 192500.0,
         "stop_pct": 0.09915014164305949
       },
       "flags": [
@@ -1170,8 +1194,9 @@
         "stop": 810,
         "target": 1035,
         "lots": 26,
+        "units": 2600,
         "position_value": 2301000.0,
-        "risk_idr": 195000.0,
+        "risk": 195000.0,
         "stop_pct": 0.0847457627118644
       },
       "flags": [
@@ -1215,8 +1240,9 @@
         "stop": 610,
         "target": 805,
         "lots": 30,
+        "units": 3000,
         "position_value": 2025000.0,
-        "risk_idr": 195000.0,
+        "risk": 195000.0,
         "stop_pct": 0.0962962962962963
       },
       "flags": [
@@ -1254,14 +1280,15 @@
         "name": "PT Industri Jamu dan Farmasi Sido Muncul Tbk",
         "missing": []
       },
-      "atr": 9.020555877426855,
+      "atr": 9.020555877426691,
       "plan": {
         "entry": 326.0,
         "stop": 306,
         "target": 366,
         "lots": 100,
+        "units": 10000,
         "position_value": 3260000.0,
-        "risk_idr": 200000.0,
+        "risk": 200000.0,
         "stop_pct": 0.06134969325153374
       },
       "flags": [
@@ -1307,8 +1334,9 @@
         "stop": 800,
         "target": 1040,
         "lots": 25,
+        "units": 2500,
         "position_value": 2200000.0,
-        "risk_idr": 200000.0,
+        "risk": 200000.0,
         "stop_pct": 0.09090909090909091
       },
       "flags": [
@@ -1352,8 +1380,9 @@
         "stop": 1025,
         "target": 1445,
         "lots": 14,
+        "units": 1400,
         "position_value": 1631000.0,
-        "risk_idr": 196000.0,
+        "risk": 196000.0,
         "stop_pct": 0.12017167381974249
       },
       "flags": [
@@ -1397,8 +1426,9 @@
         "stop": 420,
         "target": 590,
         "lots": 35,
+        "units": 3500,
         "position_value": 1666000.0,
-        "risk_idr": 196000.0,
+        "risk": 196000.0,
         "stop_pct": 0.11764705882352941
       },
       "flags": [
@@ -1444,8 +1474,9 @@
         "stop": 3040,
         "target": 4270,
         "lots": 4,
+        "units": 400,
         "position_value": 1380000.0,
-        "risk_idr": 164000.0,
+        "risk": 164000.0,
         "stop_pct": 0.11884057971014493
       },
       "flags": [
@@ -1489,8 +1520,9 @@
         "stop": 1300,
         "target": 1570,
         "lots": 22,
+        "units": 2200,
         "position_value": 3058000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.06474820143884892
       },
       "flags": [
@@ -1510,7 +1542,7 @@
         "close": 4190.0,
         "sma20": 4634.383569335938,
         "sma50": 4717.78728515625,
-        "sma200": 5377.6939697265625,
+        "sma200": 5377.693999023438,
         "rsi": 29.3,
         "ret_1m": -0.1271,
         "ret_3m": -0.1613,
@@ -1528,14 +1560,15 @@
         "name": "PT Astra International Tbk",
         "missing": []
       },
-      "atr": 144.44153890536845,
+      "atr": 144.4415389130078,
       "plan": {
         "entry": 4190.0,
         "stop": 3900,
         "target": 4770,
         "lots": 6,
+        "units": 600,
         "position_value": 2514000.0,
-        "risk_idr": 174000.0,
+        "risk": 174000.0,
         "stop_pct": 0.06921241050119331
       },
       "flags": [
@@ -1581,8 +1614,9 @@
         "stop": 1925,
         "target": 2480,
         "lots": 10,
+        "units": 1000,
         "position_value": 2110000.0,
-        "risk_idr": 185000.0,
+        "risk": 185000.0,
         "stop_pct": 0.08767772511848342
       },
       "flags": [
@@ -1632,8 +1666,9 @@
         "stop": 20,
         "target": 35,
         "lots": 400,
+        "units": 40000,
         "position_value": 1000000.0,
-        "risk_idr": 200000.0,
+        "risk": 200000.0,
         "stop_pct": 0.2
       },
       "flags": [
@@ -1677,8 +1712,9 @@
         "stop": 6225,
         "target": 8400,
         "lots": 2,
+        "units": 200,
         "position_value": 1390000.0,
-        "risk_idr": 145000.0,
+        "risk": 145000.0,
         "stop_pct": 0.10431654676258993
       },
       "flags": [
@@ -1724,8 +1760,9 @@
         "stop": 3260,
         "target": 4700,
         "lots": 4,
+        "units": 400,
         "position_value": 1496000.0,
-        "risk_idr": 192000.0,
+        "risk": 192000.0,
         "stop_pct": 0.12834224598930483
       },
       "flags": [
@@ -1770,8 +1807,9 @@
         "stop": 1095,
         "target": 1380,
         "lots": 21,
+        "units": 2100,
         "position_value": 2499000.0,
-        "risk_idr": 199500.0,
+        "risk": 199500.0,
         "stop_pct": 0.07983193277310924
       },
       "flags": [
@@ -1791,7 +1829,7 @@
         "close": 22625.0,
         "sma20": 24694.959375,
         "sma50": 24431.247890625,
-        "sma200": 25978.404853515625,
+        "sma200": 25978.40484375,
         "rsi": 36.3,
         "ret_1m": -0.1048,
         "ret_3m": -0.1335,
@@ -1809,14 +1847,15 @@
         "name": "PT United Tractors Tbk",
         "missing": []
       },
-      "atr": 943.0323038467194,
+      "atr": 943.032303896173,
       "plan": {
         "entry": 22625.0,
         "stop": 20725,
         "target": 26425,
         "lots": 1,
+        "units": 100,
         "position_value": 2262500.0,
-        "risk_idr": 190000.0,
+        "risk": 190000.0,
         "stop_pct": 0.08397790055248619
       },
       "flags": [
@@ -1860,8 +1899,9 @@
         "stop": 535,
         "target": 805,
         "lots": 22,
+        "units": 2200,
         "position_value": 1375000.0,
-        "risk_idr": 198000.0,
+        "risk": 198000.0,
         "stop_pct": 0.144
       },
       "flags": [
@@ -1910,8 +1950,9 @@
         "stop": 1600,
         "target": 2250,
         "lots": 9,
+        "units": 900,
         "position_value": 1633500.0,
-        "risk_idr": 193500.0,
+        "risk": 193500.0,
         "stop_pct": 0.1184573002754821
       },
       "flags": [
@@ -1956,8 +1997,9 @@
         "stop": 1720,
         "target": 2740,
         "lots": 5,
+        "units": 500,
         "position_value": 1030000.0,
-        "risk_idr": 170000.0,
+        "risk": 170000.0,
         "stop_pct": 0.1650485436893204
       },
       "flags": [
@@ -2001,8 +2043,9 @@
         "stop": 326,
         "target": 470,
         "lots": 41,
+        "units": 4100,
         "position_value": 1533400.0,
-        "risk_idr": 196800.0,
+        "risk": 196800.0,
         "stop_pct": 0.12834224598930483
       },
       "flags": [
@@ -2046,8 +2089,9 @@
         "stop": 2160,
         "target": 2970,
         "lots": 7,
+        "units": 700,
         "position_value": 1701000.0,
-        "risk_idr": 189000.0,
+        "risk": 189000.0,
         "stop_pct": 0.1111111111111111
       },
       "flags": [
@@ -2091,8 +2135,9 @@
         "stop": 1040,
         "target": 1550,
         "lots": 11,
+        "units": 1100,
         "position_value": 1331000.0,
-        "risk_idr": 187000.0,
+        "risk": 187000.0,
         "stop_pct": 0.14049586776859505
       },
       "flags": [

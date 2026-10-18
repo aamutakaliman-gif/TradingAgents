@@ -1,5 +1,6 @@
 urutan,tahap,status,catatan
 1,Screener LQ45 (teknikal + fundamental),selesai,"45 saham dipindai, tes lulus, kode di branch ccr-1c2d0097-crqzw5"
 2,Analisis tim agen AI untuk kandidat teratas,berjalan,Dijalankan Claude setiap hari untuk kandidat yang lolos screener
-3,Jadwal harian + paper trading 2-4 minggu,berjalan,"Mulai Senin 19 Okt 2026, laporan masuk ke chat setiap hari bursa pukul 16:48 WIB"
-4,Uang sungguhan (eksekusi manual di Mirae),belum,Hanya setelah Anda puas dan menyetujui
+3,Jadwal harian + paper trading saham 2-4 minggu,berjalan,"Mulai Senin 19 Okt 2026, laporan setiap hari bursa pukul 16:48 WIB"
+4,Screener + paper trading kripto 2-4 minggu,berjalan,"15 kripto terbesar Binance, modal virtual 555,56 USDT, laporan setiap hari 07:15 WIB mulai 19 Okt"
+5,Uang sungguhan (Mirae / Binance),belum,Hanya setelah Anda puas dan menyetujui

@@ -41,7 +41,7 @@ def test_plan_trade_risks_at_most_two_percent():
     assert plan["stop"] == 950
     assert plan["target"] == 1100
     assert plan["lots"] == 40  # 200,000 / (50 * 100)
-    assert plan["risk_idr"] <= config.EQUITY * config.RISK_PER_TRADE
+    assert plan["risk"] <= config.EQUITY * config.RISK_PER_TRADE
 
 
 @pytest.mark.unit
@@ -55,7 +55,7 @@ def test_plan_trade_capped_by_cash():
 def test_plan_trade_respects_six_percent_rule():
     # 300k open risk + 250k lost this month leaves 50k of the 600k monthly cap.
     plan = plan_trade(entry=1000, atr_value=25, open_risk=300_000, month_loss=250_000)
-    assert plan["risk_idr"] <= 50_000
+    assert plan["risk"] <= 50_000
     assert plan_trade(entry=1000, atr_value=25, month_loss=600_000)["lots"] == 0
 
 
@@ -154,3 +154,51 @@ def test_buy_queues_candidate_and_refuses_others(tmp_path, monkeypatch):
     (tmp_path / "daily-2026-10-19.json").write_text(json.dumps(report))
     with pytest.raises(SystemExit):
         daily.buy("TEST", "rem aktif")
+
+
+@pytest.mark.unit
+def test_crypto_ticks_and_sizing():
+    assert tick_size(81_500, config.CRYPTO) == pytest.approx(1.0)
+    assert tick_size(0.3512, config.CRYPTO) == pytest.approx(0.00001)
+    plan = plan_trade(entry=80_000, atr_value=2_000, market=config.CRYPTO)  # stop 76,000
+    assert plan["stop"] == 76_000 and plan["target"] == 88_000
+    budget = config.CRYPTO.equity * config.RISK_PER_TRADE
+    assert plan["risk"] <= budget
+    assert plan["risk"] > budget * 0.99  # coins are divisible, so nearly all of the 2% is used
+    assert plan["units"] == pytest.approx(0.002777, abs=1e-6)
+
+
+@pytest.mark.unit
+def test_crypto_drops_the_utc_day_in_progress():
+    from datetime import UTC, datetime
+
+    from idx_bot.crypto import complete_days
+    df = _bars([[1, 1, 1, 1]] * 3, start="2026-10-16")
+    df.index = pd.date_range("2026-10-16", periods=3, freq="D")
+    kept = complete_days(df, now=datetime(2026, 10, 18, 0, 15, tzinfo=UTC))
+    assert list(kept.index.strftime("%Y-%m-%d")) == ["2026-10-16", "2026-10-17"]
+
+
+@pytest.mark.unit
+def test_crypto_market_score():
+    from idx_bot.crypto import market_score
+    idx = pd.date_range("2026-01-01", periods=120, freq="D")
+    btc = pd.DataFrame({"Close": np.linspace(100, 110, 120), "Volume": 5e9}, index=idx)
+    strong = pd.DataFrame({"Close": np.linspace(100, 150, 120), "Volume": 3e8}, index=idx)
+    score, d = market_score("SOL", strong, btc, rank=5)
+    assert score == 20 + 25 + 15 + 15 and d["rs_btc_30d"] > 0
+    assert market_score("BTC", btc, btc, rank=1)[0] == 30 + 20 + 30
+
+
+@pytest.mark.unit
+def test_crypto_paper_trade_uses_units_and_binance_fees():
+    from idx_bot import paper
+    ledger = paper.new_ledger(config.CRYPTO)
+    plan = plan_trade(entry=80_000, atr_value=2_000, market=config.CRYPTO)
+    paper.add_order(ledger, "BTC", plan, "2026-10-17", "uji", config.CRYPTO)
+    bars = {"BTC": _bars([[80_000, 81_000, 79_000, 80_500], [80_500, 89_000, 80_000, 88_500]], start="2026-10-18")}
+    events = paper.settle(ledger, bars, config.CRYPTO)
+    trade = ledger["closed"][0]
+    assert "unit" in events[0] and trade["exit_price"] == 88_000
+    expected = plan["units"] * (88_000 * (1 - 0.001) - 80_000 * (1 + 0.001))
+    assert trade["pnl"] == pytest.approx(expected, abs=0.01)

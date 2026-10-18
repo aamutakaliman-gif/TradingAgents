@@ -1,4 +1,6 @@
 {
+  "market": "idx",
+  "currency": "Rp",
   "date": "2026-10-16",
   "events": [],
   "brake": false,

@@ -1,0 +1,90 @@
+{
+  "market": "crypto",
+  "currency": "USDT",
+  "date": "2026-10-17",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 0,
+  "cash": 555.56,
+  "equity": 555.56,
+  "candidates": [
+    {
+      "code": "NEAR",
+      "name": "NEAR Protocol",
+      "score": 71.0,
+      "plan": {
+        "entry": 4.853939056396484,
+        "stop": 3.7891,
+        "target": 6.9837,
+        "lots": 10434628,
+        "units": 10.434628,
+        "position_value": 50.64904838816833,
+        "risk": 11.111199433368336,
+        "stop_pct": 0.21937627234797016
+      }
+    },
+    {
+      "code": "BTC",
+      "name": "Bitcoin",
+      "score": 68.0,
+      "plan": {
+        "entry": 81382.1484375,
+        "stop": 77115.0,
+        "target": 89917.0,
+        "lots": 2603,
+        "units": 0.002603,
+        "position_value": 211.83773238281248,
+        "risk": 11.1073873828125,
+        "stop_pct": 0.05243346998607553
+      }
+    },
+    {
+      "code": "AVAX",
+      "name": "Avalanche",
+      "score": 65.0,
+      "plan": {
+        "entry": 9.754706382751465,
+        "stop": 8.4643,
+        "target": 12.336,
+        "lots": 8610620,
+        "units": 8.61062,
+        "position_value": 83.99406987344743,
+        "risk": 11.111199007447421,
+        "stop_pct": 0.13228551758699744
+      }
+    },
+    {
+      "code": "BCH",
+      "name": "Bitcoin Cash",
+      "score": 53.0,
+      "plan": {
+        "entry": 275.1466979980469,
+        "stop": 244.02,
+        "target": 337.41,
+        "lots": 356966,
+        "units": 0.356966,
+        "position_value": 98.2180161975708,
+        "risk": 11.111172877570798,
+        "stop_pct": 0.11312764508723204
+      }
+    },
+    {
+      "code": "DOT",
+      "name": "Polkadot",
+      "score": 49.0,
+      "plan": {
+        "entry": 1.1142940521240234,
+        "stop": 0.94492,
+        "target": 1.4531,
+        "lots": 65601547,
+        "units": 65.601547,
+        "position_value": 73.09941363223457,
+        "risk": 11.111199840994574,
+        "stop_pct": 0.15200121709450867
+      }
+    }
+  ],
+  "open": [],
+  "pending": []
+}
