@@ -2,6 +2,7 @@
   "market": "crypto",
   "currency": "USDT",
   "price_source": "Yahoo",
+  "testnet": "nonaktif: kunci testnet belum diisi",
   "date": "2026-10-17",
   "events": [],
   "brake": false,

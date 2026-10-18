@@ -258,3 +258,93 @@ def test_crypto_fetch_falls_back_to_yahoo(monkeypatch):
     monkeypatch.setattr(binance_feed, "client", lambda: _FakeBinance())
     prices, source = crypto.fetch(["BTC"], period="3mo")
     assert source == "Binance" and len(prices["BTC"]) == 3  # all three days are long past
+
+
+class _FakeTestnet(_FakeBinance):
+    """Records the orders a testnet run sends."""
+
+    def __init__(self, fail_on=None):
+        self.calls, self.status, self.fail_on = [], {}, fail_on
+
+    def get_symbol_info(self, symbol):
+        return super().get_symbol_info("BTCUSDT")
+
+    def order_market_buy(self, **p):
+        if p["symbol"] == self.fail_on:
+            raise RuntimeError("Filter failure: NOTIONAL")
+        self.calls.append(("buy", p))
+        qty = float(p["quantity"])
+        return {"orderId": 1, "executedQty": p["quantity"], "cummulativeQuoteQty": str(qty * 60_000)}
+
+    def create_oco_order(self, **p):
+        self.calls.append(("oco", p))
+        return {"orders": [{"orderId": 11}, {"orderId": 12}]}
+
+    def get_order(self, symbol, orderId):
+        return {"status": self.status.get(orderId, "NEW"), "type": "LIMIT_MAKER" if orderId == 11 else "STOP_LOSS_LIMIT"}
+
+    def cancel_order(self, **p):
+        self.calls.append(("cancel", p))
+
+    def order_market_sell(self, **p):
+        self.calls.append(("sell", p))
+
+
+def _open_btc(units=0.0026123):
+    return {"code": "BTC", "units": units, "entry": 80_000, "stop": 76_000, "target": 88_000}
+
+
+@pytest.mark.unit
+def test_testnet_needs_keys_and_only_builds_a_testnet_client(monkeypatch):
+    from idx_bot import binance_testnet
+    monkeypatch.delenv("BINANCE_TESTNET_API_KEY", raising=False)
+    monkeypatch.delenv("BINANCE_TESTNET_API_SECRET", raising=False)
+    assert binance_testnet.connect() is None
+    monkeypatch.setenv("BINANCE_TESTNET_API_KEY", "k")
+    monkeypatch.setenv("BINANCE_TESTNET_API_SECRET", "s")
+    api = binance_testnet.connect()
+    assert api.testnet is True and "testnet.binance.vision" in api._create_api_uri("order")
+
+
+@pytest.mark.unit
+def test_testnet_bracket_keeps_paper_distances_around_its_own_fill():
+    from idx_bot import binance_testnet
+    api = _FakeTestnet()
+    rec = binance_testnet.open_bracket(api, _open_btc())
+    buy, oco = api.calls[0][1], api.calls[1][1]
+    assert buy["quantity"] == "0.00261"  # floored to the 0.00001 step
+    assert rec["fill"] == pytest.approx(60_000)
+    # paper stop is 5% and target 10% from entry; the bracket keeps those around the 60,000 fill
+    assert oco["belowStopPrice"] == "57000" and oco["abovePrice"] == "66000"
+    assert oco["belowPrice"] == "56715" and oco["belowType"] == "STOP_LOSS_LIMIT"
+    assert oco["aboveType"] == "LIMIT_MAKER" and oco["side"] == "SELL" and oco["quantity"] == "0.00261"
+
+
+@pytest.mark.unit
+def test_testnet_sync_follows_the_paper_ledger():
+    from idx_bot import binance_testnet
+    api = _FakeTestnet()
+    ledger = {"open": [_open_btc()], "closed": []}
+    events = binance_testnet.sync(api, ledger)
+    assert ledger["open"][0]["testnet"]["status"] == "open" and "OCO" in events[0]
+    assert binance_testnet.sync(api, ledger) == []  # nothing new on a quiet day
+
+    ledger["closed"].append(ledger["open"].pop())  # the paper stop was hit
+    events = binance_testnet.sync(api, ledger)
+    assert [c[0] for c in api.calls[-2:]] == ["cancel", "sell"]
+    assert ledger["closed"][0]["testnet"]["status"] == "ditutup mengikuti paper"
+
+    api2 = _FakeTestnet()
+    ledger2 = {"open": [_open_btc()], "closed": []}
+    binance_testnet.sync(api2, ledger2)
+    api2.status[11] = "FILLED"  # testnet reached its own target first
+    assert "LIMIT_MAKER" in binance_testnet.sync(api2, ledger2)[0]
+
+
+@pytest.mark.unit
+def test_testnet_failure_on_one_coin_is_reported_not_raised():
+    from idx_bot import binance_testnet
+    api = _FakeTestnet(fail_on="BTCUSDT")
+    ledger = {"open": [_open_btc()], "closed": []}
+    events = binance_testnet.sync(api, ledger)
+    assert "GAGAL" in events[0] and ledger["open"][0]["testnet"]["status"] == "gagal"

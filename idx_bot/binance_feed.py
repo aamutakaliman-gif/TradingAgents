@@ -9,10 +9,16 @@ from decimal import Decimal
 import pandas as pd
 from binance.client import Client
 
+# Binance's public market-data mirror. api.binance.com answers 451 from cloud
+# regions Binance does not serve; this host carries the same public endpoints.
+DATA_API_URL = "https://data-api.binance.vision/api"
+
 
 def client() -> Client:
     # ping=False: the constructor would otherwise call Binance before we decide to.
-    return Client(ping=False, requests_params={"timeout": 10})
+    api = Client(ping=False, requests_params={"timeout": 10})
+    api.API_URL = DATA_API_URL
+    return api
 
 
 def klines(api: Client, code: str, days: int = 400) -> pd.DataFrame:

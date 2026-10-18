@@ -14,7 +14,7 @@ from pathlib import Path
 
 import yfinance as yf
 
-from idx_bot import config, crypto, paper
+from idx_bot import binance_testnet, config, crypto, paper
 from idx_bot.risk import plan_trade
 from idx_bot.screener import screen
 
@@ -48,6 +48,15 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     held = sorted({p["code"] for p in ledger["open"] + ledger["pending"]})
     bars = _idx_bars(held) if market.name == "idx" else crypto.fetch(held, period="3mo")[0]
     events = paper.settle(ledger, bars, market)
+    testnet = "tidak dipakai"
+    if market.name == "crypto":
+        api = binance_testnet.connect()
+        if api is None:
+            testnet = "nonaktif: kunci testnet belum diisi"
+        else:
+            testnet_events = binance_testnet.sync(api, ledger)
+            events += testnet_events
+            testnet = "gagal sebagian" if any("GAGAL" in e for e in testnet_events) else "aktif"
 
     result = screen(config.LQ45) if market.name == "idx" else crypto.screen()
     date = max(r["last_date"] for r in result["rows"])
@@ -73,6 +82,7 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
 
     report = {
         "market": market.name, "currency": market.currency, "price_source": result.get("price_source", "Yahoo"),
+        "testnet": testnet,
         "date": date, "events": events, "brake": brake,
         "month_loss": month_loss, "open_risk": open_risk,
         "cash": ledger["cash"], "equity": paper.equity(ledger, last_close),
