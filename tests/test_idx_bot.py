@@ -525,3 +525,74 @@ def test_accumulation_and_distribution_notes():
     # Mixed or flat flow earns neither note.
     mixed = _signals(pct_b=0.5, stoch_k=50, stoch_d=50, adx_v=30, cmf=0.2, obv_up=False)
     assert not any("akumulasi" in n or "distribusi" in n for n in mixed["notes"])
+
+
+def _ohlc(closes, spread=0.01):
+    close = pd.Series(closes, dtype=float, index=pd.bdate_range("2025-01-01", periods=len(closes)))
+    return pd.DataFrame({"Open": close, "High": close * (1 + spread), "Low": close * (1 - spread),
+                         "Close": close, "Volume": 1e6})
+
+
+@pytest.mark.unit
+def test_chart_patterns_breakout_breakdown_and_levels():
+    from idx_bot.screener import chart_patterns
+    flat = [100.0] * 40
+    up = chart_patterns(_ohlc(flat + [110.0]))
+    assert "breakout: tembus titik tertinggi 20 hari" in up["notes"]
+    assert up["resistance"] == pytest.approx(101.0) and up["support"] == pytest.approx(99.0)
+    down = chart_patterns(_ohlc(flat + [90.0]))
+    assert "breakdown: tembus titik terendah 20 hari" in down["notes"]
+    near = chart_patterns(_ohlc(flat + [100.5]))
+    assert near["notes"] == ["dekat resistance 20 hari"]
+
+
+@pytest.mark.unit
+def test_chart_patterns_fresh_golden_cross_only():
+    from idx_bot.indicators import sma
+    from idx_bot.screener import chart_patterns
+    closes = list(np.linspace(2000, 1000, 250)) + list(np.linspace(1000, 2500, 120))
+    df = _ohlc(closes)
+    above = sma(df["Close"], 50) > sma(df["Close"], 200)
+    cross = next(i for i in range(201, len(df)) if above.iloc[i] and not above.iloc[i - 1])
+    fresh = chart_patterns(df.iloc[:cross + 3])
+    assert any("golden cross" in n for n in fresh["notes"])
+    old = chart_patterns(df.iloc[:cross + 30])  # a month later the cross is no longer news
+    assert not any("golden cross" in n for n in old["notes"])
+
+
+@pytest.mark.unit
+def test_recent_bars_and_history_csv(tmp_path):
+    import csv as _csv
+
+    from idx_bot import daily
+    from idx_bot.screener import recent_bars
+    bars = recent_bars(_ohlc(np.linspace(100, 200, 100)))
+    assert len(bars) == 63 and bars[-1]["close"] == pytest.approx(200)
+    daily._write_history(tmp_path, {"BBCA": bars})
+    with open(tmp_path / "harga-3bulan.csv", newline="") as f:
+        rows = list(_csv.DictReader(f))
+    assert len(rows) == 63 and rows[0]["kode"] == "BBCA" and float(rows[-1]["close"]) == pytest.approx(200)
+
+
+@pytest.mark.unit
+def test_signal_levels_blank_when_missing():
+    from idx_bot import daily
+    assert daily._signal_levels({"signals": {"cmf": 0.2, "support": 90.0, "resistance": 110.0}}) == [0.2, 90.0, 110.0]
+    assert daily._signal_levels({}) == ["", "", ""]
+
+
+@pytest.mark.unit
+def test_watchlist_reads_codes_per_market(tmp_path, monkeypatch):
+    path = tmp_path / "watchlist.json"
+    monkeypatch.setattr(config, "WATCHLIST_FILE", path)
+    assert config.watchlist("idx") == []  # no file yet
+    path.write_text('{"idx": ["bbca", "GOTO"], "crypto": ["BTC"]}')
+    assert config.watchlist("idx") == ["BBCA", "GOTO"]
+    assert config.watchlist("crypto") == ["BTC"]
+
+
+@pytest.mark.unit
+def test_shipped_watchlist_file_is_valid():
+    import json
+    data = json.loads(config.WATCHLIST_FILE.read_text())
+    assert set(data) == {"idx", "crypto"} and all(isinstance(v, list) for v in data.values())

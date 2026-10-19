@@ -17,7 +17,7 @@ import yfinance as yf
 from idx_bot import binance_feed, config, indodax_feed
 from idx_bot.indicators import atr
 from idx_bot.risk import plan_trade
-from idx_bot.screener import TECH_WEIGHT, technical_score
+from idx_bot.screener import TECH_WEIGHT, recent_bars, technical_score
 
 
 def symbol(code: str) -> str:
@@ -193,13 +193,14 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
     if btc is None:
         raise RuntimeError("BTC price history unavailable; crypto screen cannot score strength against BTC")
 
-    rows, skipped = [], []
+    rows, skipped, history = [], [], {}
     for rank, code in enumerate(universe, start=1):
         df = prices.get(code)
         if df is None or len(df) < 200:
             skipped.append({"code": code, "reason": "data harga kurang dari 200 hari"})
             continue
         tech, tech_d = technical_score(df)
+        history[code] = recent_bars(df)
         mkt, mkt_d = market_score(code, df, btc, rank, tiers)
         last_move = df["Close"].iloc[-1] / df["Close"].iloc[-2] - 1
         atr_value = float(atr(df).iloc[-1])
@@ -249,4 +250,5 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
         "candidates": [r["code"] for r in eligible[:config.TOP_N]],
         "rows": rows,
         "skipped": skipped,
+        "history": history,  # daily.py moves this to the chart CSV
     }

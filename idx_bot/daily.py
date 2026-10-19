@@ -73,7 +73,9 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
             events += testnet_events
             testnet = "gagal sebagian" if any("GAGAL" in e for e in testnet_events) else "aktif"
 
-    result = screen(config.IDX_UNIVERSE) if market.name == "idx" else crypto.screen(market=market)
+    universe = sorted(set(config.IDX_UNIVERSE) | set(config.watchlist("idx")))
+    result = screen(universe) if market.name == "idx" else crypto.screen(market=market)
+    history = result.pop("history", {})  # chart data goes to its own CSV, not the run record
     date = max(r["last_date"] for r in result["rows"])
     (runs / f"screener-{date}.json").write_text(json.dumps(result, indent=2, ensure_ascii=False, default=float))
     rows = {r["code"]: r for r in result["rows"]}
@@ -107,6 +109,7 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     paper.save(ledger, ledger_path)
     (runs / f"daily-{date}.json").write_text(json.dumps(report, indent=2, ensure_ascii=False, default=float))
     _write_dashboard_csvs(out_dir, result, ledger, report, last_close, market)
+    _write_history(out_dir, history)
     return report
 
 
@@ -133,16 +136,17 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
                           market: config.Market) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     cand = set(result["candidates"])
+    watch = set(config.watchlist(market.name))
     with open(out_dir / "screener.csv", "w", newline="") as f:
         w = csv.writer(f)
         if market.name == "idx":
             w.writerow(["kode", "nama", "skor", "skor_teknikal", "skor_fundamental", "harga", "rsi", "return_1b",
                         "gerak_16okt", "nilai_transaksi_miliar", "per", "roe", "stop", "target", "lot",
-                        "risiko_rp", "sinyal_teknikal", "kandidat", "catatan"])
+                        "risiko_rp", "sinyal_teknikal", "kandidat", "catatan", "cmf", "support", "resistance", "watchlist"])
         else:
             w.writerow(["kode", "nama", "skor", "skor_teknikal", "skor_pasar", "harga", "rsi", "return_1b",
                         "gerak_harian", "volume_juta", "peringkat_mcap", "kuat_vs_btc_30h", "stop", "target",
-                        "jumlah", "risiko", "sinyal_teknikal", "kandidat", "catatan"])
+                        "jumlah", "risiko", "sinyal_teknikal", "kandidat", "catatan", "cmf", "support", "resistance", "watchlist"])
         for r in result["rows"]:
             t, p = r["technical"], r["plan"]
             if market.name == "idx":
@@ -153,14 +157,16 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
                             "" if fu["roe"] is None else round(fu["roe"], 4),
                             p["stop"], p["target"], p["lots"], round(p["risk"]),
                             "; ".join(t.get("signals", {}).get("notes", [])),
-                            "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])])
+                            "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])] + _signal_levels(t)
+                           + ["ya" if r["code"] in watch else "tidak"])
             else:
                 m = r["market"]
                 w.writerow([r["code"], r["name"], r["score"], r["technical_score"], r["market_score"],
                             t["close"], t["rsi"], t["ret_1m"], r["last_move"], round(m["volume"] / 1e6, 1),
                             m["rank"], m["rs_btc_30d"], p["stop"], p["target"], p["units"], round(p["risk"], 2),
                             "; ".join(t.get("signals", {}).get("notes", [])),
-                            "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])])
+                            "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])] + _signal_levels(t)
+                           + ["ya" if r["code"] in watch else "tidak"])
     _write_positions(out_dir, ledger, last_close, market)
     _write_benchmark(out_dir, market)
     history = out_dir / "ekuitas.csv"
@@ -173,6 +179,24 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
     rows.append([report["date"], round(report["equity"], digits), round(report["cash"], digits)])
     with open(history, "w", newline="") as f:
         csv.writer(f).writerows(rows)
+
+
+def _signal_levels(t: dict) -> list:
+    """CMF and 20-day support/resistance from a row's signals, blank when missing."""
+    sig = t.get("signals", {})
+    return ["" if sig.get(k) is None else sig[k] for k in ("cmf", "support", "resistance")]
+
+
+def _write_history(out_dir: Path, history: dict) -> None:
+    """About three months of daily bars per screened name, for the price chart in the
+    dashboard's detail panel."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with open(out_dir / "harga-3bulan.csv", "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["kode", "tanggal", "open", "high", "low", "close"])
+        for code, bars in history.items():
+            for b in bars:
+                w.writerow([code, b["tanggal"]] + [round(b[k], 8) for k in ("open", "high", "low", "close")])
 
 
 def _write_benchmark(out_dir: Path, market: config.Market) -> None:

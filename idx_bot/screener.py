@@ -59,7 +59,46 @@ def _signals(pct_b: float, stoch_k: float, stoch_d: float, adx_v: float,
         elif cmf < -0.05 and not obv_up:
             notes.append("tanda distribusi (CMF < 0 dan OBV turun)")
     return {"bb_pct_b": nan(pct_b), "stoch_k": nan(stoch_k), "stoch_d": nan(stoch_d),
-            "adx": nan(adx_v), "cmf": nan(cmf), "obv_naik": obv_up, "notes": notes}
+            "adx": nan(adx_v), "cmf": None if cmf != cmf else round(cmf, 3),  # 3 places so names can be ranked
+            "obv_naik": obv_up, "notes": notes}
+
+
+_PATTERN_LOOKBACK = 20  # days that set support, resistance and the breakout level
+_CROSS_RECENT = 10      # a moving-average cross this many days old still counts as new
+_NEAR_LEVEL = 0.02      # within 2% of support or resistance counts as near it
+
+
+def chart_patterns(df: pd.DataFrame) -> dict:
+    """Simple chart patterns as plain-language notes: a break of the prior 20-day
+    high or low, a fresh SMA50/SMA200 cross, and closeness to 20-day support or
+    resistance. Support and resistance come from the 20 days before the last bar."""
+    close = df["Close"]
+    last = float(close.iloc[-1])
+    prior = df.iloc[-_PATTERN_LOOKBACK - 1:-1]
+    resistance, support = float(prior["High"].max()), float(prior["Low"].min())
+    notes = []
+    if last > resistance:
+        notes.append("breakout: tembus titik tertinggi 20 hari")
+    elif last < support:
+        notes.append("breakdown: tembus titik terendah 20 hari")
+    elif last >= resistance * (1 - _NEAR_LEVEL):
+        notes.append("dekat resistance 20 hari")
+    elif last <= support * (1 + _NEAR_LEVEL):
+        notes.append("dekat support 20 hari")
+    above = (sma(close, 50) > sma(close, 200)).tail(_CROSS_RECENT + 1)
+    if len(above) == _CROSS_RECENT + 1 and close.size >= 200:
+        if above.iloc[-1] and not above.iloc[:-1].all():
+            notes.append("golden cross baru (SMA50 memotong ke atas SMA200)")
+        elif not above.iloc[-1] and above.iloc[:-1].any():
+            notes.append("death cross baru (SMA50 memotong ke bawah SMA200)")
+    return {"support": round(support, 8), "resistance": round(resistance, 8), "notes": notes}
+
+
+def recent_bars(df: pd.DataFrame, n: int = 63) -> list[dict]:
+    """The last ``n`` daily bars (about three months) for the dashboard's price chart."""
+    return [{"tanggal": ts.strftime("%Y-%m-%d"), "open": float(r["Open"]), "high": float(r["High"]),
+             "low": float(r["Low"]), "close": float(r["Close"])}
+            for ts, r in df.tail(n).iterrows()]
 
 
 def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
@@ -90,13 +129,17 @@ def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
         "volume 20h > rata-rata 60h": (vol_ratio > 1, 10),
     }
     score = sum(points for passed, points in checks.values() if passed)
+    signals = _signals(float(bb["pct_b"]), float(st["k"]), float(st["d"]), float(adx_v), cmf, obv_up)
+    patterns = chart_patterns(df)
+    signals.update(support=patterns["support"], resistance=patterns["resistance"])
+    signals["notes"] += patterns["notes"]
     details = {
         "close": float(last), "sma20": float(s20), "sma50": float(s50), "sma200": float(s200),
         "rsi": round(float(r), 1), "ret_1m": round(float(ret_1m), 4),
         "ret_3m": round(float(ret_3m), 4), "vol_ratio": round(float(vol_ratio), 2),
         "passed": [name for name, (passed, _) in checks.items() if passed],
         # Confirmation signals read by the analyst team; not part of the 0-100 score during the trial.
-        "signals": _signals(float(bb["pct_b"]), float(st["k"]), float(st["d"]), float(adx_v), cmf, obv_up),
+        "signals": signals,
     }
     return score, details
 
@@ -140,7 +183,7 @@ def screen(universe: list[str]) -> dict:
     symbols = [f"{code}.JK" for code in universe]
     prices = yf.download(symbols, period="1y", interval="1d", group_by="ticker",
                          auto_adjust=True, progress=False, threads=True)
-    rows, skipped = [], []
+    rows, skipped, history = [], [], {}
     for code, symbol in zip(universe, symbols, strict=True):
         df = prices[symbol].dropna(subset=["Close"]) if symbol in prices.columns.get_level_values(0) else None
         if df is None or len(df) < 200:
@@ -148,6 +191,7 @@ def screen(universe: list[str]) -> dict:
             continue
         daily_value = (df["Close"] * df["Volume"]).tail(20).mean()
         tech, tech_d = technical_score(df)
+        history[code] = recent_bars(df)
         try:
             info = yf.Ticker(symbol).info
         except Exception as exc:  # one ticker's fundamentals failing should not stop the screen
@@ -194,6 +238,7 @@ def screen(universe: list[str]) -> dict:
         "candidates": [r["code"] for r in eligible[:config.TOP_N]],
         "rows": rows,
         "skipped": skipped,
+        "history": history,  # daily.py moves this to the chart CSV
     }
 
 

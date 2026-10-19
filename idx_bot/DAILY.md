@@ -34,9 +34,9 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
 5. Unggah CSV dashboard (Artifact `asset: true`), lalu dengan ArtifactData `update` dataset-nya: `source.url`,
    `source.name` dan `updated` (baca versi dokumen dulu).
    - Saham, dari `idx_bot/paper/dashboard/`: `screener.csv` → `screener`, `posisi.csv` → `posisi`,
-     `ekuitas.csv` → `ekuitas`, `ihsg-6bulan.csv` → `ihsg`.
+     `ekuitas.csv` → `ekuitas`, `ihsg-6bulan.csv` → `ihsg`, `harga-3bulan.csv` → `harga`.
    - Kripto, dari `idx_bot/crypto_paper/dashboard/`: `screener.csv` → `kripto_screener`, `posisi.csv` → `kripto_posisi`,
-     `ekuitas.csv` → `kripto_ekuitas`, `btc-6bulan.csv` → `btc`.
+     `ekuitas.csv` → `kripto_ekuitas`, `btc-6bulan.csv` → `btc`, `harga-3bulan.csv` → `kripto_harga`.
 6. Commit `idx_bot/paper`, `idx_bot/runs` dan `idx_bot/crypto_paper`, push ke `ccr-1c2d0097-crqzw5`.
 7. Laporan di chat: kondisi IHSG atau BTC, kejadian (beli/jual/stop), keputusan tiap kandidat dan alasannya,
    ekuitas dan status rem 6%, link dashboard. Singkat.
@@ -51,6 +51,12 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
   pengganti bandarmologi berbayar) tampil sebagai `signals` tiap baris screener dan kolom `sinyal_teknikal`
   di CSV; dibaca tim analis tetapi BELUM masuk skor 0-100 selama masa uji berjalan, supaya hasil uji tetap
   bisa dibandingkan. Setelah uji, tanyakan pemilik apakah dimasukkan ke skor.
+- Pola grafik (breakout/breakdown 20 hari, golden/death cross baru, dekat support/resistance) juga hanya catatan
+  di `signals`, belum masuk skor. CSV screener membawa `cmf`, `support`, `resistance` dan `watchlist`;
+  `harga-3bulan.csv` berisi 63 hari OHLC per kode untuk grafik di panel detail dashboard.
+- Watchlist pemilik ada di `idx_bot/watchlist.json` (`idx`, `crypto`). Ubah hanya atas permintaan pemilik di chat,
+  lalu commit. Saham di watchlist selalu ikut di-screen; kripto di watchlist hanya ditandai bila masuk daftar koin.
+  Sebutkan di laporan bila nama di watchlist jadi kandidat atau kena tanda distribusi/breakdown.
 - - Susunan LQ45 berganti awal November 2026: cek pengumuman BEI dan perbarui `config.LQ45`,
   dengan memberi tahu pemilik apa yang berubah.
 - Masa uji 2–4 minggu sejak 19 Oktober 2026. Setelah 2 minggu, kirim evaluasi kinerja kedua pasar dan tanyakan

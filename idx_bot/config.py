@@ -1,6 +1,8 @@
 """Settings agreed with the account owner for the paper-trading trial."""
 
+import json
 from dataclasses import dataclass
+from pathlib import Path
 
 # LQ45 constituents for 3 Aug - 30 Oct 2026 (INDY and NCKL in, SMGR and TOWR
 # out). Compiled without access to the IDX announcement itself: check it against
@@ -65,6 +67,17 @@ IDX_EXTRA = [
     "HRUM", "TINS", "PWON", "BSDE", "WIFI", "FILM", "GGRM", "HMSP",
 ]
 IDX_UNIVERSE = sorted(set(LQ45) | set(IDX_EXTRA))
+
+# The owner's watchlist, edited on request in chat: these names are always screened
+# (IDX names join the universe) and shown first on the dashboard with a star.
+WATCHLIST_FILE = Path(__file__).parent / "watchlist.json"
+
+
+def watchlist(market: str) -> list[str]:
+    """Watchlist codes for ``"idx"`` or ``"crypto"``; empty when the file is absent."""
+    if not WATCHLIST_FILE.exists():
+        return []
+    return [c.upper() for c in json.loads(WATCHLIST_FILE.read_text()).get(market, [])]
 
 # Indodax, where the owner can trade legally (Binance holds no OJK licence). Rupiah account
 # of Rp 10 jt, replacing the USDT book on 19 Oct 2026. Costs of a market (taker) order, as
