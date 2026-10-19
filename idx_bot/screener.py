@@ -14,13 +14,35 @@ import pandas as pd
 import yfinance as yf
 
 from idx_bot import config
-from idx_bot.indicators import atr, macd_hist, rsi, sma
+from idx_bot.indicators import adx, atr, bollinger, macd_hist, rsi, sma, stochastic
 from idx_bot.risk import plan_trade
 
 logger = logging.getLogger(__name__)
 
 TECH_WEIGHT = 0.6
 EXTREME_MOVE = 0.10  # a daily move this large is flagged for a manual check
+
+
+_ADX_TREND = 25        # ADX above this marks a genuine trend rather than chop
+_STOCH_OVERBOUGHT = 80  # a fresh entry into this zone warns of a stretched move
+
+
+def _signals(pct_b: float, stoch_k: float, stoch_d: float, adx_v: float) -> dict:
+    """Plain-language confirmation notes from Bollinger %B, Stochastic and ADX."""
+    def nan(x):
+        return None if x != x else round(x, 1)
+    notes = []
+    if adx_v == adx_v:
+        notes.append("tren kuat (ADX > 25)" if adx_v >= _ADX_TREND else "tren lemah/sideways (ADX < 25)")
+    if pct_b == pct_b:
+        if pct_b > 1:
+            notes.append("harga di atas pita Bollinger atas: mungkin jenuh beli")
+        elif pct_b < 0:
+            notes.append("harga di bawah pita Bollinger bawah: mungkin jenuh jual")
+    if stoch_k == stoch_k and stoch_k >= _STOCH_OVERBOUGHT:
+        notes.append("Stochastic di zona jenuh beli (>80)")
+    return {"bb_pct_b": nan(pct_b), "stoch_k": nan(stoch_k), "stoch_d": nan(stoch_d),
+            "adx": nan(adx_v), "notes": notes}
 
 
 def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
@@ -32,6 +54,9 @@ def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
     ret_1m = last / close.iloc[-22] - 1
     ret_3m = last / close.iloc[-64] - 1
     vol_ratio = df["Volume"].tail(20).mean() / df["Volume"].tail(60).mean()
+    bb = bollinger(close).iloc[-1]
+    st = stochastic(df).iloc[-1]
+    adx_v = adx(df).iloc[-1]
 
     checks = {
         "harga > SMA20": (last > s20, 10),
@@ -50,6 +75,8 @@ def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
         "rsi": round(float(r), 1), "ret_1m": round(float(ret_1m), 4),
         "ret_3m": round(float(ret_3m), 4), "vol_ratio": round(float(vol_ratio), 2),
         "passed": [name for name, (passed, _) in checks.items() if passed],
+        # Confirmation signals read by the analyst team; not part of the 0-100 score during the trial.
+        "signals": _signals(float(bb["pct_b"]), float(st["k"]), float(st["d"]), float(adx_v)),
     }
     return score, details
 

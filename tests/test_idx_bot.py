@@ -464,3 +464,31 @@ def test_buy_cost_walks_the_asks():
     assert buy_cost(book, 203) == pytest.approx(203 / 2 / 100 - 1)
     assert buy_cost(book, 10_000) is None  # more than the whole book
     assert buy_cost({"buy": [], "sell": [["1", "1"]]}, 1) is None
+
+
+@pytest.mark.unit
+def test_new_indicators_shapes_and_ranges():
+    import numpy as np
+
+    from idx_bot.indicators import adx, bollinger, stochastic
+    idx = pd.date_range("2025-01-01", periods=120)
+    up = pd.Series(np.linspace(100, 160, 120), index=idx)
+    df = pd.DataFrame({"Open": up, "High": up * 1.02, "Low": up * 0.98, "Close": up, "Volume": 1e6})
+    bb = bollinger(df["Close"]).iloc[-1]
+    assert bb["lower"] < bb["mid"] < bb["upper"] and 0 <= bb["pct_b"] <= 1.2
+    st = stochastic(df).iloc[-1]
+    assert 0 <= st["k"] <= 100 and st["k"] > 50  # rising series sits high in its range
+    assert adx(df).iloc[-1] > 25  # a clean trend reads as strong
+
+
+@pytest.mark.unit
+def test_confirmation_signals_read_in_plain_language():
+    from idx_bot.screener import _signals
+    strong = _signals(pct_b=1.1, stoch_k=85, stoch_d=80, adx_v=40)
+    assert "tren kuat (ADX > 25)" in strong["notes"]
+    assert any("Bollinger atas" in n for n in strong["notes"])
+    assert any("jenuh beli (>80)" in n for n in strong["notes"])
+    weak = _signals(pct_b=0.5, stoch_k=50, stoch_d=50, adx_v=15)
+    assert weak["notes"] == ["tren lemah/sideways (ADX < 25)"]
+    blank = _signals(pct_b=float("nan"), stoch_k=float("nan"), stoch_d=float("nan"), adx_v=float("nan"))
+    assert blank["notes"] == [] and blank["adx"] is None

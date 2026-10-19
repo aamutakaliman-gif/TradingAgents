@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T03:58:08+00:00",
+  "generated_at": "2026-10-19T06:19:57+00:00",
   "universe": "Top 15 kripto Indodax (market cap)",
   "price_source": "Indodax",
   "settings": {
@@ -26,8 +26,8 @@
       "market_score": 80,
       "last_move": 0.0082,
       "avg_daily_value": 24217402571.129307,
-      "local_premium": -0.0073,
-      "market_cap": 1656734089216,
+      "local_premium": -0.007,
+      "market_cap": 1662162042880,
       "technical": {
         "close": 1470574000.0,
         "sma20": 1492359550.0,
@@ -43,7 +43,16 @@
           "RSI 45-70",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 30.4,
+          "stoch_d": 25.4,
+          "adx": 28.8,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 1,
@@ -74,7 +83,7 @@
         "stop_pct": 0.04457239146074934
       },
       "flags": [],
-      "book_cost": 0.00014
+      "book_cost": 0.00024
     },
     {
       "code": "NEAR",
@@ -85,8 +94,8 @@
       "market_score": 65,
       "last_move": 0.0317,
       "avg_daily_value": 1204093538.9364805,
-      "local_premium": -0.0059,
-      "market_cap": 6568092160,
+      "local_premium": -0.0057,
+      "market_cap": 6633246208,
       "technical": {
         "close": 89952.0,
         "sma20": 90336.3,
@@ -103,7 +112,16 @@
           "MACD histogram naik",
           "return 3 bulan > 0",
           "volume 20h > rata-rata 60h"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 43.3,
+          "stoch_d": 41.7,
+          "adx": 29.6,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 9,
@@ -134,7 +152,7 @@
         "stop_pct": 0.2299559765208111
       },
       "flags": [],
-      "book_cost": 0.0014
+      "book_cost": 0.00151
     },
     {
       "code": "TRX",
@@ -145,8 +163,8 @@
       "market_score": 20,
       "last_move": -0.0022,
       "avg_daily_value": 343755790.3607111,
-      "local_premium": -0.0078,
-      "market_cap": 31455746048,
+      "local_premium": -0.0075,
+      "market_cap": 31455252480,
       "technical": {
         "close": 5955.0,
         "sma20": 5967.2,
@@ -163,7 +181,16 @@
           "MACD histogram > 0",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 75.0,
+          "stoch_d": 79.5,
+          "adx": 31.8,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 6,
@@ -194,7 +221,7 @@
         "stop_pct": 0.036272040302267
       },
       "flags": [],
-      "book_cost": 0.00227
+      "book_cost": 0.00202
     },
     {
       "code": "AVAX",
@@ -205,8 +232,8 @@
       "market_score": 50,
       "last_move": -0.0011,
       "avg_daily_value": 469048830.71828496,
-      "local_premium": -0.0129,
-      "market_cap": 4321951232,
+      "local_premium": -0.0126,
+      "market_cap": 4325175296,
       "technical": {
         "close": 174102.0,
         "sma20": 189605.05,
@@ -222,7 +249,16 @@
           "MACD histogram naik",
           "return 3 bulan > 0",
           "volume 20h > rata-rata 60h"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 17.7,
+          "stoch_d": 17.6,
+          "adx": 34.9,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 13,
@@ -253,7 +289,7 @@
         "stop_pct": 0.13345624978460902
       },
       "flags": [],
-      "book_cost": 0.00254
+      "book_cost": 0.00365
     },
     {
       "code": "ETH",
@@ -264,8 +300,8 @@
       "market_score": 75,
       "last_move": 0.0025,
       "avg_daily_value": 8463588983.180272,
-      "local_premium": -0.0067,
-      "market_cap": 295717404672,
+      "local_premium": -0.0064,
+      "market_cap": 296908685312,
       "technical": {
         "close": 43191000.0,
         "sma20": 45799600.0,
@@ -279,7 +315,16 @@
           "SMA50 > SMA200",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 19.8,
+          "stoch_d": 20.5,
+          "adx": 25.1,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 2,
@@ -320,8 +365,8 @@
       "market_score": 65,
       "last_move": 0.0084,
       "avg_daily_value": 7302305854.581632,
-      "local_premium": -0.0054,
-      "market_cap": 61944803328,
+      "local_premium": -0.0051,
+      "market_cap": 62290956288,
       "technical": {
         "close": 1868000.0,
         "sma20": 2011236.05,
@@ -335,7 +380,16 @@
           "SMA50 > SMA200",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 17.5,
+          "stoch_d": 15.3,
+          "adx": 30.9,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 5,
@@ -376,8 +430,8 @@
       "market_score": 50,
       "last_move": 0.0043,
       "avg_daily_value": 2094265442.941946,
-      "local_premium": -0.0089,
-      "market_cap": 8136757248,
+      "local_premium": -0.0086,
+      "market_cap": 8119013888,
       "technical": {
         "close": 3955.0,
         "sma20": 4343.95,
@@ -392,7 +446,16 @@
           "MACD histogram naik",
           "return 3 bulan > 0",
           "volume 20h > rata-rata 60h"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 12.6,
+          "stoch_d": 10.6,
+          "adx": 21.4,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ]
+        }
       },
       "market": {
         "rank": 8,
@@ -433,8 +496,8 @@
       "market_score": 25,
       "last_move": 0.0057,
       "avg_daily_value": 208537029.52471942,
-      "local_premium": -0.0084,
-      "market_cap": 1912144000,
+      "local_premium": -0.0081,
+      "market_cap": 1919054720,
       "technical": {
         "close": 19999.0,
         "sma20": 21048.25,
@@ -449,7 +512,16 @@
           "SMA50 > SMA200",
           "RSI 45-70",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 35.7,
+          "stoch_d": 42.2,
+          "adx": 17.6,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ]
+        }
       },
       "market": {
         "rank": 15,
@@ -480,7 +552,7 @@
         "stop_pct": 0.15220761038051903
       },
       "flags": [],
-      "book_cost": 0.00403
+      "book_cost": 0.00392
     },
     {
       "code": "XRP",
@@ -491,8 +563,8 @@
       "market_score": 50,
       "last_move": 0.0082,
       "avg_daily_value": 9320379570.117357,
-      "local_premium": -0.0078,
-      "market_cap": 82569945088,
+      "local_premium": -0.0075,
+      "market_cap": 82793701376,
       "technical": {
         "close": 23396.0,
         "sma20": 25293.75,
@@ -506,7 +578,16 @@
           "SMA50 > SMA200",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 18.1,
+          "stoch_d": 13.4,
+          "adx": 27.2,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 4,
@@ -547,8 +628,8 @@
       "market_score": 35,
       "last_move": 0.0035,
       "avg_daily_value": 502751616.4012038,
-      "local_premium": -0.0057,
-      "market_cap": 9105970176,
+      "local_premium": -0.0054,
+      "market_cap": 9079696384,
       "technical": {
         "close": 215992.0,
         "sma20": 237584.55,
@@ -563,7 +644,16 @@
           "MACD histogram naik",
           "return 3 bulan > 0",
           "volume 20h > rata-rata 60h"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 18.6,
+          "stoch_d": 17.5,
+          "adx": 27.5,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 7,
@@ -604,8 +694,8 @@
       "market_score": 50,
       "last_move": 0.0033,
       "avg_daily_value": 820046750.4278781,
-      "local_premium": -0.0041,
-      "market_cap": 3704124416,
+      "local_premium": -0.0038,
+      "market_cap": 3704199680,
       "technical": {
         "close": 1535.0,
         "sma20": 1687.0,
@@ -619,7 +709,16 @@
           "SMA50 > SMA200",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 14.0,
+          "stoch_d": 11.9,
+          "adx": 43.1,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 14,
@@ -660,8 +759,8 @@
       "market_score": 45,
       "last_move": 0.0111,
       "avg_daily_value": 678517565.709395,
-      "local_premium": -0.0055,
-      "market_cap": 96580771840,
+      "local_premium": -0.0052,
+      "market_cap": 96733487104,
       "technical": {
         "close": 12978012.0,
         "sma20": 13483252.45,
@@ -675,7 +774,16 @@
           "SMA50 > SMA200",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 25.1,
+          "stoch_d": 22.3,
+          "adx": 34.5,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 3,
@@ -716,8 +824,8 @@
       "market_score": 35,
       "last_move": 0.0067,
       "avg_daily_value": 266156010.907303,
-      "local_premium": -0.008,
-      "market_cap": 4610225664,
+      "local_premium": -0.0077,
+      "market_cap": 4649827328,
       "technical": {
         "close": 1058000.0,
         "sma20": 1155650.0,
@@ -731,7 +839,16 @@
           "SMA50 > SMA200",
           "MACD histogram naik",
           "return 3 bulan > 0"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 14.8,
+          "stoch_d": 13.4,
+          "adx": 23.2,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ]
+        }
       },
       "market": {
         "rank": 12,
@@ -772,8 +889,8 @@
       "market_score": 10,
       "last_move": 0.0117,
       "avg_daily_value": 930818026.7740816,
-      "local_premium": -0.0035,
-      "market_cap": 6290140160,
+      "local_premium": -0.0032,
+      "market_cap": 6295782400,
       "technical": {
         "close": 3198.0,
         "sma20": 3602.0,
@@ -788,7 +905,16 @@
           "MACD histogram naik",
           "return 3 bulan > 0",
           "volume 20h > rata-rata 60h"
-        ]
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 79.1,
+          "stoch_d": 79.2,
+          "adx": 52.1,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ]
+        }
       },
       "market": {
         "rank": 10,
@@ -830,8 +956,8 @@
       "market_score": 10,
       "last_move": 0.0,
       "avg_daily_value": 0.0,
-      "local_premium": 0.5454,
-      "market_cap": 5569462272,
+      "local_premium": 0.5458,
+      "market_cap": 5605682176,
       "technical": {
         "close": 7700000.0,
         "sma20": 7700000.0,
@@ -841,7 +967,14 @@
         "ret_1m": 0.0,
         "ret_3m": 0.0,
         "vol_ratio": NaN,
-        "passed": []
+        "passed": [],
+        "signals": {
+          "bb_pct_b": null,
+          "stoch_k": null,
+          "stoch_d": null,
+          "adx": null,
+          "notes": []
+        }
       },
       "market": {
         "rank": 11,
@@ -873,7 +1006,7 @@
         "stop_pct": 0.0
       },
       "flags": [
-        "harga Indodax +54.5% dari harga global: pasar tipis",
+        "harga Indodax +54.6% dari harga global: pasar tipis",
         "volume harian < Rp 200 juta"
       ]
     }

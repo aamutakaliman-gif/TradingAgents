@@ -45,7 +45,10 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
 
 ## Catatan
 
-- Susunan LQ45 berganti awal November 2026: cek pengumuman BEI dan perbarui `config.LQ45`,
+- Indikator konfirmasi ADX, Bollinger %B dan Stochastic tampil sebagai `signals` tiap baris screener dan kolom
+  `sinyal_teknikal` di CSV; dibaca tim analis tetapi BELUM masuk skor 0-100 selama masa uji berjalan, supaya
+  hasil uji tetap bisa dibandingkan. Setelah uji, tanyakan pemilik apakah dimasukkan ke skor.
+- - Susunan LQ45 berganti awal November 2026: cek pengumuman BEI dan perbarui `config.LQ45`,
   dengan memberi tahu pemilik apa yang berubah.
 - Masa uji 2–4 minggu sejak 19 Oktober 2026. Setelah 2 minggu, kirim evaluasi kinerja kedua pasar dan tanyakan
   apakah lanjut.

@@ -138,11 +138,11 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
         if market.name == "idx":
             w.writerow(["kode", "nama", "skor", "skor_teknikal", "skor_fundamental", "harga", "rsi", "return_1b",
                         "gerak_16okt", "nilai_transaksi_miliar", "per", "roe", "stop", "target", "lot",
-                        "risiko_rp", "kandidat", "catatan"])
+                        "risiko_rp", "sinyal_teknikal", "kandidat", "catatan"])
         else:
             w.writerow(["kode", "nama", "skor", "skor_teknikal", "skor_pasar", "harga", "rsi", "return_1b",
                         "gerak_harian", "volume_juta", "peringkat_mcap", "kuat_vs_btc_30h", "stop", "target",
-                        "jumlah", "risiko", "kandidat", "catatan"])
+                        "jumlah", "risiko", "sinyal_teknikal", "kandidat", "catatan"])
         for r in result["rows"]:
             t, p = r["technical"], r["plan"]
             if market.name == "idx":
@@ -152,12 +152,14 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
                             "" if fu["per"] is None else round(fu["per"], 1),
                             "" if fu["roe"] is None else round(fu["roe"], 4),
                             p["stop"], p["target"], p["lots"], round(p["risk"]),
+                            "; ".join(t.get("signals", {}).get("notes", [])),
                             "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])])
             else:
                 m = r["market"]
                 w.writerow([r["code"], r["name"], r["score"], r["technical_score"], r["market_score"],
                             t["close"], t["rsi"], t["ret_1m"], r["last_move"], round(m["volume"] / 1e6, 1),
                             m["rank"], m["rs_btc_30d"], p["stop"], p["target"], p["units"], round(p["risk"], 2),
+                            "; ".join(t.get("signals", {}).get("notes", [])),
                             "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])])
     _write_positions(out_dir, ledger, last_close, market)
     _write_benchmark(out_dir, market)
