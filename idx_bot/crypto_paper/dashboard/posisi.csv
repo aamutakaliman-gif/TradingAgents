@@ -1,1 +1,4 @@
 kode,status,lot,harga_masuk,stop,target,harga_terakhir,laba_rugi_rp,tanggal,alasan
+BTC,menunggu,0.00262,82116.0,77880.43,90587.15,82116.0,0,2026-10-18,"Pemimpin pasar dan paling likuid; di atas SMA50, RSI 49 netral; stop 5,2% paling sempit. Bear: return 1 bulan -2,8%, tanpa katalis baru."
+NEAR,menunggu,9.8,5.016,3.89,7.268,5.016,0,2026-10-18,"Terkuat vs BTC 30 hari (+32%), teknikal 70; ETF Bitwise dan pendapatan protokol naik. Bear: turun dari 5,85 ke 5,02 sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 22% jadi posisi kecil."
+AVAX,menunggu,8.01,9.777,8.39,12.551,9.777,0,2026-10-18,"Teknikal 70, lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."

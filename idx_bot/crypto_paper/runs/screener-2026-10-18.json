@@ -1,0 +1,771 @@
+{
+  "generated_at": "2026-10-19T00:17:09+00:00",
+  "universe": "Top 15 kripto Binance (market cap)",
+  "price_source": "Binance",
+  "settings": {
+    "equity": 555.56,
+    "currency": "USDT",
+    "risk_per_trade": 0.02,
+    "monthly_risk_cap": 0.06,
+    "tech_weight": 0.6
+  },
+  "candidates": [
+    "BTC",
+    "NEAR",
+    "AVAX",
+    "DOT",
+    "BCH"
+  ],
+  "rows": [
+    {
+      "code": "BTC",
+      "name": "Bitcoin",
+      "last_date": "2026-10-18",
+      "score": 68.0,
+      "technical_score": 60,
+      "market_score": 80,
+      "last_move": 0.0077,
+      "avg_daily_value": 1207679352.1568167,
+      "market_cap": 1648841719808,
+      "technical": {
+        "close": 82116.0,
+        "sma20": 83396.4295,
+        "sma50": 81435.5016,
+        "sma200": 72534.48055,
+        "rsi": 48.9,
+        "ret_1m": -0.0279,
+        "ret_3m": 0.3055,
+        "vol_ratio": 0.92,
+        "passed": [
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 1,
+        "rs_btc_30d": 0.0,
+        "rs_btc_90d": 0.0,
+        "volume_usd": 1207679352.1568167
+      },
+      "atr": 2117.782358144962,
+      "rules": {
+        "step": 1e-05,
+        "tick": 0.01,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 82116.0,
+        "stop": 77880.43,
+        "target": 90587.15,
+        "lots": 262,
+        "units": 0.00262,
+        "position_value": 215.14392,
+        "risk": 11.097193400000018,
+        "stop_pct": 0.05158032539334608
+      },
+      "flags": []
+    },
+    {
+      "code": "NEAR",
+      "name": "NEAR Protocol",
+      "last_date": "2026-10-18",
+      "score": 68.0,
+      "technical_score": 70,
+      "market_score": 65,
+      "last_move": 0.0315,
+      "avg_daily_value": 170576307.75945,
+      "market_cap": 6566594048,
+      "technical": {
+        "close": 5.016,
+        "sma20": 5.047,
+        "sma50": 3.87426,
+        "sma200": 2.3045600000000004,
+        "rsi": 53.8,
+        "ret_1m": -0.0689,
+        "ret_3m": 2.1291,
+        "vol_ratio": 1.26,
+        "passed": [
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ]
+      },
+      "market": {
+        "rank": 9,
+        "rs_btc_30d": 0.3177,
+        "rs_btc_90d": 1.275,
+        "volume_usd": 170576307.75945
+      },
+      "atr": 0.5629799076313646,
+      "rules": {
+        "step": 0.1,
+        "tick": 0.001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 5.016,
+        "stop": 3.89,
+        "target": 7.268,
+        "lots": 98,
+        "units": 9.8,
+        "position_value": 49.156800000000004,
+        "risk": 11.0348,
+        "stop_pct": 0.22448165869218498
+      },
+      "flags": []
+    },
+    {
+      "code": "AVAX",
+      "name": "Avalanche",
+      "last_date": "2026-10-18",
+      "score": 62.0,
+      "technical_score": 70,
+      "market_score": 50,
+      "last_move": 0.001,
+      "avg_daily_value": 43829897.266453505,
+      "market_cap": 4325560320,
+      "technical": {
+        "close": 9.777,
+        "sma20": 10.59725,
+        "sma50": 9.402679999999998,
+        "sma200": 8.17318,
+        "rsi": 45.5,
+        "ret_1m": -0.1034,
+        "ret_3m": 0.5445,
+        "vol_ratio": 1.18,
+        "passed": [
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ]
+      },
+      "market": {
+        "rank": 13,
+        "rs_btc_30d": 0.1765,
+        "rs_btc_90d": 0.2277,
+        "volume_usd": 43829897.266453505
+      },
+      "atr": 0.6933159952793084,
+      "rules": {
+        "step": 0.01,
+        "tick": 0.001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 9.777,
+        "stop": 8.39,
+        "target": 12.551,
+        "lots": 801,
+        "units": 8.01,
+        "position_value": 78.31376999999999,
+        "risk": 11.109869999999988,
+        "stop_pct": 0.14186355732842373
+      },
+      "flags": []
+    },
+    {
+      "code": "DOT",
+      "name": "Polkadot",
+      "last_date": "2026-10-18",
+      "score": 49.0,
+      "technical_score": 65,
+      "market_score": 25,
+      "last_move": 0.0018,
+      "avg_daily_value": 12387543.930148002,
+      "market_cap": 1902515584,
+      "technical": {
+        "close": 1.118,
+        "sma20": 1.17855,
+        "sma50": 1.10542,
+        "sma200": 1.04675,
+        "rsi": 46.5,
+        "ret_1m": -0.1183,
+        "ret_3m": 0.473,
+        "vol_ratio": 1.07,
+        "passed": [
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ]
+      },
+      "market": {
+        "rank": 15,
+        "rs_btc_30d": -0.0293,
+        "rs_btc_90d": 0.0935,
+        "volume_usd": 12387543.930148002
+      },
+      "atr": 0.09109255728814787,
+      "rules": {
+        "step": 0.01,
+        "tick": 0.001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 1.118,
+        "stop": 0.935,
+        "target": 1.485,
+        "lots": 6071,
+        "units": 60.71,
+        "position_value": 67.87378000000001,
+        "risk": 11.109930000000004,
+        "stop_pct": 0.1636851520572451
+      },
+      "flags": []
+    },
+    {
+      "code": "ETH",
+      "name": "Ethereum",
+      "last_date": "2026-10-18",
+      "score": 48.0,
+      "technical_score": 30,
+      "market_score": 75,
+      "last_move": 0.0031,
+      "avg_daily_value": 667164640.6350144,
+      "market_cap": 294041419776,
+      "technical": {
+        "close": 2410.31,
+        "sma20": 2559.3105000000005,
+        "sma50": 2551.5592,
+        "sma200": 2148.6317,
+        "rsi": 38.0,
+        "ret_1m": -0.1035,
+        "ret_3m": 0.2848,
+        "vol_ratio": 0.87,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 2,
+        "rs_btc_30d": -0.0925,
+        "rs_btc_90d": 0.007,
+        "volume_usd": 667164640.6350144
+      },
+      "atr": 97.02632134575826,
+      "rules": {
+        "step": 0.0001,
+        "tick": 0.01,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 2410.31,
+        "stop": 2216.25,
+        "target": 2798.43,
+        "lots": 572,
+        "units": 0.0572,
+        "position_value": 137.869732,
+        "risk": 11.100231999999997,
+        "stop_pct": 0.08051246520157156
+      },
+      "flags": []
+    },
+    {
+      "code": "TRX",
+      "name": "TRON",
+      "last_date": "2026-10-18",
+      "score": 44.0,
+      "technical_score": 60,
+      "market_score": 20,
+      "last_move": -0.003,
+      "avg_daily_value": 27170801.593822002,
+      "market_cap": 31555276800,
+      "technical": {
+        "close": 0.3327,
+        "sma20": 0.33343,
+        "sma50": 0.335172,
+        "sma200": 0.33308800000000005,
+        "rsi": 47.1,
+        "ret_1m": -0.0021,
+        "ret_3m": 0.0045,
+        "vol_ratio": 0.89,
+        "passed": [
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 6,
+        "rs_btc_30d": -0.0318,
+        "rs_btc_90d": -0.2406,
+        "volume_usd": 27170801.593822002
+      },
+      "atr": 0.0037566694264432464,
+      "rules": {
+        "step": 0.1,
+        "tick": 0.0001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 0.3327,
+        "stop": 0.3251,
+        "target": 0.3479,
+        "lots": 14620,
+        "units": 1462.0,
+        "position_value": 486.4074,
+        "risk": 11.111199999999993,
+        "stop_pct": 0.022843402464682885
+      },
+      "flags": []
+    },
+    {
+      "code": "HBAR",
+      "name": "Hedera",
+      "last_date": "2026-10-18",
+      "score": 44.0,
+      "technical_score": 40,
+      "market_score": 50,
+      "last_move": 0.0014,
+      "avg_daily_value": 20721942.592087004,
+      "market_cap": 3746544640,
+      "technical": {
+        "close": 0.08544,
+        "sma20": 0.09397649999999999,
+        "sma50": 0.087243,
+        "sma200": 0.08182505000000001,
+        "rsi": 43.7,
+        "ret_1m": -0.1087,
+        "ret_3m": 0.3216,
+        "vol_ratio": 1.15,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ]
+      },
+      "market": {
+        "rank": 14,
+        "rs_btc_30d": 0.0631,
+        "rs_btc_90d": 0.0222,
+        "volume_usd": 20721942.592087004
+      },
+      "atr": 0.0062505460905484915,
+      "rules": {
+        "step": 1.0,
+        "tick": 1e-05,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 0.08544,
+        "stop": 0.07293,
+        "target": 0.11047,
+        "lots": 888,
+        "units": 888.0,
+        "position_value": 75.87072,
+        "risk": 11.108880000000006,
+        "stop_pct": 0.14641853932584278
+      },
+      "flags": []
+    },
+    {
+      "code": "BCH",
+      "name": "Bitcoin Cash",
+      "last_date": "2026-10-18",
+      "score": 41.0,
+      "technical_score": 45,
+      "market_score": 35,
+      "last_move": 0.0025,
+      "avg_daily_value": 11641266.461184999,
+      "market_cap": 5550722560,
+      "technical": {
+        "close": 276.2,
+        "sma20": 291.6,
+        "sma50": 275.45799999999997,
+        "sma200": 294.832,
+        "rsi": 46.0,
+        "ret_1m": -0.1691,
+        "ret_3m": 0.3539,
+        "vol_ratio": 0.66,
+        "passed": [
+          "harga > SMA50",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 11,
+        "rs_btc_30d": 0.0662,
+        "rs_btc_90d": -0.0024,
+        "volume_usd": 11641266.461184999
+      },
+      "atr": 16.923080678990072,
+      "rules": {
+        "step": 0.001,
+        "tick": 0.1,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 276.2,
+        "stop": 242.3,
+        "target": 344.0,
+        "lots": 327,
+        "units": 0.327,
+        "position_value": 90.3174,
+        "risk": 11.085299999999993,
+        "stop_pct": 0.12273714699493113
+      },
+      "flags": []
+    },
+    {
+      "code": "SOL",
+      "name": "Solana",
+      "last_date": "2026-10-18",
+      "score": 38.0,
+      "technical_score": 30,
+      "market_score": 50,
+      "last_move": 0.0062,
+      "avg_daily_value": 222772266.80701748,
+      "market_cap": 61313667072,
+      "technical": {
+        "close": 104.11,
+        "sma20": 112.394,
+        "sma50": 109.365,
+        "sma200": 87.6223,
+        "rsi": 38.8,
+        "ret_1m": -0.1466,
+        "ret_3m": 0.3954,
+        "vol_ratio": 0.79,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 5,
+        "rs_btc_30d": -0.0916,
+        "rs_btc_90d": 0.0789,
+        "volume_usd": 222772266.80701748
+      },
+      "atr": 5.027180520517679,
+      "rules": {
+        "step": 0.001,
+        "tick": 0.01,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 104.11,
+        "stop": 94.05,
+        "target": 124.23,
+        "lots": 1104,
+        "units": 1.104,
+        "position_value": 114.93744000000001,
+        "risk": 11.106240000000003,
+        "stop_pct": 0.09662856593987132
+      },
+      "flags": []
+    },
+    {
+      "code": "BNB",
+      "name": "BNB",
+      "last_date": "2026-10-18",
+      "score": 36.0,
+      "technical_score": 30,
+      "market_score": 45,
+      "last_move": 0.0074,
+      "avg_daily_value": 79198210.507346,
+      "market_cap": 96279609344,
+      "technical": {
+        "close": 723.36,
+        "sma20": 753.461,
+        "sma50": 745.9112,
+        "sma200": 646.68165,
+        "rsi": 41.3,
+        "ret_1m": -0.0713,
+        "ret_3m": 0.1996,
+        "vol_ratio": 0.76,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 3,
+        "rs_btc_30d": -0.0651,
+        "rs_btc_90d": 0.0079,
+        "volume_usd": 79198210.507346
+      },
+      "atr": 21.594256823411044,
+      "rules": {
+        "step": 0.001,
+        "tick": 0.01,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 723.36,
+        "stop": 680.17,
+        "target": 809.75,
+        "lots": 257,
+        "units": 0.257,
+        "position_value": 185.90352000000001,
+        "risk": 11.099830000000015,
+        "stop_pct": 0.05970747622207483
+      },
+      "flags": []
+    },
+    {
+      "code": "XRP",
+      "name": "XRP",
+      "last_date": "2026-10-18",
+      "score": 32.0,
+      "technical_score": 30,
+      "market_score": 35,
+      "last_move": 0.01,
+      "avg_daily_value": 151393165.05100998,
+      "market_cap": 82478866432,
+      "technical": {
+        "close": 1.3071,
+        "sma20": 1.4134499999999999,
+        "sma50": 1.415516,
+        "sma200": 1.2800470000000002,
+        "rsi": 37.0,
+        "ret_1m": -0.1382,
+        "ret_3m": 0.3155,
+        "vol_ratio": 0.64,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 4,
+        "rs_btc_30d": -0.0791,
+        "rs_btc_90d": -0.0833,
+        "volume_usd": 151393165.05100998
+      },
+      "atr": 0.06544301090616746,
+      "rules": {
+        "step": 0.1,
+        "tick": 0.0001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 1.3071,
+        "stop": 1.1762,
+        "target": 1.5689,
+        "lots": 848,
+        "units": 84.8,
+        "position_value": 110.84208,
+        "risk": 11.100320000000002,
+        "stop_pct": 0.10014535995715708
+      },
+      "flags": []
+    },
+    {
+      "code": "LINK",
+      "name": "Chainlink",
+      "last_date": "2026-10-18",
+      "score": 32.0,
+      "technical_score": 30,
+      "market_score": 35,
+      "last_move": 0.0046,
+      "avg_daily_value": 29250247.416426003,
+      "market_cap": 9013271552,
+      "technical": {
+        "close": 12.041,
+        "sma20": 13.267349999999999,
+        "sma50": 12.66146,
+        "sma200": 9.841185000000001,
+        "rsi": 40.8,
+        "ret_1m": -0.1414,
+        "ret_3m": 0.2823,
+        "vol_ratio": 0.81,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 7,
+        "rs_btc_30d": -0.0304,
+        "rs_btc_90d": 0.1429,
+        "volume_usd": 29250247.416426003
+      },
+      "atr": 0.7398032629437261,
+      "rules": {
+        "step": 0.01,
+        "tick": 0.001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 12.041,
+        "stop": 10.561,
+        "target": 15.002,
+        "lots": 750,
+        "units": 7.5,
+        "position_value": 90.3075,
+        "risk": 11.100000000000003,
+        "stop_pct": 0.12291337928743463
+      },
+      "flags": []
+    },
+    {
+      "code": "ADA",
+      "name": "Cardano",
+      "last_date": "2026-10-18",
+      "score": 32.0,
+      "technical_score": 30,
+      "market_score": 35,
+      "last_move": 0.0073,
+      "avg_daily_value": 38759894.4071075,
+      "market_cap": 8134985728,
+      "technical": {
+        "close": 0.2212,
+        "sma20": 0.24257,
+        "sma50": 0.229434,
+        "sma200": 0.21220750000000002,
+        "rsi": 41.6,
+        "ret_1m": -0.1329,
+        "ret_3m": 0.2647,
+        "vol_ratio": 1.0,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 8,
+        "rs_btc_30d": -0.0295,
+        "rs_btc_90d": 0.0443,
+        "volume_usd": 38759894.4071075
+      },
+      "atr": 0.015777672999247656,
+      "rules": {
+        "step": 0.1,
+        "tick": 0.0001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 0.2212,
+        "stop": 0.1896,
+        "target": 0.2845,
+        "lots": 3516,
+        "units": 351.6,
+        "position_value": 77.77392,
+        "risk": 11.110560000000007,
+        "stop_pct": 0.14285714285714293
+      },
+      "flags": []
+    },
+    {
+      "code": "LTC",
+      "name": "Litecoin",
+      "last_date": "2026-10-18",
+      "score": 32.0,
+      "technical_score": 30,
+      "market_score": 35,
+      "last_move": 0.0048,
+      "avg_daily_value": 22235421.385545,
+      "market_cap": 4596640256,
+      "technical": {
+        "close": 59.12,
+        "sma20": 64.6935,
+        "sma50": 60.135799999999996,
+        "sma200": 51.950050000000005,
+        "rsi": 40.5,
+        "ret_1m": -0.1706,
+        "ret_3m": 0.3388,
+        "vol_ratio": 0.84,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 12,
+        "rs_btc_30d": 0.0014,
+        "rs_btc_90d": -0.0103,
+        "volume_usd": 22235421.385545
+      },
+      "atr": 3.1703577388822235,
+      "rules": {
+        "step": 0.001,
+        "tick": 0.01,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 59.12,
+        "stop": 52.77,
+        "target": 71.82,
+        "lots": 1749,
+        "units": 1.749,
+        "position_value": 103.40088,
+        "risk": 11.10614999999999,
+        "stop_pct": 0.1074086603518267
+      },
+      "flags": []
+    },
+    {
+      "code": "XLM",
+      "name": "Stellar",
+      "last_date": "2026-10-18",
+      "score": 22.0,
+      "technical_score": 30,
+      "market_score": 10,
+      "last_move": 0.0045,
+      "avg_daily_value": 15783739.526585003,
+      "market_cap": 6262464000,
+      "technical": {
+        "close": 0.1779,
+        "sma20": 0.20105499999999998,
+        "sma50": 0.19581799999999996,
+        "sma200": 0.18244049999999998,
+        "rsi": 36.8,
+        "ret_1m": -0.1756,
+        "ret_3m": 0.1382,
+        "vol_ratio": 0.76,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ]
+      },
+      "market": {
+        "rank": 10,
+        "rs_btc_30d": -0.0939,
+        "rs_btc_90d": -0.3151,
+        "volume_usd": 15783739.526585003
+      },
+      "atr": 0.010755642162838449,
+      "rules": {
+        "step": 1.0,
+        "tick": 0.0001,
+        "min_notional": 5.0
+      },
+      "plan": {
+        "entry": 0.1779,
+        "stop": 0.1563,
+        "target": 0.2212,
+        "lots": 514,
+        "units": 514.0,
+        "position_value": 91.4406,
+        "risk": 11.102400000000005,
+        "stop_pct": 0.12141652613827998
+      },
+      "flags": []
+    }
+  ],
+  "skipped": []
+}
