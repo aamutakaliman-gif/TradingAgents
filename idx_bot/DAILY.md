@@ -7,7 +7,9 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
 ## Aturan yang disetujui pemilik
 
 - Paper trading saja. Tidak ada order sungguhan, di Mirae maupun Binance.
-- Saham: LQ45, modal virtual Rp 10 juta. Kripto: 15 koin terbesar tanpa stablecoin/meme coin, buku RUPIAH
+- Saham: alam semesta IDX yang lebih luas (`config.IDX_UNIVERSE` = LQ45 + saham likuid lain, ~83 nama;
+  yang datanya kurang 200 hari atau nilai transaksi < Rp 10 miliar/hari tersaring sendiri), modal virtual
+  Rp 10 juta. Kripto: 15 koin terbesar tanpa stablecoin/meme coin, buku RUPIAH
   Rp 10 juta yang meniru Indodax (berizin OJK), spot saja tanpa leverage. Dua akun terpisah. Binance tidak berizin
   OJK, jadi hanya dipakai sebagai sumber data harga; jangan pernah menyarankan VPN atau akses ke Binance.
 - Buku kripto lama dalam USDT diarsipkan di `crypto_paper/archive-usdt/` (19 Okt 2026).
@@ -45,9 +47,10 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
 
 ## Catatan
 
-- Indikator konfirmasi ADX, Bollinger %B dan Stochastic tampil sebagai `signals` tiap baris screener dan kolom
-  `sinyal_teknikal` di CSV; dibaca tim analis tetapi BELUM masuk skor 0-100 selama masa uji berjalan, supaya
-  hasil uji tetap bisa dibandingkan. Setelah uji, tanyakan pemilik apakah dimasukkan ke skor.
+- Indikator konfirmasi ADX, Bollinger %B, Stochastic, dan baca akumulasi (Chaikin Money Flow + OBV sebagai
+  pengganti bandarmologi berbayar) tampil sebagai `signals` tiap baris screener dan kolom `sinyal_teknikal`
+  di CSV; dibaca tim analis tetapi BELUM masuk skor 0-100 selama masa uji berjalan, supaya hasil uji tetap
+  bisa dibandingkan. Setelah uji, tanyakan pemilik apakah dimasukkan ke skor.
 - - Susunan LQ45 berganti awal November 2026: cek pengumuman BEI dan perbarui `config.LQ45`,
   dengan memberi tahu pemilik apa yang berubah.
 - Masa uji 2–4 minggu sejak 19 Oktober 2026. Setelah 2 minggu, kirim evaluasi kinerja kedua pasar dan tanyakan

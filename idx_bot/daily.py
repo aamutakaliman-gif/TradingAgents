@@ -73,7 +73,7 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
             events += testnet_events
             testnet = "gagal sebagian" if any("GAGAL" in e for e in testnet_events) else "aktif"
 
-    result = screen(config.LQ45) if market.name == "idx" else crypto.screen(market=market)
+    result = screen(config.IDX_UNIVERSE) if market.name == "idx" else crypto.screen(market=market)
     date = max(r["last_date"] for r in result["rows"])
     (runs / f"screener-{date}.json").write_text(json.dumps(result, indent=2, ensure_ascii=False, default=float))
     rows = {r["code"]: r for r in result["rows"]}

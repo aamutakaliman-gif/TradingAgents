@@ -14,7 +14,17 @@ import pandas as pd
 import yfinance as yf
 
 from idx_bot import config
-from idx_bot.indicators import adx, atr, bollinger, macd_hist, rsi, sma, stochastic
+from idx_bot.indicators import (
+    adx,
+    atr,
+    bollinger,
+    chaikin_money_flow,
+    macd_hist,
+    obv,
+    rsi,
+    sma,
+    stochastic,
+)
 from idx_bot.risk import plan_trade
 
 logger = logging.getLogger(__name__)
@@ -27,8 +37,10 @@ _ADX_TREND = 25        # ADX above this marks a genuine trend rather than chop
 _STOCH_OVERBOUGHT = 80  # a fresh entry into this zone warns of a stretched move
 
 
-def _signals(pct_b: float, stoch_k: float, stoch_d: float, adx_v: float) -> dict:
-    """Plain-language confirmation notes from Bollinger %B, Stochastic and ADX."""
+def _signals(pct_b: float, stoch_k: float, stoch_d: float, adx_v: float,
+             cmf: float = float("nan"), obv_up: bool | None = None) -> dict:
+    """Plain-language confirmation notes from Bollinger %B, Stochastic, ADX, and the
+    accumulation read (Chaikin Money Flow with OBV) that stands in for bandarmologi."""
     def nan(x):
         return None if x != x else round(x, 1)
     notes = []
@@ -41,8 +53,13 @@ def _signals(pct_b: float, stoch_k: float, stoch_d: float, adx_v: float) -> dict
             notes.append("harga di bawah pita Bollinger bawah: mungkin jenuh jual")
     if stoch_k == stoch_k and stoch_k >= _STOCH_OVERBOUGHT:
         notes.append("Stochastic di zona jenuh beli (>80)")
+    if cmf == cmf and obv_up is not None:
+        if cmf > 0.05 and obv_up:
+            notes.append("tanda akumulasi (CMF > 0 dan OBV naik)")
+        elif cmf < -0.05 and not obv_up:
+            notes.append("tanda distribusi (CMF < 0 dan OBV turun)")
     return {"bb_pct_b": nan(pct_b), "stoch_k": nan(stoch_k), "stoch_d": nan(stoch_d),
-            "adx": nan(adx_v), "notes": notes}
+            "adx": nan(adx_v), "cmf": nan(cmf), "obv_naik": obv_up, "notes": notes}
 
 
 def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
@@ -57,6 +74,9 @@ def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
     bb = bollinger(close).iloc[-1]
     st = stochastic(df).iloc[-1]
     adx_v = adx(df).iloc[-1]
+    cmf = float(chaikin_money_flow(df).iloc[-1])
+    obv_s = obv(df)
+    obv_up = bool(obv_s.iloc[-1] > obv_s.iloc[-20])  # OBV higher than 20 days ago
 
     checks = {
         "harga > SMA20": (last > s20, 10),
@@ -76,7 +96,7 @@ def technical_score(df: pd.DataFrame) -> tuple[int, dict]:
         "ret_3m": round(float(ret_3m), 4), "vol_ratio": round(float(vol_ratio), 2),
         "passed": [name for name, (passed, _) in checks.items() if passed],
         # Confirmation signals read by the analyst team; not part of the 0-100 score during the trial.
-        "signals": _signals(float(bb["pct_b"]), float(st["k"]), float(st["d"]), float(adx_v)),
+        "signals": _signals(float(bb["pct_b"]), float(st["k"]), float(st["d"]), float(adx_v), cmf, obv_up),
     }
     return score, details
 
@@ -166,7 +186,7 @@ def screen(universe: list[str]) -> dict:
                 and r["plan"]["lots"] > 0]
     return {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
-        "universe": "LQ45",
+        "universe": f"IDX ({len(universe)} saham)",
         "settings": {
             "equity": config.EQUITY, "risk_per_trade": config.RISK_PER_TRADE,
             "monthly_risk_cap": config.MONTHLY_RISK_CAP, "tech_weight": TECH_WEIGHT,

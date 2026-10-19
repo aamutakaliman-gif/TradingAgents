@@ -62,3 +62,18 @@ def adx(df: pd.DataFrame, n: int = 14) -> pd.Series:
     minus_di = 100 * minus_dm.ewm(alpha=1 / n, adjust=False, min_periods=n).mean() / atr_n
     dx = 100 * (plus_di - minus_di).abs() / (plus_di + minus_di)
     return dx.ewm(alpha=1 / n, adjust=False, min_periods=n).mean()
+
+
+def obv(df: pd.DataFrame) -> pd.Series:
+    """On-Balance Volume: volume added on up days, subtracted on down days."""
+    direction = df["Close"].diff().apply(lambda x: 1 if x > 0 else -1 if x < 0 else 0)
+    return (direction * df["Volume"]).fillna(0).cumsum()
+
+
+def chaikin_money_flow(df: pd.DataFrame, n: int = 20) -> pd.Series:
+    """Chaikin Money Flow: where the close sits in each day's range, volume-weighted
+    over ``n`` days. Above 0 is net accumulation, below 0 net distribution."""
+    rng = (df["High"] - df["Low"]).replace(0, pd.NA)
+    mfm = ((df["Close"] - df["Low"]) - (df["High"] - df["Close"])) / rng
+    mfv = (mfm.fillna(0) * df["Volume"])
+    return mfv.rolling(n).sum() / df["Volume"].rolling(n).sum()

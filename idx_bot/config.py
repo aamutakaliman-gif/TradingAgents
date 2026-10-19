@@ -55,6 +55,17 @@ CRYPTO_POOL = [
 ]
 CRYPTO_TOP_N = 15
 
+# Wider IDX universe: LQ45 plus other liquid large/mid caps and popular retail names.
+# The screener drops any ticker with under 200 days of data or under the Rp 10 bn/day
+# liquidity floor, so names too thin for our size fall away on their own.
+IDX_EXTRA = [
+    "AADI", "BRMS", "PANI", "CUAN", "RAJA", "DSSA", "BREN", "TPIA", "SRTG", "TOWR",
+    "TBIG", "MIKA", "SILO", "HEAL", "EMTK", "BUKA", "DEWA", "ELSA", "PTRO", "NISP",
+    "BNGA", "PNLF", "BTPS", "SMGR", "INTP", "TKIM", "AUTO", "SCMA", "ERAA", "MYOR",
+    "HRUM", "TINS", "PWON", "BSDE", "WIFI", "FILM", "GGRM", "HMSP",
+]
+IDX_UNIVERSE = sorted(set(LQ45) | set(IDX_EXTRA))
+
 # Indodax, where the owner can trade legally (Binance holds no OJK licence). Rupiah account
 # of Rp 10 jt, replacing the USDT book on 19 Oct 2026. Costs of a market (taker) order, as
 # Indodax's pair list gave them on 19 Oct 2026: 0.2% fee plus 11% VAT on that fee each way,

@@ -492,3 +492,36 @@ def test_confirmation_signals_read_in_plain_language():
     assert weak["notes"] == ["tren lemah/sideways (ADX < 25)"]
     blank = _signals(pct_b=float("nan"), stoch_k=float("nan"), stoch_d=float("nan"), adx_v=float("nan"))
     assert blank["notes"] == [] and blank["adx"] is None
+
+
+@pytest.mark.unit
+def test_obv_follows_price_direction():
+    from idx_bot.indicators import obv
+    idx = pd.date_range("2025-01-01", periods=5)
+    up = pd.DataFrame({"Close": [10, 11, 12, 13, 14.0], "Volume": [100.0] * 5}, index=idx)
+    down = pd.DataFrame({"Close": [14, 13, 12, 11, 10.0], "Volume": [100.0] * 5}, index=idx)
+    assert obv(up).iloc[-1] == pytest.approx(400)   # four up days add volume
+    assert obv(down).iloc[-1] == pytest.approx(-400)  # four down days subtract it
+
+
+@pytest.mark.unit
+def test_chaikin_money_flow_sign_matches_close_within_range():
+    from idx_bot.indicators import chaikin_money_flow
+    idx = pd.date_range("2025-01-01", periods=25)
+    # Close pinned at the high of each bar: strong accumulation, CMF near +1.
+    hi = pd.DataFrame({"High": 101.0, "Low": 99.0, "Close": 101.0, "Volume": 1e6}, index=idx)
+    lo = pd.DataFrame({"High": 101.0, "Low": 99.0, "Close": 99.0, "Volume": 1e6}, index=idx)
+    assert chaikin_money_flow(hi).iloc[-1] == pytest.approx(1.0)
+    assert chaikin_money_flow(lo).iloc[-1] == pytest.approx(-1.0)
+
+
+@pytest.mark.unit
+def test_accumulation_and_distribution_notes():
+    from idx_bot.screener import _signals
+    accum = _signals(pct_b=0.5, stoch_k=50, stoch_d=50, adx_v=30, cmf=0.2, obv_up=True)
+    assert any("akumulasi" in n for n in accum["notes"]) and accum["cmf"] == 0.2 and accum["obv_naik"] is True
+    distr = _signals(pct_b=0.5, stoch_k=50, stoch_d=50, adx_v=30, cmf=-0.2, obv_up=False)
+    assert any("distribusi" in n for n in distr["notes"])
+    # Mixed or flat flow earns neither note.
+    mixed = _signals(pct_b=0.5, stoch_k=50, stoch_d=50, adx_v=30, cmf=0.2, obv_up=False)
+    assert not any("akumulasi" in n or "distribusi" in n for n in mixed["notes"])
