@@ -7,8 +7,10 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
 ## Aturan yang disetujui pemilik
 
 - Paper trading saja. Tidak ada order sungguhan, di Mirae maupun Binance.
-- Saham: LQ45, modal virtual Rp 10 juta. Kripto: 15 koin terbesar Binance spot tanpa stablecoin/meme coin,
-  modal virtual 555,56 USDT (Rp 10 juta), spot saja tanpa leverage. Dua akun terpisah.
+- Saham: LQ45, modal virtual Rp 10 juta. Kripto: 15 koin terbesar tanpa stablecoin/meme coin, buku RUPIAH
+  Rp 10 juta yang meniru Indodax (berizin OJK), spot saja tanpa leverage. Dua akun terpisah. Binance tidak berizin
+  OJK, jadi hanya dipakai sebagai sumber data harga; jangan pernah menyarankan VPN atau akses ke Binance.
+- Buku kripto lama dalam USDT diarsipkan di `crypto_paper/archive-usdt/` (19 Okt 2026).
 - Elder: risiko maks. 2% per trade, rem 6% per bulan (rugi bulan ini + risiko terbuka), dihitung per akun.
 - Risiko besar atau kesalahan: hentikan langkah berikutnya dan beri tahu pemilik dulu.
 - Jangan pernah meminta seed phrase Trust Wallet atau kunci API apa pun di chat.
@@ -38,7 +40,7 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
    ekuitas dan status rem 6%, link dashboard. Singkat.
 8. Kirim notifikasi HP (PushNotification, satu baris di bawah 200 karakter) di akhir setiap run, karena pemilik
    tidak membuka aplikasi. Mulai dengan yang paling penting, misalnya "LQ45 19 Okt: BELI ICBP 4 lot, ekuitas Rp 10,0 jt"
-   atau "Kripto 19 Okt: BELI BTC 0,0026, LEWATI NEAR; ekuitas 555,6 USDT". Bila harus berhenti (risiko besar,
+   atau "Kripto 19 Okt: BELI BTC 0,0026, LEWATI NEAR; ekuitas Rp 10,0 jt". Bila harus berhenti (risiko besar,
    data aneh, tes gagal), kirim notifikasinya segera dengan kata "PERLU KEPUTUSAN".
 
 ## Catatan
@@ -51,6 +53,9 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
   termasuk aturan pasangan koin (kelipatan jumlah, kelipatan harga, minimum order 5 USDT). Bila Binance tidak bisa
   dijangkau, otomatis memakai Yahoo; `price_source` di laporan harian menyebut sumbernya. Sebutkan di laporan bila
   sumbernya Yahoo. Data publik memakai data-api.binance.vision, karena api.binance.com menolak (451) wilayah server ini.
+- Harga kripto sementara = candle Binance x kurs USD/IDR (Yahoo IDR=X), fee perkiraan 0,3% per transaksi
+  (`config.INDODAX`). Begitu indodax.com bisa diakses dari sesi ini, beri tahu pemilik dan ganti dengan data,
+  fee dan aturan order resmi Indodax. Sebutkan di laporan bahwa harga masih hasil konversi.
 - Binance Spot Testnet sedang DITUNDA atas pilihan pemilik (`config.TESTNET_ENABLED = False`), karena
   testnet.binance.vision menolak (451) wilayah server cloud ini. Jangan aktifkan tanpa persetujuan pemilik; tahap ini
   dijalankan nanti dari komputer/VPS di wilayah yang dilayani Binance, sebelum uang sungguhan.

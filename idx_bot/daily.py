@@ -46,7 +46,12 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     runs.mkdir(parents=True, exist_ok=True)
     ledger = paper.load(ledger_path, market)
     held = sorted({p["code"] for p in ledger["open"] + ledger["pending"]})
-    bars = _idx_bars(held) if market.name == "idx" else crypto.fetch(held, period="3mo")[0]
+    if market.name == "idx":
+        bars = _idx_bars(held)
+    else:
+        bars = crypto.fetch(held, period="3mo")[0]
+        if market.currency == "Rp" and bars:
+            bars = crypto.in_currency(bars, crypto.usd_idr())
     events = paper.settle(ledger, bars, market)
     testnet = "tidak dipakai"
     if market.name == "crypto" and not config.TESTNET_ENABLED:
@@ -60,7 +65,7 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
             events += testnet_events
             testnet = "gagal sebagian" if any("GAGAL" in e for e in testnet_events) else "aktif"
 
-    result = screen(config.LQ45) if market.name == "idx" else crypto.screen()
+    result = screen(config.LQ45) if market.name == "idx" else crypto.screen(market=market)
     date = max(r["last_date"] for r in result["rows"])
     (runs / f"screener-{date}.json").write_text(json.dumps(result, indent=2, ensure_ascii=False, default=float))
     rows = {r["code"]: r for r in result["rows"]}
@@ -129,7 +134,7 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
         else:
             w.writerow(["kode", "nama", "skor", "skor_teknikal", "skor_pasar", "harga", "rsi", "return_1b",
                         "gerak_harian", "volume_juta_usd", "peringkat_mcap", "kuat_vs_btc_30h", "stop", "target",
-                        "jumlah", "risiko_usdt", "kandidat", "catatan"])
+                        "jumlah", "risiko", "kandidat", "catatan"])
         for r in result["rows"]:
             t, p = r["technical"], r["plan"]
             if market.name == "idx":
@@ -154,7 +159,7 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
         with open(history, newline="") as f:
             rows = list(csv.reader(f))
     rows = [r for r in rows if r[0] != report["date"]]
-    digits = 0 if market.name == "idx" else 2
+    digits = 0 if market.currency == "Rp" else 2
     rows.append([report["date"], round(report["equity"], digits), round(report["cash"], digits)])
     with open(history, "w", newline="") as f:
         csv.writer(f).writerows(rows)
@@ -179,7 +184,7 @@ def _write_positions(out_dir: Path, ledger: dict, last_close: dict, market: conf
     """One row per pending order, open position and closed trade. ``lot`` is lots on
     IDX and coins for crypto."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    digits = 0 if market.name == "idx" else 2
+    digits = 0 if market.currency == "Rp" else 2
     size = (lambda p: p["lots"]) if market.name == "idx" else (lambda p: p["units"])
     with open(out_dir / "posisi.csv", "w", newline="") as f:
         w = csv.writer(f)
@@ -209,7 +214,7 @@ def main() -> None:
     b.add_argument("--reason", required=True)
     b.add_argument("--market", choices=["idx", "crypto"], default="idx")
     args = parser.parse_args()
-    market = config.IDX if args.market == "idx" else config.CRYPTO
+    market = config.IDX if args.market == "idx" else config.INDODAX
     if args.cmd == "run":
         print(json.dumps(run(market, args.out), indent=2, ensure_ascii=False, default=float))
     else:

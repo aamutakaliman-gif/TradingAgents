@@ -36,7 +36,7 @@ class Market:
     sell_fee: float
     ticks: str              # "idx" for BEI price fractions, "sig5" for five significant digits
     extreme_move: float     # a daily move this large blocks a candidate
-    min_daily_value: float  # average daily turnover, in ``currency``
+    min_daily_value: float  # average daily turnover: in ``currency`` for IDX, in USD for crypto
 
 
 IDX = Market("idx", EQUITY, "Rp", LOT_SIZE, BUY_FEE, SELL_FEE, "idx", 0.10, MIN_DAILY_VALUE)
@@ -54,6 +54,12 @@ CRYPTO_POOL = [
     "LTC", "BCH", "XLM", "HBAR", "NEAR", "UNI", "APT", "ATOM", "ETC", "ICP", "FIL",
 ]
 CRYPTO_TOP_N = 15
+
+# Indodax, where the owner can trade legally (Binance holds no OJK licence). Rupiah account
+# of Rp 10 jt, replacing the USDT book on 19 Oct 2026. Until indodax.com is reachable from
+# here, prices are Binance's converted at the day's USD/IDR rate and the fee is a cautious
+# 0.3% each way; both are to be replaced with Indodax's own once they can be read.
+INDODAX = Market("crypto", EQUITY, "Rp", 0.00000001, 0.003, 0.003, "sig5", 0.15, CRYPTO.min_daily_value)
 
 # Binance Spot Testnet rehearsal. Off by owner's choice (18 Oct 2026): testnet.binance.vision
 # answers 451 from this cloud region, so it waits for a machine where Binance is served.

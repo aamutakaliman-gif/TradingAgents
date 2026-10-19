@@ -1,6 +1,6 @@
 {
   "market": "crypto",
-  "currency": "USDT",
+  "currency": "Rp",
   "price_source": "Binance",
   "testnet": "ditunda (testnet tidak bisa diakses dari server cloud)",
   "date": "2026-10-18",
@@ -8,22 +8,22 @@
   "brake": false,
   "month_loss": 0,
   "open_risk": 0,
-  "cash": 555.56,
-  "equity": 555.56,
+  "cash": 10000000,
+  "equity": 10000000,
   "candidates": [
     {
       "code": "BTC",
       "name": "Bitcoin",
       "score": 68.0,
       "plan": {
-        "entry": 82116.0,
-        "stop": 77880.43,
-        "target": 90587.15,
-        "lots": 262,
-        "units": 0.00262,
-        "position_value": 215.14392,
-        "risk": 11.097193400000018,
-        "stop_pct": 0.05158032539334608
+        "entry": 1478088000.0,
+        "stop": 1401800000.0,
+        "target": 1630700000.0,
+        "lots": 262164,
+        "units": 0.00262164,
+        "position_value": 3875014.6243200004,
+        "risk": 199999.67232,
+        "stop_pct": 0.05161262387625094
       }
     },
     {
@@ -31,14 +31,14 @@
       "name": "NEAR Protocol",
       "score": 68.0,
       "plan": {
-        "entry": 5.016,
-        "stop": 3.89,
-        "target": 7.268,
-        "lots": 98,
-        "units": 9.8,
-        "position_value": 49.156800000000004,
-        "risk": 11.0348,
-        "stop_pct": 0.22448165869218498
+        "entry": 90288.0,
+        "stop": 70020.0,
+        "target": 130830.0,
+        "lots": 986777185,
+        "units": 9.86777185,
+        "position_value": 890941.3847928001,
+        "risk": 199999.9998558,
+        "stop_pct": 0.224481658692185
       }
     },
     {
@@ -46,14 +46,14 @@
       "name": "Avalanche",
       "score": 62.0,
       "plan": {
-        "entry": 9.777,
-        "stop": 8.39,
-        "target": 12.551,
-        "lots": 801,
-        "units": 8.01,
-        "position_value": 78.31376999999999,
-        "risk": 11.109869999999988,
-        "stop_pct": 0.14186355732842373
+        "entry": 175986.0,
+        "stop": 151020.0,
+        "target": 225920.0,
+        "lots": 801089481,
+        "units": 8.01089481,
+        "position_value": 1409805.33403266,
+        "risk": 199999.99982646,
+        "stop_pct": 0.14186355732842384
       }
     },
     {
@@ -61,14 +61,14 @@
       "name": "Polkadot",
       "score": 49.0,
       "plan": {
-        "entry": 1.118,
-        "stop": 0.935,
-        "target": 1.485,
-        "lots": 6071,
-        "units": 60.71,
-        "position_value": 67.87378000000001,
-        "risk": 11.109930000000004,
-        "stop_pct": 0.1636851520572451
+        "entry": 20124.000000000004,
+        "stop": 16844.0,
+        "target": 26685.0,
+        "lots": 6097560975,
+        "units": 60.97560975,
+        "position_value": 1227073.1706090001,
+        "risk": 199999.9999800002,
+        "stop_pct": 0.16298946531504685
       }
     },
     {
@@ -76,14 +76,14 @@
       "name": "Bitcoin Cash",
       "score": 41.0,
       "plan": {
-        "entry": 276.2,
-        "stop": 242.3,
-        "target": 344.0,
-        "lots": 327,
-        "units": 0.327,
-        "position_value": 90.3174,
-        "risk": 11.085299999999993,
-        "stop_pct": 0.12273714699493113
+        "entry": 4971600.0,
+        "stop": 4362300.0,
+        "target": 6190200.0,
+        "lots": 32824552,
+        "units": 0.32824552,
+        "position_value": 1631905.427232,
+        "risk": 199999.99533600002,
+        "stop_pct": 0.12255611875452571
       }
     }
   ],

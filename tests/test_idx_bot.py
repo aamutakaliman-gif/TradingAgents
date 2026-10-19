@@ -348,3 +348,17 @@ def test_testnet_failure_on_one_coin_is_reported_not_raised():
     ledger = {"open": [_open_btc()], "closed": []}
     events = binance_testnet.sync(api, ledger)
     assert "GAGAL" in events[0] and ledger["open"][0]["testnet"]["status"] == "gagal"
+
+
+@pytest.mark.unit
+def test_rupiah_crypto_book_converts_prices_but_not_volume():
+    from idx_bot import crypto
+    df = _bars([[1.0, 2.0, 0.5, 1.5]])
+    df["Volume"] = 1e7
+    out = crypto.in_currency({"X": df}, 18_000)["X"]
+    assert out["Close"].iloc[0] == 27_000 and out["Low"].iloc[0] == 9_000
+    assert out["Volume"].iloc[0] == 1e7  # liquidity stays judged in USD
+    assert df["Close"].iloc[0] == 1.5  # the input is left alone
+    plan = plan_trade(entry=1_470_000_000, atr_value=38_000_000, market=config.INDODAX)
+    assert plan["risk"] <= config.INDODAX.equity * config.RISK_PER_TRADE  # Rp 200 rb
+    assert plan["units"] == pytest.approx(0.00263157, abs=1e-8)

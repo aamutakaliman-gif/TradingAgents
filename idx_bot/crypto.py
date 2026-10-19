@@ -55,6 +55,24 @@ def _yahoo(codes: list[str], period: str) -> dict[str, pd.DataFrame]:
             for c, s in zip(codes, symbols, strict=True) if s in present}
 
 
+def usd_idr() -> float:
+    """Latest USD/IDR rate from Yahoo."""
+    close = yf.download("IDR=X", period="10d", progress=False, auto_adjust=True)["Close"].squeeze().dropna()
+    if close.empty:
+        raise RuntimeError("USD/IDR rate unavailable")
+    return float(close.iloc[-1])
+
+
+def in_currency(prices: dict[str, pd.DataFrame], fx: float) -> dict[str, pd.DataFrame]:
+    """Prices times ``fx``; Volume stays in USD, since liquidity is judged in USD."""
+    out = {}
+    for code, df in prices.items():
+        df = df.copy()
+        df[["Open", "High", "Low", "Close"]] = df[["Open", "High", "Low", "Close"]] * fx
+        out[code] = df
+    return out
+
+
 def market_score(code: str, df: pd.DataFrame, btc: pd.DataFrame, rank: int) -> tuple[int, dict]:
     close, btc_close = df["Close"], btc["Close"]
     ret_30 = close.iloc[-1] / close.iloc[-31] - 1
@@ -73,8 +91,8 @@ def market_score(code: str, df: pd.DataFrame, btc: pd.DataFrame, rank: int) -> t
                    "rs_btc_90d": round(float(rs_90), 4), "volume_usd": float(volume)}
 
 
-def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_N) -> dict:
-    market = config.CRYPTO
+def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_N,
+           market: config.Market = config.INDODAX) -> dict:
     caps, names = {}, {}
     for code in pool:
         try:
@@ -86,8 +104,12 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
             names[code] = info.get("name") or info.get("shortName") or code
     universe = sorted(caps, key=caps.get, reverse=True)[:top_n]
     prices, source = fetch(universe)
+    fx = 1.0
+    if market.currency == "Rp":
+        fx = usd_idr()
+        prices = in_currency(prices, fx)
     rules = {}
-    if source == "Binance":
+    if source == "Binance" and market.currency == "USDT":  # Binance's own steps fit only its USDT pairs
         api = binance_feed.client()
         rules = {code: binance_feed.trading_rules(api, code) for code in universe}
     btc = prices.get("BTC")
@@ -136,6 +158,7 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "universe": f"Top {top_n} kripto Binance (market cap)",
         "price_source": source,
+        "usd_idr": fx if market.currency == "Rp" else None,
         "settings": {"equity": market.equity, "currency": market.currency,
                      "risk_per_trade": config.RISK_PER_TRADE,
                      "monthly_risk_cap": config.MONTHLY_RISK_CAP, "tech_weight": TECH_WEIGHT},
