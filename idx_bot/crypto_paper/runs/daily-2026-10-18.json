@@ -7,86 +7,41 @@
   "events": [],
   "brake": false,
   "month_loss": 0,
-  "open_risk": 0,
+  "open_risk": 599999.6280369,
   "cash": 10000000,
   "equity": 10000000,
-  "candidates": [
+  "candidates": [],
+  "open": [],
+  "pending": [
     {
       "code": "BTC",
-      "name": "Bitcoin",
-      "score": 68.0,
-      "plan": {
-        "entry": 1470574000.0,
-        "stop": 1405027000.0,
-        "target": 1601668000.0,
-        "lots": 305124,
-        "units": 0.00305124,
-        "position_value": 4487074.21176,
-        "risk": 199999.62828,
-        "stop_pct": 0.04457239146074934
-      }
+      "lots": 305124,
+      "units": 0.00305124,
+      "entry": 1470574000.0,
+      "stop": 1405027000.0,
+      "target": 1601668000.0,
+      "signal_date": "2026-10-18",
+      "reason": "Pemimpin pasar, paling likuid di Indodax (Rp 24 miliar/hari); di atas SMA50, RSI netral; stop 4,5%. Bear: return 1 bulan negatif, tanpa katalis baru."
     },
     {
       "code": "NEAR",
-      "name": "NEAR Protocol",
-      "score": 68.0,
-      "plan": {
-        "entry": 89952.0,
-        "stop": 69267.0,
-        "target": 131322.0,
-        "lots": 966884215,
-        "units": 9.66884215,
-        "position_value": 869731.6890768,
-        "risk": 199999.99987275,
-        "stop_pct": 0.2299559765208111
-      }
-    },
-    {
-      "code": "TRX",
-      "name": "TRON",
-      "score": 53.0,
-      "plan": {
-        "entry": 5955.0,
-        "stop": 5739.0,
-        "target": 6387.0,
-        "lots": 92592592592,
-        "units": 925.92592592,
-        "position_value": 5513888.8888536,
-        "risk": 199999.99999872,
-        "stop_pct": 0.036272040302267
-      }
+      "lots": 966884215,
+      "units": 9.66884215,
+      "entry": 89952.0,
+      "stop": 69267.0,
+      "target": 131322.0,
+      "signal_date": "2026-10-18",
+      "reason": "Terkuat vs BTC 30 hari (+32%); ETF Bitwise dan pendapatan protokol naik; volume Indodax Rp 1,2 miliar/hari. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 23%."
     },
     {
       "code": "AVAX",
-      "name": "Avalanche",
-      "score": 53.0,
-      "plan": {
-        "entry": 174102.0,
-        "stop": 150867.0,
-        "target": 220572.0,
-        "lots": 860770389,
-        "units": 8.60770389,
-        "position_value": 1498618.46265678,
-        "risk": 199999.99988415,
-        "stop_pct": 0.13345624978460902
-      }
-    },
-    {
-      "code": "DOT",
-      "name": "Polkadot",
-      "score": 43.0,
-      "plan": {
-        "entry": 19999.0,
-        "stop": 16955.0,
-        "target": 26087.0,
-        "lots": 6570302233,
-        "units": 65.70302233,
-        "position_value": 1313994.7435776698,
-        "risk": 199999.99997252,
-        "stop_pct": 0.15220761038051903
-      }
+      "lots": 860770389,
+      "units": 8.60770389,
+      "entry": 174102.0,
+      "stop": 150867.0,
+      "target": 220572.0,
+      "signal_date": "2026-10-18",
+      "reason": "Lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober; dipilih atas TRX yang lebih lemah dari BTC dan akan memakan 55% modal. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."
     }
-  ],
-  "open": [],
-  "pending": []
+  ]
 }

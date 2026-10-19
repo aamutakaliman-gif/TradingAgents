@@ -391,7 +391,7 @@ def test_indodax_rules_and_candles(monkeypatch):
     rules = indodax_feed.trading_rules()
     assert set(rules) == {"BTC", "APT"}  # the USDT pair is left out
     assert rules["BTC"] == {"step": 1e-8, "tick": 1000.0, "min_notional": 10000.0, "taker_fee": 0.002,
-                            "suspended": False, "chart_symbols": ["BTCIDR"]}
+                            "suspended": False, "pair_id": "btcidr", "chart_symbols": ["BTCIDR"]}
     assert rules["APT"]["suspended"] is True and rules["APT"]["chart_symbols"] == ["APTIDR", "APTOLDIDR"]
     df = indodax_feed.klines("BTC", days=1)
     assert df["Close"].iloc[0] == 1_470_000_000
@@ -452,3 +452,15 @@ def test_indodax_chart_falls_back_to_old_symbol(monkeypatch):
     monkeypatch.setattr(indodax_feed, "_get", lambda path, **p: [])
     with pytest.raises(LookupError):
         indodax_feed.klines("APT", 5)
+
+
+@pytest.mark.unit
+def test_buy_cost_walks_the_asks():
+    from idx_bot.indodax_feed import buy_cost
+    book = {"buy": [["99", "10"]], "sell": [["101", "1"], ["102", "1"], ["110", "5"]]}
+    # Rp 101 buys one coin at the best ask: 1% over the 100 mid
+    assert buy_cost(book, 101) == pytest.approx(0.01)
+    # Rp 203 takes both first levels: average 101.5
+    assert buy_cost(book, 203) == pytest.approx(203 / 2 / 100 - 1)
+    assert buy_cost(book, 10_000) is None  # more than the whole book
+    assert buy_cost({"buy": [], "sell": [["1", "1"]]}, 1) is None

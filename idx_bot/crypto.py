@@ -75,6 +75,24 @@ def fetch_rupiah(codes: list[str], period: str = "1y",
     return converted, f"{source} x kurs USD/IDR"
 
 
+def _check_order_books(rows: list[dict], rules: dict, market: config.Market) -> None:
+    """Walk each liquid, uptrending coin's Indodax asks for its planned order and
+    record the cost over mid as ``book_cost`` (inf when the book cannot fill it)."""
+    for r in rows:
+        rule = rules.get(r["code"])
+        if (not rule or r["plan"]["lots"] == 0 or r["avg_daily_value"] < market.min_daily_value
+                or r["technical"]["close"] <= r["technical"]["sma50"]):
+            continue
+        try:
+            cost = indodax_feed.buy_cost(indodax_feed.depth(rule["pair_id"]), r["plan"]["position_value"])
+        except Exception as exc:  # no book, no verdict: the other filters still apply
+            logger.warning("Indodax depth for %s unavailable (%s)", r["code"], exc)
+            continue
+        r["book_cost"] = float("inf") if cost is None else round(cost, 5)
+        if r["book_cost"] > config.MAX_BOOK_COST:
+            r["flags"].append("order book Indodax terlalu tipis untuk ukuran order ini")
+
+
 def local_premium(local: dict[str, pd.DataFrame], world: dict[str, pd.DataFrame], fx: float) -> dict[str, float]:
     """How far each coin's latest local close sits from the world close of the same
     day times ``fx`` (0.05 = 5% dearer locally)."""
@@ -212,11 +230,14 @@ def screen(pool: list[str] = config.CRYPTO_POOL, top_n: int = config.CRYPTO_TOP_
             "flags": flags,
         })
     rows.sort(key=lambda r: r["score"], reverse=True)
+    if market.currency == "Rp" and rules:
+        _check_order_books(rows, rules, market)
     eligible = [r for r in rows
                 if r["avg_daily_value"] >= market.min_daily_value
                 and r["technical"]["close"] > r["technical"]["sma50"]
                 and abs(r["last_move"]) < market.extreme_move
                 and abs(r["local_premium"] or 0) <= config.MAX_LOCAL_PREMIUM
+                and (r.get("book_cost") is None or r["book_cost"] <= config.MAX_BOOK_COST)
                 and r["plan"]["lots"] > 0]
     return {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),

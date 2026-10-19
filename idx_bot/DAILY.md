@@ -58,6 +58,14 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
   Bila Indodax tidak bisa dijangkau, otomatis memakai harga Binance x kurs USD/IDR; `price_source` menyebutnya.
 - Koin yang harganya di Indodax menyimpang lebih dari 3% dari harga global (Binance x kurs) ditandai "pasar tipis"
   dan tidak boleh dibeli (BCH +55% pada 18 Okt 2026). Laporkan bila koin besar kena tanda ini.
+- Sebelum dibeli, order kripto dicocokkan dengan order book Indodax (/api/depth); bila harga rata-rata isinya
+  lebih dari 1% di atas harga tengah (`config.MAX_BOOK_COST`), koin itu dilewati sebagai pasar tipis.
+- Tahap uang sungguhan di Indodax (BELUM AKTIF, butuh persetujuan pemilik), dari dokumentasi resmi
+  aamutakaliman-gif/indodax-official-api-docs: kunci TAPI v2 dibuat pemilik di indodax.com/trade_api dengan izin
+  Reading + Spot Trading saja, TANPA IDR & Crypto Withdrawal; disimpan sebagai environment variable, tidak lewat chat.
+  TAPI v2 hanya punya order LIMIT dan MARKET (tanpa stop atau OCO): stop-loss harus dijaga bot sendiri atau lewat
+  order stoplimit TAPI lama, dan satu koin tidak bisa dipasangi stop dan target sekaligus karena saldo terkunci per
+  order. Deadman switch (/tapi countdownCancelAll) dipakai bila bot memasang order limit yang menunggu.
 - Binance Spot Testnet sedang DITUNDA atas pilihan pemilik (`config.TESTNET_ENABLED = False`), karena
   testnet.binance.vision menolak (451) wilayah server cloud ini. Jangan aktifkan tanpa persetujuan pemilik; tahap ini
   dijalankan nanti dari komputer/VPS di wilayah yang dilayani Binance, sebelum uang sungguhan.

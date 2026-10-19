@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T03:41:36+00:00",
+  "generated_at": "2026-10-19T03:58:08+00:00",
   "universe": "Top 15 kripto Indodax (market cap)",
   "price_source": "Indodax",
   "settings": {
@@ -27,7 +27,7 @@
       "last_move": 0.0082,
       "avg_daily_value": 24217402571.129307,
       "local_premium": -0.0073,
-      "market_cap": 1658345357312,
+      "market_cap": 1656734089216,
       "technical": {
         "close": 1470574000.0,
         "sma20": 1492359550.0,
@@ -58,6 +58,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "btcidr",
         "chart_symbols": [
           "BTCIDR"
         ]
@@ -72,7 +73,8 @@
         "risk": 199999.62828,
         "stop_pct": 0.04457239146074934
       },
-      "flags": []
+      "flags": [],
+      "book_cost": 0.00014
     },
     {
       "code": "NEAR",
@@ -84,7 +86,7 @@
       "last_move": 0.0317,
       "avg_daily_value": 1204093538.9364805,
       "local_premium": -0.0059,
-      "market_cap": 6555024384,
+      "market_cap": 6568092160,
       "technical": {
         "close": 89952.0,
         "sma20": 90336.3,
@@ -116,6 +118,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "nearidr",
         "chart_symbols": [
           "NEARIDR"
         ]
@@ -130,7 +133,8 @@
         "risk": 199999.99987275,
         "stop_pct": 0.2299559765208111
       },
-      "flags": []
+      "flags": [],
+      "book_cost": 0.0014
     },
     {
       "code": "TRX",
@@ -142,7 +146,7 @@
       "last_move": -0.0022,
       "avg_daily_value": 343755790.3607111,
       "local_premium": -0.0078,
-      "market_cap": 31466962944,
+      "market_cap": 31455746048,
       "technical": {
         "close": 5955.0,
         "sma20": 5967.2,
@@ -174,6 +178,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "trxidr",
         "chart_symbols": [
           "TRXIDR"
         ]
@@ -188,7 +193,8 @@
         "risk": 199999.99999872,
         "stop_pct": 0.036272040302267
       },
-      "flags": []
+      "flags": [],
+      "book_cost": 0.00227
     },
     {
       "code": "AVAX",
@@ -200,7 +206,7 @@
       "last_move": -0.0011,
       "avg_daily_value": 469048830.71828496,
       "local_premium": -0.0129,
-      "market_cap": 4324387840,
+      "market_cap": 4321951232,
       "technical": {
         "close": 174102.0,
         "sma20": 189605.05,
@@ -231,6 +237,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "avaxidr",
         "chart_symbols": [
           "AVAXIDR"
         ]
@@ -245,7 +252,8 @@
         "risk": 199999.99988415,
         "stop_pct": 0.13345624978460902
       },
-      "flags": []
+      "flags": [],
+      "book_cost": 0.00254
     },
     {
       "code": "ETH",
@@ -257,7 +265,7 @@
       "last_move": 0.0025,
       "avg_daily_value": 8463588983.180272,
       "local_premium": -0.0067,
-      "market_cap": 296078213120,
+      "market_cap": 295717404672,
       "technical": {
         "close": 43191000.0,
         "sma20": 45799600.0,
@@ -286,6 +294,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "ethidr",
         "chart_symbols": [
           "ETHIDR"
         ]
@@ -312,7 +321,7 @@
       "last_move": 0.0084,
       "avg_daily_value": 7302305854.581632,
       "local_premium": -0.0054,
-      "market_cap": 62078300160,
+      "market_cap": 61944803328,
       "technical": {
         "close": 1868000.0,
         "sma20": 2011236.05,
@@ -341,6 +350,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "solidr",
         "chart_symbols": [
           "SOLIDR"
         ]
@@ -367,7 +377,7 @@
       "last_move": 0.0043,
       "avg_daily_value": 2094265442.941946,
       "local_premium": -0.0089,
-      "market_cap": 8150189568,
+      "market_cap": 8136757248,
       "technical": {
         "close": 3955.0,
         "sma20": 4343.95,
@@ -397,6 +407,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "adaidr",
         "chart_symbols": [
           "ADAIDR"
         ]
@@ -423,7 +434,7 @@
       "last_move": 0.0057,
       "avg_daily_value": 208537029.52471942,
       "local_premium": -0.0084,
-      "market_cap": 1915204224,
+      "market_cap": 1912144000,
       "technical": {
         "close": 19999.0,
         "sma20": 21048.25,
@@ -453,6 +464,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "dotidr",
         "chart_symbols": [
           "DOTIDR"
         ]
@@ -467,7 +479,8 @@
         "risk": 199999.99997252,
         "stop_pct": 0.15220761038051903
       },
-      "flags": []
+      "flags": [],
+      "book_cost": 0.00403
     },
     {
       "code": "XRP",
@@ -479,7 +492,7 @@
       "last_move": 0.0082,
       "avg_daily_value": 9320379570.117357,
       "local_premium": -0.0078,
-      "market_cap": 82710970368,
+      "market_cap": 82569945088,
       "technical": {
         "close": 23396.0,
         "sma20": 25293.75,
@@ -508,6 +521,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "xrpidr",
         "chart_symbols": [
           "XRPIDR"
         ]
@@ -534,7 +548,7 @@
       "last_move": 0.0035,
       "avg_daily_value": 502751616.4012038,
       "local_premium": -0.0057,
-      "market_cap": 9121148928,
+      "market_cap": 9105970176,
       "technical": {
         "close": 215992.0,
         "sma20": 237584.55,
@@ -564,6 +578,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "linkidr",
         "chart_symbols": [
           "LINKIDR"
         ]
@@ -590,7 +605,7 @@
       "last_move": 0.0033,
       "avg_daily_value": 820046750.4278781,
       "local_premium": -0.0041,
-      "market_cap": 3714000896,
+      "market_cap": 3704124416,
       "technical": {
         "close": 1535.0,
         "sma20": 1687.0,
@@ -619,6 +634,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "hbaridr",
         "chart_symbols": [
           "HBARIDR"
         ]
@@ -645,7 +661,7 @@
       "last_move": 0.0111,
       "avg_daily_value": 678517565.709395,
       "local_premium": -0.0055,
-      "market_cap": 96592576512,
+      "market_cap": 96580771840,
       "technical": {
         "close": 12978012.0,
         "sma20": 13483252.45,
@@ -674,6 +690,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "bnbidr",
         "chart_symbols": [
           "BNBIDR"
         ]
@@ -700,7 +717,7 @@
       "last_move": 0.0067,
       "avg_daily_value": 266156010.907303,
       "local_premium": -0.008,
-      "market_cap": 4616958976,
+      "market_cap": 4610225664,
       "technical": {
         "close": 1058000.0,
         "sma20": 1155650.0,
@@ -729,6 +746,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "ltcidr",
         "chart_symbols": [
           "LTCIDR"
         ]
@@ -755,7 +773,7 @@
       "last_move": 0.0117,
       "avg_daily_value": 930818026.7740816,
       "local_premium": -0.0035,
-      "market_cap": 6297630720,
+      "market_cap": 6290140160,
       "technical": {
         "close": 3198.0,
         "sma20": 3602.0,
@@ -785,6 +803,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "xlmidr",
         "chart_symbols": [
           "XLMIDR",
           "STRIDR"
@@ -812,7 +831,7 @@
       "last_move": 0.0,
       "avg_daily_value": 0.0,
       "local_premium": 0.5454,
-      "market_cap": 5569766912,
+      "market_cap": 5569462272,
       "technical": {
         "close": 7700000.0,
         "sma20": 7700000.0,
@@ -837,6 +856,7 @@
         "min_notional": 10000.0,
         "taker_fee": 0.002,
         "suspended": false,
+        "pair_id": "bchidr",
         "chart_symbols": [
           "BCHIDR",
           "BCHABCIDR"

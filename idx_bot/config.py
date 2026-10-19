@@ -65,6 +65,9 @@ INDODAX_VOLUME_TIERS = (5_000_000_000, 1_000_000_000)  # Rp a day for 30 / 15 vo
 # A thin Indodax book can drift far from the world price (BCH stood 55% above it on 18 Oct
 # 2026). A coin more than this far from Binance's close times USD/IDR is not a candidate.
 MAX_LOCAL_PREMIUM = 0.03
+# A market buy of the planned size must fill within this much of the Indodax mid
+# price when its order book is walked (spread plus depth), or the coin is skipped.
+MAX_BOOK_COST = 0.01
 
 # Binance Spot Testnet rehearsal. Off by owner's choice (18 Oct 2026): testnet.binance.vision
 # answers 451 from this cloud region, so it waits for a machine where Binance is served.
