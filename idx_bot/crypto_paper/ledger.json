@@ -3,33 +3,33 @@
   "pending": [
     {
       "code": "BTC",
-      "lots": 262164,
-      "units": 0.00262164,
-      "entry": 1478088000.0,
-      "stop": 1401800000.0,
-      "target": 1630700000.0,
+      "lots": 305124,
+      "units": 0.00305124,
+      "entry": 1470574000.0,
+      "stop": 1405027000.0,
+      "target": 1601668000.0,
       "signal_date": "2026-10-18",
-      "reason": "Pemimpin pasar dan paling likuid; di atas SMA50, RSI 49 netral; stop 5,2% paling sempit. Bear: return 1 bulan -2,8%, tanpa katalis baru."
+      "reason": "Pemimpin pasar, paling likuid di Indodax (Rp 24 miliar/hari); di atas SMA50, RSI netral; stop 4,5%. Bear: return 1 bulan negatif, tanpa katalis baru."
     },
     {
       "code": "NEAR",
-      "lots": 986777185,
-      "units": 9.86777185,
-      "entry": 90288.0,
-      "stop": 70020.0,
-      "target": 130830.0,
+      "lots": 966884215,
+      "units": 9.66884215,
+      "entry": 89952.0,
+      "stop": 69267.0,
+      "target": 131322.0,
       "signal_date": "2026-10-18",
-      "reason": "Terkuat vs BTC 30 hari (+32%), teknikal 70; ETF Bitwise dan pendapatan protokol naik. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 22% jadi posisi kecil."
+      "reason": "Terkuat vs BTC 30 hari (+32%); ETF Bitwise dan pendapatan protokol naik; volume Indodax Rp 1,2 miliar/hari. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 23%."
     },
     {
       "code": "AVAX",
-      "lots": 801089481,
-      "units": 8.01089481,
-      "entry": 175986.0,
-      "stop": 151020.0,
-      "target": 225920.0,
+      "lots": 860770389,
+      "units": 8.60770389,
+      "entry": 174102.0,
+      "stop": 150867.0,
+      "target": 220572.0,
       "signal_date": "2026-10-18",
-      "reason": "Teknikal 70, lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."
+      "reason": "Lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober; dipilih atas TRX yang lebih lemah dari BTC dan akan memakan 55% modal. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."
     }
   ],
   "open": [],

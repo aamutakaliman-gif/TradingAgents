@@ -14,7 +14,7 @@ from pathlib import Path
 
 import yfinance as yf
 
-from idx_bot import binance_testnet, config, crypto, paper
+from idx_bot import binance_testnet, config, crypto, indodax_feed, paper
 from idx_bot.risk import plan_trade
 from idx_bot.screener import screen
 
@@ -40,6 +40,15 @@ def _idx_bars(codes: list[str]) -> dict:
     return {c: data[s].dropna(subset=["Close"]) for c, s in zip(codes, symbols, strict=True)}
 
 
+def _indodax_rules(codes: list[str]) -> dict:
+    if not codes:
+        return {}
+    try:
+        return indodax_feed.trading_rules()
+    except Exception:  # candles fall back to converted USD prices anyway
+        return {}
+
+
 def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict:
     runs, dashboard, ledger_path = _paths(market)
     out_dir = out_dir or dashboard
@@ -49,9 +58,8 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     if market.name == "idx":
         bars = _idx_bars(held)
     else:
-        bars = crypto.fetch(held, period="3mo")[0]
-        if market.currency == "Rp" and bars:
-            bars = crypto.in_currency(bars, crypto.usd_idr())
+        bars = (crypto.fetch_rupiah(held, period="3mo", rules=_indodax_rules(held)) if market.currency == "Rp"
+                else crypto.fetch(held, period="3mo"))[0]
     events = paper.settle(ledger, bars, market)
     testnet = "tidak dipakai"
     if market.name == "crypto" and not config.TESTNET_ENABLED:
@@ -133,7 +141,7 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
                         "risiko_rp", "kandidat", "catatan"])
         else:
             w.writerow(["kode", "nama", "skor", "skor_teknikal", "skor_pasar", "harga", "rsi", "return_1b",
-                        "gerak_harian", "volume_juta_usd", "peringkat_mcap", "kuat_vs_btc_30h", "stop", "target",
+                        "gerak_harian", "volume_juta", "peringkat_mcap", "kuat_vs_btc_30h", "stop", "target",
                         "jumlah", "risiko", "kandidat", "catatan"])
         for r in result["rows"]:
             t, p = r["technical"], r["plan"]
@@ -148,7 +156,7 @@ def _write_dashboard_csvs(out_dir: Path, result: dict, ledger: dict, report: dic
             else:
                 m = r["market"]
                 w.writerow([r["code"], r["name"], r["score"], r["technical_score"], r["market_score"],
-                            t["close"], t["rsi"], t["ret_1m"], r["last_move"], round(m["volume_usd"] / 1e6, 1),
+                            t["close"], t["rsi"], t["ret_1m"], r["last_move"], round(m["volume"] / 1e6, 1),
                             m["rank"], m["rs_btc_30d"], p["stop"], p["target"], p["units"], round(p["risk"], 2),
                             "ya" if r["code"] in cand else "tidak", "; ".join(r["flags"])])
     _write_positions(out_dir, ledger, last_close, market)

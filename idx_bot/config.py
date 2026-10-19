@@ -56,10 +56,15 @@ CRYPTO_POOL = [
 CRYPTO_TOP_N = 15
 
 # Indodax, where the owner can trade legally (Binance holds no OJK licence). Rupiah account
-# of Rp 10 jt, replacing the USDT book on 19 Oct 2026. Until indodax.com is reachable from
-# here, prices are Binance's converted at the day's USD/IDR rate and the fee is a cautious
-# 0.3% each way; both are to be replaced with Indodax's own once they can be read.
-INDODAX = Market("crypto", EQUITY, "Rp", 0.00000001, 0.003, 0.003, "sig5", 0.15, CRYPTO.min_daily_value)
+# of Rp 10 jt, replacing the USDT book on 19 Oct 2026. Costs of a market (taker) order, as
+# Indodax's pair list gave them on 19 Oct 2026: 0.2% fee plus 11% VAT on that fee each way,
+# and 0.21% final income tax on sales (PMK 50/2025). Indodax books are thin, so a coin needs
+# Rp 200 mn of average daily turnover there, which keeps a Rp 4 mn order near 2% of a day.
+INDODAX = Market("crypto", EQUITY, "Rp", 0.00000001, 0.00222, 0.00432, "sig5", 0.15, 200_000_000)
+INDODAX_VOLUME_TIERS = (5_000_000_000, 1_000_000_000)  # Rp a day for 30 / 15 volume points
+# A thin Indodax book can drift far from the world price (BCH stood 55% above it on 18 Oct
+# 2026). A coin more than this far from Binance's close times USD/IDR is not a candidate.
+MAX_LOCAL_PREMIUM = 0.03
 
 # Binance Spot Testnet rehearsal. Off by owner's choice (18 Oct 2026): testnet.binance.vision
 # answers 451 from this cloud region, so it waits for a machine where Binance is served.

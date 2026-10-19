@@ -53,9 +53,11 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
   termasuk aturan pasangan koin (kelipatan jumlah, kelipatan harga, minimum order 5 USDT). Bila Binance tidak bisa
   dijangkau, otomatis memakai Yahoo; `price_source` di laporan harian menyebut sumbernya. Sebutkan di laporan bila
   sumbernya Yahoo. Data publik memakai data-api.binance.vision, karena api.binance.com menolak (451) wilayah server ini.
-- Harga kripto sementara = candle Binance x kurs USD/IDR (Yahoo IDR=X), fee perkiraan 0,3% per transaksi
-  (`config.INDODAX`). Begitu indodax.com bisa diakses dari sesi ini, beri tahu pemilik dan ganti dengan data,
-  fee dan aturan order resmi Indodax. Sebutkan di laporan bahwa harga masih hasil konversi.
+- Harga kripto dari Indodax (candle harian rupiah, aturan order dan fee resmi dari daftar pasangan Indodax);
+  biaya taker beli 0,222% dan jual 0,432% (fee 0,2% + PPN 11% atas fee, + PPh final 0,21% saat jual).
+  Bila Indodax tidak bisa dijangkau, otomatis memakai harga Binance x kurs USD/IDR; `price_source` menyebutnya.
+- Koin yang harganya di Indodax menyimpang lebih dari 3% dari harga global (Binance x kurs) ditandai "pasar tipis"
+  dan tidak boleh dibeli (BCH +55% pada 18 Okt 2026). Laporkan bila koin besar kena tanda ini.
 - Binance Spot Testnet sedang DITUNDA atas pilihan pemilik (`config.TESTNET_ENABLED = False`), karena
   testnet.binance.vision menolak (451) wilayah server cloud ini. Jangan aktifkan tanpa persetujuan pemilik; tahap ini
   dijalankan nanti dari komputer/VPS di wilayah yang dilayani Binance, sebelum uang sungguhan.

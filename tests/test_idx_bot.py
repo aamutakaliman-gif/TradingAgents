@@ -362,3 +362,93 @@ def test_rupiah_crypto_book_converts_prices_but_not_volume():
     plan = plan_trade(entry=1_470_000_000, atr_value=38_000_000, market=config.INDODAX)
     assert plan["risk"] <= config.INDODAX.equity * config.RISK_PER_TRADE  # Rp 200 rb
     assert plan["units"] == pytest.approx(0.00263157, abs=1e-8)
+
+
+_INDODAX_PAIRS = [
+    {"id": "btcidr", "symbol": "BTCIDR", "base_currency": "idr", "traded_currency": "btc", "quantity_increment": 1e-8,
+     "price_precision": 1000, "trade_min_base_currency": 10000, "trade_fee_percent_taker": 0.2,
+     "is_market_suspended": 0, "is_maintenance": 0},
+    {"id": "aptidr", "symbol": "APTIDR", "old_ticker_id": "apt_old_idr", "base_currency": "idr",
+     "traded_currency": "apt", "quantity_increment": 1e-8,
+     "price_precision": 1, "trade_min_base_currency": 10000, "trade_fee_percent_taker": 0.2,
+     "is_market_suspended": 1, "is_maintenance": 0},
+    {"id": "btcusdt", "symbol": "BTCUSDT", "base_currency": "usdt", "traded_currency": "btc", "quantity_increment": 1e-8,
+     "price_precision": 1, "trade_min_base_currency": 5, "trade_fee_percent_taker": 0.2},
+]
+
+
+@pytest.mark.unit
+def test_indodax_rules_and_candles(monkeypatch):
+    from idx_bot import indodax_feed
+
+    def fake_get(path, **params):
+        if path == "/api/pairs":
+            return _INDODAX_PAIRS
+        assert params["symbol"] == "BTCIDR" and params["tf"] == "1D"
+        return [{"Time": 1760659200, "Open": 1_450_000_000, "High": 1_480_000_000, "Low": 1_440_000_000,
+                 "Close": 1_470_000_000, "Volume": "8.5"}]
+    monkeypatch.setattr(indodax_feed, "_get", fake_get)
+    rules = indodax_feed.trading_rules()
+    assert set(rules) == {"BTC", "APT"}  # the USDT pair is left out
+    assert rules["BTC"] == {"step": 1e-8, "tick": 1000.0, "min_notional": 10000.0, "taker_fee": 0.002,
+                            "suspended": False, "chart_symbols": ["BTCIDR"]}
+    assert rules["APT"]["suspended"] is True and rules["APT"]["chart_symbols"] == ["APTIDR", "APTOLDIDR"]
+    df = indodax_feed.klines("BTC", days=1)
+    assert df["Close"].iloc[0] == 1_470_000_000
+    assert df["Volume"].iloc[0] == pytest.approx(8.5 * 1_470_000_000)  # turnover in rupiah
+    assert df.index[0].strftime("%Y-%m-%d") == "2025-10-17"
+
+
+@pytest.mark.unit
+def test_rupiah_fetch_falls_back_to_converted_usd(monkeypatch):
+    from idx_bot import crypto, indodax_feed
+
+    def down(code, days):
+        raise ConnectionError("indodax down")
+    monkeypatch.setattr(indodax_feed, "klines", down)
+    usd = _bars([[10.0, 11.0, 9.0, 10.5]], start="2026-10-01")
+    usd["Volume"] = 1e6
+    monkeypatch.setattr(crypto, "fetch", lambda codes, period: ({"BTC": usd}, "Binance"))
+    monkeypatch.setattr(crypto, "usd_idr", lambda: 18_000)
+    prices, source = crypto.fetch_rupiah(["BTC"])
+    assert source == "Binance x kurs USD/IDR"
+    assert prices["BTC"]["Close"].iloc[0] == 189_000 and prices["BTC"]["Volume"].iloc[0] == 18e9
+
+
+@pytest.mark.unit
+def test_indodax_costs_and_rules_in_sizing():
+    rules = {"step": 1e-8, "tick": 1000.0, "min_notional": 10000.0}
+    plan = plan_trade(entry=1_470_574_000, atr_value=38_000_000, market=config.INDODAX, rules=rules)
+    assert plan["stop"] % 1000 == 0 and plan["target"] % 1000 == 0  # Rp 1.000 price steps for BTC
+    assert plan["risk"] <= 200_000
+    assert config.INDODAX.buy_fee == pytest.approx(0.002 * 1.11)
+    assert config.INDODAX.sell_fee == pytest.approx(0.002 * 1.11 + 0.0021)
+
+
+@pytest.mark.unit
+def test_local_premium_flags_thin_indodax_books():
+    from idx_bot import crypto
+    world = {"BCH": _bars([[276, 280, 270, 276.8]], start="2026-10-16"),
+             "BTC": _bars([[82_000, 82_500, 81_000, 82_116]], start="2026-10-16")}
+    local = {"BCH": _bars([[7_700_000] * 4], start="2026-10-16"),
+             "BTC": _bars([[1_478_000_000] * 4], start="2026-10-16")}
+    prem = crypto.local_premium(local, world, 18_000)
+    assert prem["BCH"] == pytest.approx(7_700_000 / (276.8 * 18_000) - 1, abs=1e-4)  # about +55%
+    assert abs(prem["BTC"]) < config.MAX_LOCAL_PREMIUM < prem["BCH"]
+
+
+@pytest.mark.unit
+def test_indodax_chart_falls_back_to_old_symbol(monkeypatch):
+    from idx_bot import indodax_feed
+    seen = []
+
+    def fake_get(path, **params):
+        seen.append(params["symbol"])
+        return [] if params["symbol"] == "XLMIDR" else [
+            {"Time": 1760659200, "Open": 3400, "High": 3427, "Low": 3280, "Close": 3287, "Volume": "10"}]
+    monkeypatch.setattr(indodax_feed, "_get", fake_get)
+    df = indodax_feed.klines("XLM", 5, ["XLMIDR", "STRIDR"])
+    assert seen == ["XLMIDR", "STRIDR"] and df["Close"].iloc[0] == 3287
+    monkeypatch.setattr(indodax_feed, "_get", lambda path, **p: [])
+    with pytest.raises(LookupError):
+        indodax_feed.klines("APT", 5)
