@@ -1,0 +1,62 @@
+{
+  "market": "idx",
+  "currency": "Rp",
+  "price_source": "Yahoo",
+  "testnet": "tidak dipakai",
+  "date": "2026-10-20",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 0,
+  "cash": 10000000,
+  "equity": 10000000,
+  "candidates": [
+    {
+      "code": "PTBA",
+      "name": "PT Bukit Asam (Persero) Tbk",
+      "score": 82.0,
+      "plan": {
+        "entry": 3050.0,
+        "stop": 2710,
+        "target": 3730,
+        "lots": 5,
+        "units": 500,
+        "position_value": 1525000.0,
+        "risk": 170000.0,
+        "stop_pct": 0.11147540983606558
+      }
+    },
+    {
+      "code": "AUTO",
+      "name": "PT Astra Otoparts Tbk",
+      "score": 76.0,
+      "plan": {
+        "entry": 3250.0,
+        "stop": 3010,
+        "target": 3730,
+        "lots": 8,
+        "units": 800,
+        "position_value": 2600000.0,
+        "risk": 192000.0,
+        "stop_pct": 0.07384615384615385
+      }
+    },
+    {
+      "code": "PWON",
+      "name": "PT Pakuwon Jati Tbk",
+      "score": 74.0,
+      "plan": {
+        "entry": 270.0,
+        "stop": 244,
+        "target": 322,
+        "lots": 76,
+        "units": 7600,
+        "position_value": 2052000.0,
+        "risk": 197600.0,
+        "stop_pct": 0.0962962962962963
+      }
+    }
+  ],
+  "open": [],
+  "pending": []
+}
