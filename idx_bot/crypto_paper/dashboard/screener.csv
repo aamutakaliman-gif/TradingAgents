@@ -1,16 +1,16 @@
-kode,nama,skor,skor_teknikal,skor_pasar,harga,rsi,return_1b,gerak_harian,volume_juta,peringkat_mcap,kuat_vs_btc_30h,stop,target,jumlah,risiko,sinyal_teknikal,kandidat,catatan
-BTC,Bitcoin,68.0,60,80,1470574000.0,49.8,-0.0265,0.0082,24217.4,1,0.0,1405027000.0,1601668000.0,0.00305124,199999.63,tren kuat (ADX > 25),ya,
-NEAR,NEAR Protocol,68.0,70,65,89952.0,54.2,-0.067,0.0317,1204.1,9,0.3311,69267.0,131322.0,9.66884215,200000.0,tren kuat (ADX > 25),ya,
-TRX,TRON,53.0,75,20,5955.0,49.4,-0.0022,-0.0022,343.8,6,-0.0353,5739.0,6387.0,925.92592592,200000.0,tren kuat (ADX > 25),ya,
-AVAX,Avalanche,53.0,55,50,174102.0,44.7,-0.1011,-0.0011,469.0,13,0.1664,150867.0,220572.0,8.60770389,200000.0,tren kuat (ADX > 25),ya,
-ETH,Ethereum,48.0,30,75,43191000.0,37.5,-0.1013,0.0025,8463.6,2,-0.0931,39993000.0,49587000.0,0.06253908,199999.98,tren kuat (ADX > 25),tidak,
-SOL,Solana,44.0,30,65,1868000.0,39.1,-0.1439,0.0084,7302.3,5,-0.0912,1700676.0,2202648.0,1.19528579,200000.0,tren kuat (ADX > 25),tidak,
-ADA,Cardano,44.0,40,50,3955.0,41.1,-0.1353,0.0043,2094.3,8,-0.0328,3416.0,5033.0,371.05751391,200000.0,tren lemah/sideways (ADX < 25),tidak,
-DOT,Polkadot,43.0,55,25,19999.0,46.7,-0.1178,0.0057,208.5,15,-0.0284,16955.0,26087.0,65.70302233,200000.0,tren lemah/sideways (ADX < 25),ya,
-XRP,XRP,38.0,30,50,23396.0,36.2,-0.1367,0.0082,9320.4,4,-0.0801,21125.0,27938.0,88.06693086,200000.0,tren kuat (ADX > 25),tidak,
-LINK,Chainlink,38.0,40,35,215992.0,40.2,-0.1376,0.0035,502.8,7,-0.0307,188341.0,271294.0,7.23301146,200000.0,tren kuat (ADX > 25),tidak,
-HBAR,Hedera,38.0,30,50,1535.0,43.9,-0.105,0.0033,820.0,14,0.0639,1294.0,2017.0,829.87551867,200000.0,tren kuat (ADX > 25),tidak,
-BNB,BNB,36.0,30,45,12978012.0,42.4,-0.0678,0.0111,678.5,3,-0.0697,12217937.0,14498162.0,0.26313192,199999.99,tren kuat (ADX > 25),tidak,
-LTC,Litecoin,32.0,30,35,1058000.0,40.6,-0.1669,0.0067,266.2,12,0.0058,947000.0,1280000.0,1.8018018,200000.0,tren lemah/sideways (ADX < 25),tidak,
-XLM,Stellar,28.0,40,10,3198.0,37.3,-0.1743,0.0117,930.8,10,-0.0862,2556.0,4482.0,311.52647975,200000.0,tren kuat (ADX > 25),tidak,
-BCH,Bitcoin Cash,4.0,0,10,7700000.0,nan,0.0,0.0,0.0,11,-0.0397,7700000.0,7700000.0,0.0,0.0,,tidak,harga Indodax +54.6% dari harga global: pasar tipis; volume harian < Rp 200 juta
+kode,nama,skor,skor_teknikal,skor_pasar,harga,rsi,return_1b,gerak_harian,volume_juta,peringkat_mcap,kuat_vs_btc_30h,stop,target,jumlah,risiko,sinyal_teknikal,kandidat,catatan,cmf,support,resistance,watchlist
+BTC,Bitcoin,68.0,60,80,1475969000.0,51.3,-0.0163,0.0037,24197.1,1,0.0,1412271000.0,1603365000.0,0.00313981,199999.62,tren kuat (ADX > 25),ya,,-0.097,1435965000.0,1554200000.0,tidak
+NEAR,NEAR Protocol,68.0,70,65,88799.0,53.3,0.023,-0.0128,1166.3,9,0.3597,69004.0,128389.0,10.1035615,200000.0,tren kuat (ADX > 25); tanda distribusi (CMF < 0 dan OBV turun),ya,,-0.051,77502.0,106224.0,tidak
+TRX,TRON,59.0,85,20,5966.0,50.4,-0.0109,0.0018,337.3,6,-0.0312,5756.0,6386.0,952.38095238,200000.0,tren kuat (ADX > 25),ya,,0.031,5691.0,6100.0,tidak
+DOT,Polkadot,56.0,60,50,20766.0,51.2,-0.0205,0.0384,201.1,15,0.0092,17761.0,26776.0,66.55574043,200000.0,tren lemah/sideways (ADX < 25),ya,,-0.031,18340.0,22989.0,tidak
+ETH,Ethereum,48.0,30,75,43361000.0,38.8,-0.1032,0.0039,8202.8,2,-0.0974,40256000.0,49571000.0,0.06441223,199999.97,tren lemah/sideways (ADX < 25); tanda distribusi (CMF < 0 dan OBV turun),tidak,,-0.136,41800000.0,49359000.0,tidak
+LTC,Litecoin,47.0,45,50,1074000.0,43.6,-0.1394,0.0151,258.5,12,0.0161,966000.0,1290000.0,1.85185185,200000.0,tren lemah/sideways (ADX < 25); tanda distribusi (CMF < 0 dan OBV turun),ya,,-0.183,1020000.0,1302000.0,tidak
+BNB,BNB,45.0,45,45,13180498.0,47.4,-0.0414,0.0156,646.3,3,-0.0468,12430871.0,14679752.0,0.26679935,200000.0,tren kuat (ADX > 25),tidak,,0.074,12500000.0,14401465.0,tidak
+SOL,Solana,44.0,30,65,1892571.0,42.5,-0.114,0.0132,7184.3,5,-0.0662,1731237.0,2215239.0,1.23966429,200000.0,tren kuat (ADX > 25); tanda distribusi (CMF < 0 dan OBV turun),tidak,,-0.077,1803000.0,2200000.0,tidak
+ADA,Cardano,44.0,40,50,3931.0,40.4,-0.1178,-0.0061,2065.8,8,-0.0542,3415.0,4963.0,387.59689922,200000.0,tren lemah/sideways (ADX < 25); tanda distribusi (CMF < 0 dan OBV turun),tidak,,-0.074,3800.0,5028.0,tidak
+AVAX,Avalanche,43.0,55,25,173689.0,44.4,-0.0753,-0.0024,435.9,13,-0.0562,151516.0,218035.0,9.01997925,200000.0,tren kuat (ADX > 25); tanda distribusi (CMF < 0 dan OBV turun),tidak,,-0.05,166396.0,214635.0,tidak
+XRP,XRP,38.0,30,50,23461.0,37.0,-0.1291,0.0028,8919.1,4,-0.0884,21292.0,27799.0,92.20839096,200000.0,tren kuat (ADX > 25); tanda distribusi (CMF < 0 dan OBV turun),tidak,,-0.136,22542.0,28150.0,tidak
+LINK,Chainlink,32.0,30,35,217680.0,41.6,-0.2173,0.0078,460.1,7,-0.0412,190834.0,271372.0,7.44989942,200000.0,tren kuat (ADX > 25),tidak,,-0.029,207005.0,283857.0,tidak
+HBAR,Hedera,32.0,30,35,1494.0,41.2,-0.3175,-0.0267,665.3,14,0.001,1262.0,1958.0,862.06896551,200000.0,tren kuat (ADX > 25); tanda distribusi (CMF < 0 dan OBV turun),tidak,,-0.143,1443.0,2201.0,tidak
+XLM,Stellar,28.0,40,10,3193.0,37.2,-0.2347,-0.0016,817.3,10,-0.1127,2586.0,4407.0,329.48929159,200000.0,tren kuat (ADX > 25); Stochastic di zona jenuh beli (>80),tidak,,0.177,33.0,4245.0,tidak
+BCH,Bitcoin Cash,4.0,0,10,7700000.0,nan,0.0,0.0,0.0,11,-0.0379,7700000.0,7700000.0,0.0,0.0,dekat resistance 20 hari,tidak,harga Indodax +51.9% dari harga global: pasar tipis; volume harian < Rp 200 juta,,7700000.0,7700000.0,tidak
