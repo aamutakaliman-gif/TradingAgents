@@ -86,5 +86,8 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
   dari harga isi testnet, lalu menutupnya saat posisi paper ditutup. Field `testnet` di laporan menyebut statusnya;
   laporkan setiap baris "testnet ...", dan perlakukan "GAGAL" sebagai hal yang perlu diketahui pemilik. Kinerja tetap
   dinilai dari buku paper, karena harga testnet tidak sama dengan pasar asli.
+- Keputusan pemilik 21 Okt 2026: pembelian kripto dengan uang sungguhan nanti lewat Indodax saja, bukan lewat
+  fitur beli Trust Wallet (tanpa stop-loss, biaya lebih mahal, penyedianya tidak berizin OJK). Jangan sarankan Trust
+  Wallet untuk membeli. Waktunya tetap setelah evaluasi 2 minggu paper trading (sekitar 1 Nov 2026).
 - Uang sungguhan di Binance hanya setelah pemilik setuju, memakai API key yang dibuat pemilik dengan izin trading saja,
   tanpa izin penarikan, dan dikunci ke IP server.
