@@ -1,0 +1,92 @@
+{
+  "market": "idx",
+  "currency": "Rp",
+  "price_source": "Yahoo",
+  "testnet": "tidak dipakai",
+  "date": "2026-10-21",
+  "events": [
+    "PTBA: beli 5 lot di 3,050 (2026-10-21)"
+  ],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 170000.0,
+  "cash": 8472712.5,
+  "equity": 10027712.5,
+  "candidates": [
+    {
+      "code": "AUTO",
+      "name": "PT Astra Otoparts Tbk",
+      "score": 85.0,
+      "plan": {
+        "entry": 3330.0,
+        "stop": 3090,
+        "target": 3810,
+        "lots": 8,
+        "units": 800,
+        "position_value": 2664000.0,
+        "risk": 192000.0,
+        "stop_pct": 0.07207207207207207
+      }
+    },
+    {
+      "code": "PWON",
+      "name": "PT Pakuwon Jati Tbk",
+      "score": 83.0,
+      "plan": {
+        "entry": 278.0,
+        "stop": 252,
+        "target": 330,
+        "lots": 76,
+        "units": 7600,
+        "position_value": 2112800.0,
+        "risk": 197600.0,
+        "stop_pct": 0.09352517985611511
+      }
+    },
+    {
+      "code": "AADI",
+      "name": "PT Adaro Andalan Indonesia Tbk",
+      "score": 76.0,
+      "plan": {
+        "entry": 11100.0,
+        "stop": 9925,
+        "target": 13450,
+        "lots": 1,
+        "units": 100,
+        "position_value": 1110000.0,
+        "risk": 117500.0,
+        "stop_pct": 0.10585585585585586
+      }
+    },
+    {
+      "code": "ERAA",
+      "name": "PT Erajaya Swasembada Tbk",
+      "score": 70.0,
+      "plan": {
+        "entry": 570.0,
+        "stop": 498,
+        "target": 715,
+        "lots": 27,
+        "units": 2700,
+        "position_value": 1539000.0,
+        "risk": 194400.0,
+        "stop_pct": 0.12631578947368421
+      }
+    }
+  ],
+  "open": [
+    {
+      "code": "PTBA",
+      "lots": 5,
+      "units": 500,
+      "entry": 3050.0,
+      "stop": 2710,
+      "target": 3730,
+      "signal_date": "2026-10-20",
+      "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
+      "entry_date": "2026-10-21",
+      "cost": 1527287.5
+    }
+  ],
+  "pending": []
+}
