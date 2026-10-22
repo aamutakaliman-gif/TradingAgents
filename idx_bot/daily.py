@@ -10,7 +10,7 @@ then reviews the candidates, and ``python -m idx_bot.daily buy CODE --reason ...
 import argparse
 import csv
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import yfinance as yf
@@ -50,18 +50,19 @@ def _indodax_rules(codes: list[str]) -> dict:
         return {}
 
 
-def _close_trading_day(ledger: dict, codes: list[str]) -> list[str]:
-    """Sweep the rest of today on 15-minute bars before the daily settle; without
-    those bars the daily bars decide, as before intraday checks existed."""
-    today = datetime.now(intraday.WIB).strftime("%Y-%m-%d")
+def _close_trading_day(ledger: dict, codes: list[str], market: config.Market) -> list[str]:
+    """Sweep the rest of the day being settled on 15-minute bars before the daily
+    settle; without those bars the daily bars decide, as before intraday checks."""
+    day = intraday.last_settled_day(market, datetime.now(UTC))
     try:
-        bars = intraday.today_bars(codes, today)
-    except Exception as exc:  # a failed download must not stop the evening run
+        bars = (intraday.today_bars(codes, day) if market.name == "idx"
+                else intraday.crypto_bars(codes, day, _indodax_rules(codes)))
+    except Exception as exc:  # a failed download must not stop the daily run
         bars = {}
         note = [f"data 15 menit tidak tersedia ({exc}); stop dan target diperiksa dengan bar harian"]
     else:
         note = []
-    return note + [e["text"] for e in intraday.close_day(ledger, bars, today)]
+    return note + [e["text"] for e in intraday.close_day(ledger, bars, day, market)]
 
 
 def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict:
@@ -76,8 +77,8 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
         bars = (crypto.fetch_rupiah(held, period="3mo", rules=_indodax_rules(held)) if market.currency == "Rp"
                 else crypto.fetch(held, period="3mo"))[0]
     events = []
-    if market.name == "idx":
-        events += _close_trading_day(ledger, held)
+    if market.name == "idx" or market.currency == "Rp":  # Indodax book; the old USDT book has no checks
+        events += _close_trading_day(ledger, held, market)
     events += paper.settle(ledger, bars, market)
     testnet = "tidak dipakai"
     if market.name == "crypto" and not config.TESTNET_ENABLED:

@@ -67,6 +67,16 @@ sebelum dan sesudah 22 Okt.
    event, lima saham naik dan turun terbesar, jam data terakhir (`data_until`).
 7. PushNotification HANYA bila `notify` true (ada beli, jual, atau batal), satu baris di bawah 200 karakter.
 
+## Pengecekan kripto di antara laporan harian
+
+Mulai 22 Okt 2026 (keputusan pemilik): kripto dicek setiap 4 jam (sekitar 11:15, 15:15, 19:15, 23:15 dan 03:15 WIB),
+dengan aturan yang sama seperti pengecekan saham di atas, memakai candle 15 menit Indodax yang langsung (tidak
+tertunda). Hari kripto adalah hari UTC; run 07:15 WIB menyapu sisa hari UTC kemarin sebelum memeriksa bar harian.
+Langkahnya sama dengan pengecekan saham, dengan `python -m idx_bot.intraday check --market crypto`, berita singkat
+untuk koin yang dibeli, dataset `kripto_posisi` dari `idx_bot/crypto_paper/dashboard/posisi.csv`, commit
+`idx_bot/crypto_paper`, dan laporan dengan BTC (`btc.vs_last_daily_close`) sebagai pengganti IHSG. Notifikasi HP
+hanya bila `notify` true.
+
 ## Catatan
 
 - Indikator konfirmasi ADX, Bollinger %B, Stochastic, dan baca akumulasi (Chaikin Money Flow + OBV sebagai

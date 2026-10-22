@@ -64,6 +64,22 @@ def buy_cost(book: dict, rupiah: float) -> float | None:
     return None
 
 
+def klines_15m(code: str, start: int, end: int, symbols: list[str] | None = None) -> pd.DataFrame:
+    """15-minute candles of ``code``/IDR between two Unix times, indexed by UTC bar start.
+    The last one may still be forming: Indodax's chart data is live."""
+    rows = []
+    for sym in symbols or [f"{code}IDR"]:
+        rows = _get("/tradingview/history_v2", symbol=sym, tf="15", **{"from": start, "to": end})
+        if rows:
+            break
+    if not rows:
+        return pd.DataFrame(columns=["Open", "High", "Low", "Close"])
+    df = pd.DataFrame([{"Date": pd.to_datetime(r["Time"], unit="s", utc=True), "Open": float(r["Open"]),
+                        "High": float(r["High"]), "Low": float(r["Low"]), "Close": float(r["Close"])}
+                       for r in rows])
+    return df.set_index("Date").sort_index()
+
+
 def klines(code: str, days: int = 400, symbols: list[str] | None = None) -> pd.DataFrame:
     """Daily candles of ``code``/IDR, indexed by UTC day. ``Volume`` is the day's
     turnover in rupiah (coins traded times the close). ``symbols`` are the chart

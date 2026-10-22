@@ -682,3 +682,36 @@ def test_close_day_cancels_orders_the_checks_could_not_fill():
         {"code": "B", "signal_date": "2026-10-22"}]}
     ev = intraday.close_day(ledger, {}, "2026-10-22")
     assert [o["code"] for o in ledger["pending"]] == ["B"] and ev[0]["kind"] == "batal"
+
+
+@pytest.mark.unit
+def test_sweep_does_not_mark_a_bar_still_forming():
+    from datetime import datetime as dt
+
+    from idx_bot import intraday
+    ledger = _intraday_ledger()
+    bars = _bars15("2026-10-22", [(3100, 3150, 3050, 3120), (3120, 3160, 3100, 3140)])
+    now = dt.fromisoformat("2026-10-22T09:20:00+07:00")  # the 09:15 bar has five minutes to go
+    intraday.sweep(ledger, {"PTBA": bars}, now=now)
+    assert ledger["open"][0]["seen_until"].startswith("2026-10-22T09:00")
+
+
+@pytest.mark.unit
+def test_crypto_days_are_utc_and_bars_use_chart_codes(monkeypatch):
+    from datetime import UTC, datetime as dt
+
+    from idx_bot import indodax_feed, intraday
+    now = dt(2026, 10, 22, 0, 30, tzinfo=UTC)  # 07:30 WIB
+    assert intraday.market_day(config.INDODAX, now) == "2026-10-22"
+    assert intraday.market_day(config.IDX, now) == "2026-10-22"
+    assert intraday.last_settled_day(config.INDODAX, now) == "2026-10-21"
+    calls = []
+
+    def fake(code, start, end, symbols=None):
+        calls.append((code, start, end, symbols))
+        idx = pd.date_range("2026-10-21 23:45", periods=3, freq="15min", tz="UTC")
+        return pd.DataFrame({"Open": 1.0, "High": 1.0, "Low": 1.0, "Close": 1.0}, index=idx)
+    monkeypatch.setattr(indodax_feed, "klines_15m", fake)
+    out = intraday.crypto_bars(["XLM"], "2026-10-22", {"XLM": {"chart_symbols": ["XLMIDR", "STRIDR"]}})
+    assert calls[0][3] == ["XLMIDR", "STRIDR"] and calls[0][2] - calls[0][1] == 86_399
+    assert len(out["XLM"]) == 2  # the 23:45 bar of the 21st is left out
