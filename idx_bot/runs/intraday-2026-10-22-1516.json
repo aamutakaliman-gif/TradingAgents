@@ -1,0 +1,71 @@
+{
+  "market": "idx",
+  "date": "2026-10-22",
+  "time_wib": "15:16",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "15:00",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "MAPI",
+      0.1235
+    ],
+    [
+      "BREN",
+      0.0926
+    ],
+    [
+      "ADMR",
+      0.0528
+    ],
+    [
+      "MBMA",
+      0.0462
+    ],
+    [
+      "INCO",
+      0.0458
+    ]
+  ],
+  "top_losers": [
+    [
+      "TBIG",
+      -0.034
+    ],
+    [
+      "BNGA",
+      -0.0232
+    ],
+    [
+      "BRMS",
+      -0.0225
+    ],
+    [
+      "BBCA",
+      -0.019
+    ],
+    [
+      "ASII",
+      -0.0175
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3190.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 63725
+    }
+  ],
+  "pending": [],
+  "cash": 8472712.5,
+  "equity": 10067712.5,
+  "ihsg": {
+    "last": 5397.87,
+    "prev_close": 5328.36
+  }
+}

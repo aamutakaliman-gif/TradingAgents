@@ -12,7 +12,8 @@
       "signal_date": "2026-10-20",
       "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
       "entry_date": "2026-10-21",
-      "cost": 1527287.5
+      "cost": 1527287.5,
+      "seen_until": "2026-10-22T15:00:00+07:00"
     }
   ],
   "closed": []
