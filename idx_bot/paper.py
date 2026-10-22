@@ -98,6 +98,10 @@ def settle(ledger: dict, bars: dict[str, pd.DataFrame], market: config.Market = 
         if df is not None:
             for ts, bar in df[df.index.strftime("%Y-%m-%d") >= pos["entry_date"]].iterrows():
                 day = ts.strftime("%Y-%m-%d")
+                # Days checked bar by bar during trading hours are already settled; so is an
+                # intraday fill's own day, whose low may come from before the fill.
+                if day <= pos.get("swept_day", "") or (day == pos["entry_date"] and "entry_time" in pos):
+                    continue
                 if bar["Low"] <= pos["stop"]:
                     price = min(float(bar["Open"]), pos["stop"]) if day > pos["entry_date"] else pos["stop"]
                     _close(ledger, pos, price, day, "stop-loss", market)

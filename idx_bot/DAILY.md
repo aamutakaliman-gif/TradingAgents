@@ -1,7 +1,7 @@
 # Runbook harian paper trading (saham IDX dan kripto)
 
 Dijalankan Claude oleh dua jadwal: **saham** setiap hari bursa 16:48 WIB (`--market idx`) dan **kripto** setiap hari
-07:15 WIB (`--market crypto`). Pemilik akun membaca hasilnya di chat, notifikasi HP, dan dashboard
+07:15 WIB (`--market crypto`). Saham juga dicek tiga kali selama jam bursa (lihat "Pengecekan jam bursa"). Pemilik akun membaca hasilnya di chat, notifikasi HP, dan dashboard
 https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto"). Semua pesan dalam Bahasa Indonesia.
 
 ## Aturan yang disetujui pemilik
@@ -44,6 +44,28 @@ https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto")
    tidak membuka aplikasi. Mulai dengan yang paling penting, misalnya "LQ45 19 Okt: BELI ICBP 4 lot, ekuitas Rp 10,0 jt"
    atau "Kripto 19 Okt: BELI BTC 0,0026, LEWATI NEAR; ekuitas Rp 10,0 jt". Bila harus berhenti (risiko besar,
    data aneh, tes gagal), kirim notifikasinya segera dengan kata "PERLU KEPUTUSAN".
+
+## Pengecekan jam bursa (saham)
+
+Mulai 22 Okt 2026 (keputusan pemilik): tiga jadwal tambahan setiap hari bursa, sekitar 09:45, 14:05 dan 15:15 WIB.
+Order BELI yang disetujui sore hari tidak lagi selalu terisi di harga pembukaan: pengecekan pertama yang melihat
+harganya mengisinya di harga saat itu (bar 15 menit terakhir dari Yahoo, tertunda sekitar 10 menit), selama harga
+tidak lebih dari 3% di atas rencana. Stop dipasang dengan jarak yang sama di bawah harga isi, dan ukuran dihitung
+ulang dengan aturan 2%/6%. Stop dan target posisi juga diperiksa per bar 15 menit. Run sore menyapu sisa hari
+sebelum memeriksa bar harian dan membatalkan order yang tidak terisi seharian. Saat evaluasi 1 Nov, pisahkan hasil
+sebelum dan sesudah 22 Okt.
+
+1. `git pull origin ccr-1c2d0097-crqzw5`, lalu `python -m pytest tests/test_idx_bot.py -q`. Kalau gagal, berhenti
+   dan laporkan.
+2. `python -m idx_bot.intraday check`. Kalau `market_open` false (libur atau belum buka), kirim satu baris saja.
+3. Untuk setiap event `beli`: cek berita singkat hari itu (WebSearch) tentang emiten itu. Kalau ada kabar buruk
+   besar yang belum tercermin di harga, jangan putuskan sendiri: laporkan dengan kata "PERLU KEPUTUSAN".
+4. Unggah `idx_bot/paper/dashboard/posisi.csv` (Artifact `asset: true`) dan `update` dataset `posisi`
+   (baca versinya dulu).
+5. Commit `idx_bot/paper` dan `idx_bot/runs`, push ke `ccr-1c2d0097-crqzw5`.
+6. Laporan singkat di chat: IHSG dibanding penutupan kemarin (`ihsg.prev_close`), posisi dan laba/ruginya,
+   event, lima saham naik dan turun terbesar, jam data terakhir (`data_until`).
+7. PushNotification HANYA bila `notify` true (ada beli, jual, atau batal), satu baris di bawah 200 karakter.
 
 ## Catatan
 

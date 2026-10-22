@@ -10,11 +10,12 @@ then reviews the candidates, and ``python -m idx_bot.daily buy CODE --reason ...
 import argparse
 import csv
 import json
+from datetime import datetime
 from pathlib import Path
 
 import yfinance as yf
 
-from idx_bot import binance_testnet, config, crypto, indodax_feed, paper
+from idx_bot import binance_testnet, config, crypto, indodax_feed, intraday, paper
 from idx_bot.risk import plan_trade
 from idx_bot.screener import screen
 
@@ -49,6 +50,20 @@ def _indodax_rules(codes: list[str]) -> dict:
         return {}
 
 
+def _close_trading_day(ledger: dict, codes: list[str]) -> list[str]:
+    """Sweep the rest of today on 15-minute bars before the daily settle; without
+    those bars the daily bars decide, as before intraday checks existed."""
+    today = datetime.now(intraday.WIB).strftime("%Y-%m-%d")
+    try:
+        bars = intraday.today_bars(codes, today)
+    except Exception as exc:  # a failed download must not stop the evening run
+        bars = {}
+        note = [f"data 15 menit tidak tersedia ({exc}); stop dan target diperiksa dengan bar harian"]
+    else:
+        note = []
+    return note + [e["text"] for e in intraday.close_day(ledger, bars, today)]
+
+
 def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict:
     runs, dashboard, ledger_path = _paths(market)
     out_dir = out_dir or dashboard
@@ -60,7 +75,10 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
     else:
         bars = (crypto.fetch_rupiah(held, period="3mo", rules=_indodax_rules(held)) if market.currency == "Rp"
                 else crypto.fetch(held, period="3mo"))[0]
-    events = paper.settle(ledger, bars, market)
+    events = []
+    if market.name == "idx":
+        events += _close_trading_day(ledger, held)
+    events += paper.settle(ledger, bars, market)
     testnet = "tidak dipakai"
     if market.name == "crypto" and not config.TESTNET_ENABLED:
         testnet = "ditunda (testnet tidak bisa diakses dari server cloud)"
@@ -106,6 +124,7 @@ def run(market: config.Market = config.IDX, out_dir: Path | None = None) -> dict
         "candidates": candidates,
         "open": ledger["open"], "pending": ledger["pending"],
     }
+    ledger["settled_through"] = date  # intraday checks start after this day
     paper.save(ledger, ledger_path)
     (runs / f"daily-{date}.json").write_text(json.dumps(report, indent=2, ensure_ascii=False, default=float))
     _write_dashboard_csvs(out_dir, result, ledger, report, last_close, market)

@@ -596,3 +596,89 @@ def test_shipped_watchlist_file_is_valid():
     import json
     data = json.loads(config.WATCHLIST_FILE.read_text())
     assert set(data) == {"idx", "crypto"} and all(isinstance(v, list) for v in data.values())
+
+
+def _bars15(day, rows):
+    """15-minute WIB bars from 09:00: rows of (open, high, low, close)."""
+    idx = pd.date_range(f"{day} 09:00", periods=len(rows), freq="15min", tz="Asia/Jakarta")
+    return pd.DataFrame(rows, index=idx, columns=["Open", "High", "Low", "Close"]).assign(Volume=1e5)
+
+
+def _intraday_ledger():
+    return {"cash": 10_000_000.0, "pending": [], "closed": [], "settled_through": "2026-10-21",
+            "open": [{"code": "PTBA", "lots": 5, "units": 500, "entry": 3050.0, "stop": 2710, "target": 3730,
+                      "signal_date": "2026-10-20", "entry_date": "2026-10-21", "cost": 1_528_000.0,
+                      "reason": "uji"}]}
+
+
+@pytest.mark.unit
+def test_intraday_sweep_hits_stop_in_time_order_and_remembers_bars():
+    from idx_bot import intraday
+    ledger = _intraday_ledger()
+    calm = _bars15("2026-10-22", [(3100, 3150, 3050, 3120), (3120, 3160, 3100, 3140)])
+    assert intraday.sweep(ledger, {"PTBA": calm}) == []
+    assert ledger["open"][0]["seen_until"].startswith("2026-10-22T09:15")
+    # The same bars again change nothing; a later bar through the stop closes at the stop.
+    later = _bars15("2026-10-22", [(3100, 3150, 3050, 3120), (3120, 3160, 3100, 3140), (2900, 2950, 2700, 2720)])
+    ev = intraday.sweep(ledger, {"PTBA": later})
+    assert ledger["open"] == [] and ledger["closed"][0]["exit_price"] == 2710
+    assert ev[0]["kind"] == "jual" and "stop-loss" in ev[0]["text"] and "09:30" in ev[0]["text"]
+
+
+@pytest.mark.unit
+def test_intraday_sweep_gap_below_stop_fills_at_open_and_target_works():
+    from idx_bot import intraday
+    gap = _intraday_ledger()
+    intraday.sweep(gap, {"PTBA": _bars15("2026-10-22", [(2600, 2650, 2550, 2600)])})
+    assert gap["closed"][0]["exit_price"] == 2600
+    win = _intraday_ledger()
+    intraday.sweep(win, {"PTBA": _bars15("2026-10-22", [(3600, 3750, 3590, 3700)])})
+    assert win["closed"][0]["exit_reason"] == "target" and win["closed"][0]["exit_price"] == 3730
+
+
+@pytest.mark.unit
+def test_intraday_fill_resizes_at_price_and_waits_when_price_ran():
+    from idx_bot import intraday
+    order = {"code": "ADRO", "lots": 10, "units": 1000, "entry": 2000.0, "stop": 1800, "target": 2400,
+             "signal_date": "2026-10-21", "reason": "uji"}
+    ledger = {"cash": 10_000_000.0, "pending": [dict(order)], "open": [], "closed": []}
+    ev = intraday.fill_orders(ledger, {"ADRO": _bars15("2026-10-22", [(2000, 2030, 1990, 2020)])}, "2026-10-22")
+    pos = ledger["open"][0]
+    assert ev[0]["kind"] == "beli" and pos["entry"] == 2020 and pos["entry"] - pos["stop"] == 200
+    assert (pos["entry"] - pos["stop"]) * pos["units"] <= 200_000 and pos["planned_entry"] == 2000
+    assert pos["entry_time"] == pos["seen_until"] and ledger["pending"] == []
+    ran = {"cash": 10_000_000.0, "pending": [dict(order)], "open": [], "closed": []}
+    ev = intraday.fill_orders(ran, {"ADRO": _bars15("2026-10-22", [(2100, 2120, 2090, 2110)])}, "2026-10-22")
+    assert ev[0]["kind"] == "tunggu" and ran["open"] == [] and ran["pending"][0]["intraday_checked"]
+    # Orders queued this evening wait for tomorrow; one below its stop is cancelled.
+    today = {"cash": 1e7, "pending": [{**order, "signal_date": "2026-10-22"}], "open": [], "closed": []}
+    assert intraday.fill_orders(today, {"ADRO": _bars15("2026-10-22", [(2000,) * 4])}, "2026-10-22") == []
+    low = {"cash": 1e7, "pending": [dict(order)], "open": [], "closed": []}
+    ev = intraday.fill_orders(low, {"ADRO": _bars15("2026-10-22", [(1790, 1800, 1780, 1790)])}, "2026-10-22")
+    assert ev[0]["kind"] == "batal" and low["pending"] == [] and low["open"] == []
+
+
+@pytest.mark.unit
+def test_daily_settle_skips_a_morning_low_before_an_intraday_fill():
+    from idx_bot import intraday, paper
+    order = {"code": "ADRO", "lots": 10, "units": 1000, "entry": 2000.0, "stop": 1800, "target": 2400,
+             "signal_date": "2026-10-21", "reason": "uji"}
+    ledger = {"cash": 1e7, "pending": [order], "open": [], "closed": []}
+    # Filled at 13:45 after a morning dip to 1,750 that came before the fill.
+    bars = _bars15("2026-10-22", [(1900, 1910, 1750, 1800)] + [(2000, 2030, 1990, 2020)] * 20)
+    intraday.fill_orders(ledger, {"ADRO": bars.iloc[:19]}, "2026-10-22")
+    intraday.close_day(ledger, {"ADRO": bars}, "2026-10-22")
+    day = pd.DataFrame({"Open": [1900.0], "High": [2030.0], "Low": [1750.0], "Close": [2020.0]},
+                       index=pd.to_datetime(["2026-10-22"]))
+    assert paper.settle(ledger, {"ADRO": day}) == [] and len(ledger["open"]) == 1
+    assert ledger["open"][0]["swept_day"] == "2026-10-22"
+
+
+@pytest.mark.unit
+def test_close_day_cancels_orders_the_checks_could_not_fill():
+    from idx_bot import intraday
+    ledger = {"cash": 1e7, "open": [], "closed": [], "pending": [
+        {"code": "A", "signal_date": "2026-10-21", "intraday_checked": True},
+        {"code": "B", "signal_date": "2026-10-22"}]}
+    ev = intraday.close_day(ledger, {}, "2026-10-22")
+    assert [o["code"] for o in ledger["pending"]] == ["B"] and ev[0]["kind"] == "batal"
