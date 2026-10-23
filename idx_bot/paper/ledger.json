@@ -1,17 +1,6 @@
 {
-  "cash": 8472712.5,
-  "pending": [
-    {
-      "code": "MEDC",
-      "lots": 12,
-      "units": 1200,
-      "entry": 1450.0,
-      "stop": 1285,
-      "target": 1780,
-      "signal_date": "2026-10-22",
-      "reason": "Golden cross baru, fundamental 78, likuid Rp 68 mlr/hari; S&P naik ke BB-, buyback obligasi, untung dari rupiah lemah. Bear: tren sideways (ADX<25), baru 0,6% di atas SMA50/200, sektor energi seperti PTBA."
-    }
-  ],
+  "cash": 6706066.5,
+  "pending": [],
   "open": [
     {
       "code": "PTBA",
@@ -24,8 +13,24 @@
       "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
       "entry_date": "2026-10-21",
       "cost": 1527287.5,
-      "seen_until": "2026-10-22T16:00:00+07:00",
+      "seen_until": "2026-10-23T09:30:00+07:00",
       "swept_day": "2026-10-22"
+    },
+    {
+      "code": "MEDC",
+      "lots": 12,
+      "units": 1200,
+      "entry": 1470.0,
+      "stop": 1305,
+      "target": 1800,
+      "signal_date": "2026-10-22",
+      "reason": "Golden cross baru, fundamental 78, likuid Rp 68 mlr/hari; S&P naik ke BB-, buyback obligasi, untung dari rupiah lemah. Bear: tren sideways (ADX<25), baru 0,6% di atas SMA50/200, sektor energi seperti PTBA.",
+      "intraday_checked": true,
+      "planned_entry": 1450.0,
+      "entry_date": "2026-10-23",
+      "entry_time": "2026-10-23T09:30:00+07:00",
+      "seen_until": "2026-10-23T09:30:00+07:00",
+      "cost": 1766646.0
     }
   ],
   "closed": [],
