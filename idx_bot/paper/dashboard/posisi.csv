@@ -1,3 +1,3 @@
 kode,status,lot,harga_masuk,stop,target,harga_terakhir,laba_rugi_rp,tanggal,alasan
-PTBA,terbuka,5,3050.0,2710,3730,3340.0,138538.0,2026-10-21,"Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop."
-MEDC,terbuka,12,1470.0,1305,1800,1495.0,22869.0,2026-10-23,"Golden cross baru, fundamental 78, likuid Rp 68 mlr/hari; S&P naik ke BB-, buyback obligasi, untung dari rupiah lemah. Bear: tren sideways (ADX<25), baru 0,6% di atas SMA50/200, sektor energi seperti PTBA."
+PTBA,terbuka,5,3050.0,2710,3730,3290.0,113600.0,2026-10-21,"Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop."
+MEDC,terbuka,12,1470.0,1305,1800,1485.0,10899.0,2026-10-23,"Golden cross baru, fundamental 78, likuid Rp 68 mlr/hari; S&P naik ke BB-, buyback obligasi, untung dari rupiah lemah. Bear: tren sideways (ADX<25), baru 0,6% di atas SMA50/200, sektor energi seperti PTBA."
