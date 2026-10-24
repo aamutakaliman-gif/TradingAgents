@@ -1,0 +1,84 @@
+{
+  "market": "idx",
+  "date": "2026-10-23",
+  "time_wib": "09:46",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "09:30",
+  "events": [
+    {
+      "kind": "beli",
+      "text": "MEDC: beli 12 lot di 1,470 (09:30 WIB), stop 1,305, target 1,800"
+    }
+  ],
+  "notify": true,
+  "top_gainers": [
+    [
+      "JSMR",
+      0.0526
+    ],
+    [
+      "RAJA",
+      0.046
+    ],
+    [
+      "AKRA",
+      0.0303
+    ],
+    [
+      "ADMR",
+      0.0277
+    ],
+    [
+      "ASII",
+      0.0247
+    ]
+  ],
+  "top_losers": [
+    [
+      "GOTO",
+      -0.04
+    ],
+    [
+      "TPIA",
+      -0.0187
+    ],
+    [
+      "BREN",
+      -0.0129
+    ],
+    [
+      "BRPT",
+      -0.0104
+    ],
+    [
+      "PGEO",
+      -0.01
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3250.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 93650
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1470.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -7056
+    }
+  ],
+  "pending": [],
+  "cash": 6706066.5,
+  "equity": 10095066.5,
+  "ihsg": {
+    "last": 5403.56,
+    "prev_close": 5387.9
+  }
+}

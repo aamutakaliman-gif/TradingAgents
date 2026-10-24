@@ -1,0 +1,16 @@
+{
+  "market": "idx",
+  "currency": "Rp",
+  "price_source": "Yahoo",
+  "testnet": "tidak dipakai",
+  "date": "2026-10-19",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 0,
+  "cash": 10000000,
+  "equity": 10000000,
+  "candidates": [],
+  "open": [],
+  "pending": []
+}

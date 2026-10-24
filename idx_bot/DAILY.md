@@ -1,0 +1,125 @@
+# Runbook harian paper trading (saham IDX dan kripto)
+
+Dijalankan Claude oleh dua jadwal: **saham** setiap hari bursa 16:48 WIB (`--market idx`) dan **kripto** setiap hari
+07:15 WIB (`--market crypto`). Saham juga dicek tiga kali selama jam bursa (lihat "Pengecekan jam bursa"). Pemilik akun membaca hasilnya di chat, notifikasi HP, dan dashboard
+https://claude.ai/artifact/NSiEW7U2ivbXtpCfpcHnyn (tab "Saham IDX" dan "Kripto"). Semua pesan dalam Bahasa Indonesia.
+
+## Aturan yang disetujui pemilik
+
+- Paper trading saja. Tidak ada order sungguhan, di Mirae maupun Binance.
+- Saham: alam semesta IDX yang lebih luas (`config.IDX_UNIVERSE` = LQ45 + saham likuid lain, ~83 nama;
+  yang datanya kurang 200 hari atau nilai transaksi < Rp 10 miliar/hari tersaring sendiri), modal virtual
+  Rp 10 juta. Kripto: 15 koin terbesar tanpa stablecoin/meme coin, buku RUPIAH
+  Rp 10 juta yang meniru Indodax (berizin OJK), spot saja tanpa leverage. Dua akun terpisah. Binance tidak berizin
+  OJK, jadi hanya dipakai sebagai sumber data harga; jangan pernah menyarankan VPN atau akses ke Binance.
+- Buku kripto lama dalam USDT diarsipkan di `crypto_paper/archive-usdt/` (19 Okt 2026).
+- Elder: risiko maks. 2% per trade, rem 6% per bulan (rugi bulan ini + risiko terbuka), dihitung per akun.
+- Risiko besar atau kesalahan: hentikan langkah berikutnya dan beri tahu pemilik dulu.
+- Jangan pernah meminta seed phrase Trust Wallet atau kunci API apa pun di chat.
+
+## Langkah (ganti `<m>` dengan `idx` atau `crypto`)
+
+1. `git pull origin ccr-1c2d0097-crqzw5`, lalu `pip install -q -e . pytest` bila paket belum terpasang.
+2. `python -m pytest tests/test_idx_bot.py -q`. Kalau gagal, berhenti dan laporkan.
+3. `python -m idx_bot.daily run --market <m>`. Saham: kalau `date` sama dengan laporan sebelumnya, bursa libur;
+   kirim satu baris saja.
+4. Untuk setiap kandidat (maks. 5), jalankan tim analis secara singkat:
+   - Teknikal: baris kandidat di `runs/screener-<date>.json` (kripto: `crypto_paper/runs/`).
+   - Saham, fundamental: angka di baris yang sama. Kripto, skor pasar: peringkat market cap, kekuatan vs BTC, volume.
+   - Berita: WebSearch hari itu. Saham: aksi korporasi, suspensi, UMA, isu MSCI. Kripto: peretasan, delisting,
+     regulasi, ETF, jadwal unlock token, kondisi BTC.
+   - Bull vs bear: satu alasan terkuat masing-masing.
+   - Risiko: rencana stop/target/jumlah di laporan; tolak bila ada kabar buruk yang belum tercermin di harga.
+   - Keputusan BELI atau LEWATI. BELI: `python -m idx_bot.daily buy KODE --market <m> --reason "<alasan singkat>"`.
+5. Unggah CSV dashboard (Artifact `asset: true`), lalu dengan ArtifactData `update` dataset-nya: `source.url`,
+   `source.name` dan `updated` (baca versi dokumen dulu).
+   - Saham, dari `idx_bot/paper/dashboard/`: `screener.csv` → `screener`, `posisi.csv` → `posisi`,
+     `ekuitas.csv` → `ekuitas`, `ihsg-6bulan.csv` → `ihsg`, `harga-3bulan.csv` → `harga`.
+   - Kripto, dari `idx_bot/crypto_paper/dashboard/`: `screener.csv` → `kripto_screener`, `posisi.csv` → `kripto_posisi`,
+     `ekuitas.csv` → `kripto_ekuitas`, `btc-6bulan.csv` → `btc`, `harga-3bulan.csv` → `kripto_harga`.
+6. Commit `idx_bot/paper`, `idx_bot/runs` dan `idx_bot/crypto_paper`, push ke `ccr-1c2d0097-crqzw5`.
+7. Laporan di chat: kondisi IHSG atau BTC, kejadian (beli/jual/stop), keputusan tiap kandidat dan alasannya,
+   ekuitas dan status rem 6%, link dashboard. Singkat.
+8. Kirim notifikasi HP (PushNotification, satu baris di bawah 200 karakter) di akhir setiap run, karena pemilik
+   tidak membuka aplikasi. Mulai dengan yang paling penting, misalnya "LQ45 19 Okt: BELI ICBP 4 lot, ekuitas Rp 10,0 jt"
+   atau "Kripto 19 Okt: BELI BTC 0,0026, LEWATI NEAR; ekuitas Rp 10,0 jt". Bila harus berhenti (risiko besar,
+   data aneh, tes gagal), kirim notifikasinya segera dengan kata "PERLU KEPUTUSAN".
+
+## Pengecekan jam bursa (saham)
+
+Mulai 22 Okt 2026 (keputusan pemilik): tiga jadwal tambahan setiap hari bursa, sekitar 09:45, 14:05 dan 15:15 WIB.
+Order BELI yang disetujui sore hari tidak lagi selalu terisi di harga pembukaan: pengecekan pertama yang melihat
+harganya mengisinya di harga saat itu (bar 15 menit terakhir dari Yahoo, tertunda sekitar 10 menit), selama harga
+tidak lebih dari 3% di atas rencana. Stop dipasang dengan jarak yang sama di bawah harga isi, dan ukuran dihitung
+ulang dengan aturan 2%/6%. Stop dan target posisi juga diperiksa per bar 15 menit. Run sore menyapu sisa hari
+sebelum memeriksa bar harian dan membatalkan order yang tidak terisi seharian. Saat evaluasi 1 Nov, pisahkan hasil
+sebelum dan sesudah 22 Okt.
+
+1. `git pull origin ccr-1c2d0097-crqzw5`, lalu `python -m pytest tests/test_idx_bot.py -q`. Kalau gagal, berhenti
+   dan laporkan.
+2. `python -m idx_bot.intraday check`. Kalau `market_open` false (libur atau belum buka), kirim satu baris saja.
+3. Untuk setiap event `beli`: cek berita singkat hari itu (WebSearch) tentang emiten itu. Kalau ada kabar buruk
+   besar yang belum tercermin di harga, jangan putuskan sendiri: laporkan dengan kata "PERLU KEPUTUSAN".
+4. Unggah `idx_bot/paper/dashboard/posisi.csv` (Artifact `asset: true`) dan `update` dataset `posisi`
+   (baca versinya dulu).
+5. Commit `idx_bot/paper` dan `idx_bot/runs`, push ke `ccr-1c2d0097-crqzw5`.
+6. Laporan singkat di chat: IHSG dibanding penutupan kemarin (`ihsg.prev_close`), posisi dan laba/ruginya,
+   event, lima saham naik dan turun terbesar, jam data terakhir (`data_until`).
+7. PushNotification HANYA bila `notify` true (ada beli, jual, atau batal), satu baris di bawah 200 karakter.
+
+## Pengecekan kripto di antara laporan harian
+
+Mulai 22 Okt 2026 (keputusan pemilik): kripto dicek setiap 4 jam (sekitar 11:15, 15:15, 19:15, 23:15 dan 03:15 WIB),
+dengan aturan yang sama seperti pengecekan saham di atas, memakai candle 15 menit Indodax yang langsung (tidak
+tertunda). Hari kripto adalah hari UTC; run 07:15 WIB menyapu sisa hari UTC kemarin sebelum memeriksa bar harian.
+Langkahnya sama dengan pengecekan saham, dengan `python -m idx_bot.intraday check --market crypto`, berita singkat
+untuk koin yang dibeli, dataset `kripto_posisi` dari `idx_bot/crypto_paper/dashboard/posisi.csv`, commit
+`idx_bot/crypto_paper`, dan laporan dengan BTC (`btc.vs_last_daily_close`) sebagai pengganti IHSG. Notifikasi HP
+hanya bila `notify` true.
+
+## Catatan
+
+- Indikator konfirmasi ADX, Bollinger %B, Stochastic, dan baca akumulasi (Chaikin Money Flow + OBV sebagai
+  pengganti bandarmologi berbayar) tampil sebagai `signals` tiap baris screener dan kolom `sinyal_teknikal`
+  di CSV; dibaca tim analis tetapi BELUM masuk skor 0-100 selama masa uji berjalan, supaya hasil uji tetap
+  bisa dibandingkan. Setelah uji, tanyakan pemilik apakah dimasukkan ke skor.
+- Pola grafik (breakout/breakdown 20 hari, golden/death cross baru, dekat support/resistance) juga hanya catatan
+  di `signals`, belum masuk skor. CSV screener membawa `cmf`, `support`, `resistance` dan `watchlist`;
+  `harga-3bulan.csv` berisi 63 hari OHLC per kode untuk grafik di panel detail dashboard.
+- Watchlist pemilik ada di `idx_bot/watchlist.json` (`idx`, `crypto`). Ubah hanya atas permintaan pemilik di chat,
+  lalu commit. Saham di watchlist selalu ikut di-screen; kripto di watchlist hanya ditandai bila masuk daftar koin.
+  Sebutkan di laporan bila nama di watchlist jadi kandidat atau kena tanda distribusi/breakdown.
+- - Susunan LQ45 berganti awal November 2026: cek pengumuman BEI dan perbarui `config.LQ45`,
+  dengan memberi tahu pemilik apa yang berubah.
+- Masa uji 2–4 minggu sejak 19 Oktober 2026. Setelah 2 minggu, kirim evaluasi kinerja kedua pasar dan tanyakan
+  apakah lanjut.
+- Data kripto diambil dari Binance lewat library python-binance (fork pemilik, aamutakaliman-gif/python-binance),
+  termasuk aturan pasangan koin (kelipatan jumlah, kelipatan harga, minimum order 5 USDT). Bila Binance tidak bisa
+  dijangkau, otomatis memakai Yahoo; `price_source` di laporan harian menyebut sumbernya. Sebutkan di laporan bila
+  sumbernya Yahoo. Data publik memakai data-api.binance.vision, karena api.binance.com menolak (451) wilayah server ini.
+- Harga kripto dari Indodax (candle harian rupiah, aturan order dan fee resmi dari daftar pasangan Indodax);
+  biaya taker beli 0,222% dan jual 0,432% (fee 0,2% + PPN 11% atas fee, + PPh final 0,21% saat jual).
+  Bila Indodax tidak bisa dijangkau, otomatis memakai harga Binance x kurs USD/IDR; `price_source` menyebutnya.
+- Koin yang harganya di Indodax menyimpang lebih dari 3% dari harga global (Binance x kurs) ditandai "pasar tipis"
+  dan tidak boleh dibeli (BCH +55% pada 18 Okt 2026). Laporkan bila koin besar kena tanda ini.
+- Sebelum dibeli, order kripto dicocokkan dengan order book Indodax (/api/depth); bila harga rata-rata isinya
+  lebih dari 1% di atas harga tengah (`config.MAX_BOOK_COST`), koin itu dilewati sebagai pasar tipis.
+- Tahap uang sungguhan di Indodax (BELUM AKTIF, butuh persetujuan pemilik), dari dokumentasi resmi
+  aamutakaliman-gif/indodax-official-api-docs: kunci TAPI v2 dibuat pemilik di indodax.com/trade_api dengan izin
+  Reading + Spot Trading saja, TANPA IDR & Crypto Withdrawal; disimpan sebagai environment variable, tidak lewat chat.
+  TAPI v2 hanya punya order LIMIT dan MARKET (tanpa stop atau OCO): stop-loss harus dijaga bot sendiri atau lewat
+  order stoplimit TAPI lama, dan satu koin tidak bisa dipasangi stop dan target sekaligus karena saldo terkunci per
+  order. Deadman switch (/tapi countdownCancelAll) dipakai bila bot memasang order limit yang menunggu.
+- Binance Spot Testnet sedang DITUNDA atas pilihan pemilik (`config.TESTNET_ENABLED = False`), karena
+  testnet.binance.vision menolak (451) wilayah server cloud ini. Jangan aktifkan tanpa persetujuan pemilik; tahap ini
+  dijalankan nanti dari komputer/VPS di wilayah yang dilayani Binance, sebelum uang sungguhan.
+- Binance Spot Testnet (uang mainan), bila diaktifkan: bila BINANCE_TESTNET_API_KEY dan BINANCE_TESTNET_API_SECRET ada di environment,
+  run kripto membeli posisi paper yang baru terisi di testnet dan memasang OCO (target dan stop) dengan jarak yang sama
+  dari harga isi testnet, lalu menutupnya saat posisi paper ditutup. Field `testnet` di laporan menyebut statusnya;
+  laporkan setiap baris "testnet ...", dan perlakukan "GAGAL" sebagai hal yang perlu diketahui pemilik. Kinerja tetap
+  dinilai dari buku paper, karena harga testnet tidak sama dengan pasar asli.
+- Keputusan pemilik 21 Okt 2026: pembelian kripto dengan uang sungguhan nanti lewat Indodax saja, bukan lewat
+  fitur beli Trust Wallet (tanpa stop-loss, biaya lebih mahal, penyedianya tidak berizin OJK). Jangan sarankan Trust
+  Wallet untuk membeli. Waktunya tetap setelah evaluasi 2 minggu paper trading (sekitar 1 Nov 2026).
+- Uang sungguhan di Binance hanya setelah pemilik setuju, memakai API key yang dibuat pemilik dengan izin trading saja,
+  tanpa izin penarikan, dan dikunci ke IP server.

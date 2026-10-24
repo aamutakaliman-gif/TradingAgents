@@ -1,0 +1,79 @@
+{
+  "market": "idx",
+  "date": "2026-10-23",
+  "time_wib": "15:17",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "15:00",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "JSMR",
+      0.0688
+    ],
+    [
+      "AKRA",
+      0.0568
+    ],
+    [
+      "RAJA",
+      0.0565
+    ],
+    [
+      "DSSA",
+      0.0479
+    ],
+    [
+      "UNTR",
+      0.0432
+    ]
+  ],
+  "top_losers": [
+    [
+      "MDKA",
+      -0.0357
+    ],
+    [
+      "BBCA",
+      -0.029
+    ],
+    [
+      "BBTN",
+      -0.0256
+    ],
+    [
+      "AMRT",
+      -0.0231
+    ],
+    [
+      "TPIA",
+      -0.0224
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3290.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 113600
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1485.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": 10899
+    }
+  ],
+  "pending": [],
+  "cash": 6706066.5,
+  "equity": 10133066.5,
+  "ihsg": {
+    "last": 5412.15,
+    "prev_close": 5387.9
+  }
+}

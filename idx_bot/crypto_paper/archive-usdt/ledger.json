@@ -1,0 +1,37 @@
+{
+  "cash": 555.56,
+  "pending": [
+    {
+      "code": "BTC",
+      "lots": 262,
+      "units": 0.00262,
+      "entry": 82116.0,
+      "stop": 77880.43,
+      "target": 90587.15,
+      "signal_date": "2026-10-18",
+      "reason": "Pemimpin pasar dan paling likuid; di atas SMA50, RSI 49 netral; stop 5,2% paling sempit. Bear: return 1 bulan -2,8%, tanpa katalis baru."
+    },
+    {
+      "code": "NEAR",
+      "lots": 98,
+      "units": 9.8,
+      "entry": 5.016,
+      "stop": 3.89,
+      "target": 7.268,
+      "signal_date": "2026-10-18",
+      "reason": "Terkuat vs BTC 30 hari (+32%), teknikal 70; ETF Bitwise dan pendapatan protokol naik. Bear: turun dari 5,85 ke 5,02 sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 22% jadi posisi kecil."
+    },
+    {
+      "code": "AVAX",
+      "lots": 801,
+      "units": 8.01,
+      "entry": 9.777,
+      "stop": 8.39,
+      "target": 12.551,
+      "signal_date": "2026-10-18",
+      "reason": "Teknikal 70, lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."
+    }
+  ],
+  "open": [],
+  "closed": []
+}

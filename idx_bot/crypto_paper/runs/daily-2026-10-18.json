@@ -1,0 +1,47 @@
+{
+  "market": "crypto",
+  "currency": "Rp",
+  "price_source": "Indodax",
+  "testnet": "ditunda (testnet tidak bisa diakses dari server cloud)",
+  "date": "2026-10-18",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 599999.6280369,
+  "cash": 10000000,
+  "equity": 10000000,
+  "candidates": [],
+  "open": [],
+  "pending": [
+    {
+      "code": "BTC",
+      "lots": 305124,
+      "units": 0.00305124,
+      "entry": 1470574000.0,
+      "stop": 1405027000.0,
+      "target": 1601668000.0,
+      "signal_date": "2026-10-18",
+      "reason": "Pemimpin pasar, paling likuid di Indodax (Rp 24 miliar/hari); di atas SMA50, RSI netral; stop 4,5%. Bear: return 1 bulan negatif, tanpa katalis baru."
+    },
+    {
+      "code": "NEAR",
+      "lots": 966884215,
+      "units": 9.66884215,
+      "entry": 89952.0,
+      "stop": 69267.0,
+      "target": 131322.0,
+      "signal_date": "2026-10-18",
+      "reason": "Terkuat vs BTC 30 hari (+32%); ETF Bitwise dan pendapatan protokol naik; volume Indodax Rp 1,2 miliar/hari. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 23%."
+    },
+    {
+      "code": "AVAX",
+      "lots": 860770389,
+      "units": 8.60770389,
+      "entry": 174102.0,
+      "stop": 150867.0,
+      "target": 220572.0,
+      "signal_date": "2026-10-18",
+      "reason": "Lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober; dipilih atas TRX yang lebih lemah dari BTC dan akan memakan 55% modal. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."
+    }
+  ]
+}
