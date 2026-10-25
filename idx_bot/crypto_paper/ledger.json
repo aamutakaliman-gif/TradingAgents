@@ -13,8 +13,8 @@
       "reason": "Pemimpin pasar, paling likuid di Indodax (Rp 24 miliar/hari); di atas SMA50, RSI netral; stop 4,5%. Bear: return 1 bulan negatif, tanpa katalis baru.",
       "entry_date": "2026-10-19",
       "cost": 4497029.4,
-      "seen_until": "2026-10-24T20:00:00+00:00",
-      "swept_day": "2026-10-23"
+      "seen_until": "2026-10-24T23:45:00+00:00",
+      "swept_day": "2026-10-24"
     },
     {
       "code": "NEAR",
@@ -27,8 +27,8 @@
       "reason": "Terkuat vs BTC 30 hari (+32%); ETF Bitwise dan pendapatan protokol naik; volume Indodax Rp 1,2 miliar/hari. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 23%.",
       "entry_date": "2026-10-19",
       "cost": 872379.58,
-      "seen_until": "2026-10-24T20:00:00+00:00",
-      "swept_day": "2026-10-23"
+      "seen_until": "2026-10-24T23:45:00+00:00",
+      "swept_day": "2026-10-24"
     },
     {
       "code": "AVAX",
@@ -41,10 +41,10 @@
       "reason": "Lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober; dipilih atas TRX yang lebih lemah dari BTC dan akan memakan 55% modal. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov.",
       "entry_date": "2026-10-19",
       "cost": 1497114.38,
-      "seen_until": "2026-10-24T20:00:00+00:00",
-      "swept_day": "2026-10-23"
+      "seen_until": "2026-10-24T23:45:00+00:00",
+      "swept_day": "2026-10-24"
     }
   ],
   "closed": [],
-  "settled_through": "2026-10-23"
+  "settled_through": "2026-10-24"
 }
