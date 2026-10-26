@@ -1,6 +1,17 @@
 {
   "cash": 5551837.75,
-  "pending": [],
+  "pending": [
+    {
+      "code": "AUTO",
+      "lots": 5,
+      "units": 500,
+      "entry": 3320.0,
+      "stop": 3100,
+      "target": 3760,
+      "signal_date": "2026-10-26",
+      "reason": "Skor 85 (fundamental 100: ROE 15%, PER 6,6, PBV 1,0, pendapatan +19%), tren kuat ADX 29 di atas SMA50/200, akumulasi CMF +0,19; ASII tender offer sukarela Rp 3.600 (13 Okt-11 Nov) jadi jangkar harga; diversifikasi dari sektor energi. Bear: likuiditas tipis (~Rp 10 mlr/hari), Stochastic jenuh beli, efek tender bisa hilang setelah 11 Nov, FOMC 28 Okt."
+    }
+  ],
   "open": [
     {
       "code": "PTBA",
@@ -13,8 +24,8 @@
       "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
       "entry_date": "2026-10-21",
       "cost": 1527287.5,
-      "seen_until": "2026-10-26T15:00:00+07:00",
-      "swept_day": "2026-10-23"
+      "seen_until": "2026-10-26T16:00:00+07:00",
+      "swept_day": "2026-10-26"
     },
     {
       "code": "MEDC",
@@ -29,9 +40,9 @@
       "planned_entry": 1450.0,
       "entry_date": "2026-10-23",
       "entry_time": "2026-10-23T09:30:00+07:00",
-      "seen_until": "2026-10-26T15:00:00+07:00",
+      "seen_until": "2026-10-26T16:00:00+07:00",
       "cost": 1766646.0,
-      "swept_day": "2026-10-23"
+      "swept_day": "2026-10-26"
     },
     {
       "code": "AADI",
@@ -46,10 +57,11 @@
       "planned_entry": 11375.0,
       "entry_date": "2026-10-26",
       "entry_time": "2026-10-26T09:30:00+07:00",
-      "seen_until": "2026-10-26T15:00:00+07:00",
-      "cost": 1154228.75
+      "seen_until": "2026-10-26T16:00:00+07:00",
+      "cost": 1154228.75,
+      "swept_day": "2026-10-26"
     }
   ],
   "closed": [],
-  "settled_through": "2026-10-23"
+  "settled_through": "2026-10-26"
 }
