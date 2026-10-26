@@ -1,17 +1,6 @@
 {
-  "cash": 6706066.5,
-  "pending": [
-    {
-      "code": "AADI",
-      "lots": 1,
-      "units": 100,
-      "entry": 11375.0,
-      "stop": 10200,
-      "target": 13725,
-      "signal_date": "2026-10-23",
-      "reason": "Skor 85 (teknikal 85, fundamental 85: ROE 23%, PER 6,5), akumulasi CMF +0,14 dan OBV naik, di atas SMA50/200, paling likuid (Rp 143 mlr/hari); katalis buyback Rp 5 triliun mulai 20 Okt dan divestasi Kestrel selesai. Bear: ADX<25 sideways, sektor batu bara sama dengan PTBA (konsentrasi energi), stop 10% lebar."
-    }
-  ],
+  "cash": 5551837.75,
+  "pending": [],
   "open": [
     {
       "code": "PTBA",
@@ -24,7 +13,7 @@
       "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
       "entry_date": "2026-10-21",
       "cost": 1527287.5,
-      "seen_until": "2026-10-23T16:00:00+07:00",
+      "seen_until": "2026-10-26T09:30:00+07:00",
       "swept_day": "2026-10-23"
     },
     {
@@ -40,9 +29,25 @@
       "planned_entry": 1450.0,
       "entry_date": "2026-10-23",
       "entry_time": "2026-10-23T09:30:00+07:00",
-      "seen_until": "2026-10-23T16:00:00+07:00",
+      "seen_until": "2026-10-26T09:30:00+07:00",
       "cost": 1766646.0,
       "swept_day": "2026-10-23"
+    },
+    {
+      "code": "AADI",
+      "lots": 1,
+      "units": 100,
+      "entry": 11525.0,
+      "stop": 10350,
+      "target": 13875,
+      "signal_date": "2026-10-23",
+      "reason": "Skor 85 (teknikal 85, fundamental 85: ROE 23%, PER 6,5), akumulasi CMF +0,14 dan OBV naik, di atas SMA50/200, paling likuid (Rp 143 mlr/hari); katalis buyback Rp 5 triliun mulai 20 Okt dan divestasi Kestrel selesai. Bear: ADX<25 sideways, sektor batu bara sama dengan PTBA (konsentrasi energi), stop 10% lebar.",
+      "intraday_checked": true,
+      "planned_entry": 11375.0,
+      "entry_date": "2026-10-26",
+      "entry_time": "2026-10-26T09:30:00+07:00",
+      "seen_until": "2026-10-26T09:30:00+07:00",
+      "cost": 1154228.75
     }
   ],
   "closed": [],
