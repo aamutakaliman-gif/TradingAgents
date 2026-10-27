@@ -1,0 +1,100 @@
+{
+  "market": "idx",
+  "date": "2026-10-27",
+  "time_wib": "09:46",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "09:30",
+  "events": [
+    {
+      "kind": "beli",
+      "text": "AUTO: beli 5 lot di 3,380 (09:30 WIB), stop 3,160, target 3,820"
+    }
+  ],
+  "notify": true,
+  "top_gainers": [
+    [
+      "BRIS",
+      0.0521
+    ],
+    [
+      "TPIA",
+      0.045
+    ],
+    [
+      "AADI",
+      0.0434
+    ],
+    [
+      "SMGR",
+      0.041
+    ],
+    [
+      "CUAN",
+      0.0373
+    ]
+  ],
+  "top_losers": [
+    [
+      "TBIG",
+      -0.0279
+    ],
+    [
+      "SCMA",
+      -0.0258
+    ],
+    [
+      "WIFI",
+      -0.024
+    ],
+    [
+      "TLKM",
+      -0.0133
+    ],
+    [
+      "SIDO",
+      -0.0118
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3300.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 118588
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1465.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -13041
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 12025.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": 45265
+    },
+    {
+      "code": "AUTO",
+      "entry": 3380.0,
+      "last": 3380.0,
+      "stop": 3160,
+      "target": 3820,
+      "pnl": -6760
+    }
+  ],
+  "pending": [],
+  "cash": 3859302.75,
+  "equity": 10159802.75,
+  "ihsg": {
+    "last": 5395.04,
+    "prev_close": 5373.09
+  }
+}
