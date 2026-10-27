@@ -1,0 +1,95 @@
+{
+  "market": "idx",
+  "date": "2026-10-27",
+  "time_wib": "14:07",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "13:45",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "GGRM",
+      0.0517
+    ],
+    [
+      "HMSP",
+      0.0469
+    ],
+    [
+      "SILO",
+      0.0409
+    ],
+    [
+      "ASII",
+      0.0329
+    ],
+    [
+      "ELSA",
+      0.0312
+    ]
+  ],
+  "top_losers": [
+    [
+      "WIFI",
+      -0.0673
+    ],
+    [
+      "BREN",
+      -0.056
+    ],
+    [
+      "BRPT",
+      -0.0458
+    ],
+    [
+      "FILM",
+      -0.0452
+    ],
+    [
+      "BRMS",
+      -0.0423
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3220.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 78688
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1430.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -54936
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 11725.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": 15340
+    },
+    {
+      "code": "AUTO",
+      "entry": 3380.0,
+      "last": 3380.0,
+      "stop": 3160,
+      "target": 3820,
+      "pnl": -6760
+    }
+  ],
+  "pending": [],
+  "cash": 3859302.75,
+  "equity": 10047802.75,
+  "ihsg": {
+    "last": 5310.24,
+    "prev_close": 5373.09
+  }
+}
