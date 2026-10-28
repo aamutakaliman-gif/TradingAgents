@@ -13,8 +13,8 @@
       "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
       "entry_date": "2026-10-21",
       "cost": 1527287.5,
-      "seen_until": "2026-10-28T15:00:00+07:00",
-      "swept_day": "2026-10-27"
+      "seen_until": "2026-10-28T16:00:00+07:00",
+      "swept_day": "2026-10-28"
     },
     {
       "code": "MEDC",
@@ -29,9 +29,9 @@
       "planned_entry": 1450.0,
       "entry_date": "2026-10-23",
       "entry_time": "2026-10-23T09:30:00+07:00",
-      "seen_until": "2026-10-28T15:00:00+07:00",
+      "seen_until": "2026-10-28T16:00:00+07:00",
       "cost": 1766646.0,
-      "swept_day": "2026-10-27"
+      "swept_day": "2026-10-28"
     },
     {
       "code": "AADI",
@@ -46,9 +46,9 @@
       "planned_entry": 11375.0,
       "entry_date": "2026-10-26",
       "entry_time": "2026-10-26T09:30:00+07:00",
-      "seen_until": "2026-10-28T15:00:00+07:00",
+      "seen_until": "2026-10-28T16:00:00+07:00",
       "cost": 1154228.75,
-      "swept_day": "2026-10-27"
+      "swept_day": "2026-10-28"
     },
     {
       "code": "AUTO",
@@ -63,11 +63,11 @@
       "planned_entry": 3320.0,
       "entry_date": "2026-10-27",
       "entry_time": "2026-10-27T09:30:00+07:00",
-      "seen_until": "2026-10-28T15:00:00+07:00",
+      "seen_until": "2026-10-28T16:00:00+07:00",
       "cost": 1692535.0,
-      "swept_day": "2026-10-27"
+      "swept_day": "2026-10-28"
     }
   ],
   "closed": [],
-  "settled_through": "2026-10-27"
+  "settled_through": "2026-10-28"
 }

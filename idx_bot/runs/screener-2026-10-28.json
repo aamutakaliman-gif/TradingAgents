@@ -1,0 +1,5215 @@
+{
+  "generated_at": "2026-10-28T09:51:19+00:00",
+  "universe": "IDX (83 saham)",
+  "settings": {
+    "equity": 10000000,
+    "risk_per_trade": 0.02,
+    "monthly_risk_cap": 0.06,
+    "tech_weight": 0.6
+  },
+  "candidates": [
+    "AADI",
+    "AUTO",
+    "INTP",
+    "PTBA",
+    "PWON"
+  ],
+  "rows": [
+    {
+      "code": "AADI",
+      "name": "PT Adaro Andalan Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 94.0,
+      "technical_score": 100,
+      "fundamental_score": 85,
+      "last_move": -0.0043,
+      "avg_daily_value": 156838167875.0,
+      "technical": {
+        "close": 11650.0,
+        "sma20": 11411.25,
+        "sma50": 11294.5,
+        "sma200": 9282.96369873047,
+        "rsi": 55.1,
+        "ret_1m": 0.0543,
+        "ret_3m": 0.3164,
+        "vol_ratio": 1.19,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.6,
+          "stoch_k": 84.3,
+          "stoch_d": 80.4,
+          "adx": 19.3,
+          "cmf": 0.115,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 9500.0,
+          "resistance": 12375.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.23297001,
+        "per": 6.678323,
+        "pbv": 25271.15,
+        "profit_margin": 0.15923001,
+        "revenue_growth": 0.216,
+        "der": 25.672,
+        "sector": "Energy",
+        "name": "PT Adaro Andalan Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 555.0508562905773,
+      "plan": {
+        "entry": 11650.0,
+        "stop": 10525,
+        "target": 13900,
+        "lots": 1,
+        "units": 100,
+        "position_value": 1165000.0,
+        "risk": 112500.0,
+        "stop_pct": 0.09656652360515021
+      },
+      "flags": []
+    },
+    {
+      "code": "AUTO",
+      "name": "PT Astra Otoparts Tbk",
+      "last_date": "2026-10-28",
+      "score": 94.0,
+      "technical_score": 90,
+      "fundamental_score": 100,
+      "last_move": 0.003,
+      "avg_daily_value": 10098860713.983154,
+      "technical": {
+        "close": 3350.0,
+        "sma20": 3296.6105346679688,
+        "sma50": 3254.57833984375,
+        "sma200": 2676.1792370605467,
+        "rsi": 56.4,
+        "ret_1m": 0.0372,
+        "ret_3m": 0.2724,
+        "vol_ratio": 0.85,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.7,
+          "stoch_k": 90.9,
+          "stoch_d": 88.5,
+          "adx": 25.4,
+          "cmf": 0.169,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 2850.0,
+          "resistance": 3435.35313561
+        }
+      },
+      "fundamental": {
+        "roe": 0.15295,
+        "per": 6.633663,
+        "pbv": 1.0292052,
+        "profit_margin": 0.11416,
+        "revenue_growth": 0.193,
+        "der": 3.433,
+        "sector": "Consumer Cyclical",
+        "name": "PT Astra Otoparts Tbk",
+        "missing": []
+      },
+      "atr": 102.78136220814658,
+      "plan": {
+        "entry": 3350.0,
+        "stop": 3140,
+        "target": 3770,
+        "lots": 9,
+        "units": 900,
+        "position_value": 3015000.0,
+        "risk": 189000.0,
+        "stop_pct": 0.0626865671641791
+      },
+      "flags": []
+    },
+    {
+      "code": "INTP",
+      "name": "PT Indocement Tunggal Prakarsa Tbk",
+      "last_date": "2026-10-28",
+      "score": 93.0,
+      "technical_score": 95,
+      "fundamental_score": 90,
+      "last_move": -0.0252,
+      "avg_daily_value": 11503789675.0,
+      "technical": {
+        "close": 5800.0,
+        "sma20": 5278.0,
+        "sma50": 5308.1,
+        "sma200": 5134.592556152344,
+        "rsi": 64.3,
+        "ret_1m": 0.16,
+        "ret_3m": 0.2747,
+        "vol_ratio": 1.17,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.9,
+          "stoch_k": 87.5,
+          "stoch_d": 91.7,
+          "adx": 21.1,
+          "cmf": 0.449,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 4570.0,
+          "resistance": 5950.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.10689,
+        "per": 8.212273,
+        "pbv": 0.8614541,
+        "profit_margin": 0.12913,
+        "revenue_growth": 0.136,
+        "der": 12.218,
+        "sector": "Basic Materials",
+        "name": "PT Indocement Tunggal Prakarsa Tbk",
+        "missing": []
+      },
+      "atr": 245.59833116662617,
+      "plan": {
+        "entry": 5800.0,
+        "stop": 5300,
+        "target": 6800,
+        "lots": 4,
+        "units": 400,
+        "position_value": 2320000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.08620689655172414
+      },
+      "flags": []
+    },
+    {
+      "code": "PTBA",
+      "name": "PT Bukit Asam (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 91.0,
+      "technical_score": 85,
+      "fundamental_score": 100,
+      "last_move": 0.0252,
+      "avg_daily_value": 162628855800.0,
+      "technical": {
+        "close": 3250.0,
+        "sma20": 3190.0,
+        "sma50": 2999.0,
+        "sma200": 2648.82294921875,
+        "rsi": 56.2,
+        "ret_1m": 0.045,
+        "ret_3m": 0.3948,
+        "vol_ratio": 1.26,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.6,
+          "stoch_k": 80.8,
+          "stoch_d": 73.4,
+          "adx": 27.5,
+          "cmf": 0.158,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 2620.0,
+          "resistance": 3490.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.21109,
+        "per": 7.8883495,
+        "pbv": 1.4834566,
+        "profit_margin": 0.107329994,
+        "revenue_growth": 0.153,
+        "der": 11.782,
+        "sector": "Energy",
+        "name": "PT Bukit Asam (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 170.46905480745127,
+      "plan": {
+        "entry": 3250.0,
+        "stop": 2900,
+        "target": 3950,
+        "lots": 5,
+        "units": 500,
+        "position_value": 1625000.0,
+        "risk": 175000.0,
+        "stop_pct": 0.1076923076923077
+      },
+      "flags": []
+    },
+    {
+      "code": "PWON",
+      "name": "PT Pakuwon Jati Tbk",
+      "last_date": "2026-10-28",
+      "score": 83.0,
+      "technical_score": 85,
+      "fundamental_score": 80,
+      "last_move": -0.0136,
+      "avg_daily_value": 19318923400.0,
+      "technical": {
+        "close": 290.0,
+        "sma20": 273.0,
+        "sma50": 271.28,
+        "sma200": 293.48636962890623,
+        "rsi": 59.2,
+        "ret_1m": 0.1154,
+        "ret_3m": 0.1154,
+        "vol_ratio": 1.32,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.8,
+          "stoch_k": 88.0,
+          "stoch_d": 89.1,
+          "adx": 16.3,
+          "cmf": 0.407,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)",
+            "dekat resistance 20 hari"
+          ],
+          "support": 246.0,
+          "resistance": 294.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.10025,
+        "per": 6.301608,
+        "pbv": 0.6113797,
+        "profit_margin": 0.31166,
+        "revenue_growth": -0.05,
+        "der": 22.075,
+        "sector": "Real Estate",
+        "name": "PT Pakuwon Jati Tbk",
+        "missing": []
+      },
+      "atr": 11.427368427548926,
+      "plan": {
+        "entry": 290.0,
+        "stop": 266,
+        "target": 338,
+        "lots": 83,
+        "units": 8300,
+        "position_value": 2407000.0,
+        "risk": 199200.0,
+        "stop_pct": 0.08275862068965517
+      },
+      "flags": []
+    },
+    {
+      "code": "ASII",
+      "name": "PT Astra International Tbk",
+      "last_date": "2026-10-28",
+      "score": 80.2,
+      "technical_score": 85,
+      "fundamental_score": 73,
+      "last_move": 0.0799,
+      "avg_daily_value": 285257146557.9004,
+      "technical": {
+        "close": 5000.0,
+        "sma20": 4602.8704833984375,
+        "sma50": 4675.4014453125,
+        "sma200": 5315.035559082031,
+        "rsi": 62.4,
+        "ret_1m": 0.086,
+        "ret_3m": 0.029,
+        "vol_ratio": 1.22,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 1.0,
+          "stoch_k": 100.0,
+          "stoch_d": 82.2,
+          "adx": 18.6,
+          "cmf": 0.062,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "harga di atas pita Bollinger atas: mungkin jenuh beli",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)",
+            "breakout: tembus titik tertinggi 20 hari"
+          ],
+          "support": 3920.0,
+          "resistance": 4840.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.11983,
+        "per": 6.756757,
+        "pbv": 0.8675709,
+        "profit_margin": 0.09354,
+        "revenue_growth": -0.003,
+        "der": 41.125,
+        "sector": "Industrials",
+        "name": "PT Astra International Tbk",
+        "missing": []
+      },
+      "atr": 184.33831429695448,
+      "plan": {
+        "entry": 5000.0,
+        "stop": 4630,
+        "target": 5750,
+        "lots": 5,
+        "units": 500,
+        "position_value": 2500000.0,
+        "risk": 185000.0,
+        "stop_pct": 0.074
+      },
+      "flags": []
+    },
+    {
+      "code": "ELSA",
+      "name": "PT Elnusa Tbk",
+      "last_date": "2026-10-28",
+      "score": 76.2,
+      "technical_score": 65,
+      "fundamental_score": 93,
+      "last_move": -0.0438,
+      "avg_daily_value": 14891048150.0,
+      "technical": {
+        "close": 655.0,
+        "sma20": 638.5,
+        "sma50": 679.6,
+        "sma200": 648.3040536499024,
+        "rsi": 50.2,
+        "ret_1m": -0.0438,
+        "ret_3m": -0.0224,
+        "vol_ratio": 1.08,
+        "passed": [
+          "harga > SMA20",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.6,
+          "stoch_k": 79.3,
+          "stoch_d": 82.8,
+          "adx": 17.8,
+          "cmf": 0.125,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 540.0,
+          "resistance": 685.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.15735,
+        "per": 5.4738426,
+        "pbv": 0.88136077,
+        "profit_margin": 0.05401,
+        "revenue_growth": 0.226,
+        "der": 8.15,
+        "sector": "Energy",
+        "name": "PT Elnusa Tbk",
+        "missing": []
+      },
+      "atr": 33.836187279150636,
+      "plan": {
+        "entry": 655.0,
+        "stop": 585,
+        "target": 795,
+        "lots": 28,
+        "units": 2800,
+        "position_value": 1834000.0,
+        "risk": 196000.0,
+        "stop_pct": 0.10687022900763359
+      },
+      "flags": []
+    },
+    {
+      "code": "JSMR",
+      "name": "PT Jasa Marga (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 74.2,
+      "technical_score": 85,
+      "fundamental_score": 58,
+      "last_move": 0.0105,
+      "avg_daily_value": 21351799300.0,
+      "technical": {
+        "close": 2880.0,
+        "sma20": 2527.5,
+        "sma50": 2720.6,
+        "sma200": 2942.065858154297,
+        "rsi": 63.4,
+        "ret_1m": 0.0827,
+        "ret_3m": 0.0706,
+        "vol_ratio": 1.83,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.9,
+          "stoch_k": 100.0,
+          "stoch_d": 99.6,
+          "adx": 29.8,
+          "cmf": 0.315,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)",
+            "breakout: tembus titik tertinggi 20 hari"
+          ],
+          "support": 1965.0,
+          "resistance": 2850.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.08245,
+        "per": 5.656042,
+        "pbv": 0.5628865,
+        "profit_margin": 0.12726,
+        "revenue_growth": -0.038,
+        "der": 123.483,
+        "sector": "Industrials",
+        "name": "PT Jasa Marga (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 120.93756310308612,
+      "plan": {
+        "entry": 2880.0,
+        "stop": 2630,
+        "target": 3380,
+        "lots": 8,
+        "units": 800,
+        "position_value": 2304000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.08680555555555555
+      },
+      "flags": []
+    },
+    {
+      "code": "AKRA",
+      "name": "PT AKR Corporindo Tbk",
+      "last_date": "2026-10-28",
+      "score": 73.2,
+      "technical_score": 60,
+      "fundamental_score": 93,
+      "last_move": -0.0209,
+      "avg_daily_value": 40720486100.0,
+      "technical": {
+        "close": 1405.0,
+        "sma20": 1406.5,
+        "sma50": 1429.6,
+        "sma200": 1314.322811279297,
+        "rsi": 50.3,
+        "ret_1m": -0.0209,
+        "ret_3m": -0.0071,
+        "vol_ratio": 1.43,
+        "passed": [
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 69.6,
+          "stoch_d": 71.3,
+          "adx": 22.1,
+          "cmf": 0.171,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 1165.0,
+          "resistance": 1540.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.22207001,
+        "per": 9.162047,
+        "pbv": 2.2139409,
+        "profit_margin": 0.050430004,
+        "revenue_growth": 0.429,
+        "der": 29.874,
+        "sector": "Energy",
+        "name": "PT AKR Corporindo Tbk",
+        "missing": []
+      },
+      "atr": 63.24764248334153,
+      "plan": {
+        "entry": 1405.0,
+        "stop": 1275,
+        "target": 1665,
+        "lots": 15,
+        "units": 1500,
+        "position_value": 2107500.0,
+        "risk": 195000.0,
+        "stop_pct": 0.09252669039145907
+      },
+      "flags": []
+    },
+    {
+      "code": "BTPS",
+      "name": "PT Bank BTPN Syariah Tbk",
+      "last_date": "2026-10-28",
+      "score": 73.0,
+      "technical_score": 65,
+      "fundamental_score": 85,
+      "last_move": 0.0,
+      "avg_daily_value": 10080334350.0,
+      "technical": {
+        "close": 970.0,
+        "sma20": 964.5,
+        "sma50": 984.7,
+        "sma200": 1029.0461950683593,
+        "rsi": 49.5,
+        "ret_1m": 0.0265,
+        "ret_3m": 0.0052,
+        "vol_ratio": 1.54,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 64.3,
+          "stoch_d": 69.0,
+          "adx": 17.5,
+          "cmf": 0.062,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 835.0,
+          "resistance": 1045.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.12294,
+        "per": 5.914634,
+        "pbv": 0.709458,
+        "profit_margin": 0.3061,
+        "revenue_growth": 0.115,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank BTPN Syariah Tbk",
+        "missing": []
+      },
+      "atr": 38.99290965328477,
+      "plan": {
+        "entry": 970.0,
+        "stop": 890,
+        "target": 1130,
+        "lots": 25,
+        "units": 2500,
+        "position_value": 2425000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.08247422680412371
+      },
+      "flags": []
+    },
+    {
+      "code": "HMSP",
+      "name": "PT Hanjaya Mandala Sampoerna Tbk",
+      "last_date": "2026-10-28",
+      "score": 73.0,
+      "technical_score": 55,
+      "fundamental_score": 100,
+      "last_move": -0.0222,
+      "avg_daily_value": 13260447350.0,
+      "technical": {
+        "close": 660.0,
+        "sma20": 633.5,
+        "sma50": 674.4,
+        "sma200": 700.1531814575195,
+        "rsi": 53.5,
+        "ret_1m": 0.0476,
+        "ret_3m": -0.0833,
+        "vol_ratio": 1.04,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 1 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.8,
+          "stoch_k": 81.8,
+          "stoch_d": 85.2,
+          "adx": 27.5,
+          "cmf": 0.184,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 570.0,
+          "resistance": 675.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.34686002,
+        "per": 8.8,
+        "pbv": 2.707859,
+        "profit_margin": 0.17646,
+        "revenue_growth": 0.128,
+        "der": 1.286,
+        "sector": "Consumer Defensive",
+        "name": "PT Hanjaya Mandala Sampoerna Tbk",
+        "missing": []
+      },
+      "atr": 26.22266221918768,
+      "plan": {
+        "entry": 660.0,
+        "stop": 605,
+        "target": 770,
+        "lots": 36,
+        "units": 3600,
+        "position_value": 2376000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.08333333333333333
+      },
+      "flags": []
+    },
+    {
+      "code": "ITMG",
+      "name": "PT Indo Tambangraya Megah Tbk",
+      "last_date": "2026-10-28",
+      "score": 72.0,
+      "technical_score": 70,
+      "fundamental_score": 75,
+      "last_move": 0.0132,
+      "avg_daily_value": 54370630250.0,
+      "technical": {
+        "close": 24975.0,
+        "sma20": 25045.0,
+        "sma50": 25507.0,
+        "sma200": 24057.497373046874,
+        "rsi": 48.9,
+        "ret_1m": 0.0,
+        "ret_3m": 0.0215,
+        "vol_ratio": 1.3,
+        "passed": [
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 77.1,
+          "stoch_d": 74.9,
+          "adx": 20.8,
+          "cmf": -0.121,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 21525.0,
+          "resistance": 26250.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.111190006,
+        "per": 7.7920012,
+        "pbv": 14495.066,
+        "profit_margin": 0.10496,
+        "revenue_growth": 0.151,
+        "der": 5.2,
+        "sector": "Energy",
+        "name": "PT Indo Tambangraya Megah Tbk",
+        "missing": []
+      },
+      "atr": 883.0498568900402,
+      "plan": {
+        "entry": 24975.0,
+        "stop": 23200,
+        "target": 28525,
+        "lots": 1,
+        "units": 100,
+        "position_value": 2497500.0,
+        "risk": 177500.0,
+        "stop_pct": 0.07107107107107107
+      },
+      "flags": []
+    },
+    {
+      "code": "CTRA",
+      "name": "PT Ciputra Development Tbk",
+      "last_date": "2026-10-28",
+      "score": 71.0,
+      "technical_score": 65,
+      "fundamental_score": 80,
+      "last_move": -0.0085,
+      "avg_daily_value": 9838815325.0,
+      "technical": {
+        "close": 580.0,
+        "sma20": 556.5,
+        "sma50": 584.6,
+        "sma200": 640.435776977539,
+        "rsi": 54.4,
+        "ret_1m": 0.0741,
+        "ret_3m": 0.045,
+        "vol_ratio": 1.26,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.8,
+          "stoch_k": 83.3,
+          "stoch_d": 83.3,
+          "adx": 20.0,
+          "cmf": 0.316,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 505.0,
+          "resistance": 595.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.100430004,
+        "per": 4.2647057,
+        "pbv": 0.4388308,
+        "profit_margin": 0.21166,
+        "revenue_growth": -0.163,
+        "der": 29.003,
+        "sector": "Real Estate",
+        "name": "PT Ciputra Development Tbk",
+        "missing": []
+      },
+      "atr": 23.7852663006966,
+      "plan": {
+        "entry": 580.0,
+        "stop": 530,
+        "target": 680,
+        "lots": 40,
+        "units": 4000,
+        "position_value": 2320000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.08620689655172414
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "UNTR",
+      "name": "PT United Tractors Tbk",
+      "last_date": "2026-10-28",
+      "score": 68.2,
+      "technical_score": 75,
+      "fundamental_score": 58,
+      "last_move": -0.034,
+      "avg_daily_value": 93544153710.92773,
+      "technical": {
+        "close": 25600.0,
+        "sma20": 24817.79140625,
+        "sma50": 24682.9737890625,
+        "sma200": 25866.745625,
+        "rsi": 54.6,
+        "ret_1m": 0.034,
+        "ret_3m": 0.0625,
+        "vol_ratio": 0.95,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.7,
+          "stoch_k": 83.5,
+          "stoch_d": 88.6,
+          "adx": 19.0,
+          "cmf": 0.173,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)"
+          ],
+          "support": 21050.0,
+          "resistance": 26627.22265625
+        }
+      },
+      "fundamental": {
+        "roe": 0.07437,
+        "per": 11.66287,
+        "pbv": 0.9354452,
+        "profit_margin": 0.06308,
+        "revenue_growth": -0.132,
+        "der": 27.593,
+        "sector": "Basic Materials",
+        "name": "PT United Tractors Tbk",
+        "missing": []
+      },
+      "atr": 1067.1863313425781,
+      "plan": {
+        "entry": 25600.0,
+        "stop": 23450,
+        "target": 29900,
+        "lots": 0,
+        "units": 0,
+        "position_value": 0.0,
+        "risk": 0.0,
+        "stop_pct": 0.083984375
+      },
+      "flags": []
+    },
+    {
+      "code": "BBNI",
+      "name": "PT Bank Negara Indonesia (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 67.0,
+      "technical_score": 55,
+      "fundamental_score": 85,
+      "last_move": 0.0121,
+      "avg_daily_value": 202999910750.0,
+      "technical": {
+        "close": 3350.0,
+        "sma20": 3349.5,
+        "sma50": 3564.6,
+        "sma200": 3722.4417749023437,
+        "rsi": 47.2,
+        "ret_1m": -0.0262,
+        "ret_3m": -0.0318,
+        "vol_ratio": 1.33,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 78.8,
+          "stoch_d": 83.3,
+          "adx": 25.0,
+          "cmf": 0.187,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 2830.0,
+          "resistance": 3520.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.1245,
+        "per": 5.9397163,
+        "pbv": 0.7267814,
+        "profit_margin": 0.39862,
+        "revenue_growth": 0.098,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Negara Indonesia (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 134.40127146721971,
+      "plan": {
+        "entry": 3350.0,
+        "stop": 3080,
+        "target": 3890,
+        "lots": 7,
+        "units": 700,
+        "position_value": 2345000.0,
+        "risk": 189000.0,
+        "stop_pct": 0.08059701492537313
+      },
+      "flags": []
+    },
+    {
+      "code": "ADRO",
+      "name": "PT Alamtri Resources Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 66.0,
+      "technical_score": 60,
+      "fundamental_score": 75,
+      "last_move": -0.0081,
+      "avg_daily_value": 101157210250.0,
+      "technical": {
+        "close": 2440.0,
+        "sma20": 2464.0,
+        "sma50": 2565.6,
+        "sma200": 2361.161475830078,
+        "rsi": 46.7,
+        "ret_1m": -0.0121,
+        "ret_3m": -0.0041,
+        "vol_ratio": 1.02,
+        "passed": [
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 68.0,
+          "stoch_d": 67.0,
+          "adx": 19.3,
+          "cmf": 0.083,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 2100.0,
+          "resistance": 2650.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.123380005,
+        "per": 7.185347,
+        "pbv": 15250.0,
+        "profit_margin": 0.28888,
+        "revenue_growth": 0.11,
+        "der": 37.824,
+        "sector": "Energy",
+        "name": "PT Alamtri Resources Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 104.90599168359472,
+      "plan": {
+        "entry": 2440.0,
+        "stop": 2230,
+        "target": 2860,
+        "lots": 9,
+        "units": 900,
+        "position_value": 2196000.0,
+        "risk": 189000.0,
+        "stop_pct": 0.0860655737704918
+      },
+      "flags": []
+    },
+    {
+      "code": "BBRI",
+      "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 65.0,
+      "technical_score": 45,
+      "fundamental_score": 95,
+      "last_move": 0.0069,
+      "avg_daily_value": 999625481450.0,
+      "technical": {
+        "close": 2920.0,
+        "sma20": 2969.0,
+        "sma50": 3143.8,
+        "sma200": 3182.354846191406,
+        "rsi": 45.2,
+        "ret_1m": -0.0789,
+        "ret_3m": 0.0,
+        "vol_ratio": 1.48,
+        "passed": [
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 67.6,
+          "stoch_d": 64.9,
+          "adx": 23.5,
+          "cmf": 0.226,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 2460.0,
+          "resistance": 3240.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.18988001,
+        "per": 7.174447,
+        "pbv": 1.3667789,
+        "profit_margin": 0.41705,
+        "revenue_growth": 0.04,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 121.83402683417054,
+      "plan": {
+        "entry": 2920.0,
+        "stop": 2670,
+        "target": 3420,
+        "lots": 8,
+        "units": 800,
+        "position_value": 2336000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.08561643835616438
+      },
+      "flags": []
+    },
+    {
+      "code": "MAPA",
+      "name": "PT Map Aktif Adiperkasa Tbk",
+      "last_date": "2026-10-28",
+      "score": 64.2,
+      "technical_score": 45,
+      "fundamental_score": 93,
+      "last_move": 0.0,
+      "avg_daily_value": 15330989755.0,
+      "technical": {
+        "close": 580.0,
+        "sma20": 598.05,
+        "sma50": 645.22,
+        "sma200": 637.1227655029297,
+        "rsi": 43.9,
+        "ret_1m": -0.1077,
+        "ret_3m": -0.0333,
+        "vol_ratio": 1.23,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 63.6,
+          "stoch_d": 64.0,
+          "adx": 30.7,
+          "cmf": 0.013,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 484.0,
+          "resistance": 660.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.21906,
+        "per": 8.304697,
+        "pbv": 1.8969747,
+        "profit_margin": 0.093310006,
+        "revenue_growth": 0.155,
+        "der": 26.274,
+        "sector": "Consumer Cyclical",
+        "name": "PT Map Aktif Adiperkasa Tbk",
+        "missing": []
+      },
+      "atr": 30.38046266736717,
+      "plan": {
+        "entry": 580.0,
+        "stop": 515,
+        "target": 710,
+        "lots": 30,
+        "units": 3000,
+        "position_value": 1740000.0,
+        "risk": 195000.0,
+        "stop_pct": 0.11206896551724138
+      },
+      "flags": []
+    },
+    {
+      "code": "MEDC",
+      "name": "PT Medco Energi Internasional Tbk",
+      "last_date": "2026-10-28",
+      "score": 64.2,
+      "technical_score": 55,
+      "fundamental_score": 78,
+      "last_move": -0.0035,
+      "avg_daily_value": 68541326025.0,
+      "technical": {
+        "close": 1405.0,
+        "sma20": 1422.75,
+        "sma50": 1450.4,
+        "sma200": 1439.3634942626952,
+        "rsi": 47.6,
+        "ret_1m": -0.0377,
+        "ret_3m": 0.1377,
+        "vol_ratio": 0.89,
+        "passed": [
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 58.6,
+          "stoch_d": 63.3,
+          "adx": 15.6,
+          "cmf": 0.203,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 1200.0,
+          "resistance": 1550.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.15089,
+        "per": 6.085149,
+        "pbv": 14946.809,
+        "profit_margin": 0.13259,
+        "revenue_growth": 0.273,
+        "der": 171.735,
+        "sector": "Energy",
+        "name": "PT Medco Energi Internasional Tbk",
+        "missing": []
+      },
+      "atr": 78.38919936552163,
+      "plan": {
+        "entry": 1405.0,
+        "stop": 1245,
+        "target": 1725,
+        "lots": 12,
+        "units": 1200,
+        "position_value": 1686000.0,
+        "risk": 192000.0,
+        "stop_pct": 0.11387900355871886
+      },
+      "flags": []
+    },
+    {
+      "code": "NISP",
+      "name": "PT Bank OCBC NISP Tbk",
+      "last_date": "2026-10-28",
+      "score": 63.0,
+      "technical_score": 55,
+      "fundamental_score": 75,
+      "last_move": 0.03,
+      "avg_daily_value": 7350469025.0,
+      "technical": {
+        "close": 1200.0,
+        "sma20": 1198.25,
+        "sma50": 1233.4,
+        "sma200": 1309.3892834472656,
+        "rsi": 49.2,
+        "ret_1m": -0.04,
+        "ret_3m": -0.0361,
+        "vol_ratio": 1.22,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 79.5,
+          "stoch_d": 67.1,
+          "adx": 27.4,
+          "cmf": -0.128,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1045.0,
+          "resistance": 1265.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.122200005,
+        "per": 5.2735662,
+        "pbv": 0.62052095,
+        "profit_margin": 0.41162997,
+        "revenue_growth": -0.011,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank OCBC NISP Tbk",
+        "missing": []
+      },
+      "atr": 41.16110344967465,
+      "plan": {
+        "entry": 1200.0,
+        "stop": 1115,
+        "target": 1370,
+        "lots": 23,
+        "units": 2300,
+        "position_value": 2760000.0,
+        "risk": 195500.0,
+        "stop_pct": 0.07083333333333333
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "BMRI",
+      "name": "PT Bank Mandiri (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 61.0,
+      "technical_score": 45,
+      "fundamental_score": 85,
+      "last_move": -0.0078,
+      "avg_daily_value": 842672757300.0,
+      "technical": {
+        "close": 3840.0,
+        "sma20": 3891.5,
+        "sma50": 4081.1085986328126,
+        "sma200": 4211.151983642578,
+        "rsi": 45.6,
+        "ret_1m": -0.0471,
+        "ret_3m": -0.0466,
+        "vol_ratio": 1.4,
+        "passed": [
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 73.6,
+          "stoch_d": 74.2,
+          "adx": 24.5,
+          "cmf": 0.126,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 3200.0,
+          "resistance": 4150.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.21757999,
+        "per": 5.588625,
+        "pbv": 1.2188758,
+        "profit_margin": 0.45836,
+        "revenue_growth": -0.103,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Mandiri (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 143.32262874447287,
+      "plan": {
+        "entry": 3840.0,
+        "stop": 3550,
+        "target": 4420,
+        "lots": 6,
+        "units": 600,
+        "position_value": 2304000.0,
+        "risk": 174000.0,
+        "stop_pct": 0.07552083333333333
+      },
+      "flags": []
+    },
+    {
+      "code": "TINS",
+      "name": "PT TIMAH Tbk",
+      "last_date": "2026-10-28",
+      "score": 58.0,
+      "technical_score": 30,
+      "fundamental_score": 100,
+      "last_move": 0.0241,
+      "avg_daily_value": 188378030450.0,
+      "technical": {
+        "close": 3820.0,
+        "sma20": 4140.5,
+        "sma50": 4317.8,
+        "sma200": 3713.7045166015623,
+        "rsi": 40.9,
+        "ret_1m": -0.1732,
+        "ret_3m": 0.117,
+        "vol_ratio": 0.95,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 40.5,
+          "stoch_d": 35.8,
+          "adx": 27.5,
+          "cmf": -0.01,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 3310.0,
+          "resistance": 4780.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.41794,
+        "per": 7.64,
+        "pbv": 2.6974316,
+        "profit_margin": 0.21000999,
+        "revenue_growth": 1.335,
+        "der": 11.568,
+        "sector": "Basic Materials",
+        "name": "PT TIMAH Tbk",
+        "missing": []
+      },
+      "atr": 227.47551280708728,
+      "plan": {
+        "entry": 3820.0,
+        "stop": 3360,
+        "target": 4740,
+        "lots": 4,
+        "units": 400,
+        "position_value": 1528000.0,
+        "risk": 184000.0,
+        "stop_pct": 0.12041884816753927
+      },
+      "flags": []
+    },
+    {
+      "code": "ACES",
+      "name": "PT Aspirasi Hidup Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 57.2,
+      "technical_score": 40,
+      "fundamental_score": 83,
+      "last_move": 0.0312,
+      "avg_daily_value": 16922084030.0,
+      "technical": {
+        "close": 330.0,
+        "sma20": 330.9,
+        "sma50": 343.6,
+        "sma200": 347.55942947387695,
+        "rsi": 47.2,
+        "ret_1m": -0.0351,
+        "ret_3m": -0.0517,
+        "vol_ratio": 1.67,
+        "passed": [
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 31.4,
+          "stoch_d": 29.5,
+          "adx": 30.2,
+          "cmf": 0.073,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 308.0,
+          "resistance": 378.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.121199995,
+        "per": 7.392473,
+        "pbv": 0.887753,
+        "profit_margin": 0.086,
+        "revenue_growth": 0.025,
+        "der": 15.331,
+        "sector": "Consumer Cyclical",
+        "name": "PT Aspirasi Hidup Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 14.528002629278433,
+      "plan": {
+        "entry": 330.0,
+        "stop": 300,
+        "target": 390,
+        "lots": 66,
+        "units": 6600,
+        "position_value": 2178000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.09090909090909091
+      },
+      "flags": []
+    },
+    {
+      "code": "SILO",
+      "name": "PT Siloam International Hospitals Tbk",
+      "last_date": "2026-10-28",
+      "score": 56.2,
+      "technical_score": 45,
+      "fundamental_score": 73,
+      "last_move": -0.0052,
+      "avg_daily_value": 2068383100.0,
+      "technical": {
+        "close": 1900.0,
+        "sma20": 1881.25,
+        "sma50": 2016.8,
+        "sma200": 2356.925,
+        "rsi": 48.2,
+        "ret_1m": -0.0547,
+        "ret_3m": -0.05,
+        "vol_ratio": 0.96,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.6,
+          "stoch_k": 85.9,
+          "stoch_d": 84.8,
+          "adx": 37.6,
+          "cmf": -0.025,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "Stochastic di zona jenuh beli (>80)"
+          ],
+          "support": 1595.0,
+          "resistance": 2080.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.13108,
+        "per": 19.957983,
+        "pbv": 2.4002264,
+        "profit_margin": 0.09155,
+        "revenue_growth": 0.136,
+        "der": 23.241,
+        "sector": "Healthcare",
+        "name": "PT Siloam International Hospitals Tbk",
+        "missing": []
+      },
+      "atr": 72.51507923233461,
+      "plan": {
+        "entry": 1900.0,
+        "stop": 1750,
+        "target": 2200,
+        "lots": 13,
+        "units": 1300,
+        "position_value": 2470000.0,
+        "risk": 195000.0,
+        "stop_pct": 0.07894736842105263
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "SMRA",
+      "name": "PT Summarecon Agung Tbk",
+      "last_date": "2026-10-28",
+      "score": 56.2,
+      "technical_score": 55,
+      "fundamental_score": 58,
+      "last_move": 0.0,
+      "avg_daily_value": 9719419920.0,
+      "technical": {
+        "close": 252.0,
+        "sma20": 245.9,
+        "sma50": 279.72,
+        "sma200": 318.134291305542,
+        "rsi": 47.0,
+        "ret_1m": 0.0244,
+        "ret_3m": -0.2174,
+        "vol_ratio": 1.07,
+        "passed": [
+          "harga > SMA20",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 1 bulan > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.6,
+          "stoch_k": 65.5,
+          "stoch_d": 70.1,
+          "adx": 26.0,
+          "cmf": 0.063,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 214.0,
+          "resistance": 272.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.06781,
+        "per": 6.9883523,
+        "pbv": 0.34978282,
+        "profit_margin": 0.07057,
+        "revenue_growth": -0.185,
+        "der": 91.979,
+        "sector": "Real Estate",
+        "name": "PT Summarecon Agung Tbk",
+        "missing": []
+      },
+      "atr": 13.384322811698187,
+      "plan": {
+        "entry": 252.0,
+        "stop": 224,
+        "target": 308,
+        "lots": 71,
+        "units": 7100,
+        "position_value": 1789200.0,
+        "risk": 198800.0,
+        "stop_pct": 0.1111111111111111
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "PGEO",
+      "name": "PT Pertamina Geothermal Energy Tbk",
+      "last_date": "2026-10-28",
+      "score": 56.0,
+      "technical_score": 60,
+      "fundamental_score": 50,
+      "last_move": 0.0102,
+      "avg_daily_value": 15521572075.0,
+      "technical": {
+        "close": 990.0,
+        "sma20": 975.25,
+        "sma50": 1012.9,
+        "sma200": 1006.5829473876953,
+        "rsi": 49.9,
+        "ret_1m": 0.0051,
+        "ret_3m": -0.0198,
+        "vol_ratio": 0.88,
+        "passed": [
+          "harga > SMA20",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "return 1 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.6,
+          "stoch_k": 81.0,
+          "stoch_d": 82.5,
+          "adx": 15.6,
+          "cmf": 0.361,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)"
+          ],
+          "support": 820.0,
+          "resistance": 1030.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.07514,
+        "per": 16.301662,
+        "pbv": 20625.0,
+        "profit_margin": 0.3205,
+        "revenue_growth": 0.146,
+        "der": 36.958,
+        "sector": "Utilities",
+        "name": "PT Pertamina Geothermal Energy Tbk",
+        "missing": []
+      },
+      "atr": 49.07835828460091,
+      "plan": {
+        "entry": 990.0,
+        "stop": 890,
+        "target": 1190,
+        "lots": 20,
+        "units": 2000,
+        "position_value": 1980000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.10101010101010101
+      },
+      "flags": []
+    },
+    {
+      "code": "TLKM",
+      "name": "Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 55.0,
+      "technical_score": 25,
+      "fundamental_score": 100,
+      "last_move": -0.0327,
+      "avg_daily_value": 670924858900.0,
+      "technical": {
+        "close": 2070.0,
+        "sma20": 2185.5,
+        "sma50": 2411.0,
+        "sma200": 2749.3132470703126,
+        "rsi": 40.5,
+        "ret_1m": -0.1266,
+        "ret_3m": -0.1914,
+        "vol_ratio": 1.77,
+        "passed": [
+          "MACD histogram > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 52.6,
+          "stoch_d": 67.3,
+          "adx": 30.4,
+          "cmf": -0.175,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1770.0,
+          "resistance": 2380.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.17683001,
+        "per": 11.960478,
+        "pbv": 1.7244769,
+        "profit_margin": 0.12007,
+        "revenue_growth": 0.064,
+        "der": 59.982,
+        "sector": "Communication Services",
+        "name": "Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 109.5208279142451,
+      "plan": {
+        "entry": 2070.0,
+        "stop": 1850,
+        "target": 2510,
+        "lots": 9,
+        "units": 900,
+        "position_value": 1863000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.10628019323671498
+      },
+      "flags": []
+    },
+    {
+      "code": "KLBF",
+      "name": "PT Kalbe Farma Tbk.",
+      "last_date": "2026-10-28",
+      "score": 54.2,
+      "technical_score": 35,
+      "fundamental_score": 83,
+      "last_move": 0.0352,
+      "avg_daily_value": 41420885225.0,
+      "technical": {
+        "close": 735.0,
+        "sma20": 735.5,
+        "sma50": 754.5,
+        "sma200": 868.5314987182617,
+        "rsi": 50.0,
+        "ret_1m": 0.0138,
+        "ret_3m": 0.05,
+        "vol_ratio": 0.81,
+        "passed": [
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 61.8,
+          "stoch_d": 54.9,
+          "adx": 17.7,
+          "cmf": 0.048,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 630.0,
+          "resistance": 800.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.14768,
+        "per": 9.255761,
+        "pbv": 1.3670019,
+        "profit_margin": 0.09568,
+        "revenue_growth": 0.182,
+        "der": 3.208,
+        "sector": "Healthcare",
+        "name": "PT Kalbe Farma Tbk.",
+        "missing": []
+      },
+      "atr": 30.769779170728494,
+      "plan": {
+        "entry": 735.0,
+        "stop": 670,
+        "target": 865,
+        "lots": 30,
+        "units": 3000,
+        "position_value": 2205000.0,
+        "risk": 195000.0,
+        "stop_pct": 0.08843537414965986
+      },
+      "flags": []
+    },
+    {
+      "code": "SRTG",
+      "name": "PT Saratoga Investama Sedaya Tbk",
+      "last_date": "2026-10-28",
+      "score": 54.0,
+      "technical_score": 50,
+      "fundamental_score": 60,
+      "last_move": 0.0061,
+      "avg_daily_value": 4410976275.0,
+      "technical": {
+        "close": 1655.0,
+        "sma20": 1680.5,
+        "sma50": 1769.2,
+        "sma200": 1651.3282287597656,
+        "rsi": 45.9,
+        "ret_1m": -0.078,
+        "ret_3m": -0.0434,
+        "vol_ratio": 0.64,
+        "passed": [
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 69.3,
+          "stoch_d": 68.5,
+          "adx": 23.9,
+          "cmf": 0.044,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 1395.0,
+          "resistance": 1805.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.0634,
+        "per": 6.755102,
+        "pbv": 0.4178456,
+        "profit_margin": 0.75845003,
+        "revenue_growth": null,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Saratoga Investama Sedaya Tbk",
+        "missing": [
+          "pertumbuhan pendapatan"
+        ]
+      },
+      "atr": 74.72541582725289,
+      "plan": {
+        "entry": 1655.0,
+        "stop": 1505,
+        "target": 1955,
+        "lots": 13,
+        "units": 1300,
+        "position_value": 2151500.0,
+        "risk": 195000.0,
+        "stop_pct": 0.09063444108761329
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar",
+        "data fundamental tidak lengkap: pertumbuhan pendapatan"
+      ]
+    },
+    {
+      "code": "BBTN",
+      "name": "PT Bank Tabungan Negara (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 52.0,
+      "technical_score": 30,
+      "fundamental_score": 85,
+      "last_move": 0.0108,
+      "avg_daily_value": 24314183575.0,
+      "technical": {
+        "close": 935.0,
+        "sma20": 994.25,
+        "sma50": 1109.4,
+        "sma200": 1220.0,
+        "rsi": 36.8,
+        "ret_1m": -0.1422,
+        "ret_3m": -0.2176,
+        "vol_ratio": 1.38,
+        "passed": [
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 44.9,
+          "stoch_d": 42.1,
+          "adx": 44.2,
+          "cmf": -0.117,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 825.0,
+          "resistance": 1105.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.117419995,
+        "per": 3.137584,
+        "pbv": 0.3493872,
+        "profit_margin": 0.23923999,
+        "revenue_growth": 0.247,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Tabungan Negara (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 41.41347749657787,
+      "plan": {
+        "entry": 935.0,
+        "stop": 850,
+        "target": 1105,
+        "lots": 23,
+        "units": 2300,
+        "position_value": 2150500.0,
+        "risk": 195500.0,
+        "stop_pct": 0.09090909090909091
+      },
+      "flags": []
+    },
+    {
+      "code": "MAPI",
+      "name": "PT. Mitra Adiperkasa Tbk",
+      "last_date": "2026-10-28",
+      "score": 49.2,
+      "technical_score": 20,
+      "fundamental_score": 93,
+      "last_move": 0.0,
+      "avg_daily_value": 14101034025.0,
+      "technical": {
+        "close": 1320.0,
+        "sma20": 1424.0,
+        "sma50": 1443.3,
+        "sma200": 1373.4848876953124,
+        "rsi": 42.6,
+        "ret_1m": -0.1484,
+        "ret_3m": -0.102,
+        "vol_ratio": 0.97,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 33.8,
+          "stoch_d": 34.2,
+          "adx": 17.6,
+          "cmf": 0.241,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 1190.0,
+          "resistance": 1575.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.17649001,
+        "per": 8.524378,
+        "pbv": 1.5674373,
+        "profit_margin": 0.051009998,
+        "revenue_growth": 0.267,
+        "der": 44.339,
+        "sector": "Consumer Cyclical",
+        "name": "PT. Mitra Adiperkasa Tbk",
+        "missing": []
+      },
+      "atr": 82.0385981659376,
+      "plan": {
+        "entry": 1320.0,
+        "stop": 1155,
+        "target": 1650,
+        "lots": 12,
+        "units": 1200,
+        "position_value": 1584000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.125
+      },
+      "flags": []
+    },
+    {
+      "code": "DEWA",
+      "name": "PT Darma Henwa Tbk",
+      "last_date": "2026-10-28",
+      "score": 49.0,
+      "technical_score": 15,
+      "fundamental_score": 100,
+      "last_move": -0.0083,
+      "avg_daily_value": 157555965620.0,
+      "technical": {
+        "close": 240.0,
+        "sma20": 302.6,
+        "sma50": 367.28,
+        "sma200": 450.94235511779783,
+        "rsi": 27.3,
+        "ret_1m": -0.2941,
+        "ret_3m": -0.4545,
+        "vol_ratio": 1.05,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 9.6,
+          "stoch_d": 14.6,
+          "adx": 40.0,
+          "cmf": 0.033,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 226.0,
+          "resistance": 372.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.70732003,
+        "per": 2.1238937,
+        "pbv": 1.1353047,
+        "profit_margin": 0.66926,
+        "revenue_growth": 0.23,
+        "der": 75.857,
+        "sector": "Energy",
+        "name": "PT Darma Henwa Tbk",
+        "missing": []
+      },
+      "atr": 23.519362230885168,
+      "plan": {
+        "entry": 240.0,
+        "stop": 192,
+        "target": 336,
+        "lots": 41,
+        "units": 4100,
+        "position_value": 984000.0,
+        "risk": 196800.0,
+        "stop_pct": 0.2
+      },
+      "flags": []
+    },
+    {
+      "code": "ERAA",
+      "name": "PT Erajaya Swasembada Tbk",
+      "last_date": "2026-10-28",
+      "score": 49.0,
+      "technical_score": 25,
+      "fundamental_score": 85,
+      "last_move": -0.0351,
+      "avg_daily_value": 67804862100.0,
+      "technical": {
+        "close": 550.0,
+        "sma20": 586.2,
+        "sma50": 572.08,
+        "sma200": 423.01346572875974,
+        "rsi": 44.2,
+        "ret_1m": -0.0756,
+        "ret_3m": 0.4249,
+        "vol_ratio": 0.96,
+        "passed": [
+          "SMA50 > SMA200",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 42.0,
+          "stoch_d": 47.5,
+          "adx": 25.0,
+          "cmf": -0.108,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 474.0,
+          "resistance": 655.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.15506,
+        "per": 6.1466246,
+        "pbv": 0.90752035,
+        "profit_margin": 0.01672,
+        "revenue_growth": 0.069,
+        "der": 72.92,
+        "sector": "Consumer Cyclical",
+        "name": "PT Erajaya Swasembada Tbk",
+        "missing": []
+      },
+      "atr": 35.122624468546384,
+      "plan": {
+        "entry": 550.0,
+        "stop": 478,
+        "target": 695,
+        "lots": 27,
+        "units": 2700,
+        "position_value": 1485000.0,
+        "risk": 194400.0,
+        "stop_pct": 0.13090909090909092
+      },
+      "flags": []
+    },
+    {
+      "code": "MIKA",
+      "name": "PT Mitra Keluarga Karyasehat Tbk",
+      "last_date": "2026-10-28",
+      "score": 49.0,
+      "technical_score": 15,
+      "fundamental_score": 100,
+      "last_move": 0.0222,
+      "avg_daily_value": 6059260550.0,
+      "technical": {
+        "close": 1380.0,
+        "sma20": 1567.5,
+        "sma50": 1714.9,
+        "sma200": 1894.8470550537108,
+        "rsi": 32.3,
+        "ret_1m": -0.1761,
+        "ret_3m": -0.1882,
+        "vol_ratio": 1.05,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 20.2,
+          "stoch_d": 17.5,
+          "adx": 35.7,
+          "cmf": -0.326,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1280.0,
+          "resistance": 1775.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.18961,
+        "per": 13.612153,
+        "pbv": 2.6235242,
+        "profit_margin": 0.25281,
+        "revenue_growth": 0.094,
+        "der": 0.112,
+        "sector": "Healthcare",
+        "name": "PT Mitra Keluarga Karyasehat Tbk",
+        "missing": []
+      },
+      "atr": 70.62920186645547,
+      "plan": {
+        "entry": 1380.0,
+        "stop": 1235,
+        "target": 1670,
+        "lots": 13,
+        "units": 1300,
+        "position_value": 1794000.0,
+        "risk": 188500.0,
+        "stop_pct": 0.10507246376811594
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "NCKL",
+      "name": "PT Trimegah Bangun Persada Tbk",
+      "last_date": "2026-10-28",
+      "score": 49.0,
+      "technical_score": 15,
+      "fundamental_score": 100,
+      "last_move": 0.0204,
+      "avg_daily_value": 35132858425.0,
+      "technical": {
+        "close": 750.0,
+        "sma20": 803.75,
+        "sma50": 883.3,
+        "sma200": 1006.6942468261718,
+        "rsi": 38.3,
+        "ret_1m": -0.1379,
+        "ret_3m": -0.1176,
+        "vol_ratio": 1.01,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 46.7,
+          "stoch_d": 46.1,
+          "adx": 33.1,
+          "cmf": -0.046,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 645.0,
+          "resistance": 895.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.26018998,
+        "per": 4.4331484,
+        "pbv": 1.0767802,
+        "profit_margin": 0.32674998,
+        "revenue_growth": 0.477,
+        "der": 16.872,
+        "sector": "Basic Materials",
+        "name": "PT Trimegah Bangun Persada Tbk",
+        "missing": []
+      },
+      "atr": 40.04171937347967,
+      "plan": {
+        "entry": 750.0,
+        "stop": 665,
+        "target": 920,
+        "lots": 23,
+        "units": 2300,
+        "position_value": 1725000.0,
+        "risk": 195500.0,
+        "stop_pct": 0.11333333333333333
+      },
+      "flags": []
+    },
+    {
+      "code": "INDF",
+      "name": "PT Indofood Sukses Makmur Tbk",
+      "last_date": "2026-10-28",
+      "score": 48.2,
+      "technical_score": 25,
+      "fundamental_score": 83,
+      "last_move": -0.0414,
+      "avg_daily_value": 54602391125.0,
+      "technical": {
+        "close": 6375.0,
+        "sma20": 6766.25,
+        "sma50": 7009.5,
+        "sma200": 6622.434682617188,
+        "rsi": 32.6,
+        "ret_1m": -0.0485,
+        "ret_3m": -0.0727,
+        "vol_ratio": 1.25,
+        "passed": [
+          "SMA50 > SMA200",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": -0.1,
+          "stoch_k": 39.1,
+          "stoch_d": 55.8,
+          "adx": 29.7,
+          "cmf": 0.151,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "harga di bawah pita Bollinger bawah: mungkin jenuh jual"
+          ],
+          "support": 5925.0,
+          "resistance": 7075.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.12137,
+        "per": 5.848892,
+        "pbv": 0.730161,
+        "profit_margin": 0.07409,
+        "revenue_growth": 0.118,
+        "der": 63.789,
+        "sector": "Consumer Defensive",
+        "name": "PT Indofood Sukses Makmur Tbk",
+        "missing": []
+      },
+      "atr": 221.93065484490046,
+      "plan": {
+        "entry": 6375.0,
+        "stop": 5925,
+        "target": 7275,
+        "lots": 4,
+        "units": 400,
+        "position_value": 2550000.0,
+        "risk": 180000.0,
+        "stop_pct": 0.07058823529411765
+      },
+      "flags": []
+    },
+    {
+      "code": "EMTK",
+      "name": "PT Elang Mahkota Teknologi Tbk",
+      "last_date": "2026-10-28",
+      "score": 48.0,
+      "technical_score": 30,
+      "fundamental_score": 75,
+      "last_move": 0.0189,
+      "avg_daily_value": 16864302750.0,
+      "technical": {
+        "close": 324.0,
+        "sma20": 363.1,
+        "sma50": 438.64,
+        "sma200": 669.6983602905274,
+        "rsi": 32.3,
+        "ret_1m": -0.194,
+        "ret_3m": -0.3647,
+        "vol_ratio": 1.05,
+        "passed": [
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 15.4,
+          "stoch_d": 15.4,
+          "adx": 48.7,
+          "cmf": -0.125,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 312.0,
+          "resistance": 412.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.07585,
+        "per": 8.821127,
+        "pbv": 0.54122317,
+        "profit_margin": 0.10618,
+        "revenue_growth": 0.026,
+        "der": 6.298,
+        "sector": "Communication Services",
+        "name": "PT Elang Mahkota Teknologi Tbk",
+        "missing": []
+      },
+      "atr": 20.006985226440364,
+      "plan": {
+        "entry": 324.0,
+        "stop": 282,
+        "target": 408,
+        "lots": 47,
+        "units": 4700,
+        "position_value": 1522800.0,
+        "risk": 197400.0,
+        "stop_pct": 0.12962962962962962
+      },
+      "flags": []
+    },
+    {
+      "code": "TKIM",
+      "name": "PT Pabrik Kertas Tjiwi Kimia Tbk",
+      "last_date": "2026-10-28",
+      "score": 48.0,
+      "technical_score": 30,
+      "fundamental_score": 75,
+      "last_move": -0.0225,
+      "avg_daily_value": 14920866125.0,
+      "technical": {
+        "close": 6525.0,
+        "sma20": 6865.0,
+        "sma50": 7420.0,
+        "sma200": 7402.75935546875,
+        "rsi": 41.5,
+        "ret_1m": -0.0938,
+        "ret_3m": 0.0785,
+        "vol_ratio": 0.87,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 46.7,
+          "stoch_d": 48.9,
+          "adx": 26.9,
+          "cmf": 0.01,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 5650.0,
+          "resistance": 7525.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.14711,
+        "per": 2.7375133,
+        "pbv": 6328.8066,
+        "profit_margin": 0.43007,
+        "revenue_growth": 0.136,
+        "der": 23.331,
+        "sector": "Basic Materials",
+        "name": "PT Pabrik Kertas Tjiwi Kimia Tbk",
+        "missing": []
+      },
+      "atr": 352.1503613186443,
+      "plan": {
+        "entry": 6525.0,
+        "stop": 5800,
+        "target": 7975,
+        "lots": 2,
+        "units": 200,
+        "position_value": 1305000.0,
+        "risk": 145000.0,
+        "stop_pct": 0.1111111111111111
+      },
+      "flags": []
+    },
+    {
+      "code": "BBCA",
+      "name": "PT Bank Central Asia Tbk",
+      "last_date": "2026-10-28",
+      "score": 47.0,
+      "technical_score": 15,
+      "fundamental_score": 95,
+      "last_move": 0.0765,
+      "avg_daily_value": 1759437476925.0,
+      "technical": {
+        "close": 5275.0,
+        "sma20": 5618.0,
+        "sma50": 6085.742470703125,
+        "sma200": 6396.349965820313,
+        "rsi": 41.0,
+        "ret_1m": -0.1423,
+        "ret_3m": -0.1561,
+        "vol_ratio": 1.78,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 38.6,
+          "stoch_d": 21.4,
+          "adx": 29.7,
+          "cmf": -0.098,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 4740.0,
+          "resistance": 6200.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.21199,
+        "per": 10.921325,
+        "pbv": 2.3054032,
+        "profit_margin": 0.53691,
+        "revenue_growth": 0.077,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Central Asia Tbk",
+        "missing": []
+      },
+      "atr": 219.84777056224775,
+      "plan": {
+        "entry": 5275.0,
+        "stop": 4830,
+        "target": 6175,
+        "lots": 4,
+        "units": 400,
+        "position_value": 2110000.0,
+        "risk": 178000.0,
+        "stop_pct": 0.08436018957345971
+      },
+      "flags": []
+    },
+    {
+      "code": "BRIS",
+      "name": "PT Bank Syariah Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 47.0,
+      "technical_score": 15,
+      "fundamental_score": 95,
+      "last_move": 0.019,
+      "avg_daily_value": 111001289700.0,
+      "technical": {
+        "close": 1070.0,
+        "sma20": 1220.5,
+        "sma50": 1506.2,
+        "sma200": 1864.2274987792969,
+        "rsi": 23.5,
+        "ret_1m": -0.2937,
+        "ret_3m": -0.392,
+        "vol_ratio": 2.18,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 18.7,
+          "stoch_d": 15.0,
+          "adx": 60.1,
+          "cmf": -0.427,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1000.0,
+          "resistance": 1525.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.16148001,
+        "per": 6.183542,
+        "pbv": 0.96703935,
+        "profit_margin": 0.31524,
+        "revenue_growth": 0.109,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Syariah Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 62.73210219115939,
+      "plan": {
+        "entry": 1070.0,
+        "stop": 940,
+        "target": 1330,
+        "lots": 15,
+        "units": 1500,
+        "position_value": 1605000.0,
+        "risk": 195000.0,
+        "stop_pct": 0.12149532710280374
+      },
+      "flags": []
+    },
+    {
+      "code": "ISAT",
+      "name": "PT Indosat Tbk",
+      "last_date": "2026-10-28",
+      "score": 46.2,
+      "technical_score": 15,
+      "fundamental_score": 93,
+      "last_move": -0.0682,
+      "avg_daily_value": 107729597325.0,
+      "technical": {
+        "close": 1570.0,
+        "sma20": 1958.0,
+        "sma50": 2243.2,
+        "sma200": 2082.873884887695,
+        "rsi": 25.4,
+        "ret_1m": -0.3174,
+        "ret_3m": -0.1737,
+        "vol_ratio": 0.85,
+        "passed": [
+          "SMA50 > SMA200"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 7.3,
+          "stoch_d": 17.9,
+          "adx": 42.7,
+          "cmf": 0.053,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1525.0,
+          "resistance": 2340.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.20238,
+        "per": 6.766075,
+        "pbv": 1.3666388,
+        "profit_margin": 0.124589995,
+        "revenue_growth": 0.14,
+        "der": 176.375,
+        "sector": "Communication Services",
+        "name": "PT Indosat Tbk",
+        "missing": []
+      },
+      "atr": 110.92542552341551,
+      "plan": {
+        "entry": 1570.0,
+        "stop": 1345,
+        "target": 2020,
+        "lots": 8,
+        "units": 800,
+        "position_value": 1256000.0,
+        "risk": 180000.0,
+        "stop_pct": 0.14331210191082802
+      },
+      "flags": []
+    },
+    {
+      "code": "JPFA",
+      "name": "PT Japfa Comfeed Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 46.2,
+      "technical_score": 15,
+      "fundamental_score": 93,
+      "last_move": 0.014,
+      "avg_daily_value": 26618212425.0,
+      "technical": {
+        "close": 1810.0,
+        "sma20": 1903.25,
+        "sma50": 2103.7,
+        "sma200": 2250.383143310547,
+        "rsi": 38.8,
+        "ret_1m": -0.1214,
+        "ret_3m": -0.1381,
+        "vol_ratio": 1.09,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 43.2,
+          "stoch_d": 39.6,
+          "adx": 37.7,
+          "cmf": -0.003,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1605.0,
+          "resistance": 2130.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.29183,
+        "per": 4.0311804,
+        "pbv": 1.068766,
+        "profit_margin": 0.07644,
+        "revenue_growth": 0.342,
+        "der": 76.241,
+        "sector": "Consumer Defensive",
+        "name": "PT Japfa Comfeed Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 87.59091093227414,
+      "plan": {
+        "entry": 1810.0,
+        "stop": 1630,
+        "target": 2170,
+        "lots": 11,
+        "units": 1100,
+        "position_value": 1991000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.09944751381215469
+      },
+      "flags": []
+    },
+    {
+      "code": "MYOR",
+      "name": "PT Mayora Indah Tbk",
+      "last_date": "2026-10-28",
+      "score": 46.2,
+      "technical_score": 15,
+      "fundamental_score": 93,
+      "last_move": -0.0036,
+      "avg_daily_value": 12525445400.0,
+      "technical": {
+        "close": 1370.0,
+        "sma20": 1383.0,
+        "sma50": 1471.9,
+        "sma200": 1767.005590209961,
+        "rsi": 42.3,
+        "ret_1m": -0.0144,
+        "ret_3m": -0.2058,
+        "vol_ratio": 0.7,
+        "passed": [
+          "MACD histogram > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 51.2,
+          "stoch_d": 49.6,
+          "adx": 33.7,
+          "cmf": 0.045,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1260.0,
+          "resistance": 1475.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.19617,
+        "per": 8.967729,
+        "pbv": 1.6611618,
+        "profit_margin": 0.08781999,
+        "revenue_growth": 0.075,
+        "der": 24.671,
+        "sector": "Consumer Defensive",
+        "name": "PT Mayora Indah Tbk",
+        "missing": []
+      },
+      "atr": 51.157694446690776,
+      "plan": {
+        "entry": 1370.0,
+        "stop": 1265,
+        "target": 1580,
+        "lots": 19,
+        "units": 1900,
+        "position_value": 2603000.0,
+        "risk": 199500.0,
+        "stop_pct": 0.07664233576642336
+      },
+      "flags": []
+    },
+    {
+      "code": "WIFI",
+      "name": "PT Solusi Sinergi Digital Tbk",
+      "last_date": "2026-10-28",
+      "score": 46.2,
+      "technical_score": 15,
+      "fundamental_score": 93,
+      "last_move": 0.0361,
+      "avg_daily_value": 51826643450.0,
+      "technical": {
+        "close": 1005.0,
+        "sma20": 1258.5,
+        "sma50": 1683.9,
+        "sma200": 2098.733318481445,
+        "rsi": 28.4,
+        "ret_1m": -0.4036,
+        "ret_3m": -0.4872,
+        "vol_ratio": 1.34,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 19.0,
+          "stoch_d": 12.9,
+          "adx": 48.3,
+          "cmf": -0.206,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 955.0,
+          "resistance": 1730.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.16084999,
+        "per": 9.8829775,
+        "pbv": 0.6990969,
+        "profit_margin": 0.18837999,
+        "revenue_growth": 1.793,
+        "der": 115.824,
+        "sector": "Communication Services",
+        "name": "PT Solusi Sinergi Digital Tbk",
+        "missing": []
+      },
+      "atr": 102.11366123123992,
+      "plan": {
+        "entry": 1005.0,
+        "stop": 800,
+        "target": 1415,
+        "lots": 9,
+        "units": 900,
+        "position_value": 904500.0,
+        "risk": 184500.0,
+        "stop_pct": 0.20398009950248755
+      },
+      "flags": []
+    },
+    {
+      "code": "BNGA",
+      "name": "PT Bank CIMB Niaga Tbk",
+      "last_date": "2026-10-28",
+      "score": 45.0,
+      "technical_score": 25,
+      "fundamental_score": 75,
+      "last_move": 0.0098,
+      "avg_daily_value": 18210135575.0,
+      "technical": {
+        "close": 1540.0,
+        "sma20": 1640.75,
+        "sma50": 1686.8,
+        "sma200": 1651.4090130615234,
+        "rsi": 40.1,
+        "ret_1m": -0.1098,
+        "ret_3m": -0.061,
+        "vol_ratio": 2.02,
+        "passed": [
+          "SMA50 > SMA200",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 21.0,
+          "stoch_d": 24.7,
+          "adx": 29.1,
+          "cmf": -0.369,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1435.0,
+          "resistance": 1935.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.12457,
+        "per": 5.6457825,
+        "pbv": 0.69003344,
+        "profit_margin": 0.38167998,
+        "revenue_growth": -0.001,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank CIMB Niaga Tbk",
+        "missing": []
+      },
+      "atr": 74.33852000424048,
+      "plan": {
+        "entry": 1540.0,
+        "stop": 1390,
+        "target": 1840,
+        "lots": 13,
+        "units": 1300,
+        "position_value": 2002000.0,
+        "risk": 195000.0,
+        "stop_pct": 0.09740259740259741
+      },
+      "flags": []
+    },
+    {
+      "code": "BSDE",
+      "name": "PT Bumi Serpong Damai Tbk",
+      "last_date": "2026-10-28",
+      "score": 44.0,
+      "technical_score": 30,
+      "fundamental_score": 65,
+      "last_move": 0.0041,
+      "avg_daily_value": 17794533930.0,
+      "technical": {
+        "close": 494.0,
+        "sma20": 516.3,
+        "sma50": 580.62,
+        "sma200": 696.18,
+        "rsi": 39.4,
+        "ret_1m": -0.0936,
+        "ret_3m": -0.1257,
+        "vol_ratio": 1.15,
+        "passed": [
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 45.0,
+          "stoch_d": 45.0,
+          "adx": 33.2,
+          "cmf": -0.134,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 436.0,
+          "resistance": 565.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.041500002,
+        "per": 5.550562,
+        "pbv": 0.23050827,
+        "profit_margin": 0.16694,
+        "revenue_growth": -0.354,
+        "der": 35.164,
+        "sector": "Real Estate",
+        "name": "PT Bumi Serpong Damai Tbk",
+        "missing": []
+      },
+      "atr": 23.7974954357499,
+      "plan": {
+        "entry": 494.0,
+        "stop": 446,
+        "target": 590,
+        "lots": 41,
+        "units": 4100,
+        "position_value": 2025400.0,
+        "risk": 196800.0,
+        "stop_pct": 0.09716599190283401
+      },
+      "flags": []
+    },
+    {
+      "code": "TOWR",
+      "name": "PT Sarana Menara Nusantara Tbk.",
+      "last_date": "2026-10-28",
+      "score": 43.2,
+      "technical_score": 10,
+      "fundamental_score": 93,
+      "last_move": -0.02,
+      "avg_daily_value": 42815200840.0,
+      "technical": {
+        "close": 392.0,
+        "sma20": 419.4,
+        "sma50": 429.16,
+        "sma200": 448.9824223327637,
+        "rsi": 41.5,
+        "ret_1m": 0.0,
+        "ret_3m": -0.0297,
+        "vol_ratio": 1.26,
+        "passed": [
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 27.3,
+          "stoch_d": 33.3,
+          "adx": 19.6,
+          "cmf": 0.133,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 362.0,
+          "resistance": 472.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.16139999,
+        "per": 5.7647057,
+        "pbv": 0.7981512,
+        "profit_margin": 0.27462,
+        "revenue_growth": 0.146,
+        "der": 156.508,
+        "sector": "Real Estate",
+        "name": "PT Sarana Menara Nusantara Tbk.",
+        "missing": []
+      },
+      "atr": 23.152203162877175,
+      "plan": {
+        "entry": 392.0,
+        "stop": 344,
+        "target": 488,
+        "lots": 41,
+        "units": 4100,
+        "position_value": 1607200.0,
+        "risk": 196800.0,
+        "stop_pct": 0.12244897959183673
+      },
+      "flags": []
+    },
+    {
+      "code": "AMRT",
+      "name": "PT Sumber Alfaria Trijaya Tbk",
+      "last_date": "2026-10-28",
+      "score": 43.0,
+      "technical_score": 15,
+      "fundamental_score": 85,
+      "last_move": -0.0192,
+      "avg_daily_value": 86080540497.35718,
+      "technical": {
+        "close": 1020.0,
+        "sma20": 1150.960498046875,
+        "sma50": 1246.6563745117187,
+        "sma200": 1429.743125,
+        "rsi": 31.3,
+        "ret_1m": -0.2182,
+        "ret_3m": -0.2092,
+        "vol_ratio": 1.6,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 27.8,
+          "stoch_d": 31.9,
+          "adx": 38.5,
+          "cmf": -0.165,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 920.0,
+          "resistance": 1339.28198797
+        }
+      },
+      "fundamental": {
+        "roe": 0.20027,
+        "per": 11.867365,
+        "pbv": 2.3545978,
+        "profit_margin": 0.027139999,
+        "revenue_growth": 0.054,
+        "der": 14.109,
+        "sector": "Consumer Defensive",
+        "name": "PT Sumber Alfaria Trijaya Tbk",
+        "missing": []
+      },
+      "atr": 57.28774784445057,
+      "plan": {
+        "entry": 1020.0,
+        "stop": 905,
+        "target": 1250,
+        "lots": 17,
+        "units": 1700,
+        "position_value": 1734000.0,
+        "risk": 195500.0,
+        "stop_pct": 0.11274509803921569
+      },
+      "flags": []
+    },
+    {
+      "code": "ANTM",
+      "name": "PT Antam (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 43.0,
+      "technical_score": 5,
+      "fundamental_score": 100,
+      "last_move": 0.0108,
+      "avg_daily_value": 262013190550.0,
+      "technical": {
+        "close": 2800.0,
+        "sma20": 2949.0,
+        "sma50": 3086.8,
+        "sma200": 3259.590450439453,
+        "rsi": 42.9,
+        "ret_1m": -0.1139,
+        "ret_3m": -0.0141,
+        "vol_ratio": 0.9,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 49.4,
+          "stoch_d": 46.0,
+          "adx": 21.6,
+          "cmf": 0.048,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 2380.0,
+          "resistance": 3270.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.26827,
+        "per": 7.5593953,
+        "pbv": 1.8053696,
+        "profit_margin": 0.100760005,
+        "revenue_growth": 0.016,
+        "der": 15.598,
+        "sector": "Basic Materials",
+        "name": "PT Antam (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 145.90862531952243,
+      "plan": {
+        "entry": 2800.0,
+        "stop": 2500,
+        "target": 3400,
+        "lots": 6,
+        "units": 600,
+        "position_value": 1680000.0,
+        "risk": 180000.0,
+        "stop_pct": 0.10714285714285714
+      },
+      "flags": []
+    },
+    {
+      "code": "ICBP",
+      "name": "PT Indofood CBP Sukses Makmur Tbk",
+      "last_date": "2026-10-28",
+      "score": 42.2,
+      "technical_score": 15,
+      "fundamental_score": 83,
+      "last_move": 0.0043,
+      "avg_daily_value": 46875156125.0,
+      "technical": {
+        "close": 5775.0,
+        "sma20": 6451.25,
+        "sma50": 6906.5,
+        "sma200": 7040.446003417968,
+        "rsi": 28.9,
+        "ret_1m": -0.1348,
+        "ret_3m": -0.1691,
+        "vol_ratio": 1.25,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 16.9,
+          "stoch_d": 20.5,
+          "adx": 39.9,
+          "cmf": 0.011,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "death cross baru (SMA50 memotong ke bawah SMA200)"
+          ],
+          "support": 5500.0,
+          "resistance": 7125.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.12555,
+        "per": 9.123222,
+        "pbv": 1.2763426,
+        "profit_margin": 0.093430005,
+        "revenue_growth": 0.157,
+        "der": 66.653,
+        "sector": "Consumer Defensive",
+        "name": "PT Indofood CBP Sukses Makmur Tbk",
+        "missing": []
+      },
+      "atr": 244.18429874657988,
+      "plan": {
+        "entry": 5775.0,
+        "stop": 5275,
+        "target": 6775,
+        "lots": 4,
+        "units": 400,
+        "position_value": 2310000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.08658008658008658
+      },
+      "flags": []
+    },
+    {
+      "code": "SIDO",
+      "name": "PT Industri Jamu dan Farmasi Sido Muncul Tbk",
+      "last_date": "2026-10-28",
+      "score": 42.2,
+      "technical_score": 15,
+      "fundamental_score": 83,
+      "last_move": 0.038,
+      "avg_daily_value": 10810158890.0,
+      "technical": {
+        "close": 328.0,
+        "sma20": 341.9,
+        "sma50": 347.8,
+        "sma200": 425.8233990478516,
+        "rsi": 43.8,
+        "ret_1m": -0.0575,
+        "ret_3m": -0.0939,
+        "vol_ratio": 1.12,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 46.4,
+          "stoch_d": 45.2,
+          "adx": 23.8,
+          "cmf": -0.168,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 302.0,
+          "resistance": 358.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.30396998,
+        "per": 9.444284,
+        "pbv": 3.223429,
+        "profit_margin": 0.25887,
+        "revenue_growth": -0.205,
+        "der": 0.053,
+        "sector": "Consumer Defensive",
+        "name": "PT Industri Jamu dan Farmasi Sido Muncul Tbk",
+        "missing": []
+      },
+      "atr": 13.275428027392579,
+      "plan": {
+        "entry": 328.0,
+        "stop": 300,
+        "target": 384,
+        "lots": 71,
+        "units": 7100,
+        "position_value": 2328800.0,
+        "risk": 198800.0,
+        "stop_pct": 0.08536585365853659
+      },
+      "flags": []
+    },
+    {
+      "code": "ESSA",
+      "name": "PT ESSA Industries Indonesia Tbk.",
+      "last_date": "2026-10-28",
+      "score": 42.0,
+      "technical_score": 20,
+      "fundamental_score": 75,
+      "last_move": -0.0187,
+      "avg_daily_value": 41236353435.0,
+      "technical": {
+        "close": 525.0,
+        "sma20": 548.3,
+        "sma50": 599.52,
+        "sma200": 626.0188793945313,
+        "rsi": 41.0,
+        "ret_1m": -0.0948,
+        "ret_3m": -0.1463,
+        "vol_ratio": 0.81,
+        "passed": [
+          "MACD histogram > 0",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 55.5,
+          "stoch_d": 54.3,
+          "adx": 23.1,
+          "cmf": 0.131,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 444.0,
+          "resistance": 600.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.14062001,
+        "per": 9.638332,
+        "pbv": 21000.0,
+        "profit_margin": 0.16173,
+        "revenue_growth": 0.343,
+        "der": 0.019,
+        "sector": "Basic Materials",
+        "name": "PT ESSA Industries Indonesia Tbk.",
+        "missing": []
+      },
+      "atr": 28.752514754383725,
+      "plan": {
+        "entry": 525.0,
+        "stop": 466,
+        "target": 645,
+        "lots": 33,
+        "units": 3300,
+        "position_value": 1732500.0,
+        "risk": 194700.0,
+        "stop_pct": 0.11238095238095239
+      },
+      "flags": []
+    },
+    {
+      "code": "SCMA",
+      "name": "PT Surya Citra Media Tbk",
+      "last_date": "2026-10-28",
+      "score": 42.0,
+      "technical_score": 10,
+      "fundamental_score": 90,
+      "last_move": -0.0043,
+      "avg_daily_value": 8860456885.422516,
+      "technical": {
+        "close": 139.0,
+        "sma20": 155.60514068603516,
+        "sma50": 172.62038391113282,
+        "sma200": 213.55355987548828,
+        "rsi": 33.0,
+        "ret_1m": -0.1382,
+        "ret_3m": -0.2404,
+        "vol_ratio": 1.01,
+        "passed": [
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 21.3,
+          "stoch_d": 27.5,
+          "adx": 33.3,
+          "cmf": -0.279,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 130.16757202,
+          "resistance": 171.67027881
+        }
+      },
+      "fundamental": {
+        "roe": 0.13564,
+        "per": 8.938907,
+        "pbv": 1.3978559,
+        "profit_margin": 0.13875,
+        "revenue_growth": 0.062,
+        "der": 10.278,
+        "sector": "Communication Services",
+        "name": "PT Surya Citra Media Tbk",
+        "missing": []
+      },
+      "atr": 7.3582788941404225,
+      "plan": {
+        "entry": 139.0,
+        "stop": 124,
+        "target": 169,
+        "lots": 133,
+        "units": 13300,
+        "position_value": 1848700.0,
+        "risk": 199500.0,
+        "stop_pct": 0.1079136690647482
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "ADMR",
+      "name": "PT Alamtri Minerals Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 40.2,
+      "technical_score": 15,
+      "fundamental_score": 78,
+      "last_move": 0.012,
+      "avg_daily_value": 51084592425.0,
+      "technical": {
+        "close": 1270.0,
+        "sma20": 1358.25,
+        "sma50": 1510.0,
+        "sma200": 1663.2274139404296,
+        "rsi": 40.1,
+        "ret_1m": -0.1477,
+        "ret_3m": -0.1181,
+        "vol_ratio": 1.11,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 40.4,
+          "stoch_d": 39.7,
+          "adx": 29.9,
+          "cmf": -0.292,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1080.0,
+          "resistance": 1550.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.17246,
+        "per": 10.037939,
+        "pbv": 31750.0,
+        "profit_margin": 0.27397,
+        "revenue_growth": 0.297,
+        "der": 103.461,
+        "sector": "Basic Materials",
+        "name": "PT Alamtri Minerals Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 76.52633332529614,
+      "plan": {
+        "entry": 1270.0,
+        "stop": 1115,
+        "target": 1580,
+        "lots": 12,
+        "units": 1200,
+        "position_value": 1524000.0,
+        "risk": 186000.0,
+        "stop_pct": 0.1220472440944882
+      },
+      "flags": []
+    },
+    {
+      "code": "UNVR",
+      "name": "PT Unilever Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 39.0,
+      "technical_score": 15,
+      "fundamental_score": 75,
+      "last_move": 0.0072,
+      "avg_daily_value": 37832392800.0,
+      "technical": {
+        "close": 1405.0,
+        "sma20": 1501.25,
+        "sma50": 1610.9,
+        "sma200": 1777.6473504638673,
+        "rsi": 35.6,
+        "ret_1m": -0.1407,
+        "ret_3m": -0.1711,
+        "vol_ratio": 1.34,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 33.8,
+          "stoch_d": 34.9,
+          "adx": 37.8,
+          "cmf": -0.117,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1295.0,
+          "resistance": 1640.0
+        }
+      },
+      "fundamental": {
+        "roe": 1.01963,
+        "per": 15.153149,
+        "pbv": 12.689782,
+        "profit_margin": 0.2527,
+        "revenue_growth": 0.074,
+        "der": 13.353,
+        "sector": "Consumer Defensive",
+        "name": "PT Unilever Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 52.98263922952607,
+      "plan": {
+        "entry": 1405.0,
+        "stop": 1295,
+        "target": 1625,
+        "lots": 18,
+        "units": 1800,
+        "position_value": 2529000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.07829181494661921
+      },
+      "flags": []
+    },
+    {
+      "code": "CPIN",
+      "name": "PT Charoen Pokphand Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 37.2,
+      "technical_score": 0,
+      "fundamental_score": 93,
+      "last_move": -0.0396,
+      "avg_daily_value": 50609808250.0,
+      "technical": {
+        "close": 2670.0,
+        "sma20": 2819.5,
+        "sma50": 2983.4,
+        "sma200": 3565.587244873047,
+        "rsi": 40.5,
+        "ret_1m": -0.101,
+        "ret_3m": -0.1551,
+        "vol_ratio": 0.57,
+        "passed": [],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 43.1,
+          "stoch_d": 50.8,
+          "adx": 20.5,
+          "cmf": 0.298,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 2390.0,
+          "resistance": 3040.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.22792,
+        "per": 5.8810573,
+        "pbv": 1.2546191,
+        "profit_margin": 0.0967,
+        "revenue_growth": 0.268,
+        "der": 28.211,
+        "sector": "Consumer Defensive",
+        "name": "PT Charoen Pokphand Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 121.26520532054073,
+      "plan": {
+        "entry": 2670.0,
+        "stop": 2420,
+        "target": 3170,
+        "lots": 8,
+        "units": 800,
+        "position_value": 2136000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.09363295880149813
+      },
+      "flags": []
+    },
+    {
+      "code": "PANI",
+      "name": "PT Pantai Indah Kapuk Dua Tbk",
+      "last_date": "2026-10-28",
+      "score": 37.0,
+      "technical_score": 15,
+      "fundamental_score": 70,
+      "last_move": 0.0,
+      "avg_daily_value": 24455907550.0,
+      "technical": {
+        "close": 4250.0,
+        "sma20": 4535.5,
+        "sma50": 5148.9,
+        "sma200": 7482.9686596679685,
+        "rsi": 38.4,
+        "ret_1m": -0.0801,
+        "ret_3m": -0.2946,
+        "vol_ratio": 0.89,
+        "passed": [
+          "MACD histogram > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 20.5,
+          "stoch_d": 25.4,
+          "adx": 25.2,
+          "cmf": 0.15,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 3960.0,
+          "resistance": 5375.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.10487001,
+        "per": 29.714046,
+        "pbv": 2.653676,
+        "profit_margin": 0.45239,
+        "revenue_growth": 0.753,
+        "der": 1.571,
+        "sector": "Real Estate",
+        "name": "PT Pantai Indah Kapuk Dua Tbk",
+        "missing": []
+      },
+      "atr": 250.1107279373222,
+      "plan": {
+        "entry": 4250.0,
+        "stop": 3740,
+        "target": 5275,
+        "lots": 3,
+        "units": 300,
+        "position_value": 1275000.0,
+        "risk": 153000.0,
+        "stop_pct": 0.12
+      },
+      "flags": []
+    },
+    {
+      "code": "GGRM",
+      "name": "PT Gudang Garam Tbk",
+      "last_date": "2026-10-28",
+      "score": 35.2,
+      "technical_score": 30,
+      "fundamental_score": 43,
+      "last_move": -0.0554,
+      "avg_daily_value": 21189319250.0,
+      "technical": {
+        "close": 16200.0,
+        "sma20": 16811.25,
+        "sma50": 18106.0,
+        "sma200": 16112.225,
+        "rsi": 43.0,
+        "ret_1m": -0.0386,
+        "ret_3m": -0.1184,
+        "vol_ratio": 0.95,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 45.6,
+          "stoch_d": 55.0,
+          "adx": 26.0,
+          "cmf": 0.066,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 14250.0,
+          "resistance": 18525.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.0706,
+        "per": 7.0588236,
+        "pbv": 0.48699966,
+        "profit_margin": 0.05124,
+        "revenue_growth": -0.011,
+        "der": null,
+        "sector": "Consumer Defensive",
+        "name": "PT Gudang Garam Tbk",
+        "missing": [
+          "DER"
+        ]
+      },
+      "atr": 784.7617175586092,
+      "plan": {
+        "entry": 16200.0,
+        "stop": 14625,
+        "target": 19350,
+        "lots": 1,
+        "units": 100,
+        "position_value": 1620000.0,
+        "risk": 157500.0,
+        "stop_pct": 0.09722222222222222
+      },
+      "flags": [
+        "data fundamental tidak lengkap: DER"
+      ]
+    },
+    {
+      "code": "TBIG",
+      "name": "PT Tower Bersama Infrastructure Tbk",
+      "last_date": "2026-10-28",
+      "score": 35.0,
+      "technical_score": 15,
+      "fundamental_score": 65,
+      "last_move": 0.0,
+      "avg_daily_value": 802838425.0,
+      "technical": {
+        "close": 1090.0,
+        "sma20": 1279.5,
+        "sma50": 1392.2,
+        "sma200": 1565.8034228515626,
+        "rsi": 18.8,
+        "ret_1m": -0.2457,
+        "ret_3m": -0.2101,
+        "vol_ratio": 1.1,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 19.0,
+          "stoch_d": 12.8,
+          "adx": 47.1,
+          "cmf": 0.15,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1045.0,
+          "resistance": 1475.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.1245,
+        "per": 17.801731,
+        "pbv": 1.9040964,
+        "profit_margin": 0.20813,
+        "revenue_growth": 0.014,
+        "der": 220.835,
+        "sector": "Communication Services",
+        "name": "PT Tower Bersama Infrastructure Tbk",
+        "missing": []
+      },
+      "atr": 57.462775768316725,
+      "plan": {
+        "entry": 1090.0,
+        "stop": 975,
+        "target": 1320,
+        "lots": 17,
+        "units": 1700,
+        "position_value": 1853000.0,
+        "risk": 195500.0,
+        "stop_pct": 0.10550458715596331
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "RAJA",
+      "name": "PT Rukun Raharja Tbk",
+      "last_date": "2026-10-28",
+      "score": 34.2,
+      "technical_score": 5,
+      "fundamental_score": 78,
+      "last_move": -0.0088,
+      "avg_daily_value": 37687774535.0,
+      "technical": {
+        "close": 448.0,
+        "sma20": 563.25,
+        "sma50": 689.4,
+        "sma200": 834.8423703002929,
+        "rsi": 26.0,
+        "ret_1m": -0.316,
+        "ret_3m": -0.4821,
+        "vol_ratio": 0.98,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 8.7,
+          "stoch_d": 12.0,
+          "adx": 53.3,
+          "cmf": -0.067,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 426.0,
+          "resistance": 710.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.19903,
+        "per": 14.512471,
+        "pbv": 44800.0,
+        "profit_margin": 0.143,
+        "revenue_growth": 0.234,
+        "der": 112.726,
+        "sector": "Utilities",
+        "name": "PT Rukun Raharja Tbk",
+        "missing": []
+      },
+      "atr": 45.03211150390519,
+      "plan": {
+        "entry": 448.0,
+        "stop": 356,
+        "target": 635,
+        "lots": 21,
+        "units": 2100,
+        "position_value": 940800.0,
+        "risk": 193200.0,
+        "stop_pct": 0.20535714285714285
+      },
+      "flags": []
+    },
+    {
+      "code": "GOTO",
+      "name": "PT GoTo Gojek Tokopedia Tbk",
+      "last_date": "2026-10-28",
+      "score": 34.0,
+      "technical_score": 30,
+      "fundamental_score": 40,
+      "last_move": 0.0,
+      "avg_daily_value": 483569668274.8,
+      "technical": {
+        "close": 24.0,
+        "sma20": 27.05,
+        "sma50": 40.06,
+        "sma200": 50.96,
+        "rsi": 21.7,
+        "ret_1m": -0.3514,
+        "ret_3m": -0.52,
+        "vol_ratio": 2.98,
+        "passed": [
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 14.3,
+          "stoch_d": 16.3,
+          "adx": 63.4,
+          "cmf": 0.262,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 23.0,
+          "resistance": 32.0
+        }
+      },
+      "fundamental": {
+        "roe": -0.011569999,
+        "per": null,
+        "pbv": 0.78975946,
+        "profit_margin": 8.9999994e-05,
+        "revenue_growth": 0.306,
+        "der": 28.366,
+        "sector": "Technology",
+        "name": "PT GoTo Gojek Tokopedia Tbk",
+        "missing": [
+          "PER"
+        ]
+      },
+      "atr": 1.8091045729539341,
+      "plan": {
+        "entry": 24.0,
+        "stop": 20,
+        "target": 32,
+        "lots": 500,
+        "units": 50000,
+        "position_value": 1200000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.16666666666666666
+      },
+      "flags": [
+        "data fundamental tidak lengkap: PER"
+      ]
+    },
+    {
+      "code": "INCO",
+      "name": "PT Vale Indonesia Tbk",
+      "last_date": "2026-10-28",
+      "score": 33.0,
+      "technical_score": 15,
+      "fundamental_score": 60,
+      "last_move": 0.0343,
+      "avg_daily_value": 64301042400.0,
+      "technical": {
+        "close": 3620.0,
+        "sma20": 3954.0,
+        "sma50": 4503.5,
+        "sma200": 5350.6620190429685,
+        "rsi": 35.8,
+        "ret_1m": -0.1542,
+        "ret_3m": -0.2198,
+        "vol_ratio": 1.11,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 35.3,
+          "stoch_d": 31.5,
+          "adx": 40.4,
+          "cmf": -0.238,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 3210.0,
+          "resistance": 4560.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.05584,
+        "per": 14.597952,
+        "pbv": 13457.249,
+        "profit_margin": 0.14025,
+        "revenue_growth": 0.319,
+        "der": 0.056,
+        "sector": "Basic Materials",
+        "name": "PT Vale Indonesia Tbk",
+        "missing": []
+      },
+      "atr": 212.50645124858406,
+      "plan": {
+        "entry": 3620.0,
+        "stop": 3190,
+        "target": 4480,
+        "lots": 4,
+        "units": 400,
+        "position_value": 1448000.0,
+        "risk": 172000.0,
+        "stop_pct": 0.11878453038674033
+      },
+      "flags": []
+    },
+    {
+      "code": "INKP",
+      "name": "PT Indah Kiat Pulp & Paper Tbk",
+      "last_date": "2026-10-28",
+      "score": 33.0,
+      "technical_score": 15,
+      "fundamental_score": 60,
+      "last_move": -0.0074,
+      "avg_daily_value": 37077629125.0,
+      "technical": {
+        "close": 6750.0,
+        "sma20": 7647.5,
+        "sma50": 8273.0,
+        "sma200": 8661.304890136718,
+        "rsi": 32.9,
+        "ret_1m": -0.1641,
+        "ret_3m": -0.1483,
+        "vol_ratio": 1.1,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 12.5,
+          "stoch_d": 16.3,
+          "adx": 29.6,
+          "cmf": -0.335,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 6475.0,
+          "resistance": 8675.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.09631,
+        "per": 3.3069756,
+        "pbv": 5133.0796,
+        "profit_margin": 0.20011,
+        "revenue_growth": 0.132,
+        "der": 72.12,
+        "sector": "Basic Materials",
+        "name": "PT Indah Kiat Pulp & Paper Tbk",
+        "missing": []
+      },
+      "atr": 348.69094641267384,
+      "plan": {
+        "entry": 6750.0,
+        "stop": 6050,
+        "target": 8150,
+        "lots": 2,
+        "units": 200,
+        "position_value": 1350000.0,
+        "risk": 140000.0,
+        "stop_pct": 0.1037037037037037
+      },
+      "flags": []
+    },
+    {
+      "code": "PGAS",
+      "name": "PT Perusahaan Gas Negara (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 32.2,
+      "technical_score": 15,
+      "fundamental_score": 58,
+      "last_move": 0.0323,
+      "avg_daily_value": 60296428825.0,
+      "technical": {
+        "close": 1280.0,
+        "sma20": 1353.75,
+        "sma50": 1443.1,
+        "sma200": 1659.7382061767578,
+        "rsi": 40.5,
+        "ret_1m": -0.108,
+        "ret_3m": -0.1409,
+        "vol_ratio": 1.28,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 49.2,
+          "stoch_d": 48.7,
+          "adx": 30.6,
+          "cmf": -0.13,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1125.0,
+          "resistance": 1445.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.10092,
+        "per": 8.0230665,
+        "pbv": 10940.171,
+        "profit_margin": 0.061890002,
+        "revenue_growth": -0.038,
+        "der": 29.053,
+        "sector": "Utilities",
+        "name": "PT Perusahaan Gas Negara (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 60.823312765437365,
+      "plan": {
+        "entry": 1280.0,
+        "stop": 1155,
+        "target": 1530,
+        "lots": 16,
+        "units": 1600,
+        "position_value": 2048000.0,
+        "risk": 200000.0,
+        "stop_pct": 0.09765625
+      },
+      "flags": []
+    },
+    {
+      "code": "DSSA",
+      "name": "PT Dian Swastatika Sentosa Tbk",
+      "last_date": "2026-10-28",
+      "score": 30.2,
+      "technical_score": 5,
+      "fundamental_score": 68,
+      "last_move": -0.058,
+      "avg_daily_value": 279497700350.0,
+      "technical": {
+        "close": 650.0,
+        "sma20": 904.0,
+        "sma50": 1018.7,
+        "sma200": 1891.405,
+        "rsi": 25.7,
+        "ret_1m": -0.4037,
+        "ret_3m": -0.2121,
+        "vol_ratio": 0.72,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 1.0,
+          "stoch_d": 6.8,
+          "adx": 38.6,
+          "cmf": -0.149,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)",
+            "breakdown: tembus titik terendah 20 hari"
+          ],
+          "support": 665.0,
+          "resistance": 1185.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.18789,
+        "per": 22.663877,
+        "pbv": 46428.57,
+        "profit_margin": 0.09498,
+        "revenue_growth": 0.843,
+        "der": 62.702,
+        "sector": "Energy",
+        "name": "PT Dian Swastatika Sentosa Tbk",
+        "missing": []
+      },
+      "atr": 67.84268297834444,
+      "plan": {
+        "entry": 650.0,
+        "stop": 510,
+        "target": 930,
+        "lots": 14,
+        "units": 1400,
+        "position_value": 910000.0,
+        "risk": 196000.0,
+        "stop_pct": 0.2153846153846154
+      },
+      "flags": []
+    },
+    {
+      "code": "BREN",
+      "name": "PT Barito Renewables Energy Tbk",
+      "last_date": "2026-10-28",
+      "score": 29.0,
+      "technical_score": 15,
+      "fundamental_score": 50,
+      "last_move": -0.0417,
+      "avg_daily_value": 44902355325.0,
+      "technical": {
+        "close": 2070.0,
+        "sma20": 2410.0,
+        "sma50": 2903.2,
+        "sma200": 4937.827998046875,
+        "rsi": 34.4,
+        "ret_1m": -0.2911,
+        "ret_3m": -0.3727,
+        "vol_ratio": 0.81,
+        "passed": [
+          "MACD histogram > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 34.3,
+          "stoch_d": 40.5,
+          "adx": 34.3,
+          "cmf": -0.167,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1730.0,
+          "resistance": 3000.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.21476999,
+        "per": 106.701035,
+        "pbv": 414000.0,
+        "profit_margin": 0.24059999,
+        "revenue_growth": 0.132,
+        "der": 223.239,
+        "sector": "Utilities",
+        "name": "PT Barito Renewables Energy Tbk",
+        "missing": []
+      },
+      "atr": 196.88119610925725,
+      "plan": {
+        "entry": 2070.0,
+        "stop": 1675,
+        "target": 2860,
+        "lots": 5,
+        "units": 500,
+        "position_value": 1035000.0,
+        "risk": 197500.0,
+        "stop_pct": 0.19082125603864733
+      },
+      "flags": []
+    },
+    {
+      "code": "SMGR",
+      "name": "PT Semen Indonesia (Persero) Tbk",
+      "last_date": "2026-10-28",
+      "score": 28.0,
+      "technical_score": 20,
+      "fundamental_score": 40,
+      "last_move": -0.0303,
+      "avg_daily_value": 26556917575.0,
+      "technical": {
+        "close": 1440.0,
+        "sma20": 1488.5,
+        "sma50": 1559.1,
+        "sma200": 1968.9665380859376,
+        "rsi": 45.6,
+        "ret_1m": -0.068,
+        "ret_3m": -0.0137,
+        "vol_ratio": 0.81,
+        "passed": [
+          "RSI 45-70",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 42.2,
+          "stoch_d": 47.8,
+          "adx": 17.1,
+          "cmf": 0.075,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 1265.0,
+          "resistance": 1680.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.0073100002,
+        "per": 25.714285,
+        "pbv": 0.22203743,
+        "profit_margin": 0.01017,
+        "revenue_growth": 0.177,
+        "der": 16.849,
+        "sector": "Basic Materials",
+        "name": "PT Semen Indonesia (Persero) Tbk",
+        "missing": []
+      },
+      "atr": 80.86416549355982,
+      "plan": {
+        "entry": 1440.0,
+        "stop": 1275,
+        "target": 1770,
+        "lots": 12,
+        "units": 1200,
+        "position_value": 1728000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.11458333333333333
+      },
+      "flags": []
+    },
+    {
+      "code": "ARTO",
+      "name": "PT Bank Jago Tbk",
+      "last_date": "2026-10-28",
+      "score": 27.0,
+      "technical_score": 5,
+      "fundamental_score": 60,
+      "last_move": -0.0174,
+      "avg_daily_value": 9919098425.0,
+      "technical": {
+        "close": 565.0,
+        "sma20": 692.75,
+        "sma50": 853.7,
+        "sma200": 1251.175,
+        "rsi": 23.7,
+        "ret_1m": -0.3025,
+        "ret_3m": -0.5087,
+        "vol_ratio": 0.82,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 6.1,
+          "stoch_d": 12.2,
+          "adx": 50.5,
+          "cmf": -0.029,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 550.0,
+          "resistance": 830.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.03824,
+        "per": 23.659967,
+        "pbv": 0.86763436,
+        "profit_margin": 0.14622,
+        "revenue_growth": 0.279,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Bank Jago Tbk",
+        "missing": []
+      },
+      "atr": 43.11157756495733,
+      "plan": {
+        "entry": 565.0,
+        "stop": 478,
+        "target": 740,
+        "lots": 22,
+        "units": 2200,
+        "position_value": 1243000.0,
+        "risk": 191400.0,
+        "stop_pct": 0.15398230088495576
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "BUKA",
+      "name": "PT Bukalapak.com Tbk.",
+      "last_date": "2026-10-28",
+      "score": 27.0,
+      "technical_score": 15,
+      "fundamental_score": 45,
+      "last_move": -0.0098,
+      "avg_daily_value": 14573222305.0,
+      "technical": {
+        "close": 101.0,
+        "sma20": 103.1,
+        "sma50": 106.4,
+        "sma200": 126.965,
+        "rsi": 44.2,
+        "ret_1m": -0.0288,
+        "ret_3m": -0.1217,
+        "vol_ratio": 0.93,
+        "passed": [
+          "MACD histogram > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 39.3,
+          "stoch_d": 41.7,
+          "adx": 16.6,
+          "cmf": 0.151,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 90.0,
+          "resistance": 118.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.078200005,
+        "per": null,
+        "pbv": 0.37113115,
+        "profit_margin": 0.25043,
+        "revenue_growth": -0.005,
+        "der": 0.436,
+        "sector": "Consumer Cyclical",
+        "name": "PT Bukalapak.com Tbk.",
+        "missing": [
+          "PER"
+        ]
+      },
+      "atr": 5.583853458990177,
+      "plan": {
+        "entry": 101.0,
+        "stop": 89,
+        "target": 125,
+        "lots": 166,
+        "units": 16600,
+        "position_value": 1676600.0,
+        "risk": 199200.0,
+        "stop_pct": 0.1188118811881188
+      },
+      "flags": [
+        "data fundamental tidak lengkap: PER"
+      ]
+    },
+    {
+      "code": "PNLF",
+      "name": "PT Panin Financial Tbk",
+      "last_date": "2026-10-28",
+      "score": 27.0,
+      "technical_score": 5,
+      "fundamental_score": 60,
+      "last_move": 0.0178,
+      "avg_daily_value": 5241409065.0,
+      "technical": {
+        "close": 172.0,
+        "sma20": 181.95,
+        "sma50": 204.62,
+        "sma200": 236.65,
+        "rsi": 35.3,
+        "ret_1m": -0.1224,
+        "ret_3m": -0.2321,
+        "vol_ratio": 0.92,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 43.2,
+          "stoch_d": 37.6,
+          "adx": 51.8,
+          "cmf": 0.016,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 153.0,
+          "resistance": 200.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.05233,
+        "per": 3.132969,
+        "pbv": 0.17451563,
+        "profit_margin": 0.18153,
+        "revenue_growth": -0.362,
+        "der": null,
+        "sector": "Financial Services",
+        "name": "PT Panin Financial Tbk",
+        "missing": []
+      },
+      "atr": 7.368539381294948,
+      "plan": {
+        "entry": 172.0,
+        "stop": 157,
+        "target": 202,
+        "lots": 133,
+        "units": 13300,
+        "position_value": 2287600.0,
+        "risk": 199500.0,
+        "stop_pct": 0.0872093023255814
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "AMMN",
+      "name": "PT Amman Mineral Internasional Tbk",
+      "last_date": "2026-10-28",
+      "score": 26.2,
+      "technical_score": 5,
+      "fundamental_score": 58,
+      "last_move": 0.0372,
+      "avg_daily_value": 250549072200.0,
+      "technical": {
+        "close": 3900.0,
+        "sma20": 4107.5,
+        "sma50": 4410.4,
+        "sma200": 5020.25,
+        "rsi": 43.4,
+        "ret_1m": -0.1295,
+        "ret_3m": -0.0102,
+        "vol_ratio": 0.86,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 51.2,
+          "stoch_d": 47.5,
+          "adx": 22.2,
+          "cmf": 0.231,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 3270.0,
+          "resistance": 4620.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.16633,
+        "per": null,
+        "pbv": 48750.0,
+        "profit_margin": 0.241,
+        "revenue_growth": 5.896,
+        "der": 100.183,
+        "sector": "Basic Materials",
+        "name": "PT Amman Mineral Internasional Tbk",
+        "missing": [
+          "PER"
+        ]
+      },
+      "atr": 267.43868871733946,
+      "plan": {
+        "entry": 3900.0,
+        "stop": 3360,
+        "target": 4980,
+        "lots": 3,
+        "units": 300,
+        "position_value": 1170000.0,
+        "risk": 162000.0,
+        "stop_pct": 0.13846153846153847
+      },
+      "flags": [
+        "data fundamental tidak lengkap: PER"
+      ]
+    },
+    {
+      "code": "HEAL",
+      "name": "PT Medikaloka Hermina Tbk",
+      "last_date": "2026-10-28",
+      "score": 26.2,
+      "technical_score": 5,
+      "fundamental_score": 58,
+      "last_move": 0.1168,
+      "avg_daily_value": 5245552810.0,
+      "technical": {
+        "close": 545.0,
+        "sma20": 558.95,
+        "sma50": 620.78,
+        "sma200": 975.9087213134766,
+        "rsi": 43.4,
+        "ret_1m": -0.1138,
+        "ret_3m": -0.3272,
+        "vol_ratio": 0.58,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 50.0,
+          "stoch_d": 26.4,
+          "adx": 39.9,
+          "cmf": -0.027,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 470.0,
+          "resistance": 630.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.07281,
+        "per": 21.04247,
+        "pbv": 1.5066986,
+        "profit_margin": 0.0541,
+        "revenue_growth": 0.077,
+        "der": 51.262,
+        "sector": "Healthcare",
+        "name": "PT Medikaloka Hermina Tbk",
+        "missing": []
+      },
+      "atr": 28.073381293175807,
+      "plan": {
+        "entry": 545.0,
+        "stop": 488,
+        "target": 660,
+        "lots": 35,
+        "units": 3500,
+        "position_value": 1907500.0,
+        "risk": 199500.0,
+        "stop_pct": 0.10458715596330276
+      },
+      "flags": [
+        "pergerakan harian ekstrem +11.7%: cek berita/aksi korporasi",
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "CUAN",
+      "name": "PT Petrindo Jaya Kreasi Tbk",
+      "last_date": "2026-10-28",
+      "score": 23.0,
+      "technical_score": 5,
+      "fundamental_score": 50,
+      "last_move": -0.0526,
+      "avg_daily_value": 265965870335.0,
+      "technical": {
+        "close": 432.0,
+        "sma20": 641.55,
+        "sma50": 794.52,
+        "sma200": 1089.735,
+        "rsi": 15.6,
+        "ret_1m": -0.5119,
+        "ret_3m": -0.3455,
+        "vol_ratio": 0.92,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 1.7,
+          "stoch_d": 2.1,
+          "adx": 41.1,
+          "cmf": -0.251,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)",
+            "breakdown: tembus titik terendah 20 hari"
+          ],
+          "support": 450.0,
+          "resistance": 910.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.26372,
+        "per": 19.88035,
+        "pbv": 144000.0,
+        "profit_margin": 0.10231,
+        "revenue_growth": null,
+        "der": 223.595,
+        "sector": "Energy",
+        "name": "PT Petrindo Jaya Kreasi Tbk",
+        "missing": [
+          "pertumbuhan pendapatan"
+        ]
+      },
+      "atr": 53.73895734360062,
+      "plan": {
+        "entry": 432.0,
+        "stop": 324,
+        "target": 650,
+        "lots": 18,
+        "units": 1800,
+        "position_value": 777600.0,
+        "risk": 194400.0,
+        "stop_pct": 0.25
+      },
+      "flags": [
+        "data fundamental tidak lengkap: pertumbuhan pendapatan"
+      ]
+    },
+    {
+      "code": "BRPT",
+      "name": "PT Barito Pacific Tbk",
+      "last_date": "2026-10-28",
+      "score": 22.2,
+      "technical_score": 25,
+      "fundamental_score": 18,
+      "last_move": -0.0679,
+      "avg_daily_value": 147372266025.0,
+      "technical": {
+        "close": 1235.0,
+        "sma20": 1385.25,
+        "sma50": 1572.3,
+        "sma200": 1865.8827227783204,
+        "rsi": 36.8,
+        "ret_1m": -0.1453,
+        "ret_3m": -0.3081,
+        "vol_ratio": 1.09,
+        "passed": [
+          "MACD histogram > 0",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 27.6,
+          "stoch_d": 51.8,
+          "adx": 27.2,
+          "cmf": -0.02,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1130.0,
+          "resistance": 1510.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.0646,
+        "per": 48.910892,
+        "pbv": 47500.0,
+        "profit_margin": 0.01392,
+        "revenue_growth": 0.269,
+        "der": 133.059,
+        "sector": "Basic Materials",
+        "name": "PT Barito Pacific Tbk",
+        "missing": []
+      },
+      "atr": 93.92394936544929,
+      "plan": {
+        "entry": 1235.0,
+        "stop": 1045,
+        "target": 1615,
+        "lots": 10,
+        "units": 1000,
+        "position_value": 1235000.0,
+        "risk": 190000.0,
+        "stop_pct": 0.15384615384615385
+      },
+      "flags": []
+    },
+    {
+      "code": "HRUM",
+      "name": "PT Harum Energy Tbk",
+      "last_date": "2026-10-28",
+      "score": 21.0,
+      "technical_score": 5,
+      "fundamental_score": 45,
+      "last_move": 0.0432,
+      "avg_daily_value": 7841002400.0,
+      "technical": {
+        "close": 725.0,
+        "sma20": 776.0,
+        "sma50": 855.4,
+        "sma200": 930.4,
+        "rsi": 39.9,
+        "ret_1m": -0.1667,
+        "ret_3m": -0.0881,
+        "vol_ratio": 0.64,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 38.6,
+          "stoch_d": 32.1,
+          "adx": 28.8,
+          "cmf": -0.105,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 640.0,
+          "resistance": 880.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.07237,
+        "per": 12.806925,
+        "pbv": 9931.507,
+        "profit_margin": 0.02491,
+        "revenue_growth": 1.12,
+        "der": 29.561,
+        "sector": "Basic Materials",
+        "name": "PT Harum Energy Tbk",
+        "missing": []
+      },
+      "atr": 43.60857584313201,
+      "plan": {
+        "entry": 725.0,
+        "stop": 635,
+        "target": 905,
+        "lots": 22,
+        "units": 2200,
+        "position_value": 1595000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.12413793103448276
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar"
+      ]
+    },
+    {
+      "code": "TPIA",
+      "name": "PT Chandra Asri Pacific Tbk",
+      "last_date": "2026-10-28",
+      "score": 19.2,
+      "technical_score": 20,
+      "fundamental_score": 18,
+      "last_move": -0.0184,
+      "avg_daily_value": 262491659950.0,
+      "technical": {
+        "close": 1335.0,
+        "sma20": 1484.25,
+        "sma50": 1732.1,
+        "sma200": 3749.8453259277344,
+        "rsi": 37.5,
+        "ret_1m": -0.2238,
+        "ret_3m": -0.3932,
+        "vol_ratio": 0.87,
+        "passed": [
+          "MACD histogram > 0",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 41.8,
+          "stoch_d": 45.4,
+          "adx": 25.8,
+          "cmf": -0.018,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1080.0,
+          "resistance": 1805.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.03923,
+        "per": 117.414246,
+        "pbv": 29021.738,
+        "profit_margin": 0.0119,
+        "revenue_growth": 0.285,
+        "der": 119.069,
+        "sector": "Basic Materials",
+        "name": "PT Chandra Asri Pacific Tbk",
+        "missing": []
+      },
+      "atr": 114.57342753055805,
+      "plan": {
+        "entry": 1335.0,
+        "stop": 1105,
+        "target": 1795,
+        "lots": 8,
+        "units": 800,
+        "position_value": 1068000.0,
+        "risk": 184000.0,
+        "stop_pct": 0.17228464419475656
+      },
+      "flags": []
+    },
+    {
+      "code": "EXCL",
+      "name": "PT XLSMART Telecom Sejahtera Tbk",
+      "last_date": "2026-10-28",
+      "score": 19.0,
+      "technical_score": 15,
+      "fundamental_score": 25,
+      "last_move": -0.0231,
+      "avg_daily_value": 23199874450.0,
+      "technical": {
+        "close": 1690.0,
+        "sma20": 2049.0,
+        "sma50": 2390.4,
+        "sma200": 2833.5,
+        "rsi": 26.0,
+        "ret_1m": -0.2869,
+        "ret_3m": -0.3017,
+        "vol_ratio": 1.29,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 13.2,
+          "stoch_d": 19.0,
+          "adx": 58.4,
+          "cmf": -0.059,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1590.0,
+          "resistance": 2450.0
+        }
+      },
+      "fundamental": {
+        "roe": -0.13436,
+        "per": null,
+        "pbv": 1.0651715,
+        "profit_margin": -0.088649996,
+        "revenue_growth": 0.16,
+        "der": 204.323,
+        "sector": "Communication Services",
+        "name": "PT XLSMART Telecom Sejahtera Tbk",
+        "missing": [
+          "PER"
+        ]
+      },
+      "atr": 112.68900050771273,
+      "plan": {
+        "entry": 1690.0,
+        "stop": 1460,
+        "target": 2150,
+        "lots": 8,
+        "units": 800,
+        "position_value": 1352000.0,
+        "risk": 184000.0,
+        "stop_pct": 0.13609467455621302
+      },
+      "flags": [
+        "data fundamental tidak lengkap: PER"
+      ]
+    },
+    {
+      "code": "MDKA",
+      "name": "PT Merdeka Copper Gold Tbk",
+      "last_date": "2026-10-28",
+      "score": 19.0,
+      "technical_score": 15,
+      "fundamental_score": 25,
+      "last_move": 0.025,
+      "avg_daily_value": 103450196250.0,
+      "technical": {
+        "close": 2050.0,
+        "sma20": 2573.0,
+        "sma50": 2799.2,
+        "sma200": 2918.609334716797,
+        "rsi": 23.9,
+        "ret_1m": -0.2979,
+        "ret_3m": -0.2146,
+        "vol_ratio": 1.04,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 10.5,
+          "stoch_d": 5.7,
+          "adx": 33.6,
+          "cmf": -0.023,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "death cross baru (SMA50 memotong ke bawah SMA200)"
+          ],
+          "support": 1940.0,
+          "resistance": 3000.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.07467,
+        "per": 53.791656,
+        "pbv": 56944.445,
+        "profit_margin": 0.02264,
+        "revenue_growth": 1.219,
+        "der": 86.028,
+        "sector": "Basic Materials",
+        "name": "PT Merdeka Copper Gold Tbk",
+        "missing": []
+      },
+      "atr": 140.83360298509493,
+      "plan": {
+        "entry": 2050.0,
+        "stop": 1765,
+        "target": 2620,
+        "lots": 7,
+        "units": 700,
+        "position_value": 1435000.0,
+        "risk": 199500.0,
+        "stop_pct": 0.13902439024390245
+      },
+      "flags": []
+    },
+    {
+      "code": "BRMS",
+      "name": "PT Bumi Resources Minerals Tbk",
+      "last_date": "2026-10-28",
+      "score": 15.0,
+      "technical_score": 5,
+      "fundamental_score": 30,
+      "last_move": -0.0402,
+      "avg_daily_value": 143895279755.0,
+      "technical": {
+        "close": 382.0,
+        "sma20": 507.8,
+        "sma50": 622.22,
+        "sma200": 755.205,
+        "rsi": 20.4,
+        "ret_1m": -0.358,
+        "ret_3m": -0.2991,
+        "vol_ratio": 0.9,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 4.3,
+          "stoch_d": 4.6,
+          "adx": 47.8,
+          "cmf": 0.007,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "breakdown: tembus titik terendah 20 hari"
+          ],
+          "support": 398.0,
+          "resistance": 620.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.0398,
+        "per": 80.932205,
+        "pbv": 42444.445,
+        "profit_margin": 0.17815,
+        "revenue_growth": -0.543,
+        "der": 28.081,
+        "sector": "Basic Materials",
+        "name": "PT Bumi Resources Minerals Tbk",
+        "missing": []
+      },
+      "atr": 32.967279189015606,
+      "plan": {
+        "entry": 382.0,
+        "stop": 316,
+        "target": 515,
+        "lots": 30,
+        "units": 3000,
+        "position_value": 1146000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.17277486910994763
+      },
+      "flags": []
+    },
+    {
+      "code": "PTRO",
+      "name": "PT Petrosea Tbk",
+      "last_date": "2026-10-28",
+      "score": 15.0,
+      "technical_score": 15,
+      "fundamental_score": 15,
+      "last_move": -0.0697,
+      "avg_daily_value": 203683241500.0,
+      "technical": {
+        "close": 2670.0,
+        "sma20": 3946.0,
+        "sma50": 4743.4,
+        "sma200": 5612.75,
+        "rsi": 14.4,
+        "ret_1m": -0.4962,
+        "ret_3m": -0.4196,
+        "vol_ratio": 1.12,
+        "passed": [
+          "MACD histogram naik",
+          "volume 20h > rata-rata 60h"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 0.0,
+          "stoch_d": 2.5,
+          "adx": 45.3,
+          "cmf": -0.203,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)",
+            "breakdown: tembus titik terendah 20 hari"
+          ],
+          "support": 2840.0,
+          "resistance": 5400.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.11533,
+        "per": 51.061386,
+        "pbv": 98888.88,
+        "profit_margin": 0.035350002,
+        "revenue_growth": null,
+        "der": 258.845,
+        "sector": "Basic Materials",
+        "name": "PT Petrosea Tbk",
+        "missing": [
+          "pertumbuhan pendapatan"
+        ]
+      },
+      "atr": 281.2914361499512,
+      "plan": {
+        "entry": 2670.0,
+        "stop": 2100,
+        "target": 3810,
+        "lots": 3,
+        "units": 300,
+        "position_value": 801000.0,
+        "risk": 171000.0,
+        "stop_pct": 0.21348314606741572
+      },
+      "flags": [
+        "data fundamental tidak lengkap: pertumbuhan pendapatan"
+      ]
+    },
+    {
+      "code": "INDY",
+      "name": "PT. Indika Energy Tbk",
+      "last_date": "2026-10-28",
+      "score": 13.0,
+      "technical_score": 5,
+      "fundamental_score": 25,
+      "last_move": -0.0124,
+      "avg_daily_value": 39248263250.0,
+      "technical": {
+        "close": 1995.0,
+        "sma20": 2373.25,
+        "sma50": 2598.1,
+        "sma200": 2856.4038134765624,
+        "rsi": 33.8,
+        "ret_1m": -0.2414,
+        "ret_3m": -0.2237,
+        "vol_ratio": 0.73,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 9.1,
+          "stoch_d": 13.6,
+          "adx": 21.8,
+          "cmf": -0.15,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1920.0,
+          "resistance": 2840.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.03069,
+        "per": 43.51145,
+        "pbv": 8636.363,
+        "profit_margin": 0.00629,
+        "revenue_growth": 0.399,
+        "der": 94.428,
+        "sector": "Energy",
+        "name": "PT. Indika Energy Tbk",
+        "missing": []
+      },
+      "atr": 165.86194474786618,
+      "plan": {
+        "entry": 1995.0,
+        "stop": 1660,
+        "target": 2670,
+        "lots": 5,
+        "units": 500,
+        "position_value": 997500.0,
+        "risk": 167500.0,
+        "stop_pct": 0.16791979949874686
+      },
+      "flags": []
+    },
+    {
+      "code": "MBMA",
+      "name": "PT Merdeka Battery Materials Tbk.",
+      "last_date": "2026-10-28",
+      "score": 13.0,
+      "technical_score": 5,
+      "fundamental_score": 25,
+      "last_move": -0.0121,
+      "avg_daily_value": 47850346120.0,
+      "technical": {
+        "close": 326.0,
+        "sma20": 416.0,
+        "sma50": 482.66,
+        "sma200": 588.9,
+        "rsi": 24.6,
+        "ret_1m": -0.348,
+        "ret_3m": -0.3237,
+        "vol_ratio": 0.95,
+        "passed": [
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 9.5,
+          "stoch_d": 10.2,
+          "adx": 40.1,
+          "cmf": -0.073,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)",
+            "dekat support 20 hari"
+          ],
+          "support": 324.0,
+          "resistance": 505.0
+        }
+      },
+      "fundamental": {
+        "roe": 0.09239,
+        "per": 26.831276,
+        "pbv": 21733.334,
+        "profit_margin": 0.042140003,
+        "revenue_growth": 1.266,
+        "der": 52.775,
+        "sector": "Basic Materials",
+        "name": "PT Merdeka Battery Materials Tbk.",
+        "missing": []
+      },
+      "atr": 26.936173281705763,
+      "plan": {
+        "entry": 326.0,
+        "stop": 272,
+        "target": 434,
+        "lots": 37,
+        "units": 3700,
+        "position_value": 1206200.0,
+        "risk": 199800.0,
+        "stop_pct": 0.1656441717791411
+      },
+      "flags": []
+    },
+    {
+      "code": "FILM",
+      "name": "PT.MD Entertainment Tbk",
+      "last_date": "2026-10-28",
+      "score": 12.0,
+      "technical_score": 0,
+      "fundamental_score": 30,
+      "last_move": -0.0699,
+      "avg_daily_value": 6615005660.0,
+      "technical": {
+        "close": 346.0,
+        "sma20": 498.85,
+        "sma50": 663.64,
+        "sma200": 3782.485,
+        "rsi": 16.4,
+        "ret_1m": -0.4464,
+        "ret_3m": -0.6689,
+        "vol_ratio": 0.51,
+        "passed": [],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 0.0,
+          "stoch_d": 2.3,
+          "adx": 39.2,
+          "cmf": -0.319,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)",
+            "breakdown: tembus titik terendah 20 hari"
+          ],
+          "support": 372.0,
+          "resistance": 665.0
+        }
+      },
+      "fundamental": {
+        "roe": -0.087799996,
+        "per": null,
+        "pbv": 1.2095914,
+        "profit_margin": -0.42666,
+        "revenue_growth": -0.243,
+        "der": 12.248,
+        "sector": "Communication Services",
+        "name": "PT.MD Entertainment Tbk",
+        "missing": [
+          "PER"
+        ]
+      },
+      "atr": 45.73948380512917,
+      "plan": {
+        "entry": 346.0,
+        "stop": 254,
+        "target": 530,
+        "lots": 21,
+        "units": 2100,
+        "position_value": 726600.0,
+        "risk": 193200.0,
+        "stop_pct": 0.2658959537572254
+      },
+      "flags": [
+        "nilai transaksi harian < Rp 10 miliar",
+        "data fundamental tidak lengkap: PER"
+      ]
+    }
+  ],
+  "skipped": []
+}
