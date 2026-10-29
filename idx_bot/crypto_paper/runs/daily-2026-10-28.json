@@ -1,0 +1,90 @@
+{
+  "market": "crypto",
+  "currency": "Rp",
+  "price_source": "Indodax",
+  "testnet": "ditunda (testnet tidak bisa diakses dari server cloud)",
+  "date": "2026-10-28",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 595888.7056976,
+  "cash": 3133476.6430063564,
+  "equity": 9867520.522609306,
+  "candidates": [
+    {
+      "code": "BNB",
+      "name": "BNB",
+      "score": 79.0,
+      "plan": {
+        "entry": 13758097.0,
+        "stop": 13045561.0,
+        "target": 15183169.0,
+        "lots": 576994,
+        "units": 0.00576994,
+        "position_value": 79383.39420418,
+        "risk": 4111.28996784,
+        "stop_pct": 0.051790302103554
+      }
+    },
+    {
+      "code": "TRX",
+      "name": "TRON",
+      "score": 66.0,
+      "plan": {
+        "entry": 5989.0,
+        "stop": 5780.0,
+        "target": 6407.0,
+        "lots": 1967126460,
+        "units": 19.6712646,
+        "position_value": 117811.2036894,
+        "risk": 4111.2943014,
+        "stop_pct": 0.03489731173818668
+      }
+    }
+  ],
+  "open": [
+    {
+      "code": "BTC",
+      "lots": 305124,
+      "units": 0.00305124,
+      "entry": 1470572000.0,
+      "stop": 1405027000.0,
+      "target": 1601668000.0,
+      "signal_date": "2026-10-18",
+      "reason": "Pemimpin pasar, paling likuid di Indodax (Rp 24 miliar/hari); di atas SMA50, RSI netral; stop 4,5%. Bear: return 1 bulan negatif, tanpa katalis baru.",
+      "entry_date": "2026-10-19",
+      "cost": 4497029.4,
+      "seen_until": "2026-10-28T23:45:00+00:00",
+      "swept_day": "2026-10-28"
+    },
+    {
+      "code": "NEAR",
+      "lots": 966884215,
+      "units": 9.66884215,
+      "entry": 90026.0,
+      "stop": 69267.0,
+      "target": 131322.0,
+      "signal_date": "2026-10-18",
+      "reason": "Terkuat vs BTC 30 hari (+32%); ETF Bitwise dan pendapatan protokol naik; volume Indodax Rp 1,2 miliar/hari. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 23%.",
+      "entry_date": "2026-10-19",
+      "cost": 872379.58,
+      "seen_until": "2026-10-28T23:45:00+00:00",
+      "swept_day": "2026-10-28"
+    },
+    {
+      "code": "AVAX",
+      "lots": 860770389,
+      "units": 8.60770389,
+      "entry": 173542.0,
+      "stop": 150867.0,
+      "target": 220572.0,
+      "signal_date": "2026-10-18",
+      "reason": "Lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober; dipilih atas TRX yang lebih lemah dari BTC dan akan memakan 55% modal. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov.",
+      "entry_date": "2026-10-19",
+      "cost": 1497114.38,
+      "seen_until": "2026-10-28T23:45:00+00:00",
+      "swept_day": "2026-10-28"
+    }
+  ],
+  "pending": []
+}
