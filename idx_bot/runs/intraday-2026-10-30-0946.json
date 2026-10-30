@@ -1,0 +1,95 @@
+{
+  "market": "idx",
+  "date": "2026-10-30",
+  "time_wib": "09:46",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "09:30",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "PGAS",
+      0.0617
+    ],
+    [
+      "INTP",
+      0.0182
+    ],
+    [
+      "BUKA",
+      0.0102
+    ],
+    [
+      "HEAL",
+      0.0097
+    ],
+    [
+      "ASII",
+      0.0085
+    ]
+  ],
+  "top_losers": [
+    [
+      "BRPT",
+      -0.0696
+    ],
+    [
+      "SCMA",
+      -0.0692
+    ],
+    [
+      "PTRO",
+      -0.0683
+    ],
+    [
+      "ISAT",
+      -0.0683
+    ],
+    [
+      "ERAA",
+      -0.068
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3010.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": -26050
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1315.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -192591
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 10975.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": -59472
+    },
+    {
+      "code": "AUTO",
+      "entry": 3380.0,
+      "last": 3240.0,
+      "stop": 3160,
+      "target": 3820,
+      "pnl": -76585
+    }
+  ],
+  "pending": [],
+  "cash": 3859302.75,
+  "equity": 9659802.75,
+  "ihsg": {
+    "last": 4987.19,
+    "prev_close": 5098.06
+  }
+}
