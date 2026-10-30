@@ -1,0 +1,87 @@
+{
+  "market": "crypto",
+  "date": "2026-10-27",
+  "time_wib": "15:22",
+  "source": "Indodax, langsung",
+  "market_open": true,
+  "data_until_wib": "15:15",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "LTC",
+      0.0029
+    ],
+    [
+      "LINK",
+      0.0029
+    ],
+    [
+      "NEAR",
+      0.0017
+    ],
+    [
+      "BCH",
+      0.0
+    ],
+    [
+      "BTC",
+      -0.0003
+    ]
+  ],
+  "top_losers": [
+    [
+      "DOT",
+      -0.0146
+    ],
+    [
+      "AVAX",
+      -0.0089
+    ],
+    [
+      "ADA",
+      -0.0067
+    ],
+    [
+      "HBAR",
+      -0.0057
+    ],
+    [
+      "SOL",
+      -0.0055
+    ]
+  ],
+  "positions": [
+    {
+      "code": "BTC",
+      "entry": 1470572000.0,
+      "last": 1450548000.0,
+      "stop": 1405027000.0,
+      "target": 1601668000.0,
+      "pnl": -90180
+    },
+    {
+      "code": "NEAR",
+      "entry": 90026.0,
+      "last": 81282.0,
+      "stop": 69267.0,
+      "target": 131322.0,
+      "pnl": -89872
+    },
+    {
+      "code": "AVAX",
+      "entry": 173542.0,
+      "last": 160397.0,
+      "stop": 150867.0,
+      "target": 220572.0,
+      "pnl": -122429
+    }
+  ],
+  "pending": [],
+  "cash": 3133476.6430063564,
+  "equity": 9725999.431006987,
+  "btc": {
+    "last": 1450548000.0,
+    "vs_last_daily_close": -0.0003
+  }
+}

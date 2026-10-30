@@ -1,0 +1,98 @@
+{
+  "market": "idx",
+  "currency": "Rp",
+  "price_source": "Yahoo",
+  "testnet": "tidak dipakai",
+  "date": "2026-10-29",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 595500.0,
+  "cash": 3859302.75,
+  "equity": 9754802.75,
+  "candidates": [
+    {
+      "code": "PWON",
+      "name": "PT Pakuwon Jati Tbk",
+      "score": 80.0,
+      "plan": {
+        "entry": 286.0,
+        "stop": 262,
+        "target": 334,
+        "lots": 1,
+        "units": 100,
+        "position_value": 28600.0,
+        "risk": 2400.0,
+        "stop_pct": 0.08391608391608392
+      }
+    }
+  ],
+  "open": [
+    {
+      "code": "PTBA",
+      "lots": 5,
+      "units": 500,
+      "entry": 3050.0,
+      "stop": 2710,
+      "target": 3730,
+      "signal_date": "2026-10-20",
+      "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
+      "entry_date": "2026-10-21",
+      "cost": 1527287.5,
+      "seen_until": "2026-10-29T16:00:00+07:00",
+      "swept_day": "2026-10-29"
+    },
+    {
+      "code": "MEDC",
+      "lots": 12,
+      "units": 1200,
+      "entry": 1470.0,
+      "stop": 1305,
+      "target": 1800,
+      "signal_date": "2026-10-22",
+      "reason": "Golden cross baru, fundamental 78, likuid Rp 68 mlr/hari; S&P naik ke BB-, buyback obligasi, untung dari rupiah lemah. Bear: tren sideways (ADX<25), baru 0,6% di atas SMA50/200, sektor energi seperti PTBA.",
+      "intraday_checked": true,
+      "planned_entry": 1450.0,
+      "entry_date": "2026-10-23",
+      "entry_time": "2026-10-23T09:30:00+07:00",
+      "seen_until": "2026-10-29T16:00:00+07:00",
+      "cost": 1766646.0,
+      "swept_day": "2026-10-29"
+    },
+    {
+      "code": "AADI",
+      "lots": 1,
+      "units": 100,
+      "entry": 11525.0,
+      "stop": 10350,
+      "target": 13875,
+      "signal_date": "2026-10-23",
+      "reason": "Skor 85 (teknikal 85, fundamental 85: ROE 23%, PER 6,5), akumulasi CMF +0,14 dan OBV naik, di atas SMA50/200, paling likuid (Rp 143 mlr/hari); katalis buyback Rp 5 triliun mulai 20 Okt dan divestasi Kestrel selesai. Bear: ADX<25 sideways, sektor batu bara sama dengan PTBA (konsentrasi energi), stop 10% lebar.",
+      "intraday_checked": true,
+      "planned_entry": 11375.0,
+      "entry_date": "2026-10-26",
+      "entry_time": "2026-10-26T09:30:00+07:00",
+      "seen_until": "2026-10-29T16:00:00+07:00",
+      "cost": 1154228.75,
+      "swept_day": "2026-10-29"
+    },
+    {
+      "code": "AUTO",
+      "lots": 5,
+      "units": 500,
+      "entry": 3380.0,
+      "stop": 3160,
+      "target": 3820,
+      "signal_date": "2026-10-26",
+      "reason": "Skor 85 (fundamental 100: ROE 15%, PER 6,6, PBV 1,0, pendapatan +19%), tren kuat ADX 29 di atas SMA50/200, akumulasi CMF +0,19; ASII tender offer sukarela Rp 3.600 (13 Okt-11 Nov) jadi jangkar harga; diversifikasi dari sektor energi. Bear: likuiditas tipis (~Rp 10 mlr/hari), Stochastic jenuh beli, efek tender bisa hilang setelah 11 Nov, FOMC 28 Okt.",
+      "intraday_checked": true,
+      "planned_entry": 3320.0,
+      "entry_date": "2026-10-27",
+      "entry_time": "2026-10-27T09:30:00+07:00",
+      "seen_until": "2026-10-29T16:00:00+07:00",
+      "cost": 1692535.0,
+      "swept_day": "2026-10-29"
+    }
+  ],
+  "pending": []
+}

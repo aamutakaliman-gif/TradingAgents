@@ -1,0 +1,1088 @@
+{
+  "generated_at": "2026-10-28T00:18:26+00:00",
+  "universe": "Top 15 kripto Indodax (market cap)",
+  "price_source": "Indodax",
+  "settings": {
+    "equity": 10000000,
+    "currency": "Rp",
+    "risk_per_trade": 0.02,
+    "monthly_risk_cap": 0.06,
+    "tech_weight": 0.6
+  },
+  "candidates": [
+    "TRX",
+    "BNB",
+    "BTC",
+    "NEAR"
+  ],
+  "rows": [
+    {
+      "code": "TRX",
+      "name": "TRON",
+      "last_date": "2026-10-27",
+      "score": 72.0,
+      "technical_score": 90,
+      "market_score": 45,
+      "last_move": 0.0044,
+      "avg_daily_value": 300760457.92601883,
+      "local_premium": -0.0021,
+      "market_cap": 31494092800,
+      "technical": {
+        "close": 6002.0,
+        "sma20": 5950.65,
+        "sma50": 5976.04,
+        "sma200": 5918.955,
+        "rsi": 54.3,
+        "ret_1m": 0.0012,
+        "ret_3m": 0.0076,
+        "vol_ratio": 0.86,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 1 bulan > 0",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.8,
+          "stoch_k": 89.8,
+          "stoch_d": 87.4,
+          "adx": 40.0,
+          "cmf": 0.212,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "Stochastic di zona jenuh beli (>80)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)",
+            "dekat resistance 20 hari"
+          ],
+          "support": 5640.0,
+          "resistance": 6043.0
+        }
+      },
+      "market": {
+        "rank": 6,
+        "rs_btc_30d": 0.0357,
+        "rs_btc_90d": -0.2511,
+        "volume": 300760457.92601883
+      },
+      "atr": 105.0204359567245,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "trxidr",
+        "chart_symbols": [
+          "TRXIDR"
+        ]
+      },
+      "plan": {
+        "entry": 6002.0,
+        "stop": 5791.0,
+        "target": 6424.0,
+        "lots": 94786729857,
+        "units": 947.86729857,
+        "position_value": 5689099.52601714,
+        "risk": 199999.99999827,
+        "stop_pct": 0.03515494835054982
+      },
+      "flags": [],
+      "book_cost": 0.00087
+    },
+    {
+      "code": "BNB",
+      "name": "BNB",
+      "last_date": "2026-10-27",
+      "score": 69.0,
+      "technical_score": 85,
+      "market_score": 45,
+      "last_move": 0.0028,
+      "avg_daily_value": 511365584.682102,
+      "local_premium": -0.0031,
+      "market_cap": 97597415424,
+      "technical": {
+        "close": 13474387.0,
+        "sma20": 13248286.15,
+        "sma50": 13377781.36,
+        "sma200": 11592060.33,
+        "rsi": 54.0,
+        "ret_1m": -0.0347,
+        "ret_3m": 0.093,
+        "vol_ratio": 0.64,
+        "passed": [
+          "harga > SMA20",
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.8,
+          "stoch_k": 83.5,
+          "stoch_d": 83.6,
+          "adx": 23.4,
+          "cmf": 0.181,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "Stochastic di zona jenuh beli (>80)"
+          ],
+          "support": 12500000.0,
+          "resistance": 13948232.0
+        }
+      },
+      "market": {
+        "rank": 3,
+        "rs_btc_30d": -0.0022,
+        "rs_btc_90d": 0.0379,
+        "volume": 511365584.682102
+      },
+      "atr": 348903.85342466657,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "bnbidr",
+        "chart_symbols": [
+          "BNBIDR"
+        ]
+      },
+      "plan": {
+        "entry": 13474387.0,
+        "stop": 12776579.0,
+        "target": 14870003.0,
+        "lots": 28661179,
+        "units": 0.28661179,
+        "position_value": 3861918.1772227297,
+        "risk": 199999.99995631998,
+        "stop_pct": 0.0517877362435857
+      },
+      "flags": [],
+      "book_cost": 0.00067
+    },
+    {
+      "code": "BTC",
+      "name": "Bitcoin",
+      "last_date": "2026-10-27",
+      "score": 68.0,
+      "technical_score": 60,
+      "market_score": 80,
+      "last_move": 0.0098,
+      "avg_daily_value": 20720354820.17842,
+      "local_premium": -0.0019,
+      "market_cap": 1621754773504,
+      "technical": {
+        "close": 1465298000.0,
+        "sma20": 1472893950.0,
+        "sma50": 1461042780.0,
+        "sma200": 1295563845.0,
+        "rsi": 48.3,
+        "ret_1m": -0.0417,
+        "ret_3m": 0.0535,
+        "vol_ratio": 0.79,
+        "passed": [
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.4,
+          "stoch_k": 33.1,
+          "stoch_d": 23.6,
+          "adx": 17.9,
+          "cmf": 0.105,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda akumulasi (CMF > 0 dan OBV naik)"
+          ],
+          "support": 1435965000.0,
+          "resistance": 1530811000.0
+        }
+      },
+      "market": {
+        "rank": 1,
+        "rs_btc_30d": 0.0,
+        "rs_btc_90d": 0.0,
+        "volume": 20720354820.17842
+      },
+      "atr": 30893512.41173647,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1000.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "btcidr",
+        "chart_symbols": [
+          "BTCIDR"
+        ]
+      },
+      "plan": {
+        "entry": 1465298000.0,
+        "stop": 1403510000.0,
+        "target": 1588874000.0,
+        "lots": 323687,
+        "units": 0.00323687,
+        "position_value": 4742979.13726,
+        "risk": 199999.72356,
+        "stop_pct": 0.042167531792167874
+      },
+      "flags": [],
+      "book_cost": 0.00042
+    },
+    {
+      "code": "XRP",
+      "name": "XRP",
+      "last_date": "2026-10-27",
+      "score": 56.0,
+      "technical_score": 60,
+      "market_score": 50,
+      "last_move": 0.0185,
+      "avg_daily_value": 6379734463.417159,
+      "local_premium": -0.002,
+      "market_cap": 84035567616,
+      "technical": {
+        "close": 24108.0,
+        "sma20": 23999.0,
+        "sma50": 25005.6,
+        "sma200": 22672.575,
+        "rsi": 47.6,
+        "ret_1m": -0.1001,
+        "ret_3m": -0.0509,
+        "vol_ratio": 0.59,
+        "passed": [
+          "harga > SMA20",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram > 0",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.5,
+          "stoch_k": 61.2,
+          "stoch_d": 46.4,
+          "adx": 19.3,
+          "cmf": 0.128,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 22542.0,
+          "resistance": 26791.0
+        }
+      },
+      "market": {
+        "rank": 4,
+        "rs_btc_30d": -0.0804,
+        "rs_btc_90d": -0.0246,
+        "volume": 6379734463.417159
+      },
+      "atr": 955.294315880124,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "xrpidr",
+        "chart_symbols": [
+          "XRPIDR"
+        ]
+      },
+      "plan": {
+        "entry": 24108.0,
+        "stop": 22197.0,
+        "target": 27930.0,
+        "lots": 10465724751,
+        "units": 104.65724751,
+        "position_value": 2523076.92297108,
+        "risk": 199999.99999161,
+        "stop_pct": 0.07926829268292683
+      },
+      "flags": []
+    },
+    {
+      "code": "NEAR",
+      "name": "NEAR Protocol",
+      "last_date": "2026-10-27",
+      "score": 52.0,
+      "technical_score": 60,
+      "market_score": 40,
+      "last_move": 0.0435,
+      "avg_daily_value": 1026027685.8398937,
+      "local_premium": -0.0032,
+      "market_cap": 6100948480,
+      "technical": {
+        "close": 84676.0,
+        "sma20": 88665.7,
+        "sma50": 77965.12,
+        "sma200": 43846.97,
+        "rsi": 49.7,
+        "ret_1m": -0.0663,
+        "ret_3m": 1.5698,
+        "vol_ratio": 0.92,
+        "passed": [
+          "harga > SMA50",
+          "SMA50 > SMA200",
+          "RSI 45-70",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.3,
+          "stoch_k": 35.0,
+          "stoch_d": 22.1,
+          "adx": 20.2,
+          "cmf": -0.13,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 77502.0,
+          "resistance": 106224.0
+        }
+      },
+      "market": {
+        "rank": 9,
+        "rs_btc_30d": -0.0918,
+        "rs_btc_90d": 1.657,
+        "volume": 1026027685.8398937
+      },
+      "atr": 8630.74569134268,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "nearidr",
+        "chart_symbols": [
+          "NEARIDR"
+        ]
+      },
+      "plan": {
+        "entry": 84676.0,
+        "stop": 67414.0,
+        "target": 119200.0,
+        "lots": 1158614297,
+        "units": 11.58614297,
+        "position_value": 981068.2421277199,
+        "risk": 199999.99994813997,
+        "stop_pct": 0.2038594170721338
+      },
+      "flags": [],
+      "book_cost": 0.00073
+    },
+    {
+      "code": "SOL",
+      "name": "Solana",
+      "last_date": "2026-10-27",
+      "score": 44.0,
+      "technical_score": 30,
+      "market_score": 65,
+      "last_move": 0.0052,
+      "avg_daily_value": 6095274833.948189,
+      "local_premium": -0.0018,
+      "market_cap": 59622514688,
+      "technical": {
+        "close": 1835498.0,
+        "sma20": 1891737.65,
+        "sma50": 1953489.18,
+        "sma200": 1571226.92,
+        "rsi": 37.8,
+        "ret_1m": -0.1493,
+        "ret_3m": 0.0738,
+        "vol_ratio": 0.83,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 25.8,
+          "stoch_d": 21.9,
+          "adx": 26.8,
+          "cmf": -0.032,
+          "obv_naik": true,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 1792897.0,
+          "resistance": 2157619.0
+        }
+      },
+      "market": {
+        "rank": 5,
+        "rs_btc_30d": -0.1288,
+        "rs_btc_90d": 0.1129,
+        "volume": 6095274833.948189
+      },
+      "atr": 69991.38956256445,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "solidr",
+        "chart_symbols": [
+          "SOLIDR"
+        ]
+      },
+      "plan": {
+        "entry": 1835498.0,
+        "stop": 1695515.0,
+        "target": 2115464.0,
+        "lots": 142874491,
+        "units": 1.42874491,
+        "position_value": 2622458.4248151802,
+        "risk": 199999.99873653002,
+        "stop_pct": 0.07626431627819807
+      },
+      "flags": []
+    },
+    {
+      "code": "ADA",
+      "name": "Cardano",
+      "last_date": "2026-10-27",
+      "score": 38.0,
+      "technical_score": 30,
+      "market_score": 50,
+      "last_move": -0.0032,
+      "avg_daily_value": 1415378422.3406987,
+      "local_premium": -0.0045,
+      "market_cap": 7555769344,
+      "technical": {
+        "close": 3721.0,
+        "sma20": 4032.5,
+        "sma50": 4106.86,
+        "sma200": 3728.64,
+        "rsi": 36.3,
+        "ret_1m": -0.2235,
+        "ret_3m": 0.0059,
+        "vol_ratio": 0.79,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 11.3,
+          "stoch_d": 9.8,
+          "adx": 21.3,
+          "cmf": -0.034,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "dekat support 20 hari"
+          ],
+          "support": 3651.0,
+          "resistance": 4789.0
+        }
+      },
+      "market": {
+        "rank": 8,
+        "rs_btc_30d": -0.1565,
+        "rs_btc_90d": 0.0011,
+        "volume": 1415378422.3406987
+      },
+      "atr": 212.0249684069518,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "adaidr",
+        "chart_symbols": [
+          "ADAIDR"
+        ]
+      },
+      "plan": {
+        "entry": 3721.0,
+        "stop": 3296.0,
+        "target": 4571.0,
+        "lots": 47058823529,
+        "units": 470.58823529,
+        "position_value": 1751058.82351409,
+        "risk": 199999.99999825,
+        "stop_pct": 0.11421660843859177
+      },
+      "flags": []
+    },
+    {
+      "code": "ETH",
+      "name": "Ethereum",
+      "last_date": "2026-10-27",
+      "score": 36.0,
+      "technical_score": 20,
+      "market_score": 60,
+      "last_move": 0.0105,
+      "avg_daily_value": 7232166964.588674,
+      "local_premium": -0.0029,
+      "market_cap": 286405066752,
+      "technical": {
+        "close": 42521000.0,
+        "sma20": 43584500.0,
+        "sma50": 45265280.0,
+        "sma200": 38277945.0,
+        "rsi": 38.6,
+        "ret_1m": -0.1184,
+        "ret_3m": -0.017,
+        "vol_ratio": 0.72,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 26.5,
+          "stoch_d": 18.8,
+          "adx": 24.3,
+          "cmf": -0.003,
+          "obv_naik": true,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)"
+          ],
+          "support": 41532000.0,
+          "resistance": 48237000.0
+        }
+      },
+      "market": {
+        "rank": 2,
+        "rs_btc_30d": -0.0852,
+        "rs_btc_90d": -0.0359,
+        "volume": 7232166964.588674
+      },
+      "atr": 1436241.9307715127,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1000.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "ethidr",
+        "chart_symbols": [
+          "ETHIDR"
+        ]
+      },
+      "plan": {
+        "entry": 42521000.0,
+        "stop": 39648000.0,
+        "target": 48267000.0,
+        "lots": 6961364,
+        "units": 0.06961364,
+        "position_value": 2960041.58644,
+        "risk": 199999.98772,
+        "stop_pct": 0.06756661414359963
+      },
+      "flags": []
+    },
+    {
+      "code": "LINK",
+      "name": "Chainlink",
+      "last_date": "2026-10-27",
+      "score": 32.0,
+      "technical_score": 30,
+      "market_score": 35,
+      "last_move": 0.0153,
+      "avg_daily_value": 257024961.30446085,
+      "local_premium": -0.0006,
+      "market_cap": 8638662656,
+      "technical": {
+        "close": 210035.0,
+        "sma20": 220635.6,
+        "sma50": 226191.76,
+        "sma200": 176997.235,
+        "rsi": 39.6,
+        "ret_1m": -0.158,
+        "ret_3m": 0.0502,
+        "vol_ratio": 0.59,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 20.1,
+          "stoch_d": 11.7,
+          "adx": 26.7,
+          "cmf": 0.103,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 204162.0,
+          "resistance": 250749.0
+        }
+      },
+      "market": {
+        "rank": 7,
+        "rs_btc_30d": -0.1314,
+        "rs_btc_90d": 0.1282,
+        "volume": 257024961.30446085
+      },
+      "atr": 11411.707313395937,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "linkidr",
+        "chart_symbols": [
+          "LINKIDR"
+        ]
+      },
+      "plan": {
+        "entry": 210035.0,
+        "stop": 187211.0,
+        "target": 255683.0,
+        "lots": 876270592,
+        "units": 8.76270592,
+        "position_value": 1840474.9379072,
+        "risk": 199999.99991808,
+        "stop_pct": 0.10866760301854453
+      },
+      "flags": []
+    },
+    {
+      "code": "LTC",
+      "name": "Litecoin",
+      "last_date": "2026-10-27",
+      "score": 28.0,
+      "technical_score": 30,
+      "market_score": 25,
+      "last_move": 0.0117,
+      "avg_daily_value": 179504654.96076497,
+      "local_premium": -0.0,
+      "market_cap": 4438120448,
+      "technical": {
+        "close": 1038000.0,
+        "sma20": 1078650.0,
+        "sma50": 1094160.0,
+        "sma200": 924535.0,
+        "rsi": 40.8,
+        "ret_1m": -0.1568,
+        "ret_3m": 0.1702,
+        "vol_ratio": 0.65,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 18.6,
+          "stoch_d": 14.7,
+          "adx": 16.9,
+          "cmf": -0.132,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 1001000.0,
+          "resistance": 1235000.0
+        }
+      },
+      "market": {
+        "rank": 12,
+        "rs_btc_30d": -0.1527,
+        "rs_btc_90d": 0.0072,
+        "volume": 179504654.96076497
+      },
+      "atr": 50087.05640366564,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1000.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "ltcidr",
+        "chart_symbols": [
+          "LTCIDR"
+        ]
+      },
+      "plan": {
+        "entry": 1038000.0,
+        "stop": 937000.0,
+        "target": 1240000.0,
+        "lots": 198019801,
+        "units": 1.98019801,
+        "position_value": 2055445.53438,
+        "risk": 199999.99901,
+        "stop_pct": 0.09730250481695568
+      },
+      "flags": [
+        "volume harian < Rp 200 juta"
+      ]
+    },
+    {
+      "code": "AVAX",
+      "name": "Avalanche",
+      "last_date": "2026-10-27",
+      "score": 28.0,
+      "technical_score": 30,
+      "market_score": 25,
+      "last_move": 0.0018,
+      "avg_daily_value": 248637698.90303177,
+      "local_premium": -0.0028,
+      "market_cap": 3967988736,
+      "technical": {
+        "close": 162136.0,
+        "sma20": 174705.95,
+        "sma50": 173368.56,
+        "sma200": 144975.08,
+        "rsi": 37.1,
+        "ret_1m": -0.2217,
+        "ret_3m": 0.2345,
+        "vol_ratio": 0.77,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 14.7,
+          "stoch_d": 12.1,
+          "adx": 24.2,
+          "cmf": -0.274,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "tanda distribusi (CMF < 0 dan OBV turun)"
+          ],
+          "support": 157938.0,
+          "resistance": 208048.0
+        }
+      },
+      "market": {
+        "rank": 13,
+        "rs_btc_30d": -0.1329,
+        "rs_btc_90d": 0.1272,
+        "volume": 248637698.90303177
+      },
+      "atr": 9187.446194342216,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "avaxidr",
+        "chart_symbols": [
+          "AVAXIDR"
+        ]
+      },
+      "plan": {
+        "entry": 162136.0,
+        "stop": 143761.0,
+        "target": 198886.0,
+        "lots": 1088435374,
+        "units": 10.88435374,
+        "position_value": 1764745.57798864,
+        "risk": 199999.9999725,
+        "stop_pct": 0.11333078403315736
+      },
+      "flags": []
+    },
+    {
+      "code": "DOT",
+      "name": "Polkadot",
+      "last_date": "2026-10-27",
+      "score": 25.0,
+      "technical_score": 25,
+      "market_score": 25,
+      "last_move": -0.0094,
+      "avg_daily_value": 182632518.53979227,
+      "local_premium": -0.0011,
+      "market_cap": 1705444992,
+      "technical": {
+        "close": 18160.0,
+        "sma20": 20293.95,
+        "sma50": 20281.68,
+        "sma200": 18399.91,
+        "rsi": 36.3,
+        "ret_1m": -0.1528,
+        "ret_3m": 0.2068,
+        "vol_ratio": 0.76,
+        "passed": [
+          "SMA50 > SMA200",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.0,
+          "stoch_k": 8.8,
+          "stoch_d": 5.9,
+          "adx": 15.7,
+          "cmf": -0.016,
+          "obv_naik": false,
+          "notes": [
+            "tren lemah/sideways (ADX < 25)",
+            "breakdown: tembus titik terendah 20 hari"
+          ],
+          "support": 18218.0,
+          "resistance": 22989.0
+        }
+      },
+      "market": {
+        "rank": 15,
+        "rs_btc_30d": -0.1689,
+        "rs_btc_90d": 0.0595,
+        "volume": 182632518.53979227
+      },
+      "atr": 1271.1107643912376,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "dotidr",
+        "chart_symbols": [
+          "DOTIDR"
+        ]
+      },
+      "plan": {
+        "entry": 18160.0,
+        "stop": 15617.0,
+        "target": 23246.0,
+        "lots": 7864726700,
+        "units": 78.647267,
+        "position_value": 1428234.36872,
+        "risk": 199999.999981,
+        "stop_pct": 0.1400330396475771
+      },
+      "flags": [
+        "volume harian < Rp 200 juta"
+      ]
+    },
+    {
+      "code": "HBAR",
+      "name": "Hedera",
+      "last_date": "2026-10-27",
+      "score": 22.0,
+      "technical_score": 30,
+      "market_score": 10,
+      "last_move": -0.0171,
+      "avg_daily_value": 685458750.3819926,
+      "local_premium": -0.0027,
+      "market_cap": 3354315776,
+      "technical": {
+        "close": 1377.0,
+        "sma20": 1514.4,
+        "sma50": 1566.96,
+        "sma200": 1444.885,
+        "rsi": 34.1,
+        "ret_1m": -0.232,
+        "ret_3m": 0.0036,
+        "vol_ratio": 0.77,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik",
+          "return 3 bulan > 0"
+        ],
+        "signals": {
+          "bb_pct_b": 0.1,
+          "stoch_k": 5.0,
+          "stoch_d": 10.9,
+          "adx": 27.4,
+          "cmf": 0.017,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)",
+            "dekat support 20 hari"
+          ],
+          "support": 1365.0,
+          "resistance": 1828.0
+        }
+      },
+      "market": {
+        "rank": 14,
+        "rs_btc_30d": -0.1671,
+        "rs_btc_90d": -0.1468,
+        "volume": 685458750.3819926
+      },
+      "atr": 89.42277739396388,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "hbaridr",
+        "chart_symbols": [
+          "HBARIDR"
+        ]
+      },
+      "plan": {
+        "entry": 1377.0,
+        "stop": 1198.0,
+        "target": 1735.0,
+        "lots": 111731843575,
+        "units": 1117.31843575,
+        "position_value": 1538547.48602775,
+        "risk": 199999.99999925,
+        "stop_pct": 0.1299927378358751
+      },
+      "flags": []
+    },
+    {
+      "code": "XLM",
+      "name": "Stellar",
+      "last_date": "2026-10-27",
+      "score": 16.0,
+      "technical_score": 20,
+      "market_score": 10,
+      "last_move": 0.0088,
+      "avg_daily_value": 623422113.7728606,
+      "local_premium": -0.0044,
+      "market_cap": 5982950912,
+      "technical": {
+        "close": 3080.0,
+        "sma20": 3271.65,
+        "sma50": 3473.8,
+        "sma200": 3252.415,
+        "rsi": 36.3,
+        "ret_1m": -0.1852,
+        "ret_3m": -0.0399,
+        "vol_ratio": 0.84,
+        "passed": [
+          "SMA50 > SMA200",
+          "MACD histogram naik"
+        ],
+        "signals": {
+          "bb_pct_b": 0.2,
+          "stoch_k": 18.7,
+          "stoch_d": 11.9,
+          "adx": 59.8,
+          "cmf": 0.305,
+          "obv_naik": false,
+          "notes": [
+            "tren kuat (ADX > 25)"
+          ],
+          "support": 33.0,
+          "resistance": 3805.0
+        }
+      },
+      "market": {
+        "rank": 10,
+        "rs_btc_30d": -0.1748,
+        "rs_btc_90d": -0.2737,
+        "volume": 623422113.7728606
+      },
+      "atr": 215.44419889433516,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "xlmidr",
+        "chart_symbols": [
+          "XLMIDR",
+          "STRIDR"
+        ]
+      },
+      "plan": {
+        "entry": 3080.0,
+        "stop": 2649.0,
+        "target": 3942.0,
+        "lots": 46403712296,
+        "units": 464.03712296,
+        "position_value": 1429234.3387167999,
+        "risk": 199999.99999575998,
+        "stop_pct": 0.13993506493506494
+      },
+      "flags": []
+    },
+    {
+      "code": "BCH",
+      "name": "Bitcoin Cash",
+      "last_date": "2026-10-27",
+      "score": 14.0,
+      "technical_score": 0,
+      "market_score": 35,
+      "last_move": 0.0,
+      "avg_daily_value": 0.0,
+      "local_premium": 0.4332,
+      "market_cap": 5957351424,
+      "technical": {
+        "close": 7700000.0,
+        "sma20": 7700000.0,
+        "sma50": 7700000.0,
+        "sma200": 7700000.0,
+        "rsi": NaN,
+        "ret_1m": 0.0,
+        "ret_3m": 0.0,
+        "vol_ratio": NaN,
+        "passed": [],
+        "signals": {
+          "bb_pct_b": null,
+          "stoch_k": null,
+          "stoch_d": null,
+          "adx": null,
+          "cmf": null,
+          "obv_naik": false,
+          "notes": [
+            "dekat resistance 20 hari"
+          ],
+          "support": 7700000.0,
+          "resistance": 7700000.0
+        }
+      },
+      "market": {
+        "rank": 11,
+        "rs_btc_30d": 0.03,
+        "rs_btc_90d": -0.2727,
+        "volume": 0.0
+      },
+      "atr": 0.0,
+      "rules": {
+        "step": 1e-08,
+        "tick": 1000.0,
+        "min_notional": 10000.0,
+        "taker_fee": 0.002,
+        "suspended": false,
+        "pair_id": "bchidr",
+        "chart_symbols": [
+          "BCHIDR",
+          "BCHABCIDR"
+        ]
+      },
+      "plan": {
+        "entry": 7700000.0,
+        "stop": 7700000.0,
+        "target": 7700000.0,
+        "lots": 0,
+        "units": 0.0,
+        "position_value": 0.0,
+        "risk": 0.0,
+        "stop_pct": 0.0
+      },
+      "flags": [
+        "harga Indodax +43.3% dari harga global: pasar tipis",
+        "volume harian < Rp 200 juta"
+      ]
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,92 @@
+{
+  "market": "idx",
+  "currency": "Rp",
+  "price_source": "Yahoo",
+  "testnet": "tidak dipakai",
+  "date": "2026-10-22",
+  "events": [],
+  "brake": false,
+  "month_loss": 0,
+  "open_risk": 170000.0,
+  "cash": 8472712.5,
+  "equity": 10062712.5,
+  "candidates": [
+    {
+      "code": "PWON",
+      "name": "PT Pakuwon Jati Tbk",
+      "score": 83.0,
+      "plan": {
+        "entry": 280.0,
+        "stop": 254,
+        "target": 332,
+        "lots": 76,
+        "units": 7600,
+        "position_value": 2128000.0,
+        "risk": 197600.0,
+        "stop_pct": 0.09285714285714286
+      }
+    },
+    {
+      "code": "AUTO",
+      "name": "PT Astra Otoparts Tbk",
+      "score": 76.0,
+      "plan": {
+        "entry": 3280.0,
+        "stop": 3050,
+        "target": 3740,
+        "lots": 8,
+        "units": 800,
+        "position_value": 2624000.0,
+        "risk": 184000.0,
+        "stop_pct": 0.0701219512195122
+      }
+    },
+    {
+      "code": "MEDC",
+      "name": "PT Medco Energi Internasional Tbk",
+      "score": 73.2,
+      "plan": {
+        "entry": 1450.0,
+        "stop": 1285,
+        "target": 1780,
+        "lots": 12,
+        "units": 1200,
+        "position_value": 1740000.0,
+        "risk": 198000.0,
+        "stop_pct": 0.11379310344827587
+      }
+    },
+    {
+      "code": "ERAA",
+      "name": "PT Erajaya Swasembada Tbk",
+      "score": 70.0,
+      "plan": {
+        "entry": 580.0,
+        "stop": 505,
+        "target": 730,
+        "lots": 26,
+        "units": 2600,
+        "position_value": 1508000.0,
+        "risk": 195000.0,
+        "stop_pct": 0.12931034482758622
+      }
+    }
+  ],
+  "open": [
+    {
+      "code": "PTBA",
+      "lots": 5,
+      "units": 500,
+      "entry": 3050.0,
+      "stop": 2710,
+      "target": 3730,
+      "signal_date": "2026-10-20",
+      "reason": "Fundamental 100 (laba 1H26 +218%), akumulasi CMF +0,19, tren kuat di atas SMA50/200, likuid Rp 144 mlr/hari. Bear: naik 6,3% dalam rebound umum pasca-crash; risiko MSCI dan gap di bawah stop.",
+      "entry_date": "2026-10-21",
+      "cost": 1527287.5,
+      "seen_until": "2026-10-22T16:00:00+07:00",
+      "swept_day": "2026-10-22"
+    }
+  ],
+  "pending": []
+}

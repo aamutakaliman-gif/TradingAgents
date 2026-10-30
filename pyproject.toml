@@ -9,6 +9,7 @@ description = "TradingAgents: Multi-Agents LLM Financial Trading Framework"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "python-binance @ git+https://github.com/aamutakaliman-gif/python-binance@7d7b7fb029631db74852b2e84ed237911307495f",
     "cryptography>=42.0",
     "langchain-core>=1.6.5",
     "langchain-anthropic>=1.7.4",

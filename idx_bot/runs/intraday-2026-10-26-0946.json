@@ -1,0 +1,92 @@
+{
+  "market": "idx",
+  "date": "2026-10-26",
+  "time_wib": "09:46",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "09:30",
+  "events": [
+    {
+      "kind": "beli",
+      "text": "AADI: beli 1 lot di 11,525 (09:30 WIB), stop 10,350, target 13,875"
+    }
+  ],
+  "notify": true,
+  "top_gainers": [
+    [
+      "TPIA",
+      0.0752
+    ],
+    [
+      "SMGR",
+      0.0681
+    ],
+    [
+      "CUAN",
+      0.0588
+    ],
+    [
+      "PTRO",
+      0.0485
+    ],
+    [
+      "GOTO",
+      0.04
+    ]
+  ],
+  "top_losers": [
+    [
+      "BUKA",
+      -0.0367
+    ],
+    [
+      "TBIG",
+      -0.032
+    ],
+    [
+      "ISAT",
+      -0.0224
+    ],
+    [
+      "ELSA",
+      -0.015
+    ],
+    [
+      "MAPI",
+      -0.0144
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3280.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 108612
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1470.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -7056
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 11525.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": -4610
+    }
+  ],
+  "pending": [],
+  "cash": 5551837.75,
+  "equity": 10108337.75,
+  "ihsg": {
+    "last": 5452.65,
+    "prev_close": 5439.26
+  }
+}

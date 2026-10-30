@@ -1,0 +1,95 @@
+{
+  "market": "idx",
+  "date": "2026-10-29",
+  "time_wib": "14:07",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "13:45",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "BTPS",
+      0.0103
+    ],
+    [
+      "CTRA",
+      0.0086
+    ],
+    [
+      "BSDE",
+      0.0081
+    ],
+    [
+      "DSSA",
+      0.0077
+    ],
+    [
+      "MYOR",
+      0.0036
+    ]
+  ],
+  "top_losers": [
+    [
+      "WIFI",
+      -0.0697
+    ],
+    [
+      "CUAN",
+      -0.0694
+    ],
+    [
+      "BRMS",
+      -0.0681
+    ],
+    [
+      "PTRO",
+      -0.0674
+    ],
+    [
+      "RAJA",
+      -0.067
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3070.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 3875
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1365.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -132741
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 11300.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": -27054
+    },
+    {
+      "code": "AUTO",
+      "entry": 3380.0,
+      "last": 3340.0,
+      "stop": 3160,
+      "target": 3820,
+      "pnl": -26710
+    }
+  ],
+  "pending": [],
+  "cash": 3859302.75,
+  "equity": 9832302.75,
+  "ihsg": {
+    "last": 5148.63,
+    "prev_close": 5282.31
+  }
+}

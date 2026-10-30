@@ -1,0 +1,95 @@
+{
+  "market": "idx",
+  "date": "2026-10-27",
+  "time_wib": "15:18",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "15:00",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "SILO",
+      0.0409
+    ],
+    [
+      "UNTR",
+      0.036
+    ],
+    [
+      "GGRM",
+      0.0274
+    ],
+    [
+      "HMSP",
+      0.0234
+    ],
+    [
+      "INTP",
+      0.0178
+    ]
+  ],
+  "top_losers": [
+    [
+      "DEWA",
+      -0.0692
+    ],
+    [
+      "BREN",
+      -0.069
+    ],
+    [
+      "PTRO",
+      -0.0689
+    ],
+    [
+      "RAJA",
+      -0.0678
+    ],
+    [
+      "DSSA",
+      -0.0676
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3150.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 43775
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1405.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -84861
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 11600.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": 2871
+    },
+    {
+      "code": "AUTO",
+      "entry": 3380.0,
+      "last": 3370.0,
+      "stop": 3160,
+      "target": 3820,
+      "pnl": -11748
+    }
+  ],
+  "pending": [],
+  "cash": 3859302.75,
+  "equity": 9965302.75,
+  "ihsg": {
+    "last": 5201.17,
+    "prev_close": 5373.09
+  }
+}

@@ -1,0 +1,4 @@
+kode,status,lot,harga_masuk,stop,target,harga_terakhir,laba_rugi_rp,tanggal,alasan
+BTC,terbuka,0.00305124,1470572000.0,1405027000.0,1601668000.0,1448716000.0,-95745.0,2026-10-19,"Pemimpin pasar, paling likuid di Indodax (Rp 24 miliar/hari); di atas SMA50, RSI netral; stop 4,5%. Bear: return 1 bulan negatif, tanpa katalis baru."
+NEAR,terbuka,9.66884215,90026.0,69267.0,131322.0,83990.0,-63802.0,2026-10-19,"Terkuat vs BTC 30 hari (+32%); ETF Bitwise dan pendapatan protokol naik; volume Indodax Rp 1,2 miliar/hari. Bear: turun sejak 12 Okt, insiden keamanan 3,8 jt USD (1 Okt), stop lebar 23%."
+AVAX,terbuka,8.60770389,173542.0,150867.0,220572.0,157986.0,-143092.0,2026-10-19,"Lebih kuat dari BTC 30 hari (+18%), tidak ada unlock token di Oktober; dipilih atas TRX yang lebih lemah dari BTC dan akan memakan 55% modal. Bear: return 1 bulan -10%, unlock kecil sekitar 8 Nov."

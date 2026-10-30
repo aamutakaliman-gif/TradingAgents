@@ -1,0 +1,87 @@
+{
+  "market": "idx",
+  "date": "2026-10-26",
+  "time_wib": "15:23",
+  "source": "Yahoo, tertunda sekitar 10 menit",
+  "market_open": true,
+  "data_until_wib": "15:00",
+  "events": [],
+  "notify": false,
+  "top_gainers": [
+    [
+      "TPIA",
+      0.109
+    ],
+    [
+      "SMGR",
+      0.0502
+    ],
+    [
+      "BRIS",
+      0.0392
+    ],
+    [
+      "MAPA",
+      0.0342
+    ],
+    [
+      "UNVR",
+      0.0179
+    ]
+  ],
+  "top_losers": [
+    [
+      "WIFI",
+      -0.0673
+    ],
+    [
+      "MDKA",
+      -0.0594
+    ],
+    [
+      "BUKA",
+      -0.055
+    ],
+    [
+      "MBMA",
+      -0.0479
+    ],
+    [
+      "CUAN",
+      -0.0431
+    ]
+  ],
+  "positions": [
+    {
+      "code": "PTBA",
+      "entry": 3050.0,
+      "last": 3200.0,
+      "stop": 2710,
+      "target": 3730,
+      "pnl": 68712
+    },
+    {
+      "code": "MEDC",
+      "entry": 1470.0,
+      "last": 1445.0,
+      "stop": 1305,
+      "target": 1800,
+      "pnl": -36981
+    },
+    {
+      "code": "AADI",
+      "entry": 11525.0,
+      "last": 11450.0,
+      "stop": 10350,
+      "target": 13875,
+      "pnl": -12091
+    }
+  ],
+  "pending": [],
+  "cash": 5551837.75,
+  "equity": 10030837.75,
+  "ihsg": {
+    "last": 5358.16,
+    "prev_close": 5439.26
+  }
+}
